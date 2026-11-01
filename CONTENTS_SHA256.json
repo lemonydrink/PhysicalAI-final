@@ -622,8 +622,8 @@
     },
     {
       "path": "reports/2026-11-01-burgq/final-report/REPORT.md",
-      "bytes": 22533,
-      "sha256": "de2b9ce2c88e4daf799df579d1b5eaf9dee09d57a10e2add22876bdf94cf419e"
+      "bytes": 24276,
+      "sha256": "edc382376f46964e523360ed4d8061b3950868933a7224145bd9590425124d6f"
     },
     {
       "path": "reports/2026-11-01-burgq/final-report/VERIFICATION.json",
@@ -4277,8 +4277,8 @@
     },
     {
       "path": "reports/2026-11-01-burgq/final-report/write_report.py",
-      "bytes": 23692,
-      "sha256": "9ca25f68ffe74e41db02631f319349faf044483afd6df2f428250d28f740e0aa"
+      "bytes": 25435,
+      "sha256": "d7ff92cfc93caffab6ef1d343137f30772b18ed361b7f176714fd69bc441638a"
     },
     {
       "path": "reports/2026-11-01-burgq/final-ros2-best80/RESULT.md",
