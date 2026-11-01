@@ -1,0 +1,12 @@
+{
+  "all_raw_state_action_exact": true,
+  "episodes": 3071,
+  "frames": 404716,
+  "raw_timestamp_delta_seconds": [
+    0.05
+  ],
+  "all_instruction_strings_match": true,
+  "all_image_shapes_dtype_valid": true,
+  "cross_split_exact_action_groups": 0,
+  "finite_state_action": true
+}

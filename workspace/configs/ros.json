@@ -1,0 +1,10 @@
+{
+  "backend": "simulation",
+  "profile_id": "async-controller-measured-v1",
+  "max_observation_age_seconds": 1.0,
+  "max_pending_inference": 1,
+  "tick_hz": 20,
+  "clock_domain": "same-host-monotonic",
+  "timeout_behavior": "pause_simulation_time_without_repeating_motion",
+  "note": "Separate execution profile from synchronous 80-trial evaluation. No real robot interface."
+}

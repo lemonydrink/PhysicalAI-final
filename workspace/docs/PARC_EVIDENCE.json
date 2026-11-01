@@ -1,0 +1,157 @@
+{
+  "date": "2026-10-30",
+  "parc_head": "eeddacf7b79bb2f9089b6a013410f0a0913f7ea2",
+  "scope": "Local read-only crosscheck; no GPU/rollout/hardware validation",
+  "tests": {
+    "result": "4 passed",
+    "command": ".venv/bin/python -m pytest -q experiments/T2-Xvla-libero/tests/test_t2_xvla_layout.py experiments/T2EXP-005-xvla-libero-improved/tests/test_action_adapter.py"
+  },
+  "files": [
+    {
+      "path": "PARC2026_final/experiments/T2-Xvla-libero/code/dataset/prepare_t2_source.py",
+      "bytes": 37453,
+      "sha256": "4ff4784538c89db335fb5f7825863203adb9dd23eebc8b1e12c57c41c2db4f39"
+    },
+    {
+      "path": "PARC2026_final/experiments/T2-Xvla-libero/config/T2_TASKS.csv",
+      "bytes": 1459,
+      "sha256": "faf5f2a19fbee049b8cdecadba30f51b885a5fc7c4396b1544b3748ec6d674fc"
+    },
+    {
+      "path": "PARC2026_final/experiments/T2-Xvla-libero/config/model.json",
+      "bytes": 778,
+      "sha256": "51f69abd51f4b3024bd7961000a4e4fd951dfc755378570863c6c8deddc321d2"
+    },
+    {
+      "path": "PARC2026_final/runs/T2-Xvla-libero/20260903T152306Z/run.json",
+      "bytes": 1982,
+      "sha256": "6bee07942fc447573c3752ad0ef589a8c1603716172ceabebd620df24b36bc6d"
+    },
+    {
+      "path": "PARC2026_final/experiments/T2-Xvla-libero/config/data.json",
+      "bytes": 1042,
+      "sha256": "13b39457b4cf9fb53a003076b5b0533339c748f60db08fb2df1c5711736e1610"
+    },
+    {
+      "path": "PARC2026_final/experiments/T2-Xvla-libero/tests/test_t2_xvla_layout.py",
+      "bytes": 1873,
+      "sha256": "a73c06a9964db56b4ad8f85a41b9893ddba8331ee62c3e42415eab0f0ca243ca"
+    },
+    {
+      "path": "PARC2026_final/experiments/T2-Xvla-libero/code/training/models/action_hub.py",
+      "bytes": 9865,
+      "sha256": "4da411f074567af75b7dda507ed02688aa7c4541c51c5e4cd2d3f57aee4aadf8"
+    },
+    {
+      "path": "PARC2026_final/experiments/T2-Xvla-libero/code/training/datasets/domain_handler/simulations.py",
+      "bytes": 8102,
+      "sha256": "a4e911a5b315e08b4821d8cd3f50bb8e89525d703c64162fda6f11d009d114c2"
+    },
+    {
+      "path": "PARC2026_final/experiments/T2-Xvla-libero/code/training/datasets/domain_config.py",
+      "bytes": 2352,
+      "sha256": "543aaf8e9a0c80d8c230611f8e18a86e6191345c03e6d01c83034f35d8178063"
+    },
+    {
+      "path": "PARC2026_final/experiments/T2-Xvla-libero/code/training/datasets/domain_handler/base.py",
+      "bytes": 6229,
+      "sha256": "34c0dd428150e8657d2c953bc548415ad2afa4ddb7750c49581184185c4bed3c"
+    },
+    {
+      "path": "PARC2026_final/experiments/T2-Xvla-libero/code/training/datasets/utils.py",
+      "bytes": 4473,
+      "sha256": "6c973a3de8ce72d1c5101816fd01f61dbf1bcd34397da64c7515cb10c3167387"
+    },
+    {
+      "path": "PARC2026_final/experiments/T2EXP-005-xvla-libero-improved/code/inference/policy_impl.py",
+      "bytes": 5884,
+      "sha256": "54656fba52b407ba22a1cdc3d92b050a94b4fed7020a559e9358ad38e60b0887"
+    },
+    {
+      "path": "PARC2026_final/experiments/T2EXP-005-xvla-libero-improved/code/common/action_adapter.py",
+      "bytes": 2087,
+      "sha256": "624d3b176e1d53d1bff4a727c766a4711eac750588dc26963954ec3d5e4389a6"
+    },
+    {
+      "path": "PARC2026_final/runs/T2-Xvla-libero/preflight-batch4/ckpt-1/state.json",
+      "bytes": 18,
+      "sha256": "26e7830bfbe73ff1d0a5d977d67b4ac06dc10e6e24afeb225e7249ec796b5930"
+    },
+    {
+      "path": "PARC2026_final/runs/T2-Xvla-libero/20260903T152306Z/ckpt-82468/state.json",
+      "bytes": 22,
+      "sha256": "f9184b19973d7ba7800b2ce520f2d6614dd673d7a800bbc22106f74982d805e0"
+    },
+    {
+      "path": "PARC2026_final/runs/T2EXP-005-xvla-libero-improved/production-two-phase-20260904-r2/checkpoint_index.json",
+      "bytes": 246,
+      "sha256": "a509d65b195b6fd875c7075f179c33ab3e0432f14203aaf3d75c9acfd0b066a1"
+    },
+    {
+      "path": "PARC2026_final/runs/T2EXP-005-xvla-libero-improved/production-two-phase-20260904-r2/parameter_summary.json",
+      "bytes": 53178,
+      "sha256": "f0ace548314ce3c15dcd787ef12934836219f73d866ca6698c37bd34b861f219"
+    },
+    {
+      "path": "PARC2026_final/experiments/T2EXP-005-xvla-libero-improved/experiment.json",
+      "bytes": 2192,
+      "sha256": "230b92afbc5c5a88de0bc80e1bc12f33478f68a4ce7ca15bd01533c25e240a9d"
+    },
+    {
+      "path": "PARC2026_final/experiments/T2EXP-005-xvla-libero-improved/tests/test_action_adapter.py",
+      "bytes": 1022,
+      "sha256": "fe0c334b3875c470bdbde2261b93815afa300bfc2813aa7f3a03f2da28578eee"
+    },
+    {
+      "path": "PARC2026_final/AGENTS.md",
+      "bytes": 12996,
+      "sha256": "235f6bc21be74f6717aa37007a8daca4066cc5bd224c41f6b40824db884f93d3"
+    },
+    {
+      "path": "PARC2026_final/docs/EVALUATION_CONTRACT.md",
+      "bytes": 10265,
+      "sha256": "75f7db687a472506fce5861043ec87db4134148036de525b66f107791d93238f"
+    },
+    {
+      "path": "PARC2026_final/docs/ENVIRONMENTS.md",
+      "bytes": 3538,
+      "sha256": "4645d385bd8ab528794e509daa5a645595ddcd7ba00f4884ecd5066a7f8618c0"
+    },
+    {
+      "path": "PARC2026/PARC2026_pre/report.md",
+      "bytes": 7988,
+      "sha256": "5fd8b7888fae25e7897232937b7724ecd9bff694f358669fa1ff4a22dbe84393"
+    },
+    {
+      "path": "PARC2026/PARC2026_pre/experiments/XVLA_libero/artifacts/local_eval/docker-body-100k-5ep/server_8000.json",
+      "bytes": 4154,
+      "sha256": "1e08faccf3c4a4b95d43549d8648ca2f5068e64776a0fba7b4e2e36a6410478c"
+    },
+    {
+      "path": "PARC2026/PARC2026_pre/experiments/XVLA_RL/reports/lora_100k_diagnosis/REPORT.md",
+      "bytes": 8121,
+      "sha256": "f98969581cac3f7b09873188927dea23980d3a1d82cea981e6dc95652bcc8115"
+    },
+    {
+      "path": "PARC2026/PARC2026_pre/experiments/XVLA_RL/logs/base_vs_lora_t1_10ep.json",
+      "bytes": 53331,
+      "sha256": "409757a705e05bac0abf71b2d2d918e4f22abe9b471ca5ac84144cc1202e266d"
+    },
+    {
+      "path": "PARC2026/PARC2026_pre/experiments/XVLA_base_improve/README.md",
+      "bytes": 11878,
+      "sha256": "1d57b0821b424586db7a2e2baf4639ee9eaaf67bdbc4364029fbfa9af3977c64"
+    },
+    {
+      "path": "PARC2026/PARC2026_pre/experiments/XVLA_base_improve/logs/residual_r2_official_10ep.json",
+      "bytes": 144720,
+      "sha256": "38c90ec53a6f1a44229eeee0f5f87d88c874e0ed0b7f1fa206f0a8f427fe9760"
+    },
+    {
+      "path": "PARC2026/PARC2026_pre/experiments/XVLA_base_improve/logs/residual_r2_heldout_visual_10ep.json",
+      "bytes": 376652,
+      "sha256": "2906c8fea45275c50041c3facbfa1d470de9e982d9cd3f2f87e83d6fedda8438"
+    }
+  ],
+  "qualifier_addendum": "Preliminary-stage body-frame LoRA local sim evaluation records success; see F-14 through F-17. Conflicting controller-frame results kept separate."
+}

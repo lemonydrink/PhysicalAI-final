@@ -1,0 +1,78 @@
+{
+  "task_set": "draft_eight",
+  "selection_confirmed": true,
+  "tasks": [
+    {
+      "dataset_task_index": 8,
+      "key": "milk_basket",
+      "instruction": "Pick up the milk and place it in the basket.",
+      "dataset_instruction": null,
+      "suite": null,
+      "environment": null,
+      "max_steps": 300
+    },
+    {
+      "dataset_task_index": 20,
+      "key": "tomato_basket",
+      "instruction": "Pick up the tomato sauce and place it in the basket.",
+      "dataset_instruction": null,
+      "suite": null,
+      "environment": null,
+      "max_steps": 300
+    },
+    {
+      "dataset_task_index": 16,
+      "key": "butter_basket",
+      "instruction": "Pick up the butter and place it in the basket.",
+      "dataset_instruction": null,
+      "suite": null,
+      "environment": null,
+      "max_steps": 300
+    },
+    {
+      "dataset_task_index": 6,
+      "key": "bowl_center_plate",
+      "instruction": "Pick up the black bowl from table center and place it on the plate.",
+      "dataset_instruction": null,
+      "suite": null,
+      "environment": null,
+      "max_steps": 300
+    },
+    {
+      "dataset_task_index": 4,
+      "key": "bowl_cookie_plate",
+      "instruction": "Pick up the black bowl next to the cookie box and place it on the plate.",
+      "dataset_instruction": null,
+      "suite": null,
+      "environment": null,
+      "max_steps": 300
+    },
+    {
+      "dataset_task_index": 9,
+      "key": "bowl_plate",
+      "instruction": "Put the bowl on the plate.",
+      "dataset_instruction": null,
+      "suite": null,
+      "environment": null,
+      "max_steps": 300
+    },
+    {
+      "dataset_task_index": 7,
+      "key": "middle_drawer",
+      "instruction": "Open the middle drawer of the cabinet.",
+      "dataset_instruction": null,
+      "suite": null,
+      "environment": null,
+      "max_steps": 300
+    },
+    {
+      "dataset_task_index": 36,
+      "key": "plate_stove",
+      "instruction": "Push the plate to the front of the stove.",
+      "dataset_instruction": null,
+      "suite": null,
+      "environment": null,
+      "max_steps": 300
+    }
+  ]
+}

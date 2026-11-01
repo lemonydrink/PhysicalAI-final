@@ -1,0 +1,10 @@
+{
+  "core_tests": "15 passed (including W&B offline and disabled)",
+  "backend_asset_free_tests": "8 passed, 4 deselected: smoke HDF5, initial checkpoint stats (two tests), raw dataset fixture",
+  "original_backend_full_tests": "12 passed in original asset-complete workspace during alignment audit",
+  "syntax": "compileall passed",
+  "dependencies": "original runtime uv pip check and uv lock --check passed; no dependency changes in publication",
+  "secret_scan": "known private-key, GitHub/HF token, AWS-key and credential URL patterns: no matches",
+  "excluded": "weights, raw/HDF5 data, external scene assets symlink, virtual environments, W&B binary logs, build/cache, historical analysis archive, upstream demonstration videos",
+  "scope": "Snapshot; no final SFT performance claim"
+}

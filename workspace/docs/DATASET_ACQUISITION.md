@@ -1,0 +1,42 @@
+# 原案8タスクのローカル取得
+
+取得元はLIBERO-PLUSのLeRobot形式公開データ `Sylvest/libero_plus_lerobot`。
+revisionを `22c57433fef692b5b9ecc0795344daac7fa867a5` に固定する。
+原案8タスクのラベルに一致する全episodeを選択する。各タスクから少数を抜粋する制限は設けない。
+公開データ内の摂動・収集条件の系譜はメタデータだけから確定できないため、原版HDF5や全摂動網羅と同一とは扱わない。
+
+| タスク | dataset task index | エピソード数 |
+|---|---:|---:|
+| 牛乳をかごへ | 8 | 395 |
+| トマトソースをかごへ | 20 | 350 |
+| バターをかごへ | 16 | 405 |
+| 中央のボウルを皿へ | 6 | 385 |
+| クッキー箱の隣のボウルを皿へ | 4 | 445 |
+| ボウルを皿へ | 9 | 480 |
+| 中段の引き出しを開く | 7 | 370 |
+| 皿をコンロの前へ押す | 36 | 241 |
+| 合計 | | 3,071 |
+
+合計404,716フレーム、20Hz。stateは8次元、actionは7次元、正面・手首のRGB映像は各256×256。
+保存先は `data/raw/`。公開元のファイル名・episode index・数値を維持し、座標変換や学習用の正規化は行わない。
+選択対象ファイルはparquet 3,071本、動画6,142本、合計9,213本。メタデータは別途保存する。
+
+```bash
+cd /home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2
+.venv/bin/python scripts/download_eight_dataset.py --workers 8
+```
+
+中断後は同じコマンドで再開できる。取得済みのファイルも公開元のサイズとblob hashで検証する。
+parquetのタスク・次元・有限値・時間間隔を検査し、2視点動画を全フレーム復号して解像度とフレーム数を確認する。
+全件の検証成功後だけ `data/eight-tasks-local.manifest.json` を生成する。
+manifestにはepisodeごとの元ファイル、SHA256、件数、固定revisionを保存する。
+
+このmanifestは生データの取得完了記録であり、SmolVLA学習用manifestとは別である。
+学習前にepisode単位のtrain/validation分割と、trainだけからの正規化統計の作成が必要。
+取得完了は学習完了・成功率70%達成を意味しない。
+
+## 取得完了記録（2026-10-30）
+
+全3,071エピソード・404,716フレーム・9,213ファイルの取得と全件検証が完了。対象ファイル合計2,971,651,522 bytes（約2.77 GiB、メタデータ・キャッシュを除く）。タスク欠落・重複episode indexなし。両視点の全動画の復号・フレーム数一致を確認。
+
+取得完了manifestのSHA256：`cc2158e01dcb3727968a19be7c69afd537382b9166a388852ef604af693fb8c7`。取得ログ：`data/download-eight.log`。

@@ -1,0 +1,9 @@
+string episode
+uint64 sequence
+float64 observation_time
+string codec
+string bundle_hash
+float64 action_dt
+uint32 horizon
+uint32 action_dim
+float32[] actions

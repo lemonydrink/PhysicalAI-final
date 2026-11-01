@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "optimizer_updates_during_audit": 0,
+  "initial_model": "lerobot/smolvla_libero_plus",
+  "initial_revision": "7bb70aa5bc92b82c9239142775d3a173103567ff",
+  "normalizer_roundtrip": true,
+  "trainable_weights_fp32": true,
+  "loss_dim": 7,
+  "padded_output_projection_gradient_zero": true,
+  "real_output_projection_gradient_nonzero": true,
+  "loss": 0.14535871148109436,
+  "dataset_frame_count": 404716,
+  "dataset_rotvec_above_pi": 106735,
+  "action_min": [
+    -0.9375,
+    -0.9375,
+    -0.9375,
+    -0.1939285695552826,
+    -0.375,
+    -0.32892856001853943,
+    -1.0
+  ],
+  "action_max": [
+    0.9375,
+    0.9375,
+    0.9375,
+    0.3085714280605316,
+    0.3471428453922272,
+    0.375,
+    1.0
+  ],
+  "state_encoding": "libero_quat2axisangle",
+  "dataset_camera_transforms": {
+    "front": "identity",
+    "wrist": "identity"
+  },
+  "simulator_camera_transforms": {
+    "front": "rot180",
+    "wrist": "rot180"
+  },
+  "camera_evidence": "camera_contract.png raw comparison and camera_canonical.png canonical comparison; matching robot/wrist orientation",
+  "creator_source_sha256": "6ff09687a6ca8cb5df16b828cce2326467099da2b4dd6e5af557644d3e60f37f",
+  "simulator_source_sha256": "3d2770de25dfc127f455e89bf79e447b4fcc8256c60bde912c16c5dff5d89768",
+  "limitations": "Raw source column names do not independently document physical units; state convention matched creator source, numeric distribution and actual simulator. Full demonstration replay not available from 8D-only raw data."
+}

@@ -1,0 +1,97 @@
+{
+  "task_set": "draft_eight",
+  "selection_confirmed": true,
+  "tasks": [
+    {
+      "dataset_task_index": 8,
+      "key": "milk_basket",
+      "instruction": "Pick up the milk and place it in the basket.",
+      "dataset_instruction": "pick up the milk and place it in the basket",
+      "suite": "libero_object",
+      "environment": "pick_up_the_milk_and_place_it_in_the_basket",
+      "max_steps": 300,
+      "bddl_sha256": "9910aabf6717e8ba3e24a3f8500d9bce9ee075346ea6961e8fd766f1257d2996",
+      "initial_states_sha256": "4a86269faf4c98baff4c1428997ac828d00c56922a9a131be94e19b6027e1db2"
+    },
+    {
+      "dataset_task_index": 20,
+      "key": "tomato_basket",
+      "instruction": "Pick up the tomato sauce and place it in the basket.",
+      "dataset_instruction": "pick up the tomato sauce and place it in the basket",
+      "suite": "libero_object",
+      "environment": "pick_up_the_tomato_sauce_and_place_it_in_the_basket",
+      "max_steps": 300,
+      "bddl_sha256": "b1f4bb69d256a05f693838de46182bb0d3de0de68eec350df1b5b1e76f6c136d",
+      "initial_states_sha256": "2326da7ccacd3ebc75d80847f92d2e310b537b8dbbd8a76840a29b13f00f9a65"
+    },
+    {
+      "dataset_task_index": 16,
+      "key": "butter_basket",
+      "instruction": "Pick up the butter and place it in the basket.",
+      "dataset_instruction": "pick up the butter and place it in the basket",
+      "suite": "libero_object",
+      "environment": "pick_up_the_butter_and_place_it_in_the_basket",
+      "max_steps": 300,
+      "bddl_sha256": "5d8053b40ff33246fdbcc38548db84032c6bb647b4b88b6646d9cf6b73a5006c",
+      "initial_states_sha256": "f0925a8653c5902c5a4d78a2053365382ad7d05be7f059abe19c2004ffc5dc59"
+    },
+    {
+      "dataset_task_index": 6,
+      "key": "bowl_center_plate",
+      "instruction": "Pick up the black bowl from table center and place it on the plate.",
+      "dataset_instruction": "pick up the black bowl from table center and place it on the plate",
+      "suite": "libero_spatial",
+      "environment": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate",
+      "max_steps": 300,
+      "bddl_sha256": "5e19880ebc844f86b89f63b172aab0b7a89f85b6e6955891f544f0ea7d0795d5",
+      "initial_states_sha256": "27d5b81d739f969e40c72b6c88699e57a91ea61209946b21c593aae5990689cb"
+    },
+    {
+      "dataset_task_index": 4,
+      "key": "bowl_cookie_plate",
+      "instruction": "Pick up the black bowl next to the cookie box and place it on the plate.",
+      "dataset_instruction": "pick up the black bowl next to the cookie box and place it on the plate",
+      "suite": "libero_spatial",
+      "environment": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate",
+      "max_steps": 300,
+      "bddl_sha256": "566c65596f3472e752e6522817bff51bbf3ce5159d7bec1d3554e5ead46b1e55",
+      "initial_states_sha256": "ab86fb7b5942dc0fec762eae57e72bf636106b1c10ad8ce57227723d8eb9a81b"
+    },
+    {
+      "dataset_task_index": 9,
+      "key": "bowl_plate",
+      "instruction": "Put the bowl on the plate.",
+      "dataset_instruction": "put the bowl on the plate",
+      "suite": "libero_goal",
+      "environment": "put_the_bowl_on_the_plate",
+      "max_steps": 300,
+      "bddl_sha256": "358b7781437e412c67d6a7648c1c28796b6b1bf117a25e61316cb8dfeb940e5b",
+      "initial_states_sha256": "ef3466ffad734754dc40eba1f6f5712e37aa46b9692c595e0da34f16d3a0c668"
+    },
+    {
+      "dataset_task_index": 7,
+      "key": "middle_drawer",
+      "instruction": "Open the middle drawer of the cabinet.",
+      "dataset_instruction": "open the middle drawer of the cabinet",
+      "suite": "libero_goal",
+      "environment": "open_the_middle_drawer_of_the_cabinet",
+      "max_steps": 300,
+      "bddl_sha256": "832ab48ec476807c767e8985666e295700f92d1f8daeae1c34eee1e75293769b",
+      "initial_states_sha256": "977efe1216bee72bb4e9fa9ec4be1bcfe37fb00ece815eac117feba019b34b9f"
+    },
+    {
+      "dataset_task_index": 36,
+      "key": "plate_stove",
+      "instruction": "Push the plate to the front of the stove.",
+      "dataset_instruction": "push the plate to the front of the stove",
+      "suite": "libero_goal",
+      "environment": "push_the_plate_to_the_front_of_the_stove",
+      "max_steps": 300,
+      "bddl_sha256": "26f22f8ad39a4b2b344b049115c45661a877fa0b4821fb78246725e7e87d8c0b",
+      "initial_states_sha256": "794beed679b18bbd7d9fb851c81877a974915ad63addff2d5ac5af0607fafac9"
+    }
+  ],
+  "dataset_revision": "22c57433fef692b5b9ecc0795344daac7fa867a5",
+  "environment_scope": "unperturbed_base_tasks",
+  "source_metadata_sha256": "e7c9d0a5f997173326e05ec2640c7b24c3e86a4e306d1e3cc88fa3453d0b4823"
+}

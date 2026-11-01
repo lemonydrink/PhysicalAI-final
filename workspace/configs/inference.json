@@ -1,0 +1,13 @@
+{
+  "profile_id": "base-controller-previous-chunk-v1",
+  "model": "2toINF/X-VLA-Libero",
+  "pose_frame": "controller",
+  "proprio_mode": "previous_chunk",
+  "denoising_steps": 10,
+  "front_rotate_180": true,
+  "wrist_rotate_180": false,
+  "horizon": 30,
+  "simulation_action_dt": 0.05,
+  "training_codec": "configs/codec.json",
+  "note": "Selected by paired development smoke (initial state 0), not a training-codec validation. Final evaluation uses disjoint initial states."
+}

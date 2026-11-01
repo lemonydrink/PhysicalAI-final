@@ -1,0 +1,63 @@
+{
+  "snapshot_at_jst": "2026-11-01T22:31:28.104558+09:00",
+  "source_workspace": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2",
+  "experiment": "burgq-staged-batch32-20261101",
+  "training_status": "in_progress",
+  "last_recorded_optimizer_step": 383,
+  "planned_optimizer_steps": 11434,
+  "epoch": 0.03349668066916835,
+  "baseline_successes": 73,
+  "baseline_trials": 80,
+  "baseline_macro_success_rate": 0.9125,
+  "sft_final_success_rate": null,
+  "successful_videos": [
+    {
+      "task": "bowl_center_plate",
+      "episode_id": 0,
+      "file": "videos/bowl_center_plate_000.mp4",
+      "sha256": "95c174e7c079cbe617cb35ce143bc7297a5f41afbbfb01c9d3c1fdfe5c421d23"
+    },
+    {
+      "task": "bowl_cookie_plate",
+      "episode_id": 0,
+      "file": "videos/bowl_cookie_plate_000.mp4",
+      "sha256": "8580b46d743a7910b157c5f925099b4104af6613e36de70a119bdaf10c96bad5"
+    },
+    {
+      "task": "bowl_plate",
+      "episode_id": 0,
+      "file": "videos/bowl_plate_000.mp4",
+      "sha256": "568957d29817cf9cfef56023db1c94e1820174a327beaaac688daffcc107cf82"
+    },
+    {
+      "task": "butter_basket",
+      "episode_id": 0,
+      "file": "videos/butter_basket_000.mp4",
+      "sha256": "8d0c04a07181e8b811dff771d2ec349985e568fa64ea84b0ba4243ee822c06e2"
+    },
+    {
+      "task": "middle_drawer",
+      "episode_id": 0,
+      "file": "videos/middle_drawer_000.mp4",
+      "sha256": "4ba8ad053f84a2a0bf2a4c3a2c3faa369858e4c2f4f55df7780e01bb4a9d491d"
+    },
+    {
+      "task": "milk_basket",
+      "episode_id": 0,
+      "file": "videos/milk_basket_000.mp4",
+      "sha256": "b682e8d5f0b6f029ff0005a400608ab02b79f931d16c1bcc7f460ede549f0ffe"
+    },
+    {
+      "task": "plate_stove",
+      "episode_id": 0,
+      "file": "videos/plate_stove_000.mp4",
+      "sha256": "961a3b6f2c1a65b081357db25d6a59c7963bcf5557713721d3ba0f1371195756"
+    },
+    {
+      "task": "tomato_basket",
+      "episode_id": 0,
+      "file": "videos/tomato_basket_000.mp4",
+      "sha256": "dc3ebc14ea6b98b4258bc9d9dc3757fe66fdd3a3b769d9987de1eaf19f181aae"
+    }
+  ]
+}

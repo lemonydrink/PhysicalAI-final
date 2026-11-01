@@ -1,0 +1,16 @@
+{
+  "model_family": "smolvla",
+  "entrypoint": "backends/smolvla/staged_job.py",
+  "config": "backends/smolvla/configs/burgq-staged-batch32.json",
+  "python": "backends/smolvla/.venv/bin/python",
+  "batch_size": 32,
+  "previous_backend": "xvla_reference_only",
+  "goal": "trained SmolVLA >=70% on eight simulation tasks, compared with its own unadjusted initialization",
+  "performance_verified": false,
+  "initial_model": "BurgQ/smolvla-libero-bs32-100k",
+  "initial_revision": "238fb0654cd598e287f8b6c2d64bd09af239c76f",
+  "current_job": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101",
+  "gradient_accumulation_steps": 1,
+  "effective_batch_size": 32,
+  "preprocessing_profile": "libero_raw_v1"
+}

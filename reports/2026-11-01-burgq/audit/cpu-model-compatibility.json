@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "cpu_only": true,
+  "optimizer_updates": 0,
+  "initial_model": "BurgQ/smolvla-libero-bs32-100k",
+  "initial_revision": "238fb0654cd598e287f8b6c2d64bd09af239c76f",
+  "strict_load": true,
+  "tensor_count": 500,
+  "all_tensor_values_equal": true,
+  "weight_sha256": "88638a6aa1399327d79418265b224b883e7af6b5a7855c3b0aa6b7929ff1f971",
+  "normalization_state_dim": 8,
+  "normalization_action_dim": 7,
+  "software_note": "Source card specifies LeRobot0.6.1/Transformers5.5.4. Local LeRobot0.4.4/Transformers4.57.6 loads all500 tensors strictly; evaluation here is a local matched protocol, not reproduction of published83%."
+}

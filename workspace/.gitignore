@@ -1,0 +1,17 @@
+.venv*/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+/data/*
+!/data/tasks.resolved.json
+models/
+runs/
+logs/
+.pixi/
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+backends/*/data/
+backends/*/models/
+backends/*/runs/

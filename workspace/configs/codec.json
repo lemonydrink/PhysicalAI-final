@@ -1,0 +1,15 @@
+{
+  "id": "upstream-ee6d-body-v1",
+  "representation": "absolute_ee6d",
+  "rotation_layout": "columns_concatenated",
+  "pose_frame": "libero_body",
+  "position_scale_m": 0.05,
+  "rotation_scale_rad": 0.5,
+  "state_action_alignment": "previous_state_next_action",
+  "front_rotate_180": true,
+  "wrist_rotate_180": false,
+  "action_dt": 0.05,
+  "domain_id": 3,
+  "validation_status": "unvalidated",
+  "validation_evidence": null
+}

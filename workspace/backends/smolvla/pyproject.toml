@@ -1,0 +1,20 @@
+[project]
+name = "physicalai-smolvla"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "lerobot[smolvla]", "torch==2.11.0", "torchvision==0.26.0",
+  "numpy>=2,<2.3", "scipy>=1.15,<1.16", "h5py>=3.12,<4", "wandb>=0.24,<0.25",
+  "pytest>=8,<9",
+]
+[tool.uv]
+package = false
+environments = ["sys_platform == 'linux' and platform_machine == 'x86_64'"]
+[tool.uv.sources]
+lerobot = {path = "third_party/lerobot", editable = true}
+torch = {index = "pytorch-cu130"}
+torchvision = {index = "pytorch-cu130"}
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true

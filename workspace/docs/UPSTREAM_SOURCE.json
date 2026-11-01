@@ -1,0 +1,47 @@
+{
+  "source_repo": "2toINF/X-VLA-Libero",
+  "revision": "129e71460678b7236cee6fc9707f09d9fa0c3590",
+  "license": "Apache-2.0 (retained in source headers)",
+  "files": [
+    {
+      "source": "PARC2026/PARC2026_pre/experiments/XVLA_libero/train/models/transformer.py",
+      "target": "src/physicalai_vla/upstream/models/transformer.py",
+      "sha256": "337f4c61a88d033da7e8cef6e6ae9efcd978d3540983c5de70a23f445141c308"
+    },
+    {
+      "source": "PARC2026/PARC2026_pre/experiments/XVLA_libero/train/models/configuration_florence2.py",
+      "target": "src/physicalai_vla/upstream/models/configuration_florence2.py",
+      "sha256": "de2e45a975b3582de05d2f4d963a3e9f9a3d20dccf78d28e0052932a0be93bdf"
+    },
+    {
+      "source": "PARC2026/PARC2026_pre/experiments/XVLA_libero/train/models/modeling_xvla.py",
+      "target": "src/physicalai_vla/upstream/models/modeling_xvla.py",
+      "sha256": "3ff262344727cec8b734c283f9127001cc1f6ca4628cfe333c26607f1f879ce1"
+    },
+    {
+      "source": "PARC2026/PARC2026_pre/experiments/XVLA_libero/train/models/configuration_xvla.py",
+      "target": "src/physicalai_vla/upstream/models/configuration_xvla.py",
+      "sha256": "7b65fea79c870a5c5c3741a2085def160541f4ba7c73dafbd9369e64620702fe"
+    },
+    {
+      "source": "PARC2026/PARC2026_pre/experiments/XVLA_libero/train/models/action_hub.py",
+      "target": "src/physicalai_vla/upstream/models/action_hub.py",
+      "sha256": "4da411f074567af75b7dda507ed02688aa7c4541c51c5e4cd2d3f57aee4aadf8"
+    },
+    {
+      "source": "PARC2026/PARC2026_pre/experiments/XVLA_libero/train/models/__init__.py",
+      "target": "src/physicalai_vla/upstream/models/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "PARC2026/PARC2026_pre/experiments/XVLA_libero/train/models/modeling_florence2.py",
+      "target": "src/physicalai_vla/upstream/models/modeling_florence2.py",
+      "sha256": "ebed9223ee776c142de962ea71eaa30a0bf1f55e728de136dc7fe13ef830f4af"
+    },
+    {
+      "source": "PARC2026/PARC2026_pre/experiments/XVLA_libero/train/models/processing_xvla.py",
+      "target": "src/physicalai_vla/upstream/models/processing_xvla.py",
+      "sha256": "f75d213f3897d87a896ffdc014d4075d9bc374d67a38a098e4c007b3b884d1b6"
+    }
+  ]
+}

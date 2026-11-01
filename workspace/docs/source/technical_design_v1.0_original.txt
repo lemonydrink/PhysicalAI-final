@@ -1,0 +1,820 @@
+# X-VLA × LIBERO-PLUS × ROS2
+
+## 8タスク対応・Franka Panda制御システム 技術設計書 v1.0
+
+対象：Multi-task SFT / ROS2 / Franka Panda / 低遅延VLA推論 / Sim-to-Real
+
+## 1. 設計方針
+
+X-VLAをLIBERO-PLUSの8タスクでFine-tuningし、ROS2を介してFranka Pandaを操作するシステムを構築する。
+
+推論とロボット制御は別プロセスに分離する。X-VLAの推論遅延が直接ロボットの制御周期を乱さないように、Action Chunking、非同期推論、軌道補間、Watchdogを組み合わせる。
+
+ただし、LIBERO-PLUSで学習したモデルをそのままFranka Panda実機で実行しても、成功は保証されない。シミュレーションと実機では、カメラ、物体、座標系、グリッパー、制御ダイナミクスが異なる。
+
+本設計では、まずシミュレーションで8タスクの動作を完成させ、実機用のキャリブレーションと追加データ収集を経て移行する。
+
+### 1.1 使用技術
+
+| 項目          | 採用技術                           |
+| ----------- | ------------------------------ |
+| VLA         | X-VLA（LeRobot実装）               |
+| 初期重み        | `lerobot/xvla-libero`          |
+| Fine-tuning | Multi-task SFT / Flow Matching |
+| データセット      | `Sylvest/libero_plus_lerobot`  |
+| シミュレーター     | LIBERO-PLUS / MuJoCo           |
+| ミドルウェア      | ROS2                           |
+| ロボット        | Franka Panda（7軸＋グリッパー）         |
+| 実機制御        | `franka_ros2` / `ros2_control` |
+| 推論          | GPU上の独立した非同期プロセス               |
+| 制御          | 安全制約付きCartesian制御＋軌道補間         |
+| 推論周期        | 目標5 Hz（設計値）                    |
+| 行動更新周期      | 20 Hz（LIBERO側の基準に合わせる設計）       |
+| ロボット低レベル制御  | FCI側1 kHz                      |
+
+Franka FCIは1 kHzで状態通信と制御を行う仕様である。一方、X-VLAはAction Chunkをまとめて生成できる。両者を別々の周期で動作させることが設計の中心になる。
+
+[image](https://www.google.com/s2/favicons?domain=https://frankarobotics.github.io\&sz=32)
+
+Franka Control Interface (FCI) documentation+2
+
+
+
+前提条件： 実際のFranka Pandaのハードウェア、FCI対応ソフトウェア、互換性のある`franka_ros2`環境、接続カメラが利用できるものとする。以下の数値目標は実機計測前の初期設定値であり、メーカー保証値ではない。
+
+## 2. 対象タスク
+
+前回選定した8タスクを維持する。`task_index`は`Sylvest/libero_plus_lerobot`の`meta/tasks.jsonl`で確認済みである。
+
+[image](https://www.google.com/s2/favicons?domain=https://huggingface.co\&sz=32)
+
+Sylvest/libero_plus_lerobot at main
+
+
+
+| ID | 言語指示                                                                     | 操作           |
+| -- | ------------------------------------------------------------------------ | ------------ |
+| 8  | Pick up the milk and place it in the basket.                             | 牛乳パックの把持・配置  |
+| 20 | Pick up the tomato sauce and place it in the basket.                     | トマトソースの把持・配置 |
+| 16 | Pick up the butter and place it in the basket.                           | バターの把持・配置    |
+| 6  | Pick up the black bowl from table center and place it on the plate.      | 中央のボウルの把持・配置 |
+| 4  | Pick up the black bowl next to the cookie box and place it on the plate. | 物体間の位置関係の理解  |
+| 9  | Put the bowl on the plate.                                               | ボウルの把持・配置    |
+| 7  | Open the middle drawer of the cabinet.                                   | 引き出し操作       |
+| 36 | Push the plate to the front of the stove.                                | 物体を押す操作      |
+
+これらは難易度を統一した8タスクではない。引き出し操作とPushingは、Pick-and-Placeより接触力の管理が難しいため、実機での導入順序を後ろにする。
+
+また、ここでの`task_index`はデータセット内の番号であり、LIBERO-PLUS評価環境の各摂動バリアントに割り当てられるIDとは異なる。評価時はタスク名とバリアントの対応を明示的に管理する。
+
+[image](https://www.google.com/s2/favicons?domain=https://huggingface.co\&sz=32)
+
+Hugging Face
+
+
+
+## 3. 実装に先立って解決するデータ互換性
+
+### 3.1 データセットの実際の仕様
+
+確認できた`Sylvest/libero_plus_lerobot`のメタデータは次のとおり。
+
+| 項目        | 値                          |
+| --------- | -------------------------- |
+| エピソード数    | 14,347                     |
+| 総フレーム数    | 2,238,036                  |
+| FPS       | 20                         |
+| タスク数      | 40                         |
+| 画像        | Front / Wrist、各256×256 RGB |
+| State     | 8次元                        |
+| Action    | 7次元                        |
+| LeRobot形式 | v2.1                       |
+
+[image](https://www.google.com/s2/favicons?domain=https://huggingface.co\&sz=32)
+
+Sylvest/libero_plus_lerobot at main
+
+このデータセットは、現在のLeRobot公式ドキュメントが扱う新しい形式と完全に同一ではない。学習前にデータ形式の互換性を検証し、必要ならv3形式に移行する。
+
+特に画像キーは以下の名前を使う。
+
+```
+observation.images.front: [3, 256, 256]
+observation.images.wrist: [3, 256, 256]
+observation.state: [8]
+action: [7]
+```
+
+これは読み込み後のテンソル形状であり、メタデータ上の画像サイズ表記はHWC形式である。
+
+### 3.2 最大の互換性問題：Action Representation
+
+LIBERO-PLUSの標準行動は次の7次元である。
+
+\\[ a_t=[\Delta x,\Delta y,\Delta z,\Delta r_x,\Delta r_y,\Delta r_z,g] \\]
+
+一方、X-VLAの`ee6d`モードは3次元位置、6D回転表現、グリッパー、Paddingを含む20次元表現を使用する。公式のLIBERO用チェックポイントは絶対座標モードで評価されている。
+
+[image](https://www.google.com/s2/favicons?domain=https://huggingface.co\&sz=32)
+
+Hugging Face+2
+
+
+
+7次元の相対行動を、絶対行動用に学習済みのチェックポイントへ無条件に与えてはいけない。
+
+ここでは次の方針を採る。
+
+- `lerobot/xvla-libero`を第一候補とし、公式のLIBERO前処理と同じ絶対EE pose表現へ教師行動を変換する。
+- 相対行動から絶対EE poseへの厳密な変換には、LIBEROのコントローラー仕様、回転表現、スケーリングの確認を必要条件とする。環境で教師軌道を再生し、次時刻のEE poseと整合するか検証する。
+- この変換を再現できない場合は、`lerobot/xvla-base`から`action_mode=auto`で7次元の相対行動を直接学習する構成へ切り替える。
+
+SFTと実行時は必ず同一のAction Codecを用いる。モデル出力から実機指令までの変換は、独立したテスト対象とする。
+
+## 4. ROS2システムアーキテクチャ
+
+\#chatgpt-mermaid-\_r_l4\_{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace,-apple-system,"system-ui","Segoe UI",sans-serif;font-size:14px;fill:rgb(169, 177, 214);}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#chatgpt-mermaid-\_r_l4\_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-\_r_l4\_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-\_r_l4\_ .error-icon{fill:rgba(169, 177, 214, 0.067);}#chatgpt-mermaid-\_r_l4\_ .error-text{fill:rgb(169, 177, 214);stroke:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_l4\_ .edge-thickness-normal{stroke-width:1px;}#chatgpt-mermaid-\_r_l4\_ .edge-thickness-thick{stroke-width:3.5px;}#chatgpt-mermaid-\_r_l4\_ .edge-pattern-solid{stroke-dasharray:0;}#chatgpt-mermaid-\_r_l4\_ .edge-thickness-invisible{stroke-width:0;fill:none;}#chatgpt-mermaid-\_r_l4\_ .edge-pattern-dashed{stroke-dasharray:3;}#chatgpt-mermaid-\_r_l4\_ .edge-pattern-dotted{stroke-dasharray:2;}#chatgpt-mermaid-\_r_l4\_ .marker{fill:rgba(169, 177, 214, 0.72);stroke:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_l4\_ .marker.cross{stroke:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_l4\_ svg{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace,-apple-system,"system-ui","Segoe UI",sans-serif;font-size:14px;}#chatgpt-mermaid-\_r_l4\_ p{margin:0;}#chatgpt-mermaid-\_r_l4\_ .label{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace,-apple-system,"system-ui","Segoe UI",sans-serif;color:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_l4\_ .cluster-label text{fill:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_l4\_ .cluster-label span{color:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_l4\_ .cluster-label span p{background-color:transparent;}#chatgpt-mermaid-\_r_l4\_ .label text,#chatgpt-mermaid-\_r_l4\_ span{fill:rgb(169, 177, 214);color:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_l4\_ .node rect,#chatgpt-mermaid-\_r_l4\_ .node circle,#chatgpt-mermaid-\_r_l4\_ .node ellipse,#chatgpt-mermaid-\_r_l4\_ .node polygon,#chatgpt-mermaid-\_r_l4\_ .node path{fill:rgb(26, 49, 34);stroke:rgb(58, 132, 63);stroke-width:1px;}#chatgpt-mermaid-\_r_l4\_ .rough-node .label text,#chatgpt-mermaid-\_r_l4\_ .node .label text,#chatgpt-mermaid-\_r_l4\_ .image-shape .label,#chatgpt-mermaid-\_r_l4\_ .icon-shape .label{text-anchor:middle;}#chatgpt-mermaid-\_r_l4\_ .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#chatgpt-mermaid-\_r_l4\_ .rough-node .label,#chatgpt-mermaid-\_r_l4\_ .node .label,#chatgpt-mermaid-\_r_l4\_ .image-shape .label,#chatgpt-mermaid-\_r_l4\_ .icon-shape .label{text-align:center;}#chatgpt-mermaid-\_r_l4\_ .node.clickable{cursor:pointer;}#chatgpt-mermaid-\_r_l4\_ .root .anchor path{fill:rgba(169, 177, 214, 0.72)!important;stroke-width:0;stroke:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_l4\_ .arrowheadPath{fill:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_l4\_ .edgePath .path{stroke:rgba(169, 177, 214, 0.72);stroke-width:1px;}#chatgpt-mermaid-\_r_l4\_ .flowchart-link{stroke:rgba(169, 177, 214, 0.72);fill:none;}#chatgpt-mermaid-\_r_l4\_ .edgeLabel{background-color:rgb(12, 13, 22);text-align:center;}#chatgpt-mermaid-\_r_l4\_ .edgeLabel p{background-color:rgb(12, 13, 22);}#chatgpt-mermaid-\_r_l4\_ .edgeLabel rect{opacity:0.5;background-color:rgb(12, 13, 22);fill:rgb(12, 13, 22);}#chatgpt-mermaid-\_r_l4\_ .labelBkg{background-color:rgba(12, 13, 22, 0.5);}#chatgpt-mermaid-\_r_l4\_ .cluster rect{fill:rgba(169, 177, 214, 0.067);stroke:rgba(169, 177, 214, 0.153);stroke-width:1px;}#chatgpt-mermaid-\_r_l4\_ .cluster text{fill:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_l4\_ .cluster span{color:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_l4\_ div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace,-apple-system,"system-ui","Segoe UI",sans-serif;font-size:12px;background:rgba(169, 177, 214, 0.067);border:1px solid rgba(169, 177, 214, 0.153);border-radius:2px;pointer-events:none;z-index:100;}#chatgpt-mermaid-\_r_l4\_ .flowchartTitleText{text-anchor:middle;font-size:18px;fill:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_l4\_ rect.text{fill:none;stroke-width:0;}#chatgpt-mermaid-\_r_l4\_ .icon-shape,#chatgpt-mermaid-\_r_l4\_ .image-shape{background-color:rgb(12, 13, 22);text-align:center;}#chatgpt-mermaid-\_r_l4\_ .icon-shape p,#chatgpt-mermaid-\_r_l4\_ .image-shape p{background-color:rgb(12, 13, 22);padding:2px;}#chatgpt-mermaid-\_r_l4\_ .icon-shape .label rect,#chatgpt-mermaid-\_r_l4\_ .image-shape .label rect{opacity:0.5;background-color:rgb(12, 13, 22);fill:rgb(12, 13, 22);}#chatgpt-mermaid-\_r_l4\_ .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#chatgpt-mermaid-\_r_l4\_ .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#chatgpt-mermaid-\_r_l4\_ .node .neo-node{stroke:rgb(58, 132, 63);}#chatgpt-mermaid-\_r_l4\_ [data-look="neo"].node rect,#chatgpt-mermaid-\_r_l4\_ [data-look="neo"].cluster rect,#chatgpt-mermaid-\_r_l4\_ [data-look="neo"].node polygon{stroke:url(#chatgpt-mermaid-\_r_l4\_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_l4\_ [data-look="neo"].swimlane.cluster rect{filter:none;}#chatgpt-mermaid-\_r_l4\_ [data-look="neo"].node path{stroke:url(#chatgpt-mermaid-\_r_l4\_-gradient);stroke-width:1px;}#chatgpt-mermaid-\_r_l4\_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_l4\_ [data-look="neo"].node .neo-line path{stroke:rgb(58, 132, 63);filter:none;}#chatgpt-mermaid-\_r_l4\_ [data-look="neo"].node circle{stroke:url(#chatgpt-mermaid-\_r_l4\_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_l4\_ [data-look="neo"].node circle .state-start{fill:#000000;}#chatgpt-mermaid-\_r_l4\_ [data-look="neo"].icon-shape .icon{fill:url(#chatgpt-mermaid-\_r_l4\_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_l4\_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#chatgpt-mermaid-\_r_l4\_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_l4\_ .node text{font-size:14px;font-weight:600;letter-spacing:normal;fill:rgb(140, 223, 173);}#chatgpt-mermaid-\_r_l4\_ .edgeLabels text{font-size:13px;font-weight:600;letter-spacing:-0.08px;fill:rgb(140, 223, 173);}#chatgpt-mermaid-\_r_l4\_ .node tspan[font-weight="normal"],#chatgpt-mermaid-\_r_l4\_ .edgeLabels tspan[font-weight="normal"]{font-weight:600;}#chatgpt-mermaid-\_r_l4\_ .edgeLabel .label rect{opacity:1;rx:13px;ry:13px;fill:rgb(2, 28, 12);stroke:rgb(26, 75, 45);stroke-width:1px;}#chatgpt-mermaid-\_r_l4\_ .node rect,#chatgpt-mermaid-\_r_l4\_ .node circle,#chatgpt-mermaid-\_r_l4\_ .node ellipse,#chatgpt-mermaid-\_r_l4\_ .node polygon,#chatgpt-mermaid-\_r_l4\_ .node path{fill:rgb(0, 55, 22);stroke:rgba(255, 255, 255, 0.1);stroke-width:1px;}#chatgpt-mermaid-\_r_l4\_ .node rect{rx:16px;ry:16px;}#chatgpt-mermaid-\_r_l4\_ .mermaid-decision .label-container{fill:rgb(2, 28, 12);stroke:rgb(26, 75, 45);stroke-dasharray:2,2;}#chatgpt-mermaid-\_r_l4\_ .edgePaths .flowchart-link{stroke:rgba(169, 177, 214, 0.72);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;}#chatgpt-mermaid-\_r_l4\_ .marker{fill:rgba(169, 177, 214, 0.72);stroke:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_l4\_ :root{--mermaid-font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace,-apple-system,"system-ui","Segoe UI",sans-serif;}Task UI / 言語指示Task ManagerFront + Wrist CamerasObservationSynchronizerRobot State / TF2X-VLA Inference Server(GPU)Action Chunk BufferSafety SupervisorAction Decoder / IK /Interpolatorros2_control Controller(Realtime)Franka FCI 1 kHzFranka Panda
+
+AI推論、非リアルタイム計画、安全監視、リアルタイム制御の4層に分離する。
+
+### 4.1 ROS2ノード仕様
+
+| ノード                 | 実装                 | 主な役割                |
+| ------------------- | ------------------ | ------------------- |
+| `task_manager`      | Python             | 言語指示、タスク開始・終了       |
+| `observation_sync`  | Python/C++         | カメラ・関節状態・TFの時刻同期    |
+| `xvla_server`       | Python + GPU       | Action Chunk推論      |
+| `chunk_scheduler`   | C++推奨              | 新旧Chunkの管理と遅延補償     |
+| `action_decoder`    | C++                | 相対/絶対Actionの座標変換・IK |
+| `safety_supervisor` | C++                | 状態監視、安全制約、停止要求      |
+| `panda_controller`  | C++ / ros2_control | 軌道補間とリアルタイム実行       |
+| `gripper_bridge`    | ROS2 Action Client | グリッパー操作と完了確認        |
+| `episode_logger`    | Python             | 推論時間、追従誤差、成功判定の記録   |
+
+`xvla_server`はロボットのリアルタイム制御スレッドに入れない。GPU処理が遅延しても、既存の制御指令を安全に停止できる構造にする。
+
+また、Frankaの公式`franka_ros2`が提供する`franka_hardware`は、関節位置・速度・トルクの状態と指令インターフェースを備えている。実際に使用する制御インターフェースはロボット型式とROS2パッケージのバージョンに合わせて固定する。
+
+[image](https://www.google.com/s2/favicons?domain=https://frankarobotics.github.io\&sz=32)
+
+Franka Control Interface (FCI) documentation
+
+
+
+### 4.2 ROS2のTopic / Action設計
+
+以下は本プロジェクトで定義する名前であり、既存のROS2標準Topic名をすべてそのまま列挙したものではない。
+
+| 名前                        | 型                              | 頻度 / 条件   |
+| ------------------------- | ------------------------------ | --------- |
+| `/vla/task`               | `std_msgs/String`              | タスク開始・変更時 |
+| `/camera/front/image_raw` | `sensor_msgs/Image`            | 30 Hz     |
+| `/camera/wrist/image_raw` | `sensor_msgs/Image`            | 30 Hz     |
+| `/joint_states`           | `sensor_msgs/JointState`       | 100 Hz目標  |
+| `/tf`, `/tf_static`       | `tf2_msgs/TFMessage`           | 必要に応じて    |
+| `/vla/observation`        | `custom/Observation`           | 10 Hz     |
+| `/vla/action_chunk`       | `custom/ActionChunk`           | 推論完了ごと    |
+| `/vla/status`             | `custom/PolicyStatus`          | 10 Hz     |
+| `/vla/stop_request`       | `std_msgs/Bool`                | 停止要求時     |
+| `/vla/gripper_command`    | `franka_gripper`のAction Client | 把持・開放時    |
+
+実機ではロボット状態の取得元を`/joint_states`だけに限定せず、Franka固有の状態Broadcasterから接触や外力の情報も取得する。
+
+QoS方針： カメラは`SensorDataQoS`相当のBest Effort・小さなキュー、Action ChunkはReliable・KeepLast(1)、停止要求はReliableを用いる。安全停止そのものはDDSメッセージの到着に依存させず、コントローラー内部のWatchdogとハードウェアの安全機構で実行する。
+
+## 5. SFTの実装仕様
+
+### 5.1 データ準備
+
+学習・評価のリークを防ぐため、エピソード単位で90%を学習、10%を検証に分割する。同じタスク内でも検証用エピソードを学習へ入れない。
+
+作業は次の順番とする。
+
+1. Hugging Faceからデータとメタデータを取得し、コミットSHAを固定する。
+2. `task_index ∈ {4, 6, 7, 8, 9, 16, 20, 36}`に該当するエピソードだけを抽出する。
+3. タスクごとにtrain/validationを分割する。
+4. LeRobot v2.1からv3.0へ変換する（互換するバージョンで直接読める場合は不要）。
+5. State、Action、画像、言語指示、FPS、Action Codecの整合性を検証する。
+6. train/validationそれぞれに対応する正規化統計を作成する。学習時の正規化はtrain側の統計だけを使う。
+
+LeRobot公式にはv2.1→v3.0変換機能と、エピソードを指定するデータセット分割機能がある。元のデータセットは変更せず、ローカルのコピーに適用する。
+
+[image](https://www.google.com/s2/favicons?domain=https://huggingface.co\&sz=32)
+
+Hugging Face+1
+
+
+
+### 5.2 タスク選別コード
+
+以下は、元データセットの`meta/tasks.jsonl`と`meta/episodes.jsonl`から、各タスクのエピソードIDを取り出して分割定義を生成するコードである。
+
+```
+import jsonimport randomfrom collections import defaultdictfrom pathlib import PathMETA = Path("dataset/meta")TARGET_TASKS = {4, 6, 7, 8, 9, 16, 20, 36}RNG = random.Random(42)def read_jsonl(path):    with path.open() as f:        return [json.loads(line) for line in f]task_rows = read_jsonl(META / "tasks.jsonl")text_to_id = {row["task"]: row["task_index"] for row in task_rows}grouped = defaultdict(list)for row in read_jsonl(META / "episodes.jsonl"):    idx = row.get("task_index")    if idx is None:        names = row.get("tasks", [])        if isinstance(names, str):            names = [names]        matches = {text_to_id[n] for n in names if n in text_to_id}        if len(matches) != 1:            continue        idx = matches.pop()    if idx in TARGET_TASKS:        grouped[idx].append(row["episode_index"])if set(grouped) != TARGET_TASKS:    raise RuntimeError(f"Missing tasks: {TARGET_TASKS - set(grouped)}")
+```
+
+`episodes.jsonl`のタスクラベル構造が異なるリビジョンでは、対応するフィールドの読み取りを調整する。選別後には元データと学習データで各タスクのエピソード数が一致することを確認する。
+
+分割にはLeRobotの`lerobot-edit-dataset`またはPython APIの`split_dataset()`を利用できる。
+
+[image](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
+
+
+### 5.3 推奨SFT設定
+
+まずは20 Hzの7次元相対行動を直接扱う設定を基準とする。
+
+| パラメータ                   | 初期設定                         |
+| ----------------------- | ---------------------------- |
+| Base checkpoint         | `lerobot/xvla-base`（7D相対行動版） |
+| Optimizer               | AdamW                        |
+| Learning rate           | 1e-4（Soft Promptのみの場合）       |
+| Learning rate scheduler | Cosine                       |
+| Warmup                  | 総ステップの5%                     |
+| Weight decay            | 1e-4                         |
+| Batch size              | 1〜4                          |
+| Training steps          | 20,000                       |
+| Precision               | BF16                         |
+| Action chunk size       | 32                           |
+| Initial executed chunk  | 最大8 steps                    |
+| Cameras                 | Front + Wrist                |
+| Domain ID               | 3（LIBEROドメイン）                |
+| Validation              | 1,000 stepsごと                |
+| Best checkpoint         | シミュレーション成功率で選択               |
+
+上記の学習率やステップ数は本プロジェクトの初期ハイパーパラメータであり、X-VLA公式の最適値を保証するものではない。公式実装は`action_mode=auto`による異なる行動次元への対応と、Soft Promptsの学習をサポートする。
+
+[image](https://www.google.com/s2/favicons?domain=https://huggingface.co\&sz=32)
+
+Hugging Face
+
+
+
+#### 学習コマンドの基準形
+
+```
+lerobot-train \
+  --dataset.repo_id=local/libero_plus_8_train \
+  --policy.path=lerobot/xvla-base \
+  --policy.action_mode=auto \
+  --policy.max_action_dim=20 \
+  --policy.dtype=bfloat16 \
+  --policy.device=cuda \
+  --policy.chunk_size=32 \
+  --policy.n_action_steps=8 \
+  --policy.freeze_vision_encoder=true \
+  --policy.freeze_language_encoder=true \
+  --policy.train_policy_transformer=false \
+  --policy.train_soft_prompts=true \
+  --batch_size=1 \
+  --steps=20000 \
+  --output_dir=outputs/xvla_libero_plus_8
+```
+
+これはLeRobotの公式オプションを基準にした設定例であり、実行前に以下を必要条件とする。
+
+- ローカル学習データがLeRobotの期待する形式で登録済み。
+- 必要な画像キーのマッピング、Action Codec、Domain ID、正規化Processorが設定済み。
+- 1バッチのForward/Backwardを実行してGPUメモリ使用量とLossを検証済み。
+- `--policy.path`から読み込む重みと学習するAction Modeの整合性を確認済み。
+
+`lerobot/xvla-libero`から学習する場合は、絶対行動用データへの変換を完了してからチェックポイントとAction Modeを切り替える。
+
+#### 学習環境
+
+16 GB VRAMのGPUでは、まずSoft Promptsのみを学習する。GPUメモリに余裕がない場合はChunkを16へ縮める。Full Fine-tuningを行う場合は、より大容量のGPUを使い、Vision/Language EncoderとPolicy Transformerを含む学習を行う。
+
+Soft PromptのみのSFTを最初に採用する理由は、既存のX-VLAの表現を維持しながら、LIBERO-PLUSへの適応が可能か低コストで検証できるためである。ただし、公式ドキュメントは十分な計算資源がある場合、Encoderを含めたFine-tuningも推奨している。
+
+[image](https://www.google.com/s2/favicons?domain=https://huggingface.co\&sz=32)
+
+Hugging Face
+
+
+
+### 5.4 学習時の画像拡張
+
+実機のカメラを想定し、FrontとWrist双方に次の拡張を適用する。
+
+| 拡張             | 初期範囲       |
+| -------------- | ---------- |
+| Brightness     | 0.85〜1.15  |
+| Contrast       | 0.9〜1.1    |
+| Gaussian noise | σ=0〜0.02   |
+| Blur           | 確率0.15     |
+| Random crop    | 画角の95〜100% |
+| Color jitter   | 軽度         |
+
+ただし、空間位置や把持点に影響する幾何学的拡張は慎重に扱う。左右反転やカメラ回転を無条件に適用しない。
+
+画像の180°回転を行う公式`LiberoProcessorStep`との二重処理も防ぐ。
+
+[image](https://www.google.com/s2/favicons?domain=https://huggingface.co\&sz=32)
+
+Hugging Face
+
+
+
+## 6. 実機遅延を考慮した推論設計
+
+### 6.1 推論周期と制御周期の分離
+
+制御周期の階層
+
+X-VLA推論
+
+目標 5 Hz
+
+新しいChunkを非同期生成
+
+VLA行動更新
+
+20 Hz
+
+50 msごとに行動目標を更新
+
+軌道補間
+
+100 Hz
+
+連続的な参照軌道を生成
+
+Franka FCI
+
+1,000 Hz
+
+ロボット側リアルタイム制御
+
+この図は周期の相対関係を示したもので、実測レイテンシではない。
+
+### 6.2 遅延予算
+
+推論1回のEnd-to-End遅延は次式で定義する。
+
+\\[ T\_{\mathrm{e2e}} = T\_{\mathrm{capture}}+ T\_{\mathrm{sync}}+ T\_{\mathrm{pre}}+ T\_{\mathrm{infer}}+ T\_{\mathrm{post}}+ T\_{\mathrm{transport}} \\]
+
+初期の性能目標を以下に設定する。
+
+| 処理           | 目標時間    |
+| ------------ | ------- |
+| 画像取得（フレーム間隔） | 最大33 ms |
+| 観測同期・整形      | 10 ms   |
+| 前処理          | 10 ms   |
+| X-VLA推論      | 150 ms  |
+| 後処理          | 5 ms    |
+| ROS2通信       | 5 ms    |
+| 合計予算         | 213 ms  |
+
+この合計は設計上の予算である。RTX 5060 Tiを含む実際のGPUでX-VLAが150 msで推論できることは未確認であり、まず実測が必要である。
+
+20 Hzでは1 actionが50 msなので、200 ms級の推論遅延は約4 action分に相当する。同期推論で4 step待つ構造ではなく、未来のAction Chunkを準備しておく構造にする。
+
+### 6.3 Action Chunkingと非同期実行
+
+`chunk_size=32`なら、20 Hzで1.6秒分の行動を一度に予測する。ただし、その全行動を無条件に実行すると環境変化に反応できない。
+
+そこで、最大32 step予測し、通常は4〜8 stepごとに新しい観測で再計画する。
+
+非同期Chunkの時間軸（模式図）
+
+Chunk Aを実行中にBを推論する。Bが利用可能になった時点で軌道を連続的に接続する。表示時間は例示であり、保証された動作タイミングではない。
+
+具体的な実装規則は次のとおり。
+
+1. 新規推論要求には観測時刻、Task ID、Episode ID、Sequence IDを付与する。
+2. 推論中も既存Chunkを実行する。ただし有効期限と安全制約を守る。
+3. 新Chunkが届いたら、観測時刻からの経過時間を使い、すでに経過した行動を飛ばす。
+4. 新旧軌道は同じロボット座標系・時間基準に変換した後、速度と加速度が連続になるように接続する。
+5. 観測時の予測状態と実際の状態の差が許容範囲を超える場合、新Chunkを破棄する。
+6. Episode IDが異なる古い推論結果は必ず破棄する。
+
+注意： 相対Actionの数値を単純に線形補間して混ぜる方法は採用しない。行動の基準姿勢と時刻が異なると、予期しない移動量が生成される可能性があるためである。
+
+初期段階では、古いChunkから新しいChunkへの切り替え時にいったん速度を落とし、次の有効な軌道に接続する保守的な方式を採用する。時間整列した軌道融合は、その後に実装する。
+
+### 6.4 Chunkバッファが不足した場合
+
+有効な行動がなくなった場合、新しい推論結果を待つために以前の移動指令を延長してはいけない。
+
+- 次の有効Actionがなければ、制限付き減速で停止し、その位置を保持する。
+- 推論結果の到着が継続して遅れる場合は、Task Managerを`PAUSED`へ移行する。
+- 通信断、ロボット状態の喪失、異常接触、Joint Limit違反では`FAULT`へ移行する。
+
+実機の停止挙動は、使用コントローラーの停止方式とFrankaの安全仕様に合わせて実装し、空間内で事前検証する。
+
+## 7. Action DecoderとFranka制御の仕様
+
+### 7.1 座標系
+
+シミュレーションと実機で次の座標系を明示的に管理する。
+
+| Frame          | 意味                      |
+| -------------- | ----------------------- |
+| `world`        | 実験環境の基準座標               |
+| `panda_link0`  | Franka Pandaのベース        |
+| `panda_hand`   | ハンドの基準                  |
+| `panda_tcp`    | 把持時に使うTool Center Point |
+| `front_camera` | 外部カメラ                   |
+| `wrist_camera` | 手先カメラ                   |
+
+ROS2の`tf2`を使って各座標間の変換を管理する。`panda_tcp`はカスタム静的Frameとして定義し、使用するグリッパー構成と整合させる。
+
+相対位置の移動については、例えばモデルの出力がロボットベース座標系基準であれば、
+
+\\[ \mathbf{p}\_{target} = \mathbf{p}\_{current} + s_p\\,\Delta\mathbf{p} \\]
+
+を用いる。ここで\\(s_p\\)は学習データのAction Scaleに依存する変換係数である。
+
+回転はEuler角を単純加算せず、SO(3)上の合成で処理する。
+
+\\[ R\_{target}=R\_{current}\operatorname{Exp} \left(s_r[\Delta\boldsymbol\omega]\_\times\right) \\]
+
+ただし、これは相対回転が手先座標系で定義されている場合の例である。世界座標系基準の場合は合成順序が変わるため、実装するControllerと一致させる。
+
+絶対Actionを使用する場合は別のCodecを用い、正規化の復元後に`panda_link0`座標系の目標姿勢へ変換する。
+
+### 7.2 実行時の制限
+
+VLAが出力した位置や速度を無制限にFrankaへ送信しない。
+
+初期試験用のソフトウェア制限値は以下とする。
+
+```
+control:
+  policy_hz: 20
+  interpolation_hz: 100
+  fci_hz: 1000
+
+  limits:
+    max_linear_velocity_mps: 0.03
+    max_angular_velocity_radps: 0.10
+    max_linear_step_m: 0.0015
+    max_angular_step_rad: 0.005
+    max_tracking_error_m: 0.01
+
+  watchdog:
+    command_timeout_ms: 150
+    observation_timeout_ms: 250
+    max_pending_inference: 1
+
+  execution:
+    chunk_size: 32
+    initial_execute_steps: 8
+    nominal_replan_interval_ms: 200
+```
+
+これらは保守的な動作確認用の提案値であり、安全認証された制限値ではない。関節制限、衝突判定、速度・加速度・ジャークの上限は、使用するPandaとControllerの公式仕様を優先する。
+
+[image](https://www.google.com/s2/favicons?domain=https://frankarobotics.github.io\&sz=32)
+
+Franka Control Interface (FCI) documentation
+
+
+
+また、速度や移動量を毎回強く制限するだけでは、SFTで学習した運動の時間スケールと実機が一致しなくなる。 実機移行後は、実機側の速度・行動スケールで収集した追加データを利用する。
+
+### 7.3 Control Controllerの構成
+
+`panda_controller`はROS2の`controller_interface::ControllerInterface`を用いるC++プラグインとして作成する。
+
+役割は次のとおり。
+
+1. `chunk_scheduler`から安全判定済みの軌道を受け取る。
+2. 時刻付き軌道をローカルなリアルタイムバッファに保持する。
+3. 関節空間に変換した軌道を補間する。
+4. `update()`内で状態を確認し、使用中のコマンドインターフェースへ指令を送る。
+5. タイムアウト、軌道範囲外、エラー時は停止処理に移行する。
+
+リアルタイムスレッド内では、GPU推論、ファイルI/O、Python呼び出し、ブロッキング通信、動的メモリ確保を行わない。
+
+Cartesian指令を関節指令に変換する場合、特異点近傍・関節限界・衝突を含むIKの実現可能性確認が必要になる。初期実装では、既存のMoveIt 2によるIK・軌道検証と、互換性を確認した`ros2_control`のControllerを利用し、独自のトルク制御器を最初から作らない。
+
+### 7.4 グリッパー制御
+
+LIBEROの`g`は連続的なAction成分だが、実機Franka GripperはROS2のMove/GraspなどのAction APIで操作できる。
+
+[image](https://www.google.com/s2/favicons?domain=https://frankarobotics.github.io\&sz=32)
+
+Franka Control Interface (FCI) documentation
+
+
+
+したがって、グリッパーは独立した状態機械にする。
+
+\#chatgpt-mermaid-\_r_lt\_{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace,-apple-system,"system-ui","Segoe UI",sans-serif;font-size:14px;fill:rgb(169, 177, 214);}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#chatgpt-mermaid-\_r_lt\_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-\_r_lt\_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-\_r_lt\_ .error-icon{fill:rgba(169, 177, 214, 0.067);}#chatgpt-mermaid-\_r_lt\_ .error-text{fill:rgb(169, 177, 214);stroke:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_lt\_ .edge-thickness-normal{stroke-width:1px;}#chatgpt-mermaid-\_r_lt\_ .edge-thickness-thick{stroke-width:3.5px;}#chatgpt-mermaid-\_r_lt\_ .edge-pattern-solid{stroke-dasharray:0;}#chatgpt-mermaid-\_r_lt\_ .edge-thickness-invisible{stroke-width:0;fill:none;}#chatgpt-mermaid-\_r_lt\_ .edge-pattern-dashed{stroke-dasharray:3;}#chatgpt-mermaid-\_r_lt\_ .edge-pattern-dotted{stroke-dasharray:2;}#chatgpt-mermaid-\_r_lt\_ .marker{fill:rgba(169, 177, 214, 0.72);stroke:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_lt\_ .marker.cross{stroke:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_lt\_ svg{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace,-apple-system,"system-ui","Segoe UI",sans-serif;font-size:14px;}#chatgpt-mermaid-\_r_lt\_ p{margin:0;}#chatgpt-mermaid-\_r_lt\_ defs [id$="-barbEnd"]{fill:rgba(169, 177, 214, 0.72);stroke:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_lt\_ g.stateGroup text{fill:rgb(58, 132, 63);stroke:none;font-size:10px;}#chatgpt-mermaid-\_r_lt\_ g.stateGroup text{fill:rgb(169, 177, 214);stroke:none;font-size:10px;}#chatgpt-mermaid-\_r_lt\_ g.stateGroup .state-title{font-weight:bolder;fill:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_lt\_ g.stateGroup rect{fill:rgb(26, 49, 34);stroke:rgb(58, 132, 63);}#chatgpt-mermaid-\_r_lt\_ g.stateGroup line{stroke:rgba(169, 177, 214, 0.72);stroke-width:1;}#chatgpt-mermaid-\_r_lt\_ .transition{stroke:rgba(169, 177, 214, 0.72);stroke-width:1;fill:none;}#chatgpt-mermaid-\_r_lt\_ .stateGroup .composit{fill:transparent;border-bottom:1px;}#chatgpt-mermaid-\_r_lt\_ .stateGroup .alt-composit{fill:#e0e0e0;border-bottom:1px;}#chatgpt-mermaid-\_r_lt\_ .state-note{stroke:rgb(172, 79, 35);fill:rgba(169, 177, 214, 0.067);}#chatgpt-mermaid-\_r_lt\_ .state-note text{fill:rgb(169, 177, 214);stroke:none;font-size:10px;}#chatgpt-mermaid-\_r_lt\_ .stateLabel .box{stroke:none;stroke-width:0;fill:rgb(26, 49, 34);opacity:0.5;}#chatgpt-mermaid-\_r_lt\_ .edgeLabel .label rect{fill:rgb(26, 49, 34);opacity:0.5;}#chatgpt-mermaid-\_r_lt\_ .edgeLabel{background-color:rgb(12, 13, 22);text-align:center;}#chatgpt-mermaid-\_r_lt\_ .edgeLabel p{background-color:rgb(12, 13, 22);}#chatgpt-mermaid-\_r_lt\_ .edgeLabel rect{opacity:0.5;background-color:rgb(12, 13, 22);fill:rgb(12, 13, 22);}#chatgpt-mermaid-\_r_lt\_ .edgeLabel .label text{fill:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_lt\_ .label div .edgeLabel{color:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_lt\_ .stateLabel text{fill:rgb(169, 177, 214);font-size:10px;font-weight:bold;}#chatgpt-mermaid-\_r_lt\_ .node circle.state-start{fill:rgba(169, 177, 214, 0.72);stroke:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_lt\_ .node .fork-join{fill:rgba(169, 177, 214, 0.72);stroke:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_lt\_ .node circle.state-end{fill:rgb(58, 132, 63);stroke:transparent;stroke-width:1.5;}#chatgpt-mermaid-\_r_lt\_ .end-state-inner{fill:transparent;stroke-width:1.5;}#chatgpt-mermaid-\_r_lt\_ .node rect{fill:rgb(26, 49, 34);stroke:rgb(58, 132, 63);stroke-width:1px;}#chatgpt-mermaid-\_r_lt\_ .node polygon{fill:rgb(26, 49, 34);stroke:rgb(58, 132, 63);stroke-width:1px;}#chatgpt-mermaid-\_r_lt\_ [id$="-barbEnd"]{fill:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_lt\_ .statediagram-cluster rect{fill:rgb(26, 49, 34);stroke:rgb(58, 132, 63);stroke-width:1px;}#chatgpt-mermaid-\_r_lt\_ .cluster-label,#chatgpt-mermaid-\_r_lt\_ .nodeLabel{color:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_lt\_ .statediagram-cluster rect.outer{rx:5px;ry:5px;}#chatgpt-mermaid-\_r_lt\_ .statediagram-state .divider{stroke:rgb(58, 132, 63);}#chatgpt-mermaid-\_r_lt\_ .statediagram-state .title-state{rx:5px;ry:5px;}#chatgpt-mermaid-\_r_lt\_ .statediagram-cluster.statediagram-cluster .inner{fill:transparent;}#chatgpt-mermaid-\_r_lt\_ .statediagram-cluster.statediagram-cluster-alt .inner{fill:rgba(169, 177, 214, 0.067);}#chatgpt-mermaid-\_r_lt\_ .statediagram-cluster .inner{rx:0;ry:0;}#chatgpt-mermaid-\_r_lt\_ .statediagram-state rect.basic{rx:5px;ry:5px;}#chatgpt-mermaid-\_r_lt\_ .statediagram-state rect.divider{stroke-dasharray:10,10;fill:rgba(169, 177, 214, 0.067);}#chatgpt-mermaid-\_r_lt\_ .note-edge{stroke-dasharray:5;}#chatgpt-mermaid-\_r_lt\_ .statediagram-note rect{fill:rgba(169, 177, 214, 0.067);stroke:rgb(172, 79, 35);stroke-width:1px;rx:0;ry:0;}#chatgpt-mermaid-\_r_lt\_ .statediagram-note rect{fill:rgba(169, 177, 214, 0.067);stroke:rgb(172, 79, 35);stroke-width:1px;rx:0;ry:0;}#chatgpt-mermaid-\_r_lt\_ .statediagram-note text{fill:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_lt\_ .statediagram-note .nodeLabel{color:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_lt\_ .statediagram .edgeLabel{color:red;}#chatgpt-mermaid-\_r_lt\_ [id$="-dependencyStart"],#chatgpt-mermaid-\_r_lt\_ [id$="-dependencyEnd"]{fill:rgba(169, 177, 214, 0.72);stroke:rgba(169, 177, 214, 0.72);stroke-width:1;}#chatgpt-mermaid-\_r_lt\_ .statediagramTitleText{text-anchor:middle;font-size:18px;fill:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_lt\_ [data-look="neo"].statediagram-cluster rect{fill:rgb(26, 49, 34);stroke:url(#chatgpt-mermaid-\_r_lt\_-gradient);stroke-width:1;}#chatgpt-mermaid-\_r_lt\_ [data-look="neo"].statediagram-cluster rect.outer{rx:5px;ry:5px;filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_lt\_ .node .neo-node{stroke:rgb(58, 132, 63);}#chatgpt-mermaid-\_r_lt\_ [data-look="neo"].node rect,#chatgpt-mermaid-\_r_lt\_ [data-look="neo"].cluster rect,#chatgpt-mermaid-\_r_lt\_ [data-look="neo"].node polygon{stroke:url(#chatgpt-mermaid-\_r_lt\_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_lt\_ [data-look="neo"].swimlane.cluster rect{filter:none;}#chatgpt-mermaid-\_r_lt\_ [data-look="neo"].node path{stroke:url(#chatgpt-mermaid-\_r_lt\_-gradient);stroke-width:1px;}#chatgpt-mermaid-\_r_lt\_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_lt\_ [data-look="neo"].node .neo-line path{stroke:rgb(58, 132, 63);filter:none;}#chatgpt-mermaid-\_r_lt\_ [data-look="neo"].node circle{stroke:url(#chatgpt-mermaid-\_r_lt\_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_lt\_ [data-look="neo"].node circle .state-start{fill:#000000;}#chatgpt-mermaid-\_r_lt\_ [data-look="neo"].icon-shape .icon{fill:url(#chatgpt-mermaid-\_r_lt\_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_lt\_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#chatgpt-mermaid-\_r_lt\_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_lt\_ :root{--mermaid-font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace,-apple-system,"system-ui","Segoe UI",sans-serif;}OPENCLOSINGHOLDINGFAULTOPENINGClose requestGrasp confirmedTimeout / FailureOpen requestCompletedTimeout / Failure
+
+`g`からOpen/Closeへの変換は、学習データの符号を検証して決定する。閾値付近でグリッパーが繰り返し開閉しないように、ヒステリシスを設ける。
+
+Grasp完了前に運搬行動を開始しない。また、指令から完了までの実測時間をログに記録する。物体を把持しているかは、Actionの成功応答だけではなくグリッパー幅や物体状態で確認する。
+
+## 8. 安全監視とタスク状態管理
+
+実機では、SFTモデル自体を安全機構として扱わない。AI出力は常に検証対象とする。
+
+### 8.1 Task Managerの状態遷移
+
+\#chatgpt-mermaid-\_r_m4\_{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace,-apple-system,"system-ui","Segoe UI",sans-serif;font-size:14px;fill:rgb(169, 177, 214);}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#chatgpt-mermaid-\_r_m4\_ .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-\_r_m4\_ .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#chatgpt-mermaid-\_r_m4\_ .error-icon{fill:rgba(169, 177, 214, 0.067);}#chatgpt-mermaid-\_r_m4\_ .error-text{fill:rgb(169, 177, 214);stroke:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_m4\_ .edge-thickness-normal{stroke-width:1px;}#chatgpt-mermaid-\_r_m4\_ .edge-thickness-thick{stroke-width:3.5px;}#chatgpt-mermaid-\_r_m4\_ .edge-pattern-solid{stroke-dasharray:0;}#chatgpt-mermaid-\_r_m4\_ .edge-thickness-invisible{stroke-width:0;fill:none;}#chatgpt-mermaid-\_r_m4\_ .edge-pattern-dashed{stroke-dasharray:3;}#chatgpt-mermaid-\_r_m4\_ .edge-pattern-dotted{stroke-dasharray:2;}#chatgpt-mermaid-\_r_m4\_ .marker{fill:rgba(169, 177, 214, 0.72);stroke:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_m4\_ .marker.cross{stroke:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_m4\_ svg{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace,-apple-system,"system-ui","Segoe UI",sans-serif;font-size:14px;}#chatgpt-mermaid-\_r_m4\_ p{margin:0;}#chatgpt-mermaid-\_r_m4\_ defs [id$="-barbEnd"]{fill:rgba(169, 177, 214, 0.72);stroke:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_m4\_ g.stateGroup text{fill:rgb(58, 132, 63);stroke:none;font-size:10px;}#chatgpt-mermaid-\_r_m4\_ g.stateGroup text{fill:rgb(169, 177, 214);stroke:none;font-size:10px;}#chatgpt-mermaid-\_r_m4\_ g.stateGroup .state-title{font-weight:bolder;fill:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_m4\_ g.stateGroup rect{fill:rgb(26, 49, 34);stroke:rgb(58, 132, 63);}#chatgpt-mermaid-\_r_m4\_ g.stateGroup line{stroke:rgba(169, 177, 214, 0.72);stroke-width:1;}#chatgpt-mermaid-\_r_m4\_ .transition{stroke:rgba(169, 177, 214, 0.72);stroke-width:1;fill:none;}#chatgpt-mermaid-\_r_m4\_ .stateGroup .composit{fill:transparent;border-bottom:1px;}#chatgpt-mermaid-\_r_m4\_ .stateGroup .alt-composit{fill:#e0e0e0;border-bottom:1px;}#chatgpt-mermaid-\_r_m4\_ .state-note{stroke:rgb(172, 79, 35);fill:rgba(169, 177, 214, 0.067);}#chatgpt-mermaid-\_r_m4\_ .state-note text{fill:rgb(169, 177, 214);stroke:none;font-size:10px;}#chatgpt-mermaid-\_r_m4\_ .stateLabel .box{stroke:none;stroke-width:0;fill:rgb(26, 49, 34);opacity:0.5;}#chatgpt-mermaid-\_r_m4\_ .edgeLabel .label rect{fill:rgb(26, 49, 34);opacity:0.5;}#chatgpt-mermaid-\_r_m4\_ .edgeLabel{background-color:rgb(12, 13, 22);text-align:center;}#chatgpt-mermaid-\_r_m4\_ .edgeLabel p{background-color:rgb(12, 13, 22);}#chatgpt-mermaid-\_r_m4\_ .edgeLabel rect{opacity:0.5;background-color:rgb(12, 13, 22);fill:rgb(12, 13, 22);}#chatgpt-mermaid-\_r_m4\_ .edgeLabel .label text{fill:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_m4\_ .label div .edgeLabel{color:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_m4\_ .stateLabel text{fill:rgb(169, 177, 214);font-size:10px;font-weight:bold;}#chatgpt-mermaid-\_r_m4\_ .node circle.state-start{fill:rgba(169, 177, 214, 0.72);stroke:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_m4\_ .node .fork-join{fill:rgba(169, 177, 214, 0.72);stroke:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_m4\_ .node circle.state-end{fill:rgb(58, 132, 63);stroke:transparent;stroke-width:1.5;}#chatgpt-mermaid-\_r_m4\_ .end-state-inner{fill:transparent;stroke-width:1.5;}#chatgpt-mermaid-\_r_m4\_ .node rect{fill:rgb(26, 49, 34);stroke:rgb(58, 132, 63);stroke-width:1px;}#chatgpt-mermaid-\_r_m4\_ .node polygon{fill:rgb(26, 49, 34);stroke:rgb(58, 132, 63);stroke-width:1px;}#chatgpt-mermaid-\_r_m4\_ [id$="-barbEnd"]{fill:rgba(169, 177, 214, 0.72);}#chatgpt-mermaid-\_r_m4\_ .statediagram-cluster rect{fill:rgb(26, 49, 34);stroke:rgb(58, 132, 63);stroke-width:1px;}#chatgpt-mermaid-\_r_m4\_ .cluster-label,#chatgpt-mermaid-\_r_m4\_ .nodeLabel{color:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_m4\_ .statediagram-cluster rect.outer{rx:5px;ry:5px;}#chatgpt-mermaid-\_r_m4\_ .statediagram-state .divider{stroke:rgb(58, 132, 63);}#chatgpt-mermaid-\_r_m4\_ .statediagram-state .title-state{rx:5px;ry:5px;}#chatgpt-mermaid-\_r_m4\_ .statediagram-cluster.statediagram-cluster .inner{fill:transparent;}#chatgpt-mermaid-\_r_m4\_ .statediagram-cluster.statediagram-cluster-alt .inner{fill:rgba(169, 177, 214, 0.067);}#chatgpt-mermaid-\_r_m4\_ .statediagram-cluster .inner{rx:0;ry:0;}#chatgpt-mermaid-\_r_m4\_ .statediagram-state rect.basic{rx:5px;ry:5px;}#chatgpt-mermaid-\_r_m4\_ .statediagram-state rect.divider{stroke-dasharray:10,10;fill:rgba(169, 177, 214, 0.067);}#chatgpt-mermaid-\_r_m4\_ .note-edge{stroke-dasharray:5;}#chatgpt-mermaid-\_r_m4\_ .statediagram-note rect{fill:rgba(169, 177, 214, 0.067);stroke:rgb(172, 79, 35);stroke-width:1px;rx:0;ry:0;}#chatgpt-mermaid-\_r_m4\_ .statediagram-note rect{fill:rgba(169, 177, 214, 0.067);stroke:rgb(172, 79, 35);stroke-width:1px;rx:0;ry:0;}#chatgpt-mermaid-\_r_m4\_ .statediagram-note text{fill:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_m4\_ .statediagram-note .nodeLabel{color:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_m4\_ .statediagram .edgeLabel{color:red;}#chatgpt-mermaid-\_r_m4\_ [id$="-dependencyStart"],#chatgpt-mermaid-\_r_m4\_ [id$="-dependencyEnd"]{fill:rgba(169, 177, 214, 0.72);stroke:rgba(169, 177, 214, 0.72);stroke-width:1;}#chatgpt-mermaid-\_r_m4\_ .statediagramTitleText{text-anchor:middle;font-size:18px;fill:rgb(169, 177, 214);}#chatgpt-mermaid-\_r_m4\_ [data-look="neo"].statediagram-cluster rect{fill:rgb(26, 49, 34);stroke:url(#chatgpt-mermaid-\_r_m4\_-gradient);stroke-width:1;}#chatgpt-mermaid-\_r_m4\_ [data-look="neo"].statediagram-cluster rect.outer{rx:5px;ry:5px;filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_m4\_ .node .neo-node{stroke:rgb(58, 132, 63);}#chatgpt-mermaid-\_r_m4\_ [data-look="neo"].node rect,#chatgpt-mermaid-\_r_m4\_ [data-look="neo"].cluster rect,#chatgpt-mermaid-\_r_m4\_ [data-look="neo"].node polygon{stroke:url(#chatgpt-mermaid-\_r_m4\_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_m4\_ [data-look="neo"].swimlane.cluster rect{filter:none;}#chatgpt-mermaid-\_r_m4\_ [data-look="neo"].node path{stroke:url(#chatgpt-mermaid-\_r_m4\_-gradient);stroke-width:1px;}#chatgpt-mermaid-\_r_m4\_ [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_m4\_ [data-look="neo"].node .neo-line path{stroke:rgb(58, 132, 63);filter:none;}#chatgpt-mermaid-\_r_m4\_ [data-look="neo"].node circle{stroke:url(#chatgpt-mermaid-\_r_m4\_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_m4\_ [data-look="neo"].node circle .state-start{fill:#000000;}#chatgpt-mermaid-\_r_m4\_ [data-look="neo"].icon-shape .icon{fill:url(#chatgpt-mermaid-\_r_m4\_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_m4\_ [data-look="neo"].icon-shape .icon-neo path{stroke:url(#chatgpt-mermaid-\_r_m4\_-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#chatgpt-mermaid-\_r_m4\_ :root{--mermaid-font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace,-apple-system,"system-ui","Segoe UI",sans-serif;}IDLEREADYRUNNINGPAUSEDSUCCESSFAULTCalibration / Safety OKStart taskInference or buffertimeoutReobserve and replanGoal verifiedSafety violationSafety violationResetManual reset + checks
+
+`FAULT`から`RUNNING`への自動復帰は禁止する。ハードウェア側で保護停止が発生した場合、原因を確認してから正規の復旧手順を実行する。
+
+### 8.2 停止条件
+
+| 条件                      | 動作                       |
+| ----------------------- | ------------------------ |
+| 新しいActionがなくなった         | 減速停止・保持                  |
+| 観測が古い                   | 新規行動の実行禁止                |
+| Joint/Workspace Limit超過 | 指令拒否・停止                  |
+| IK失敗・衝突予測               | 指令拒否・再計画または停止            |
+| 追従誤差が過大                 | 停止・ログ保存                  |
+| 外力・接触異常                 | 接触監視器の条件に従い停止            |
+| ROS2プロセス異常終了            | Controller Watchdogによる停止 |
+| Franka保護停止              | 正規の復旧が完了するまで再実行禁止        |
+
+物理非常停止やメーカーの安全機能をソフトウェアWatchdogで代替しない。実機での接触を伴う引き出し操作とPushingは、接触力を検証できる段階まで有効化しない。
+
+## 9. 実装用リポジトリ構成
+
+以下は本設計で新規に作成するファイル構成である。
+
+xvla-libero-plus-ros2/
+
+configs/
+
+学習・推論・安全制約・カメラ設定
+
+data/
+
+変換済みのLeRobotデータと分割定義
+
+scripts/
+
+データ変換・SFT・評価・計測
+
+models/
+
+チェックポイント・正規化統計・Action Codec
+
+ros2_ws/src/vla_msgs/
+
+Observation・ActionChunk・状態メッセージ
+
+ros2_ws/src/vla_perception/
+
+カメラとロボット状態の同期
+
+ros2_ws/src/vla_policy/
+
+X-VLA推論Server
+
+ros2_ws/src/vla_control/
+
+Chunk Scheduler・IK・Controller
+
+ros2_ws/src/vla_safety/
+
+安全監視とWatchdog
+
+ros2_ws/src/vla_task/
+
+タスク管理と達成判定
+
+ros2_ws/src/libero_bridge/
+
+LIBERO-PLUSとROS2の接続
+
+tests/
+
+Codec・軌道・遅延・停止処理テスト
+
+logs/
+
+推論と実行の時系列ログ
+
+### 9.1 ActionChunkのROS2メッセージ
+
+`ros2_ws/src/vla_msgs/msg/ActionChunk.msg`
+
+```
+
+std_msgs/Header header
+
+uint32 episode_id
+uint32 task_id
+uint32 sequence_id
+
+builtin_interfaces/Time observation_stamp
+
+string action_codec
+float32 action_dt
+uint32 horizon
+
+# [step0_dim0, ..., step0_dim6, step1_dim0, ...]
+float32[] actions
+
+```
+
+実装時に行う検証：
+
+- `len(actions) == horizon * action_dim`
+- すべてのActionが有限値
+- Codec名が学習時の設定と一致
+- Actionの単位、座標Frame、正規化方式が明確
+- Sequence IDが単調増加
+- Episode IDが現在実行中のものと一致
+
+### 9.2 Chunk Schedulerの処理
+
+実装はC++を推奨するが、以下はアルゴリズムを示すPython風の擬似コードである。
+
+```
+def on_new_chunk(chunk):    if chunk.episode_id != active_episode_id:        return    if chunk.action_codec != EXPECTED_CODEC:        request_fault("codec mismatch")        return    if not validate_chunk(chunk):        request_fault("invalid chunk")        return    # 観測時刻からの経過を計算    age = now() - chunk.observation_stamp    # 予測列のうち、すでに経過した部分をスキップ    skip = int(age / chunk.action_dt)    if skip >= chunk.horizon:        request_replan()        return    remaining = chunk.actions[skip:]    # 予測と実際の状態の整合性を検証    if not state_alignment_ok(chunk, current_robot_state()):        request_pause()        request_replan()        return    # 同一座標系の時刻付き軌道に変換    trajectory = decode_and_validate(remaining)    if trajectory is None:        request_pause()
+```
+
+`state_alignment_ok()`は、予測時刻から現在までの実行指令を使って期待姿勢を再構成し、実測姿勢との誤差を確認する関数とする。これは単純に現在位置と観測時位置を比較するものではない。
+
+また`send_realtime_reference()`は実際のFranka用Controller APIに置き換える。上記は直接実機で実行する完成コードではなく、SchedulerとWatchdogの実装契約である。
+
+## 10. LIBERO-PLUSとROS2の接続
+
+学習と実機の間に、ROS2を通じてシミュレーターを操作する段階を設ける。
+
+通常のLIBERO評価コードからX-VLAを直接呼び出すのではなく、`libero_bridge`を介してROS2上で観測と行動を送受信する。
+
+### 10.1 LIBERO Bridge
+
+`libero_bridge`は以下を担当する。
+
+- LIBERO-PLUS環境を生成して対象タスクをResetする。
+- シミュレーション画像・EEF状態・言語指示をROS2へ公開する。
+- ROS2側から7次元Actionを受け取り、`env.step()`を呼び出す。
+- 成功判定、終了判定、実行ステップ数を公開する。
+- ロボットの状態を実行ログに記録する。
+
+実行時には、シミュレーション時刻とWall-clock時刻を分けて管理する。
+
+実機遅延を模擬するため、Bridgeに次の機能を追加する。
+
+```
+simulation:
+  fps: 20
+  task_ids: [4, 6, 7, 8, 9, 16, 20, 36]
+
+latency_injection:
+  enabled: true
+  observation_delay_ms: 40
+  inference_delay_ms: 150
+  inference_jitter_ms: 50
+  packet_drop_probability: 0.0
+
+evaluation:
+  episodes_per_task: 30
+  max_steps: 300
+  seed: 42
+```
+
+`max_steps`は全タスク共通の便宜的な値である。実際の評価ではLIBERO-PLUSの各Suiteが定める最大ステップ数を優先する。
+
+[image](https://www.google.com/s2/favicons?domain=https://huggingface.co\&sz=32)
+
+Hugging Face
+
+
+
+### 10.2 実機への移行
+
+実機を利用する段階では、`libero_bridge`をFrankaハードウェア接続へ切り替える。ただし、同じROS2メッセージを使えることと、同じ制御性能が得られることは別である。
+
+実機移行前のチェック項目を以下とする。
+
+| 項目     | 実装・検証内容                 |
+| ------ | ----------------------- |
+| カメラ    | Front/Wristの位置、向き、画角を校正 |
+| TCP    | Franka Handの実際の把持中心を設定  |
+| State  | 関節状態からモデル入力8次元を再現       |
+| Action | ロボット座標系とAction Scaleを整合 |
+| グリッパー  | 開閉方向、把持幅、把持完了時間を測定      |
+| 作業環境   | 物体サイズ、配置範囲、到達可能領域を確認    |
+| 制御     | 通信遅延、追従誤差、Watchdogを検証   |
+
+特に引き出し・コンロ・皿などは、実物に相当する安全な模擬治具が必要となる。
+
+Sim-to-Realの追加SFT： カメラや実物の差によって成功率が低い場合、各タスクからまず10〜30本程度の実機教師軌道を収集する。LIBERO-PLUSと同じObservation/Action仕様に変換し、少量の実機データを混合して追加学習する。これは初期の収集目標であり、必要なデータ量は成功率に基づいて決める。
+
+## 11. 評価設計と受け入れ基準
+
+### 11.1 比較するモデル
+
+| モデル                   | 目的                |
+| --------------------- | ----------------- |
+| A：既存X-VLA LIBEROモデル   | Fine-tuning前の性能   |
+| B：8タスクSoft Prompt SFT | 提案手法              |
+| C：8タスクFull/LoRA SFT   | 計算資源に余裕がある場合の追加比較 |
+
+AとBでAction表現が異なる場合は、同じ評価環境で正規化・Action Codecの条件を揃えてから比較する。
+
+また、既存のX-VLA LIBEROモデルはLIBEROのタスクで学習済みである。したがって、Bの成功率だけで「8タスクの操作能力を新しく獲得した」とは結論できない。Fine-tuning前後の比較が必要である。
+
+### 11.2 成功率評価
+
+| 評価               | 試行        | 目標             |
+| ---------------- | --------- | -------------- |
+| 学習対象8タスク（通常環境）   | 各30回      | 平均80%以上        |
+| LIBERO-PLUS摂動環境  | 各タスク30回以上 | 通常環境からの性能低下を測定 |
+| ROS2経由・遅延なし      | 各30回      | 直接推論との差が5pt以内  |
+| ROS2経由・遅延あり      | 各30回      | 遅延なしとの差が10pt以内 |
+| 実機Pick-and-Place | 各10回      | 初期目標70%以上      |
+| 実機引き出し/Pushing   | 安全検証後に実施  | 安全な動作完了を優先     |
+
+成功率の数値は開発上の受け入れ目標であり、実現可能性を事前保証するものではない。
+
+### 11.3 遅延と制御品質
+
+記録する指標は以下とする。
+
+| Metric             | 計算・測定               |
+| ------------------ | ------------------- |
+| Inference latency  | 推論要求からAction生成まで    |
+| End-to-End latency | 画像取得から行動目標の受け渡しまで   |
+| Observation age    | 実行時刻 − 観測時刻         |
+| Buffer underrun    | 行動バッファ不足の回数         |
+| Action rejection   | 古い・無効・危険なChunkの破棄回数 |
+| Tracking error     | 目標EEF poseと実測poseの差 |
+| Jerk               | 実測軌道の加速度変化率         |
+| Completion time    | 開始から成功判定までの秒数       |
+| Safety events      | 停止・異常接触・限界超過の件数     |
+
+レイテンシは平均だけでなく、p50・p95・p99を記録する。
+
+初期の性能基準は、ROS2通信部分のp95が10 ms以下、行動バッファ不足による意図しない動作が0件、Watchdogの停止開始が設定期限内であること、とする。実機では負荷試験によって検証する。
+
+## 12. 実装順序
+
+1. Phase 1：Dataset / Action Codec
+
+   8タスクを抽出し、データの形式を統一する。20 Hz、画像2系統、State 8次元、Action 7次元を検証する。教師Actionを再生して、予測形式と環境の行動形式が一致することを確認する。
+
+   完了条件
+
+   &#x20;全8タスクのデータ読み込み・教師軌道再生が成功
+
+2. Phase 2：X-VLA SFT
+
+   既存チェックポイントの評価後、Multi-task SFTを実施する。最初はSoft Promptのみを更新する。学習Lossとシミュレーション成功率からチェックポイントを選ぶ。
+
+   完了条件
+
+   &#x20;8タスクの成功率が基準を満たす
+
+3. Phase 3：ROS2 / LIBERO Bridge
+
+   Observation、ActionChunk、Task Managerを実装する。ROS2経由でLIBERO-PLUSを操作し、直接推論と同等の行動になることを確認する。
+
+   完了条件
+
+   &#x20;ROS2通信による目立った性能劣化がない
+
+4. Phase 4：非同期推論 / 遅延耐性
+
+   Action Chunk Buffer、時刻整列、Watchdog、軌道補間を実装する。遅延注入・通信切断・GPU負荷の試験を行う。
+
+   完了条件
+
+   &#x20;遅延・タイムアウト下で安全に停止できる
+
+5. Phase 5：Franka Panda接続
+
+   実機と同じバージョンのROS2・FCI環境で、Fake Hardwareから接続試験を始める。制御方式とカメラ校正を検証した後、低速の空間内動作試験へ移る。
+
+   完了条件
+
+   &#x20;追従精度、停止、安全制約が確認済み
+
+6. Phase 6：実機8タスク評価
+
+   Pick-and-Placeから順番に物体を導入する。必要に応じて実機デモで追加SFTし、最後に引き出しとPushingを有効化する。
+
+   完了条件
+
+   &#x20;各タスクの成功率と安全性を記録
+
+
+
+## 13. 最終的な未確定事項
+
+実装に進む前に、以下の4点だけは実際の環境で確定する必要がある。
+
+| 未確定事項               | 確認方法                              |
+| ------------------- | --------------------------------- |
+| X-VLAと教師Actionの互換性  | Action Codecの単体テスト                |
+| 16 GB GPUでの推論・SFT可否 | 1バッチ学習・推論ベンチマーク                   |
+| ROS2/FCIの正確な互換性     | Panda本体のシステム版、libfranka版、ROS2版を照合 |
+| 実機カメラと作業環境          | キャリブレーションと動作範囲の測定                 |
+
+参照実装は [X-VLA](https://github.com/2toinf/X-VLA?utm_source=chatgpt.com)、[LIBERO-PLUS](https://github.com/sylvestf/LIBERO-plus?utm_source=chatgpt.com)、[franka_ros2](https://github.com/frankarobotics/franka_ros2?utm_source=chatgpt.com) を基準とする。特にPanda実機の制御はFR3用のLaunchやControllerがそのまま利用可能とは仮定せず、互換性を確認する。
+
+この設計書の実装範囲は、8タスクのSFTからROS2経由のシミュレーション実行、遅延耐性を持つ実機制御までである。データ構造とROS2の通信契約、学習条件、制御・停止方針、評価基準を定義した。
+
+一方、実行可能なコード一式を実装・テストしたものではない。とくにAction CodecとPandaの低レベルControllerは、対象のソフトウェア・ハードウェア版が確定してから実装・検証する必要がある。

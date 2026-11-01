@@ -1,0 +1,2578 @@
+{
+  "origin": "/home/lemonydrink/PhysicalAI/PARC2026_final/third_party/lerobot",
+  "git_revision": "8fff0fde7c79f23a93d845d1a50e985de01f8b8a",
+  "origin_dirty": true,
+  "copied_with_parc_compatibility_patches": true,
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "e68d99028603f8bbc4bfa6fe408017c0710e7d5df473a0510f4d9199808f91a9"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "fced40daa8919c4b9d43986c2f1f5b797f258835046912b70deed241a279af35",
+      "origin_sha256": "d01b641512f7c38fb2c8d312b9eb48df08df80476f32eb88ae1bac0e1c7b4f78"
+    },
+    {
+      "path": "MANIFEST.in",
+      "sha256": "2d1b3f40f36f1d47923dce23d6bec977df577d86bb5313c6ee797a51784d1e8d"
+    },
+    {
+      "path": "README.md",
+      "sha256": "b4dfd317b45f1dcbcdc107ab9b815a1f47a2e44981703e434a7a8d06c574d2a7"
+    },
+    {
+      "path": "requirements-macos.txt",
+      "sha256": "c4b02e1f4126309d32a4a641b465dde5d461ea74de4c0082ea14d59f1c261837"
+    },
+    {
+      "path": "Makefile",
+      "sha256": "c18fa8c34d6773f0e3eedd4f99942ca6fb76623ad549ab8b6c2faf49aa2538e6"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "44df2a48d3b47fe5a13e4c1f0ab4882d540b2096a391296c258b68a3bfd2e004"
+    },
+    {
+      "path": ".dockerignore",
+      "sha256": "b735976e9b8581df33aae214f8244d2dd5a5ba46ed6969222f5fd65bdf36e256"
+    },
+    {
+      "path": "docs-requirements.txt",
+      "sha256": "9b826056b28f78ef5a98ea74960560bf117de4f9c68a3aac112d0c60e84f5db8"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "da8d0397d3f5ce3bfbb98e2ba8215559f9403f3cb66b3398dcc3c5fcac147818"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "sha256": "bc7e90f35f334dd9b4d46515902c5114ff088903b26a3a71d5c675873089029b"
+    },
+    {
+      "path": "requirements-ubuntu.txt",
+      "sha256": "99399532d8387057f8dda15913cbe92ad20a30924b8a614d47f68cd7fcae8849"
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "sha256": "649946309b67bb861ff62ec5a611776515ab6e2639d6f876bd911872d826c66b"
+    },
+    {
+      "path": "setup.py",
+      "sha256": "89d7328697cd8431abf39fdfb5bc774e442e193a20079f2dfaf01dafffb32d9b"
+    },
+    {
+      "path": "requirements.in",
+      "sha256": "53d940efaf5687d52e0f6246c35fd463b9ff798c9d00985cdf3cdf775e1ede70"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "0583375a0ec642ec79c447781f34322b0cfa66baff31258214d040f1f6d86d7c"
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "82aef5620791f62b7fd6bbf012d5241cfc1e06d52da0ea6a01e3398bc44284fe"
+    },
+    {
+      "path": "tests/test_cli_peft.py",
+      "sha256": "e0badc5396ff0a6494929ac43239b8d401c6e8c15f859d1c9ee69c3988e20600"
+    },
+    {
+      "path": "tests/test_control_robot.py",
+      "sha256": "b37bd401a7929a55a42987385bf99c216ad87d259a085989014832a4670dfbb9"
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "b38bd8395de985c854870c93c0d3b18d26ee0332cfcc1c9ac525872d1c23e673"
+    },
+    {
+      "path": "tests/utils.py",
+      "sha256": "fb980e30ad1b0a98a9f6617533bdf6f935aaa895e40f0828b342786f74c24d1e"
+    },
+    {
+      "path": "tests/test_available.py",
+      "sha256": "9c8be03c38cd90e88407f9b1745017314a91d06479368c1efcdfca63e48b64cd"
+    },
+    {
+      "path": "tests/__init__.py",
+      "sha256": "7c685e1896165e21778b442e0568c114ac33322d177aedc52c6134b329a09174"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "sha256": "d8c3623a6dc2e2bd919ec02d69c4ac25005db83671a4661cf4deca4dcf84bd63"
+    },
+    {
+      "path": ".github/labeler.yml",
+      "sha256": "455b24c6a05330f9cd812b2f3dd356ecd1656666d735b9e07e986f4ae4ed8d3a"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "165d87151d472890158ded4a228e3d21bebfe0bcd73adfff646d1fa58b020f36"
+    },
+    {
+      "path": "docker/Dockerfile.internal",
+      "sha256": "c5029fec47ada2c3cd415ae8b4234537c2a9ac93d72fe3fd2227bb7b5f25ac5e"
+    },
+    {
+      "path": "docker/Dockerfile.user",
+      "sha256": "8f906a7b07d73fbf6f1439c48e9260ea31cadcfde69328dd60265ef1e4128bea"
+    },
+    {
+      "path": "tests/scripts/test_edit_dataset_parsing.py",
+      "sha256": "32ba7af94e5bb60b89105ae6317873f1d0fab84203da0117b818816c759384ba"
+    },
+    {
+      "path": "tests/utils/test_replay_buffer.py",
+      "sha256": "188da69e3d0d988c9b8c0af99ab6dc090f7e14e35048f2012c6fcde67b6b93d2"
+    },
+    {
+      "path": "tests/utils/test_visualization_utils.py",
+      "sha256": "716e423776a2553cd9a5857f784882a2ad6da7edafd9ec29bd1056bbecd70f6a"
+    },
+    {
+      "path": "tests/utils/test_random_utils.py",
+      "sha256": "1a82763f5e8f53bd25f5a251ac63dcbc75af49cf8dbc8c8046c959f1309a8b4d"
+    },
+    {
+      "path": "tests/utils/test_logging_utils.py",
+      "sha256": "07f440408f2e7a30926fcef325d3544cd2c7e19b2afd7326b324b871b27d7eda"
+    },
+    {
+      "path": "tests/utils/test_encoding_utils.py",
+      "sha256": "e409efa1b74f4995ec8146dd3d50c336a260ba3148fd1361fcad1fec236cb4cf"
+    },
+    {
+      "path": "tests/utils/test_process.py",
+      "sha256": "283a3adcefed8fa0ac03aaa918bf1c8a35b8b7ac3991bf44659ce428ecf14c03"
+    },
+    {
+      "path": "tests/utils/test_io_utils.py",
+      "sha256": "b8dd09269eefb97c3e76bc8cfb5ff66fe2317b0fbb78ce247b528254d17ee82a"
+    },
+    {
+      "path": "tests/utils/test_train_utils.py",
+      "sha256": "139b7281fbe7e9cf9cdb1dd6184cf2dcde48b9e514fd62c49d5115ee4e1bb0df"
+    },
+    {
+      "path": "tests/motors/test_feetech.py",
+      "sha256": "be7044469918fdd57cd148cd081d88a2ce66521759a6e92f06fef1bc84070621"
+    },
+    {
+      "path": "tests/motors/test_damiao.py",
+      "sha256": "f76de1900d6b2ebdb4d988f8c8595efefd905068f969a2885d8a1cbb1f56ebf6"
+    },
+    {
+      "path": "tests/motors/test_motors_bus.py",
+      "sha256": "82316e389c0dcf20c45ab678ec60527d03c905b7947309875d46ebbc8d960a12"
+    },
+    {
+      "path": "tests/motors/test_dynamixel.py",
+      "sha256": "a01a9cccdefc323bb8a955bef12f0aba06db1d59c6c1dddd8b39c551f2c59b15"
+    },
+    {
+      "path": "tests/rl/test_actor.py",
+      "sha256": "89943953828419e8afd47c38e21f710a3e4e6b3870a2cdb46fe1fe3ac5fba489"
+    },
+    {
+      "path": "tests/rl/test_actor_learner.py",
+      "sha256": "bd624308b0dcd4904c7d49b7c2b56e02a9c81943d8b45879706ae8b0396044e9"
+    },
+    {
+      "path": "tests/rl/test_learner_service.py",
+      "sha256": "946238faac8dc43116df29297522dc891c047f4364298bce45598da159069685"
+    },
+    {
+      "path": "tests/rl/test_queue.py",
+      "sha256": "35cec66697da72a21091deaee4c103f10948000078da358a795986b59405b188"
+    },
+    {
+      "path": "tests/transport/test_transport_utils.py",
+      "sha256": "3d070a40acee3b0019e34f416f64871632203468c39f3a9d29042b926e02b1de"
+    },
+    {
+      "path": "tests/async_inference/test_policy_server.py",
+      "sha256": "5f2f7ff47be5e8c4c50dec9a6eec54e86575ac2d112006e6ec5a41b4f8c1c008"
+    },
+    {
+      "path": "tests/async_inference/test_e2e.py",
+      "sha256": "f63d2b33f89da02d9ec7318f4476948262c3e2b45a91d7086155bcbc005af2b2"
+    },
+    {
+      "path": "tests/async_inference/test_robot_client.py",
+      "sha256": "25a63fe01a759347e4c990a6f5913a1755e408316fb26c35621128c8523069fd"
+    },
+    {
+      "path": "tests/async_inference/test_helpers.py",
+      "sha256": "4dd8e17cd4756309551b911db1663b0025db739aa39b0336f5c27b6179407457"
+    },
+    {
+      "path": "tests/robots/test_so100_follower.py",
+      "sha256": "c79e0d82ae4087b36287ef48ab1ee43db3f6f28623beda2f3130ef0e29c94b20"
+    },
+    {
+      "path": "tests/robots/test_reachy2.py",
+      "sha256": "c20febc1963c1f153c66ef9257f3b32d4cd9f242c23ec2f3edceec494dba4505"
+    },
+    {
+      "path": "tests/mocks/mock_robot.py",
+      "sha256": "8dc41e5ec540f1ad58cc044cf9d9e683d72fb17994fb4b9d8db573f116b1497c"
+    },
+    {
+      "path": "tests/mocks/mock_teleop.py",
+      "sha256": "ee15b02eca654959016a066da3a0709546876283ea9dae39d98eb64d4e8a0ff7"
+    },
+    {
+      "path": "tests/mocks/mock_feetech.py",
+      "sha256": "f235e6e1b658265ccb6e47c6d54aa947c3c68ff98084327bd1452afc2ba20c49"
+    },
+    {
+      "path": "tests/mocks/mock_serial_patch.py",
+      "sha256": "fb9d7a967a4bcbb715972a90f6b4c519c5d116d1c1a52bd7da1673f9f4254b52"
+    },
+    {
+      "path": "tests/mocks/mock_motors_bus.py",
+      "sha256": "ddaa41bf36835294a22ba0f893144718fbdd96a35ead71ceacc38faca377cca8"
+    },
+    {
+      "path": "tests/mocks/mock_dynamixel.py",
+      "sha256": "8364128a4b0e9221b50313f27891e7b45ebe281a9fb4294b47934d106703ca60"
+    },
+    {
+      "path": "tests/datasets/test_quantiles_dataset_integration.py",
+      "sha256": "dffe014a3225cfa20cf108092e02bcdfb7efdb57ee4ff5f6e67fd027505112c2"
+    },
+    {
+      "path": "tests/datasets/test_datasets.py",
+      "sha256": "e3d584c8c534d498511459542630a95efb8f265f03cbec0ddc30259054c2dedd"
+    },
+    {
+      "path": "tests/datasets/test_aggregate.py",
+      "sha256": "01a749dea52dc7d8e50e467fb7e2d700efafb9a6771d90a5d4dfb9c4d97429fb"
+    },
+    {
+      "path": "tests/datasets/test_visualize_dataset.py",
+      "sha256": "40d4eda33467aab3439fd5b8783315102cd4c3ac762fcf80dd8c4d525253eaa6"
+    },
+    {
+      "path": "tests/datasets/test_online_buffer.py",
+      "sha256": "02020120bd0109f95b3e36b6c2d164d57b572dc025a1761cba3a4fd0c69ca062"
+    },
+    {
+      "path": "tests/datasets/test_dataset_utils.py",
+      "sha256": "509b6999481461de36f23832f63f5a2750699437dc095bc2fadd63172591cbeb"
+    },
+    {
+      "path": "tests/datasets/test_delta_timestamps.py",
+      "sha256": "a634f06e2d562127268e972930e618c7112d882ad38cdc723903bdad9bd3994e"
+    },
+    {
+      "path": "tests/datasets/test_streaming.py",
+      "sha256": "146097f7109e90d39547c72b0c64f69270b1acd3f666cf9eb4f7ae097edb1538"
+    },
+    {
+      "path": "tests/datasets/test_subtask_dataset.py",
+      "sha256": "3b62767d7145d9dfd954d3414dda5da4a2a515d416a6a627cee029061a74d5ad"
+    },
+    {
+      "path": "tests/datasets/test_streaming_video_encoder.py",
+      "sha256": "c8ad592666c588ce795256dd17e41a86adc767f0c06540917eb8d44944ba41e6"
+    },
+    {
+      "path": "tests/datasets/test_sampler.py",
+      "sha256": "3129e83532428c05341083e4af03c2a78a813d7e2b6ef29ebd4c64f121ff5d1b"
+    },
+    {
+      "path": "tests/datasets/test_compute_stats.py",
+      "sha256": "4622c127d68d997beba82b74583960c7cefe086675344d4ee113a0c39b094acb"
+    },
+    {
+      "path": "tests/datasets/test_dataset_tools.py",
+      "sha256": "67af1c33083bf1dd0966de7c991f5054651b8e6ca35949e1e0e36b6439fff1a7"
+    },
+    {
+      "path": "tests/datasets/test_image_transforms.py",
+      "sha256": "c9f67757a8e48d7d85457e0f8ea95c6f9600596dd520364c4fbc9fd79d6950cc"
+    },
+    {
+      "path": "tests/datasets/test_image_writer.py",
+      "sha256": "f9adeaa281069e4f6b14050f2d2b81aa7cdfc8f6e8a703c5e6b7f6dbbd3b9654"
+    },
+    {
+      "path": "tests/envs/test_envs.py",
+      "sha256": "53693e3713012d596bd3607b699dc196328b24df7a611f2c692dd20dfcdafa65"
+    },
+    {
+      "path": "tests/fixtures/files.py",
+      "sha256": "e101681ac4df05eb7c3de5e7fd615b38ba9f364c13096f9cbe2b431cb2dc8e5f"
+    },
+    {
+      "path": "tests/fixtures/dataset_factories.py",
+      "sha256": "62c0967b43821abe66b2b6c0d6a22ff21a4951c4026d267aee04d18b2c315dbc"
+    },
+    {
+      "path": "tests/fixtures/hub.py",
+      "sha256": "b0340e480400414e8b7233bfc63f046e25ba100e3cc576c045e07d67b3ddc8ea"
+    },
+    {
+      "path": "tests/fixtures/constants.py",
+      "sha256": "725ed4572e35689a5b8fa43db37bfd527d29672e075b97abfeb76f86cad86ba2"
+    },
+    {
+      "path": "tests/fixtures/optimizers.py",
+      "sha256": "330dfa95ce52e1c179460dd76c022c24d5aabc199559595a0724c71242b8b686"
+    },
+    {
+      "path": "tests/policies/test_sarm_processor.py",
+      "sha256": "692fd9ed9186a3308b3ada2a20ebcb8b8ef0a55560bb56f671bf27d7ed26e194"
+    },
+    {
+      "path": "tests/policies/test_sac_config.py",
+      "sha256": "a4a3e2c6146c05db0147a7696278aa7884c8c13a8884875de9581ce7d54635a4"
+    },
+    {
+      "path": "tests/policies/test_sac_policy.py",
+      "sha256": "eb090832f7ec7e2286fa847ba482291c763b0ee7ee5a54a6170bdfbdd6977d87"
+    },
+    {
+      "path": "tests/policies/test_policies.py",
+      "sha256": "9a8e9bfb4fdbdbb92f06561aa19f6ef83a8cccc1c76ab0533b8c6f9c03d2eb2d"
+    },
+    {
+      "path": "tests/policies/test_sarm_utils.py",
+      "sha256": "89dd49250f1a6e7482f364273af0548f6f288deda75c44b72261f4c6eb9a0b52"
+    },
+    {
+      "path": "tests/policies/test_sarm_subtask_annotations.py",
+      "sha256": "f0b002843d814258cd41551a1cd937e0bacc9f74df793b130f083d5e62d80ab1"
+    },
+    {
+      "path": "tests/optim/test_schedulers.py",
+      "sha256": "747f45dbaf37d819c3ba992bf908c34b0f3a84d03236275a8317cbb1297cfb36"
+    },
+    {
+      "path": "tests/optim/test_optimizers.py",
+      "sha256": "ed5395b772439ec6509b86b84d259a0f7eb6e54a775a7788d28330e4daf7f2a3"
+    },
+    {
+      "path": "tests/training/test_multi_gpu.py",
+      "sha256": "a5ee26e98e618640bf92e6d5a26ceb94d0346e88f33a074732252eecf004de57"
+    },
+    {
+      "path": "tests/training/test_visual_validation.py",
+      "sha256": "0abe67635b826f30b65e3079d53a6413d73c4c62b186005e75bb38b37dc0b4df"
+    },
+    {
+      "path": "tests/teleoperators/test_reachy2_teleoperator.py",
+      "sha256": "a10d80ab51e9cbf194a7a293fc5a4e65b29e91c9f7a1fb3289cb200602a665e4"
+    },
+    {
+      "path": "tests/cameras/test_realsense.py",
+      "sha256": "96cafa50f48c83b00e043194c6dfc1626b23d059198ea7ef4bda52a84dc451ca"
+    },
+    {
+      "path": "tests/cameras/test_opencv.py",
+      "sha256": "b60f4a1b281dcbac027b24afaf7f33bfcf805000b9b272e55d92a9f2bcfc1d94"
+    },
+    {
+      "path": "tests/cameras/test_reachy2_camera.py",
+      "sha256": "78406314777cceefdfe9d39f96cba0c1bb3aa4e22b9151228e7b50e504366c79"
+    },
+    {
+      "path": "tests/processor/test_normalize_processor.py",
+      "sha256": "5e0d19868b55fe5d6f4e674dad04bc0c6ed450c95b3c06196d6a309ce1005e43"
+    },
+    {
+      "path": "tests/processor/test_rename_processor.py",
+      "sha256": "27d244aebea6dbefe4f6c6ee49dae2f2f8afc53b8007aaa2439fa4cbfa97e346"
+    },
+    {
+      "path": "tests/processor/test_sac_processor.py",
+      "sha256": "8e60809e19ee5a2a598af4764b039aea6b533d47c661272a49d2b26753f81015"
+    },
+    {
+      "path": "tests/processor/test_classifier_processor.py",
+      "sha256": "7a3eeab28e4e838b9ba504f8cba3dbbbe7a92a6b0bd58b49e4c3841b7de70b2e"
+    },
+    {
+      "path": "tests/processor/test_pipeline_from_pretrained_helpers.py",
+      "sha256": "63503212a27ed2fbd72d982c12a1f26fa901e648ccac17950a68d9d87faf99c5"
+    },
+    {
+      "path": "tests/processor/test_libero_processor.py",
+      "sha256": "d47bc75c23caf5253e1bf48cc384671d8a8418f13ef508bd40fe60bcdb96e80a"
+    },
+    {
+      "path": "tests/processor/test_tdmpc_processor.py",
+      "sha256": "c5cb806d14e4ca421b522590179aca42f9a50e985d18952acf0b59bedb3fd9e8"
+    },
+    {
+      "path": "tests/processor/test_converters.py",
+      "sha256": "7baa492ad8e3089d8df23dc843d669a104d524deb353ae9ee5a4f2253bd56fac"
+    },
+    {
+      "path": "tests/processor/test_observation_processor.py",
+      "sha256": "681f1536a4135286be6413b812764a0878fdec349bf873d55b8308bd1e7c456c"
+    },
+    {
+      "path": "tests/processor/test_device_processor.py",
+      "sha256": "110b8d283b4bb51f92030b0a7b65b13051eb4cfe16865bb68295d6c32f04988b"
+    },
+    {
+      "path": "tests/processor/test_diffusion_processor.py",
+      "sha256": "12904506be02320e265d96db63526941dcc0434affd081c32856bb373dbc838e"
+    },
+    {
+      "path": "tests/processor/test_batch_processor.py",
+      "sha256": "2fc4a2349c09a98eb50a2dfafab4c015d53e940a011602d18210af878b44bbec"
+    },
+    {
+      "path": "tests/processor/test_policy_robot_bridge.py",
+      "sha256": "9d191632828a564fe98aedaa0df1529b5411bd66139c9840cc0232166b6be8d3"
+    },
+    {
+      "path": "tests/processor/test_migration_detection.py",
+      "sha256": "af8f74979458a51f46395e47dc238156fe956d1b0f2876130661df293bf4f019"
+    },
+    {
+      "path": "tests/processor/test_vqbet_processor.py",
+      "sha256": "64e5aa7055723418470cae2014c734ed8017fec589def87b2b090d41a46c4136"
+    },
+    {
+      "path": "tests/processor/test_tokenizer_processor.py",
+      "sha256": "60e85982db658353a3f464e6820f56fb04b70a65def360ba8b350f624ca673b3"
+    },
+    {
+      "path": "tests/processor/test_act_processor.py",
+      "sha256": "26c12a6e98620d0963566621d389a667125b6941128ee1ec704d9a4d9508db6c"
+    },
+    {
+      "path": "tests/processor/test_pipeline.py",
+      "sha256": "e337eef55399c4e7fd9ce1574131149939a4ef1b37940a6578e655bcc6b86857"
+    },
+    {
+      "path": "tests/processor/test_smolvla_processor.py",
+      "sha256": "10f5aacfa585561e2fcd9592cb13b4ef9b94fb3b16c0cb00c55f3784bd50b831"
+    },
+    {
+      "path": "tests/processor/test_batch_conversion.py",
+      "sha256": "c0c52b5611ee9003eb4a702c220cf977a7d5d3e27eec65a6d69033280ead2476"
+    },
+    {
+      "path": "tests/configs/test_plugin_loading.py",
+      "sha256": "21db549066016f4ec45afe7272f03d05434ccd2b222cf0c1c60971863737a8c5"
+    },
+    {
+      "path": "tests/artifacts/datasets/save_dataset_to_safetensors.py",
+      "sha256": "ebdbafc4d3876ddd9540c992770c1869695a0a5e9cdc21f8af3ef74b27cdf953"
+    },
+    {
+      "path": "tests/artifacts/image_transforms/default_transforms.safetensors",
+      "sha256": "c813152aa53bf0974240a029306e9f86423a223b917ef8b31c283b1878148f0a"
+    },
+    {
+      "path": "tests/artifacts/image_transforms/save_image_transforms_to_safetensors.py",
+      "sha256": "d450d9a310f4bea04611d802704da3f63143952d5a4ba328d1acaeb5af8b9bf9"
+    },
+    {
+      "path": "tests/artifacts/image_transforms/single_transforms.safetensors",
+      "sha256": "79d439ce795da2a34494d8e14eaa153971bbe352ee7d319c133ff948c564d049"
+    },
+    {
+      "path": "tests/artifacts/policies/save_policy_to_safetensors.py",
+      "sha256": "35ed702e65e112379b072562073e390ebe0b4ae41e7f434b441eca4c4c481de1"
+    },
+    {
+      "path": "tests/artifacts/cameras/image_320x180.png",
+      "sha256": "599ac8cfbb986170b623c00cc318e5f4537426f8f9aae0aaf617e1d136c711b5"
+    },
+    {
+      "path": "tests/artifacts/cameras/test_rs.bag",
+      "sha256": "d7e30aa86efa01b1681830793eb25b3896639b5fa4319154df7fc58b4e6e02f1"
+    },
+    {
+      "path": "tests/artifacts/cameras/image_160x120.png",
+      "sha256": "dceda915575de865c9f8d006e906962476c0284d400d6dad7ab021aef7ebc2ee"
+    },
+    {
+      "path": "tests/artifacts/cameras/image_128x128.png",
+      "sha256": "757082908390d1f11fc3ae1e585d10c6ec6f44d13488c24d05d1514dc169bc5b"
+    },
+    {
+      "path": "tests/artifacts/cameras/image_480x270.png",
+      "sha256": "cca3697f66f02b369d9aee28c33b20762a42da8218bc76684b1eae570fa6d209"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/aloha_sim_insertion_human/frame_1.safetensors",
+      "sha256": "866a7360c069563f683025304013bb33014400626997977308448380fa655cf9"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/aloha_sim_insertion_human/frame_498.safetensors",
+      "sha256": "c6dc5fa8cc78cd791fbc02ff6a903b9ed6985bc4fa21922088e764b320cda722"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/aloha_sim_insertion_human/frame_499.safetensors",
+      "sha256": "d48cb07a1677c1dbf9047dffaf6dccde3cb782192af5aade7b69da9226bb3295"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/aloha_sim_insertion_human/frame_0.safetensors",
+      "sha256": "d72106069ef71512962a53c533e95099262dbb4a5dd7f30394b71611d6a95c6b"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/aloha_sim_insertion_human/frame_251.safetensors",
+      "sha256": "dc80916d7bf01053008abf82c0f6abe918d899c8246f808d255bdab33cffabef"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/aloha_sim_insertion_human/frame_250.safetensors",
+      "sha256": "bdea5ae5053a8a8543682474ce25599abbd89fc52af25aeb8928523b790b8e03"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/xarm_lift_medium/frame_23.safetensors",
+      "sha256": "73c7aedf1e38b7ac9522062e97e5985006d9d5ea87770ae35bfa074aa318a31f"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/xarm_lift_medium/frame_1.safetensors",
+      "sha256": "5d8b7c6aed4cdcfc5cd6f74f22601166b9acf945af60b0a380d8deb80c539293"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/xarm_lift_medium/frame_0.safetensors",
+      "sha256": "fa22cb24ca8cbc25cdd64d31d76e54539ea90a43b33fc6af71bb0518dbabf29d"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/xarm_lift_medium/frame_24.safetensors",
+      "sha256": "6ecce7245caa3b7411afaaa7229edc2455efdf0fea1bd991e5369814b752490b"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/xarm_lift_medium/frame_13.safetensors",
+      "sha256": "ce144258493e5144cd0a6a68922bf10c0d4eec4a99849adb75a504f663044918"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/xarm_lift_medium/frame_12.safetensors",
+      "sha256": "fe5fd8b231042ede278f81c0efe1a5ddb409c8c596729ecad4168916c482373e"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/pusht/frame_80.safetensors",
+      "sha256": "99faa1e17ab76cd4fb26ab4689525ec900b27a9a586371f53d13751af387f6eb"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/pusht/frame_1.safetensors",
+      "sha256": "5dfed489cc9cc8d6f033499e454bf23de04d3627eab705111271517ac8b2b84b"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/pusht/frame_160.safetensors",
+      "sha256": "97b15975a0ce0bdfc1406f1f46b054ab858f3e85758bb737709eda5d9e6774c9"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/pusht/frame_81.safetensors",
+      "sha256": "dbd5ce2fac77f46afd90e617aed7ec374006646a958a662bcc202b5019172313"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/pusht/frame_159.safetensors",
+      "sha256": "9e8f0d8aa74e435ad656f93217b5e407fd2b817544213c0fd5e5230040d9e4cc"
+    },
+    {
+      "path": "tests/artifacts/datasets/lerobot/pusht/frame_0.safetensors",
+      "sha256": "9e700a108852b53b6c127f94f6f1cc109a9d97dc8388a082aea350b006563ecc"
+    },
+    {
+      "path": "tests/artifacts/policies/aloha_sim_insertion_human_act_/output_dict.safetensors",
+      "sha256": "7bb9179cbabb7b5cb18e2c5569e690abff65d101b9af9e7342863d773c11b865"
+    },
+    {
+      "path": "tests/artifacts/policies/aloha_sim_insertion_human_act_/actions.safetensors",
+      "sha256": "89fda3523a1a5b42094ef93d69699575f9c3b8bb95720cd512182ae2f329bea9"
+    },
+    {
+      "path": "tests/artifacts/policies/aloha_sim_insertion_human_act_/grad_stats.safetensors",
+      "sha256": "dcd19f6cf855747f0ad81d93e3ddf6386706f5970d6afbab84d3c821a9cbf71e"
+    },
+    {
+      "path": "tests/artifacts/policies/aloha_sim_insertion_human_act_/param_stats.safetensors",
+      "sha256": "a03ada32c759278191fdffbb26016bc59b543e447f0dce23f29ac1c59eb060bf"
+    },
+    {
+      "path": "tests/artifacts/policies/aloha_sim_insertion_human_act_1000_steps/output_dict.safetensors",
+      "sha256": "af777314960e8e85e837b31b9d20266a44ff0055e72212ee141647d156679a09"
+    },
+    {
+      "path": "tests/artifacts/policies/aloha_sim_insertion_human_act_1000_steps/actions.safetensors",
+      "sha256": "5bce517490407efc54edde1bf22065110cf0d900d65679644e4942c985a166e1"
+    },
+    {
+      "path": "tests/artifacts/policies/aloha_sim_insertion_human_act_1000_steps/grad_stats.safetensors",
+      "sha256": "c0fca911f3a15830262ad6fb500dd0a059825dd61bfe2b1b22d40725fe952fcd"
+    },
+    {
+      "path": "tests/artifacts/policies/aloha_sim_insertion_human_act_1000_steps/param_stats.safetensors",
+      "sha256": "61587c3ac90f92290587a9c07e6886fbfdba5cbd9232f7434d184588b58deb21"
+    },
+    {
+      "path": "tests/artifacts/policies/xarm_lift_medium_tdmpc_use_policy/output_dict.safetensors",
+      "sha256": "48492ffd0a2505a54e1d657e11efe07df0eda8f04f72d68bdbd9e5d88008eaa6"
+    },
+    {
+      "path": "tests/artifacts/policies/xarm_lift_medium_tdmpc_use_policy/actions.safetensors",
+      "sha256": "b3fa7277349b7e6bb820128cad483bb02a696f441858feb89d26bd6eea7cac6d"
+    },
+    {
+      "path": "tests/artifacts/policies/xarm_lift_medium_tdmpc_use_policy/grad_stats.safetensors",
+      "sha256": "53fa8fcecdd54e9c77b6bfe44c457c0c105f9c6233158705c14306b1d7461f13"
+    },
+    {
+      "path": "tests/artifacts/policies/xarm_lift_medium_tdmpc_use_policy/param_stats.safetensors",
+      "sha256": "12f8cfef1be9c1057597eb1165855700727f842d748877b6a22de1b1c6d6e21d"
+    },
+    {
+      "path": "tests/artifacts/policies/pusht_diffusion_/output_dict.safetensors",
+      "sha256": "9ebf14deb3cf12d3bff56fea04793aeda6e39f9c3787254871c79f76e8666718"
+    },
+    {
+      "path": "tests/artifacts/policies/pusht_diffusion_/actions.safetensors",
+      "sha256": "f20c3448d910124cda1f49a8f86de56c234235cf45b7db114e5a8169e4a04a3d"
+    },
+    {
+      "path": "tests/artifacts/policies/pusht_diffusion_/grad_stats.safetensors",
+      "sha256": "373d33579ee4e147031f514cf07f5da160e3874bec4400d288099de2d9a5871e"
+    },
+    {
+      "path": "tests/artifacts/policies/pusht_diffusion_/param_stats.safetensors",
+      "sha256": "9a2403cba16d09a2bfd2709b416e3f25d240161f4bc6bc05dfe798043f837005"
+    },
+    {
+      "path": "tests/artifacts/policies/xarm_lift_medium_tdmpc_use_mpc/output_dict.safetensors",
+      "sha256": "48492ffd0a2505a54e1d657e11efe07df0eda8f04f72d68bdbd9e5d88008eaa6"
+    },
+    {
+      "path": "tests/artifacts/policies/xarm_lift_medium_tdmpc_use_mpc/actions.safetensors",
+      "sha256": "0b4ab82bd23a46f6517eb5ecd58c5ef284db51eef04086ae0d3c4a6bf11b45c0"
+    },
+    {
+      "path": "tests/artifacts/policies/xarm_lift_medium_tdmpc_use_mpc/grad_stats.safetensors",
+      "sha256": "53fa8fcecdd54e9c77b6bfe44c457c0c105f9c6233158705c14306b1d7461f13"
+    },
+    {
+      "path": "tests/artifacts/policies/xarm_lift_medium_tdmpc_use_mpc/param_stats.safetensors",
+      "sha256": "12f8cfef1be9c1057597eb1165855700727f842d748877b6a22de1b1c6d6e21d"
+    },
+    {
+      "path": "tests/policies/hilserl/test_modeling_classifier.py",
+      "sha256": "ecb85ff78302003a5562cceac735c113f949d9601053e9f0ca99b70b77630ddd"
+    },
+    {
+      "path": "tests/policies/rtc/test_action_queue.py",
+      "sha256": "afa6505fe14ac9319a2569fc6bc3dd6528dbd313ea0015952bffd8a02649c26a"
+    },
+    {
+      "path": "tests/policies/rtc/test_latency_tracker.py",
+      "sha256": "158e0d188ab153cb831f5b7bb6bd0c2aeeba1661e082ceaecd08816aac18778e"
+    },
+    {
+      "path": "tests/policies/rtc/test_debug_tracker.py",
+      "sha256": "34ce65e0e78fc543e4c21836718a705d7afeb982bafb34b3343b40c298be8216"
+    },
+    {
+      "path": "tests/policies/rtc/test_configuration_rtc.py",
+      "sha256": "c416a60977599a1ce8d814a94d06913e3735ec8f8249a176af6be6728b01134c"
+    },
+    {
+      "path": "tests/policies/rtc/test_modeling_rtc.py",
+      "sha256": "2f9723d47ce6aa33ad48828667b34b48495a68a9f9a2ecdb2428080f0a1e60a1"
+    },
+    {
+      "path": "tests/policies/groot/test_groot_lerobot.py",
+      "sha256": "5d62e731dedb291663633a334745dbd30ba061ce6f5886ddaa19dd1198b0fb5c"
+    },
+    {
+      "path": "tests/policies/groot/test_groot_vs_original.py",
+      "sha256": "8c04789aa63edb9c3b8e99f36af8ca924c8be77f14370bc30d35e44630dbcf5c"
+    },
+    {
+      "path": "tests/policies/pi0_fast/test_pi0_fast_original_vs_lerobot.py",
+      "sha256": "652ed6a7e8a974e616af826a04b4916368fc7a3aedf9f315a6904fbb1d15da1d"
+    },
+    {
+      "path": "tests/policies/smolvla/test_smolvla_rtc.py",
+      "sha256": "32a9459d94b18d3a7e9ed3aa6701523f24b973252cc6e58da2d75aebc139a452"
+    },
+    {
+      "path": "tests/policies/wall_x/test_wallx.py",
+      "sha256": "d0d9f2c620d398ffaa9ad9a9ad5d1ed422abd5f10ba6d276cb6bc58c523ef2c3"
+    },
+    {
+      "path": "tests/policies/pi0_pi05/test_pi0_rtc.py",
+      "sha256": "28637fe2c9c67c1a49b9c1028ab1d12fd76fc9ee3ec626f2603410b31a9f52af"
+    },
+    {
+      "path": "tests/policies/pi0_pi05/test_pi0_original_vs_lerobot.py",
+      "sha256": "bc3ef07ea260f611ef380fd3fbb3217886442f0dcdeb8f1e6a76ee0886b9eb87"
+    },
+    {
+      "path": "tests/policies/pi0_pi05/test_pi05_rtc.py",
+      "sha256": "7cb2ef20ab52d948738b08b153ae5dc8e5cb0c20645f9f59e13e330a4ae7ed7b"
+    },
+    {
+      "path": "tests/policies/pi0_pi05/test_pi05_original_vs_lerobot.py",
+      "sha256": "1a2146601a90067a1bbb9ddff3fde907f3afc8b2d36a66106375220d18c0f280"
+    },
+    {
+      "path": "tests/policies/pi0_pi05/test_pi0.py",
+      "sha256": "65f8de93f8e94771d657f552837be3d7be794570d69c894fc22c536c50bcd467"
+    },
+    {
+      "path": "tests/policies/pi0_pi05/test_pi05.py",
+      "sha256": "23bfd89964eae9d23123723ae055cc6fca02fc27bd77b5d54c9f81bdc0580c31"
+    },
+    {
+      "path": "tests/policies/xvla/test_xvla_original_vs_lerobot.py",
+      "sha256": "6ba7c2f94ed12dd3e5ba4abb20dce8d70dd914cd64bc040058af1513fb190b95"
+    },
+    {
+      "path": "media/readme/lerobot-logo-thumbnail.png",
+      "sha256": "72ee48061c2528eb9f6a1f163622d4805476a52c813bd03f2f32e32d89afd63e"
+    },
+    {
+      "path": "media/readme/so100_video.webp",
+      "sha256": "11857a0729814afa529571c30ad4acb9f8cf8f4fa743163d462cb31a10f9782b"
+    },
+    {
+      "path": "media/readme/robots_control_video.webp",
+      "sha256": "977b535598044cefbae8f5e9aef976dd98377e45575f95f3900d99a5d7ba8939"
+    },
+    {
+      "path": "media/readme/VLA_architecture.jpg",
+      "sha256": "a54f82e318e0a9c0c6bbd1ef099685518f001d5bf3a5f341d6d2090994e7cb43"
+    },
+    {
+      "path": "src/lerobot/__init__.py",
+      "sha256": "e9cf424c0656b89d285065a9344efd8149208950047f096f751db50e7d898bd7"
+    },
+    {
+      "path": "src/lerobot/__version__.py",
+      "sha256": "beb2aa5d785c7e7ccbcb910ec4688e2868423458e2a1aac7fd76c1e1a182a470"
+    },
+    {
+      "path": "src/lerobot.egg-info/PKG-INFO",
+      "sha256": "bf678250cd67f2ad93c5e4f1e12564d3ff70126a9115de68aa21af772feff87b"
+    },
+    {
+      "path": "src/lerobot.egg-info/SOURCES.txt",
+      "sha256": "8202fe52ee29a103360464014325dc9d6f9aa2986dc8da1ca2b29316fac480fc"
+    },
+    {
+      "path": "src/lerobot.egg-info/dependency_links.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "src/lerobot.egg-info/top_level.txt",
+      "sha256": "2ffc2f47edaf6a3e64608861273e1f70aad3d5455a4aacd5bc0aeafd5675d49b"
+    },
+    {
+      "path": "src/lerobot.egg-info/entry_points.txt",
+      "sha256": "099dcf3d7cb0d8f1a1bed2ef652cca19932b6223b77574cc367e466fcbf34041"
+    },
+    {
+      "path": "src/lerobot.egg-info/requires.txt",
+      "sha256": "ca3d4e0e1f2f18bb77ee1763e89bc6895586436375cedfaf283b4714a29f8e65"
+    },
+    {
+      "path": "src/lerobot/data_processing/__init__.py",
+      "sha256": "aeca598c36a771e076642c45fdf0eeddc08b016d552ad0bfdd5d49ddc6b996ce"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_edit_dataset.py",
+      "sha256": "1dc47668f13b07f16c6e37c1eb5c9f5b5d946510fc6a8a18588e5d8fce5027cc"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_setup_can.py",
+      "sha256": "3106ab86df6525c9256fa5aff0fd269b257ca13915049fad7c0b67edf0949231"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_imgtransform_viz.py",
+      "sha256": "1ef746c7853dba94ff8a871397c376506c3ed49f0eb9fb884ae73354677785b7"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_train_tokenizer.py",
+      "sha256": "83a5b3766c6101705259409f8181a1dff387af7ced107d9179ebd5e11f7f528e"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_dataset_viz.py",
+      "sha256": "2dfc2061241b8dfee4efc964bb22b6e03f361622eae241922b0d8acf99834643"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_replay.py",
+      "sha256": "f95bbe88dce6f9625f730dc3357e8b7b9e725e42373edb5e5802b64f600d806c"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_train.py",
+      "sha256": "30335d19bd861fac7d71516cfe95c3c3e24de1a250a153579d9dd784fea78a3b"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_eval.py",
+      "sha256": "cb0e1c2d891b93b41cb7b97921188fe2fd20ea6fa05675b87835b06c648ecce7"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_teleoperate.py",
+      "sha256": "fa47c505ed3c1a6e68616804412193a98d4ecb161db51cec3b459d6e311998e3"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_find_joint_limits.py",
+      "sha256": "ea783a97541c7190df03bf43c29233d56f1db8243596fc55a25d7870905061ab"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_find_cameras.py",
+      "sha256": "98a82292465c4be91927ddec1c30bd7d72eab9c7f8b2a7def1dc5fce4ca256d4"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_setup_motors.py",
+      "sha256": "f9be02464d5d57175e6d0e33165b6e17121e87ca0d1344843cd5da030d71e7a4"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_info.py",
+      "sha256": "0c2750f6d98bfadd23a9200f138461285f91e4f27a305754159d1e9517552b6d"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_calibrate.py",
+      "sha256": "c2f9081853b75b64e2ee6ae8322f6f9cf86e8f4008518987e27e6ee553cafda5"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_record.py",
+      "sha256": "47a5dca9e4d3143a22aba373978dc26637fb36a2309ea3b511355a7161b624de"
+    },
+    {
+      "path": "src/lerobot/scripts/lerobot_find_port.py",
+      "sha256": "a64de40270cdb6e48847af7898016a84f970914b3d1eb220854ff13b4349c907"
+    },
+    {
+      "path": "src/lerobot/utils/transition.py",
+      "sha256": "6b17122c4244ba2a91ab49c6fa0f73c36270c5c84940dd9bd7517ae95ba345cb"
+    },
+    {
+      "path": "src/lerobot/utils/rotation.py",
+      "sha256": "1b4c52538ec4ec06060145e5ff750ab3cf0d102291a982eeae2f927656bc14cd"
+    },
+    {
+      "path": "src/lerobot/utils/import_utils.py",
+      "sha256": "169313c58e0fb16d50fcc3377fb753b007e7c669b51198c500d9b6e81c68bc48"
+    },
+    {
+      "path": "src/lerobot/utils/rabc.py",
+      "sha256": "29a3ad1364e6cf16995934ed9136571f79f564b85e7aa1e4eac477e50087301a"
+    },
+    {
+      "path": "src/lerobot/utils/control_utils.py",
+      "sha256": "6855fe8956e6553e426bbd043c05c56d205cd0d05c835fd83b19a8c1ad1c1660"
+    },
+    {
+      "path": "src/lerobot/utils/visualization_utils.py",
+      "sha256": "604597817f66b9a405de9f8ba407c83e3af0e4f1da6f2c986626c70257c04906"
+    },
+    {
+      "path": "src/lerobot/utils/hub.py",
+      "sha256": "1981583e520bc73e221491459694d58ad1c1370537bf280968493b31c8e2c51f"
+    },
+    {
+      "path": "src/lerobot/utils/errors.py",
+      "sha256": "5bab3b68cbbc88a764daaa103c488a08dcf2d61ef5274931fa3d6013d2a2ec4a"
+    },
+    {
+      "path": "src/lerobot/utils/utils.py",
+      "sha256": "6d15ea2af3a80ae419af3d42d4264ff07bb769147b021a99f1a46cd51b728ac4"
+    },
+    {
+      "path": "src/lerobot/utils/constants.py",
+      "sha256": "a9dba3dc6f7db6e77b10c8bbf250ed670111425b9468f43bb51a5d0270d99458"
+    },
+    {
+      "path": "src/lerobot/utils/decorators.py",
+      "sha256": "4f92457a9a9e87d84b935b0b072869e92cde6be1c372f82ce485a07e7a853de2"
+    },
+    {
+      "path": "src/lerobot/utils/logging_utils.py",
+      "sha256": "809716075fbbffb4f528c38665c51b4b0308ba9cfaaed42f21a4da7d440e5e29"
+    },
+    {
+      "path": "src/lerobot/utils/random_utils.py",
+      "sha256": "3f3b373ad8ae7dd240c13eddc10c226836e31bd68bf0cd1765132599e482a17d"
+    },
+    {
+      "path": "src/lerobot/utils/train_utils.py",
+      "sha256": "ed0f839e6caf51ff6f79a1c8f750eb1a144f83c40a92366a5d32da0921e5b82b"
+    },
+    {
+      "path": "src/lerobot/utils/io_utils.py",
+      "sha256": "3c04da95df2f211faefec3527603596bcf4231072919d6a8d4bcaa3436a14d5c"
+    },
+    {
+      "path": "src/lerobot/utils/robot_utils.py",
+      "sha256": "879bbee3825a9df374a71fd78a622ed8099a0a6a2f364a143be9a3c23b726bb3"
+    },
+    {
+      "path": "src/lerobot/motors/encoding_utils.py",
+      "sha256": "5285eb2b3f62399e95a2fa4b2fcab631bcad547124e8cc9b6a61525148bc924a"
+    },
+    {
+      "path": "src/lerobot/motors/motors_bus.py",
+      "sha256": "a6c1f5a560840fce7e23bed02fad016ab0e41fccdd96dd116332258a20a94e7a"
+    },
+    {
+      "path": "src/lerobot/motors/__init__.py",
+      "sha256": "7c08c186384a43761faadc63d20b9fd0e634ce577697b8cabde77d040c627aaf"
+    },
+    {
+      "path": "src/lerobot/motors/calibration_gui.py",
+      "sha256": "ab3ec60f69fce544ca7adc8c71b77039d30f48153f1c72a4abe0918f6201cb0b"
+    },
+    {
+      "path": "src/lerobot/rl/wandb_utils.py",
+      "sha256": "ca5aecaea55b52e5e3019427385741a77c16d9ee8f0286613263390cb16c1c31"
+    },
+    {
+      "path": "src/lerobot/rl/actor.py",
+      "sha256": "099b99de479b04666d545f0a6dabf9f7cc9f10cce24e32e11a69829aaad58145"
+    },
+    {
+      "path": "src/lerobot/rl/crop_dataset_roi.py",
+      "sha256": "10b16c2abf9ad3e32f1e9157ac22bb81f4002db29ab579f3dc523ee3d7ea5b82"
+    },
+    {
+      "path": "src/lerobot/rl/joint_observations_processor.py",
+      "sha256": "a345b28ad97ff14ee540640cf5b41627ed06769cc76f6f4496d6a050fecc202a"
+    },
+    {
+      "path": "src/lerobot/rl/gym_manipulator.py",
+      "sha256": "0c8bca5bd17b4b45ab33689c5ff3a82d23ff64279bd8182626ac077f610f7382"
+    },
+    {
+      "path": "src/lerobot/rl/eval_policy.py",
+      "sha256": "c559fffa395d8af484fdfa06ffc865e63814aec23fc80e7ceb5d9d3481327380"
+    },
+    {
+      "path": "src/lerobot/rl/queue.py",
+      "sha256": "fbfc76286938c6b3e707f78a69875f5fbd29ad09378af393303ded3bb40fb20a"
+    },
+    {
+      "path": "src/lerobot/rl/learner.py",
+      "sha256": "2c63b34ffe0f8f71b780287632df029a96cf5f06d49436a84c5aaf1c08daefa6"
+    },
+    {
+      "path": "src/lerobot/rl/buffer.py",
+      "sha256": "7d33968f96f8240b9cfb1e359bd97cac472afde58fe87fd9c3452f98012f01c7"
+    },
+    {
+      "path": "src/lerobot/rl/learner_service.py",
+      "sha256": "491b0bd9e2da92b5c93d7341d2daee3ff6c2f047085e5372f6477f5ccd3f8e23"
+    },
+    {
+      "path": "src/lerobot/rl/process.py",
+      "sha256": "6108e142cfbed7602b3d4d5edf16e83df464fd42ef71237b367e55569cf70a5c"
+    },
+    {
+      "path": "src/lerobot/transport/utils.py",
+      "sha256": "2e438e199d85c7b4176e11397cf581c7de9f434dff84d2d0d2d2bd7b5988c202"
+    },
+    {
+      "path": "src/lerobot/transport/services_pb2_grpc.py",
+      "sha256": "3b1cde1f24d00b536e113074385a1bd2f0948d0e8ce2c5cb543ca4debbb377ba"
+    },
+    {
+      "path": "src/lerobot/transport/services_pb2.py",
+      "sha256": "06efc0dd44bb4a1e532612d6f7994176214028802ecbfd96e9d79376da74657c"
+    },
+    {
+      "path": "src/lerobot/transport/services.proto",
+      "sha256": "a3c2c3aee953851f779f052815e7da2c398b2cbe367a47ec3b80cbad902aaef7"
+    },
+    {
+      "path": "src/lerobot/async_inference/configs.py",
+      "sha256": "9b3514b3c09727dc1336d9586e68bd2c276c401ed34bffb69f9e7f67f0f7f342"
+    },
+    {
+      "path": "src/lerobot/async_inference/helpers.py",
+      "sha256": "e9d80e4956ad20db1df848151b1f625e25fc5dbd2a1c186378c96901d0eaadb9"
+    },
+    {
+      "path": "src/lerobot/async_inference/constants.py",
+      "sha256": "6ff4bac2a25eff10bc3e0b97d07c07a515ad70530336fdbacd4fe9a0364b0ee9"
+    },
+    {
+      "path": "src/lerobot/async_inference/policy_server.py",
+      "sha256": "146cb898e29f55ce95f94195dff05995507f08fda58559dd8c6d6aec82c4d93b"
+    },
+    {
+      "path": "src/lerobot/async_inference/robot_client.py",
+      "sha256": "42bee997bec0bc6bbbdad674c8f622347277a2baaba13af02f250bee49db1b67"
+    },
+    {
+      "path": "src/lerobot/robots/utils.py",
+      "sha256": "a311bbb641b1f75dd6509df3d2305497858acaa8d8169e3344297290e3fecbf9"
+    },
+    {
+      "path": "src/lerobot/robots/__init__.py",
+      "sha256": "809dfb9fa15249bf33fa3d400d1e776450e59300829c9b1841a841ccf31fbc17"
+    },
+    {
+      "path": "src/lerobot/robots/robot.py",
+      "sha256": "d212206036fe3ef7a0befe95b53be52785199fcbd8d99e3350fa0514a0cbf648"
+    },
+    {
+      "path": "src/lerobot/robots/config.py",
+      "sha256": "65f420e72414df8717d4d2d0788d7e3584d7420f616e39b0d07af2098a877094"
+    },
+    {
+      "path": "src/lerobot/datasets/aggregate.py",
+      "sha256": "a029eb16be3bca7d3d3715f96867612e0eaa6f8f509a26c63253b073813d4a64"
+    },
+    {
+      "path": "src/lerobot/datasets/sampler.py",
+      "sha256": "0202ce63101050dc8b28f00cf68b9c28bf66d9c5c2f9e05d1e7c9e24d4905d19"
+    },
+    {
+      "path": "src/lerobot/datasets/pipeline_features.py",
+      "sha256": "f3857ec658c1de8debc20aa711389dfbc8129a17b3f018f9644acf96b62f099d"
+    },
+    {
+      "path": "src/lerobot/datasets/compute_stats.py",
+      "sha256": "941dd3c6d0f14704e95123c9a9c49270b2b5ea589f712b734adb4ee03b8736b2"
+    },
+    {
+      "path": "src/lerobot/datasets/card_template.md",
+      "sha256": "f237ac3b54c0a87c99248fcc60d10abe4677c0e8775561f91348cd575819b9ff"
+    },
+    {
+      "path": "src/lerobot/datasets/image_writer.py",
+      "sha256": "2e39a940baa54fef5e09957b1151ebe31bfc74184fe631c74a25bcd2589f43f8"
+    },
+    {
+      "path": "src/lerobot/datasets/backward_compatibility.py",
+      "sha256": "e6fc804f37f7968b1a7bf8d01a21360c59b89ee8de8ac38415deb8bf339d8caa"
+    },
+    {
+      "path": "src/lerobot/datasets/dataset_tools.py",
+      "sha256": "15279fc2fa06dd1c6ca3da067e780cda4e08d3b22f633f585af2ea2c787469bb"
+    },
+    {
+      "path": "src/lerobot/datasets/lerobot_dataset.py",
+      "sha256": "e0930de3c1dac7aedec3458cdabc6f5838e61c020927de2f7fe41308bd639809"
+    },
+    {
+      "path": "src/lerobot/datasets/utils.py",
+      "sha256": "3b1a2552701faee5fd3d4149667129b94db52d608e9c07d8fff5e102c59dc569"
+    },
+    {
+      "path": "src/lerobot/datasets/transforms.py",
+      "sha256": "057df573caf198a08ee8480ad2e3eaa85e5eef829c07d147c6b60e6e07bed44e"
+    },
+    {
+      "path": "src/lerobot/datasets/online_buffer.py",
+      "sha256": "f60e138d014767e373b16d2c5fe837aee21bd6248bd2f69898064e0313403991"
+    },
+    {
+      "path": "src/lerobot/datasets/factory.py",
+      "sha256": "adc786de92b9d79f84f1b950e141fce7ad28d48c885be3b66176a3f6d36c63ef"
+    },
+    {
+      "path": "src/lerobot/datasets/streaming_dataset.py",
+      "sha256": "7005cb579faabd91473033c5ed5728761f084e49f1d08d42fbb75a1b8d93ec19"
+    },
+    {
+      "path": "src/lerobot/datasets/video_utils.py",
+      "sha256": "90f93dc671edbb21c8ec6f57591f2c961ef64e08ec944abcc37157c579eaf842"
+    },
+    {
+      "path": "src/lerobot/envs/metaworld.py",
+      "sha256": "94d4c98fc4358d6ead2c7ac386890982a415f214d122248fe81448eff0f2e9dd"
+    },
+    {
+      "path": "src/lerobot/envs/configs.py",
+      "sha256": "dcfe69fab352f1b558c737946926601feee17f309ec968055303d1f584d5c8b9"
+    },
+    {
+      "path": "src/lerobot/envs/metaworld_config.json",
+      "sha256": "29a6eb981413975da05d37f0033b3c51b82fdf8d6350eb863d0c530a2b1c9b94"
+    },
+    {
+      "path": "src/lerobot/envs/utils.py",
+      "sha256": "89a5d704564689fd1024472e68400c1de35cfaa6610413cc542b0ba0f3152e07"
+    },
+    {
+      "path": "src/lerobot/envs/__init__.py",
+      "sha256": "445d8bbc96fe2a50870e35e966301580d12d2d8fbd69c3eb2c4d9b21140e697e"
+    },
+    {
+      "path": "src/lerobot/envs/factory.py",
+      "sha256": "f67a673ec4ddfb428213f65aca83ab05b7962e21bf37071976697fe571d5e0ce"
+    },
+    {
+      "path": "src/lerobot/envs/libero.py",
+      "sha256": "02bc214e6b011c7f64b25604c97f1f083a96e151fa239fdc137433b356e542f3"
+    },
+    {
+      "path": "src/lerobot/policies/utils.py",
+      "sha256": "cd512e8d484d6c35da8654cc26f63f142a77a27115fd2649773efa2c1f04388d"
+    },
+    {
+      "path": "src/lerobot/policies/__init__.py",
+      "sha256": "dfdb10aa986c259e9ceb13dfa1bde6a4919c5ff0884bee19174afcebdeb4db42"
+    },
+    {
+      "path": "src/lerobot/policies/factory.py",
+      "sha256": "79caf2df45cce4d1b1551a156063f2098b5fa29ffc9e3ed62de60fc64d5f1c95"
+    },
+    {
+      "path": "src/lerobot/policies/pretrained.py",
+      "sha256": "db9188fba4368234c231e84d4733de36e044391ef72592dd1e3a70b6e370a045"
+    },
+    {
+      "path": "src/lerobot/optim/schedulers.py",
+      "sha256": "47af5671a9d9c79ecdb5101e92e6b9f127331127549497047f691258f10b1020"
+    },
+    {
+      "path": "src/lerobot/optim/__init__.py",
+      "sha256": "4f485904e4eca422d708f5507810d51ae99a614dd41aac98127ed6019b9b3cc5"
+    },
+    {
+      "path": "src/lerobot/optim/optimizers.py",
+      "sha256": "9bce2b9e5651b9a4f72aecbb8f54ef3a1143021217d261972bd505126e94f97b"
+    },
+    {
+      "path": "src/lerobot/optim/factory.py",
+      "sha256": "3c655595e9cdb0665bdd711a645281b1d94b3807a892599e10ac5c61295af631"
+    },
+    {
+      "path": "src/lerobot/teleoperators/teleoperator.py",
+      "sha256": "cd4e8c25f8f3efafec3611ea367fe4247dfdb2dc0cf2f14cc7fa9db892aa0c0b"
+    },
+    {
+      "path": "src/lerobot/teleoperators/utils.py",
+      "sha256": "4054118148dd2035a7c20aadff07aa1d7f1a5ff0f61685ab7bdd85b7d1380ac7"
+    },
+    {
+      "path": "src/lerobot/teleoperators/__init__.py",
+      "sha256": "cc563d12d06c98307f071f7de8c0e0e1d190c4c0666749ca99f6c9283ae8d97d"
+    },
+    {
+      "path": "src/lerobot/teleoperators/config.py",
+      "sha256": "cc9bacc17230e4c0d1532ee4c998a9d2aa4d6ec374f4606e7f447f1e3c94ba28"
+    },
+    {
+      "path": "src/lerobot/cameras/configs.py",
+      "sha256": "0d6b155f6edf76cef332898e6c815c225c855dfb24db8c7afc48201329ba8acb"
+    },
+    {
+      "path": "src/lerobot/cameras/camera.py",
+      "sha256": "75e10b3203bcaef522a1c4e4ba479daf5e78c3d7503e96691396215a16c2a718"
+    },
+    {
+      "path": "src/lerobot/cameras/utils.py",
+      "sha256": "f3918b33757f3708709beb651a77e855291d7f20b6a9be425addb076cf2491f8"
+    },
+    {
+      "path": "src/lerobot/cameras/__init__.py",
+      "sha256": "8a5747f51f94725107cb973050188dc05780ac6bbb53919779be960553c1be93"
+    },
+    {
+      "path": "src/lerobot/model/kinematics.py",
+      "sha256": "356645b7f6c68172055c13642791d5eddcb5df49e4fdea12780e4b1bc01371fe"
+    },
+    {
+      "path": "src/lerobot/templates/lerobot_modelcard_template.md",
+      "sha256": "75166fb078b80394e70ce03099769d4a19186a1ceac238fff874ec477958640f"
+    },
+    {
+      "path": "src/lerobot/processor/converters.py",
+      "sha256": "2b97131f34c4881e93e7b864091637fac8ce1642a6620ed9330e84372e113640"
+    },
+    {
+      "path": "src/lerobot/processor/core.py",
+      "sha256": "753621e70b54641c34baccd9ad7dc65a29c45850b358e4fa0b55f54f5e9304ad"
+    },
+    {
+      "path": "src/lerobot/processor/observation_processor.py",
+      "sha256": "7b3735a82f5c8bc52c119a1480107c3cba5afd612b0ff5c5e55731c27fee9eb3"
+    },
+    {
+      "path": "src/lerobot/processor/delta_action_processor.py",
+      "sha256": "20618218cc5e409f37bade516ea83d702ae00abe50a4e7bcaaa8b13ce2fc7ac6"
+    },
+    {
+      "path": "src/lerobot/processor/policy_robot_bridge.py",
+      "sha256": "8d00ad845d184570d3071f45ccf3bebfde61412713f7b6d4d94b193f25d094d9"
+    },
+    {
+      "path": "src/lerobot/processor/device_processor.py",
+      "sha256": "be81c88d9e7ea304ec49a42ea80557feb08b252bec82eb3c9eb8faf148397d33"
+    },
+    {
+      "path": "src/lerobot/processor/pipeline.py",
+      "sha256": "2fc286b0b541ccefd95c373ad67324a6859a951af306171402d08cb3f9061936"
+    },
+    {
+      "path": "src/lerobot/processor/gym_action_processor.py",
+      "sha256": "f8e1e8d8ce44b411f2f371b3baceaaa7f933bbe39680c9fd942895d75fb9bf22"
+    },
+    {
+      "path": "src/lerobot/processor/__init__.py",
+      "sha256": "a83594d79eb54532e6b0f0d945f422f88a26ce0db23b29cf803f24bf80048b2c"
+    },
+    {
+      "path": "src/lerobot/processor/normalize_processor.py",
+      "sha256": "5b610f5be7d3bcf371d52e3ccca433846c9ef49adca84ba5ef3c54ad8809338e"
+    },
+    {
+      "path": "src/lerobot/processor/factory.py",
+      "sha256": "23bd0d47e9baeeeea61b4c622388e844a1039fbf7cb8b2367f6e0975d3bf87fb"
+    },
+    {
+      "path": "src/lerobot/processor/migrate_policy_normalization.py",
+      "sha256": "11c39295c54467617f90624048be8074ece9fbd023e0ba9e39cad9773f0547c7"
+    },
+    {
+      "path": "src/lerobot/processor/env_processor.py",
+      "sha256": "6d6622d69835f0c3c73dd8700d9b9e9af9e50fc4bebaaf3e87322a09d480ba36"
+    },
+    {
+      "path": "src/lerobot/processor/rename_processor.py",
+      "sha256": "11c4a25620260fc281cdeef50968280c7d4fcfe549cd272edf638763dcc4eca4"
+    },
+    {
+      "path": "src/lerobot/processor/hil_processor.py",
+      "sha256": "fd019663ac727a0b9e50398ac8e779c39ca53feade079fb8073b42928eafc721"
+    },
+    {
+      "path": "src/lerobot/processor/batch_processor.py",
+      "sha256": "305843a6bf98ddda243422b577ea10cbe105be71d08c5611a8aed3b2bb27d832"
+    },
+    {
+      "path": "src/lerobot/processor/tokenizer_processor.py",
+      "sha256": "b3a235e3a5f9839dfff76d670bd9494e4c51ab6da2127cca172bd7ae404a95d5"
+    },
+    {
+      "path": "src/lerobot/configs/eval.py",
+      "sha256": "bcc3efdfd34f3f7bb7e33f43cd3aa97477ef71c5e640e4882efff2fdd5c5a97f"
+    },
+    {
+      "path": "src/lerobot/configs/parser.py",
+      "sha256": "883716eeac54af1bd6d49d932f0df23a51e7dcfc545001b224596a3a7f4c3b6b"
+    },
+    {
+      "path": "src/lerobot/configs/default.py",
+      "sha256": "529e46f5dfb926eed17c128f9fac739598f677bdbda51138f11389d71073f236"
+    },
+    {
+      "path": "src/lerobot/configs/train.py",
+      "sha256": "996a5787b8e2141f56a6163b45b7131be63606091d5ec4f5b7c3a8bae1aa4e63"
+    },
+    {
+      "path": "src/lerobot/configs/policies.py",
+      "sha256": "38c2de5bfb1d9a729d1f3e3ea97838c99626289350de50a6324c669a85c98e0e"
+    },
+    {
+      "path": "src/lerobot/configs/types.py",
+      "sha256": "1354e7d24b19d5d4970064104f76d8c85570c204bf2d09e2b4402f93a994ad99"
+    },
+    {
+      "path": "src/lerobot/data_processing/sarm_annotations/subtask_annotation.py",
+      "sha256": "542e7ef92ced2ebd9055945b9e6fadf83eae9ba94bb4583f663cf5861a659ea1"
+    },
+    {
+      "path": "src/lerobot/data_processing/sarm_annotations/__init__.py",
+      "sha256": "aeca598c36a771e076642c45fdf0eeddc08b016d552ad0bfdd5d49ddc6b996ce"
+    },
+    {
+      "path": "src/lerobot/motors/damiao/damiao.py",
+      "sha256": "92b919f1bb47e9615df90e7872c58f415a59d66b54fe9a0c54e20da6cd1b6f2b"
+    },
+    {
+      "path": "src/lerobot/motors/damiao/tables.py",
+      "sha256": "3c2be95b29fe25e2bb4c28384271ecd595e6aa1f15197ea4a1aa97568461089b"
+    },
+    {
+      "path": "src/lerobot/motors/damiao/__init__.py",
+      "sha256": "f135c5d1bd661d8bea9356ea637f3c333742e6473635cf3a0edfe4f95f80453b"
+    },
+    {
+      "path": "src/lerobot/motors/dynamixel/tables.py",
+      "sha256": "65dfec2f2974411ed71b62dd28baa7ab4d4c1e5d94c60f2d56df4946e81734c1"
+    },
+    {
+      "path": "src/lerobot/motors/dynamixel/dynamixel.py",
+      "sha256": "a8db3aae77fabd5d5acc472aae5988467ed5c0244a4c2b1cba000f1d4ddb7635"
+    },
+    {
+      "path": "src/lerobot/motors/dynamixel/__init__.py",
+      "sha256": "080d8b76d52d7674bf7528b0232777b330d0d88d444be95fb1d318b7c19fedd0"
+    },
+    {
+      "path": "src/lerobot/motors/feetech/feetech.py",
+      "sha256": "1dd81201ebd03ad39a6d46a034d99f21583dcefa81e9f099d3dc0a184dce56a8"
+    },
+    {
+      "path": "src/lerobot/motors/feetech/tables.py",
+      "sha256": "71f7f7beb17169781bd26a33b165ed4c5c3df7b9c477d36860f9d6011eb00428"
+    },
+    {
+      "path": "src/lerobot/motors/feetech/__init__.py",
+      "sha256": "17b9e22b45fd71e4e04db7a072f8d32fa0a01de91e906b8b9746a1c83e7bbe8c"
+    },
+    {
+      "path": "src/lerobot/motors/robstride/tables.py",
+      "sha256": "cae6df57ae3516044ed083b0e81b6402fee4c676cc50c9e02552f55b5b47fbb8"
+    },
+    {
+      "path": "src/lerobot/motors/robstride/robstride.py",
+      "sha256": "1bb894e0d3762d20255dc67e186df20e28b95ece32d4f8d136a0dff5a5ab0a36"
+    },
+    {
+      "path": "src/lerobot/motors/robstride/__init__.py",
+      "sha256": "24ce4fd9afb1775c811fd4c0c4178fcb9ec8b361bc9bd10b0e402a4dbfe4341d"
+    },
+    {
+      "path": "src/lerobot/robots/so_follower/so100.md",
+      "sha256": "f25586ff96ba4af49184ce62e9a6861307ef03cde132b777e45da77b72e234c2"
+    },
+    {
+      "path": "src/lerobot/robots/so_follower/so101.md",
+      "sha256": "6a755e96da7db54b9069aa107ec0210512e14125770fc20e4c5f3d4c2b989da3"
+    },
+    {
+      "path": "src/lerobot/robots/so_follower/robot_kinematic_processor.py",
+      "sha256": "41e525d75839a2b247505c9a0002228e1afad6017edc813cbcbaebe48f230400"
+    },
+    {
+      "path": "src/lerobot/robots/so_follower/__init__.py",
+      "sha256": "71e85ab1303c4c02817b2318cdbf9f9a7a06bd7dab5c39ffdd50ed2557827129"
+    },
+    {
+      "path": "src/lerobot/robots/so_follower/so_follower.py",
+      "sha256": "4f8fc0703aa49589e65efcc9c30ef325535d0818552a0c1d4df98c2352fe4abc"
+    },
+    {
+      "path": "src/lerobot/robots/so_follower/config_so_follower.py",
+      "sha256": "c46a05fec9f5f6049269156f5e4b1dcd01195f4a3295552c23f3a9327aecf7df"
+    },
+    {
+      "path": "src/lerobot/robots/koch_follower/config_koch_follower.py",
+      "sha256": "cf0fee4174c7a52527bd54ac696c48989d3856cb27a48049d18eca6393b880b0"
+    },
+    {
+      "path": "src/lerobot/robots/koch_follower/__init__.py",
+      "sha256": "388106434f9b1554b9943422ae413127d0b4e81b934d99cd0ede32384046fe67"
+    },
+    {
+      "path": "src/lerobot/robots/koch_follower/koch.mdx",
+      "sha256": "b5e0c2b1c5c3cc249fa2f36f519eb0ec44762995df8f39592f7d44714bdf8ba3"
+    },
+    {
+      "path": "src/lerobot/robots/koch_follower/koch_follower.py",
+      "sha256": "52cb0d307de8208909370be8651c60909bffd8de74adcd677ab43a06ed48fbb0"
+    },
+    {
+      "path": "src/lerobot/robots/hope_jr/__init__.py",
+      "sha256": "e89db6b32acbf2edb7a936cf906a0e29be4150e2ad7a3be324be8e05bb0ec6e4"
+    },
+    {
+      "path": "src/lerobot/robots/hope_jr/hope_jr.mdx",
+      "sha256": "7208b9ba6380b1240cf5a5dbf8557948e83c48645d751a66786400f558dc5b7b"
+    },
+    {
+      "path": "src/lerobot/robots/hope_jr/hope_jr_hand.py",
+      "sha256": "a59a944317b0236e9e294e664efb4f490b36127964ea435337a6bfa30bec67cf"
+    },
+    {
+      "path": "src/lerobot/robots/hope_jr/hope_jr_arm.py",
+      "sha256": "43d1cbd102ffed86f00f9340288b3281b84bee662f3c5c74d1f0fb49b4ae0b79"
+    },
+    {
+      "path": "src/lerobot/robots/hope_jr/config_hope_jr.py",
+      "sha256": "2667fb096d4614bde2a090925f640423db178e4edd6b7f339a3187a7530f2310"
+    },
+    {
+      "path": "src/lerobot/robots/lekiwi/config_lekiwi.py",
+      "sha256": "1539fafbd4894169d26f0303c1e1b78dd7fcb967935092aae267b0b0cd32b040"
+    },
+    {
+      "path": "src/lerobot/robots/lekiwi/__init__.py",
+      "sha256": "8f54519fae5e757bf367c327d02f23974fe12723b24e1e9eeb85b40a985c8812"
+    },
+    {
+      "path": "src/lerobot/robots/lekiwi/lekiwi.mdx",
+      "sha256": "805e9f28dee9aabba51c3ad8210ce1705326e3ff9d2f842b088ba6ff30487f77"
+    },
+    {
+      "path": "src/lerobot/robots/lekiwi/lekiwi_client.py",
+      "sha256": "51d22d91529019cc5e3a1be8dbb03b272a665526299d507ca47a2502cae37496"
+    },
+    {
+      "path": "src/lerobot/robots/lekiwi/lekiwi_host.py",
+      "sha256": "c4d6a3d00ea35b9e2154f9a213ec49b329dffc7b4c0c3491b8371177cd2209af"
+    },
+    {
+      "path": "src/lerobot/robots/lekiwi/lekiwi.py",
+      "sha256": "fa7e1ad3a695b2f910edcb2ed550da3a5d96a496a622e20407582d2e6f4a0041"
+    },
+    {
+      "path": "src/lerobot/robots/reachy2/robot_reachy2.py",
+      "sha256": "5ead84341a0aa45e8f1f9e1d342deef75b82d9dc77d4b111e6d4f3a1c0b1f013"
+    },
+    {
+      "path": "src/lerobot/robots/reachy2/__init__.py",
+      "sha256": "b6e4622e9216ec243cdf568bd65afb792996610877ad92387c4e2cd2dcb32a7f"
+    },
+    {
+      "path": "src/lerobot/robots/reachy2/configuration_reachy2.py",
+      "sha256": "4cbe415e46c8f758bcc92b869b1affd17d68f0151e6feca7ceddfe625e38505f"
+    },
+    {
+      "path": "src/lerobot/robots/bi_so_follower/__init__.py",
+      "sha256": "39fb2620f85c45aacbf6c472adfa2f2ca57173e1df1159d71d9a62334ba7a6a7"
+    },
+    {
+      "path": "src/lerobot/robots/bi_so_follower/bi_so_follower.py",
+      "sha256": "e005bbd27759572b6a4834c8902803bebb7bcdadb6a1ab87069263c5c2e0fd3b"
+    },
+    {
+      "path": "src/lerobot/robots/bi_so_follower/config_bi_so_follower.py",
+      "sha256": "c8d6bd49f916233c5f51090f90e0acff153d3f6581e85177745b2367d3245b68"
+    },
+    {
+      "path": "src/lerobot/robots/openarm_follower/openarm_follower.py",
+      "sha256": "d317afd613b82df916c79815209fd9de0b7cf20265aa5aab37adb088918f63c7"
+    },
+    {
+      "path": "src/lerobot/robots/openarm_follower/__init__.py",
+      "sha256": "b06311aa94e353413db7fdee1e2cae290ecc53ea42e95aad50ba86fdb82f50d6"
+    },
+    {
+      "path": "src/lerobot/robots/openarm_follower/config_openarm_follower.py",
+      "sha256": "5c10479aa82177594f3f9c00eee4d92e9b05748c11249e2515f83ebe460572ad"
+    },
+    {
+      "path": "src/lerobot/robots/earthrover_mini_plus/config_earthrover_mini_plus.py",
+      "sha256": "31fc0be35ec4e94c3f96135ac8757ccb1bb22062eb8bdc4fa3d16f6f5c11e68e"
+    },
+    {
+      "path": "src/lerobot/robots/earthrover_mini_plus/robot_earthrover_mini_plus.py",
+      "sha256": "01c756be49b2fbf02cf2d624dba7f75b8c0964f5fe06a1ed2f57bc25eb37eaaf"
+    },
+    {
+      "path": "src/lerobot/robots/earthrover_mini_plus/__init__.py",
+      "sha256": "5d8d6aaa64e48a99bad94c6d739f0917929bc60633b70d57f54b2ab4e24f52ac"
+    },
+    {
+      "path": "src/lerobot/robots/earthrover_mini_plus/earthrover_mini_plus.mdx",
+      "sha256": "f0e8ad38c49d1e750b118e5e6241ea8ecc2e8a574477cd424e56029dd6781aed"
+    },
+    {
+      "path": "src/lerobot/robots/unitree_g1/g1_utils.py",
+      "sha256": "e235392180b05ef7e2a4c5f26de9dfab011c0687a1f96723f78043573f0b6ede"
+    },
+    {
+      "path": "src/lerobot/robots/unitree_g1/unitree_sdk2_socket.py",
+      "sha256": "4249651755db97ca3ba5969953a985debcae2036a6b637e2bf5e89fb4b9c0670"
+    },
+    {
+      "path": "src/lerobot/robots/unitree_g1/run_g1_server.py",
+      "sha256": "3b628fd71d0afa5e5a22bcb32efa1d4bb7aa8623dfba1eeefc993ee4405e21aa"
+    },
+    {
+      "path": "src/lerobot/robots/unitree_g1/config_unitree_g1.py",
+      "sha256": "1037c8a19fc5abf914b7cc0209978c43a123281e824d085b6aa6ca22a66c1774"
+    },
+    {
+      "path": "src/lerobot/robots/unitree_g1/robot_kinematic_processor.py",
+      "sha256": "58eb581a4f57ea4ad2731beda532cf4dd5722ae0c3a09b7e4d413198f68fd77c"
+    },
+    {
+      "path": "src/lerobot/robots/unitree_g1/__init__.py",
+      "sha256": "81f82ab2bd178d063dc989b54ecd12a4f3b03720ac3b74d66ec7e98a2d9ebe8f"
+    },
+    {
+      "path": "src/lerobot/robots/unitree_g1/unitree_g1.py",
+      "sha256": "a414a6ddd748068b4220413a604f8d6ab4af43c91b10d3547f4c98d1f98d27cf"
+    },
+    {
+      "path": "src/lerobot/robots/bi_openarm_follower/bi_openarm_follower.py",
+      "sha256": "3f06fc6f6f69c087bc95f28da59bb7a0f5a650307bd38871a754c1d8ddb51f7d"
+    },
+    {
+      "path": "src/lerobot/robots/bi_openarm_follower/__init__.py",
+      "sha256": "2645f2e7bb06d30fc9f472a2cbb85fe5bb4e595086ad66110d27f5512c1b8c5d"
+    },
+    {
+      "path": "src/lerobot/robots/bi_openarm_follower/config_bi_openarm_follower.py",
+      "sha256": "2f397757ce6f6f0ad4f4166b8bcddfcbf9942a3864208b5d359bad3949ada09f"
+    },
+    {
+      "path": "src/lerobot/robots/omx_follower/omx_follower.py",
+      "sha256": "12235b383b54ba51cbd1744b8e572ca685f380278b35ed9b94826f5a9bed2931"
+    },
+    {
+      "path": "src/lerobot/robots/omx_follower/__init__.py",
+      "sha256": "fdfaa6ea6c598cc7a83ca910211ecdbcec6325d4c1de43ca53ce4cda10d493e3"
+    },
+    {
+      "path": "src/lerobot/robots/omx_follower/config_omx_follower.py",
+      "sha256": "784763a0ce77aa357983918c7b69490c8053ae4a6a0d559c81f186e71f15f9aa"
+    },
+    {
+      "path": "src/lerobot/datasets/push_dataset_to_hub/utils.py",
+      "sha256": "c46e3ba71f434966a79d723f5a696497c057b655fab5bdc47bf4b6100554fb5a"
+    },
+    {
+      "path": "src/lerobot/datasets/v30/augment_dataset_quantile_stats.py",
+      "sha256": "60dc1a50d7cb525e18a05716bc538e1464fed72e72207d4f4bf4213586ee312f"
+    },
+    {
+      "path": "src/lerobot/datasets/v30/convert_dataset_v21_to_v30.py",
+      "sha256": "83ae76a4f3adc291de200723e63958fe267fa8596c72292bc9a7c48f34f7717a"
+    },
+    {
+      "path": "src/lerobot/policies/diffusion/processor_diffusion.py",
+      "sha256": "3a2b156a1997faf7d129b636f062c97d8f64ad1d5c16727491d4f3d2fc9e12a8"
+    },
+    {
+      "path": "src/lerobot/policies/diffusion/README.md",
+      "sha256": "0cae7913f1322708cd024ebc0bd07f4736ca2ba3bf52cdcc3a90999f76116b5e"
+    },
+    {
+      "path": "src/lerobot/policies/diffusion/modeling_diffusion.py",
+      "sha256": "3692491e0306bb505465c4ac76de3cce6e4a0ff5cd900b26b4c4c1e3ab7261a4"
+    },
+    {
+      "path": "src/lerobot/policies/diffusion/configuration_diffusion.py",
+      "sha256": "0911972c28b6b8c6187732e926888a9263b87b4bc68d1fa2b39282349188b9ac"
+    },
+    {
+      "path": "src/lerobot/policies/rtc/debug_visualizer.py",
+      "sha256": "06d9ca5c9ce6ed61dc7ac772e91a56513445ab4e6be27e239ef8a252480f1b5c"
+    },
+    {
+      "path": "src/lerobot/policies/rtc/README.md",
+      "sha256": "5a00a77a749a9bf9d0b6d2bd2f21005f159cbdb136db042165223fc0d1311a18"
+    },
+    {
+      "path": "src/lerobot/policies/rtc/debug_tracker.py",
+      "sha256": "8463c4adceb9629c5ce580d5969a593091c936de779c02773a9a0b2563621921"
+    },
+    {
+      "path": "src/lerobot/policies/rtc/modeling_rtc.py",
+      "sha256": "9de19b2548daf2233dfba8f8a74e06b98659598d50d2c54c002df359bb8e61a5"
+    },
+    {
+      "path": "src/lerobot/policies/rtc/latency_tracker.py",
+      "sha256": "34ec377bc004a7e585a2cfb2eaf898169bf7eb9bb2ec25f34615266ae1f40f42"
+    },
+    {
+      "path": "src/lerobot/policies/rtc/action_queue.py",
+      "sha256": "a3c26e56626dbc7aeae848c5d085ea8aaf11b2da08fcf3eee225e59a16394cae"
+    },
+    {
+      "path": "src/lerobot/policies/rtc/configuration_rtc.py",
+      "sha256": "a292ce9b9afef4e06bb978554d250357af65d25742cfa848370f0ef3b5c1fe48"
+    },
+    {
+      "path": "src/lerobot/policies/sarm/sarm_utils.py",
+      "sha256": "529c74f5f97506b5dbcf29cd70ec43c43c2c3f2d7797f6ec324ac2dd914e704d"
+    },
+    {
+      "path": "src/lerobot/policies/sarm/compute_rabc_weights.py",
+      "sha256": "d4029783a051deaa3e3806eb4bc3101153e224aba4d2ffb333abc348958783f0"
+    },
+    {
+      "path": "src/lerobot/policies/sarm/modeling_sarm.py",
+      "sha256": "9f26fad4a40cf61fe017bd1c96fe085ab03a1d37647031cde4571406674fc620"
+    },
+    {
+      "path": "src/lerobot/policies/sarm/README.md",
+      "sha256": "052d6d7e045bdad8aa2f575ed774da388a4032a6ac85ade7154a23df733e0ef5"
+    },
+    {
+      "path": "src/lerobot/policies/sarm/configuration_sarm.py",
+      "sha256": "312bf67cc2afaf5615a04899244682527629f8b82a3e5c7279b40426a33ff16d"
+    },
+    {
+      "path": "src/lerobot/policies/sarm/processor_sarm.py",
+      "sha256": "71b8d32a5cfe532fd52ea87836d1cab165fc7f5ebd18af70422164e06101bc2b"
+    },
+    {
+      "path": "src/lerobot/policies/pi05/README.md",
+      "sha256": "c3fecf4b33703379bb0af147622e93aa6323f16d79806d3828c7aaf72b7d5a1c"
+    },
+    {
+      "path": "src/lerobot/policies/pi05/__init__.py",
+      "sha256": "e70e27782532c2f871bf3fd812e43f796c11eb8193ff481dbeb4b2ef4a31b197"
+    },
+    {
+      "path": "src/lerobot/policies/pi05/modeling_pi05.py",
+      "sha256": "42d9b794f65771494284f3268e5a2ad53349c87accb07d15ce3fe28680c6402a"
+    },
+    {
+      "path": "src/lerobot/policies/pi05/configuration_pi05.py",
+      "sha256": "8e4d7970dc0d719dfc66d124433b479c4ce098fc809147e2d6922473553f3327"
+    },
+    {
+      "path": "src/lerobot/policies/pi05/processor_pi05.py",
+      "sha256": "2f83f9a34e06295b1a53fc9066d9e5985df91d665606f602091359fae3e57bee"
+    },
+    {
+      "path": "src/lerobot/policies/groot/README.md",
+      "sha256": "8233fadd1925681e278be5951f212a1faf8de89dd7c15ca878d44dae4a255118"
+    },
+    {
+      "path": "src/lerobot/policies/groot/processor_groot.py",
+      "sha256": "50b8ce64f1acfe61333e899fc8965eaea4d729efddc5dcd3a74c56c862876c22"
+    },
+    {
+      "path": "src/lerobot/policies/groot/modeling_groot.py",
+      "sha256": "766f805bbfbe102705a33652cb53e8d3844725eb144678ec951a61c9a95bcaa3"
+    },
+    {
+      "path": "src/lerobot/policies/groot/utils.py",
+      "sha256": "42c83608be9a6d174199265af8710d299d28c210dbf681e0b2b63236fa50cc33"
+    },
+    {
+      "path": "src/lerobot/policies/groot/__init__.py",
+      "sha256": "40411dc2b519d34f96cd68bed78817d98f10905778eea58a18a0d539ce2cd79d"
+    },
+    {
+      "path": "src/lerobot/policies/groot/configuration_groot.py",
+      "sha256": "38c0d335fb0c1e9e52a5f15c6b0056015a493143236a200bf6538e23c1305627"
+    },
+    {
+      "path": "src/lerobot/policies/groot/groot_n1.py",
+      "sha256": "04aa7c9beb3f084046c82a9c0feda708ed0a4a4969c449621387fa1f5f27c3ad"
+    },
+    {
+      "path": "src/lerobot/policies/tdmpc/processor_tdmpc.py",
+      "sha256": "0cfecbade4d78fd075e3c54911836a6d52ec88bb27c43c2c635984e2cea41b22"
+    },
+    {
+      "path": "src/lerobot/policies/tdmpc/README.md",
+      "sha256": "6227f422719d11a585ba36fc8a724421d3005cbb34350029e3dc491518b8b388"
+    },
+    {
+      "path": "src/lerobot/policies/tdmpc/configuration_tdmpc.py",
+      "sha256": "a6519d59351cfea64453b74ead9846c22bb80fea4ecec3dcec81f5d63c173ac0"
+    },
+    {
+      "path": "src/lerobot/policies/tdmpc/modeling_tdmpc.py",
+      "sha256": "e9bbbe85110994e4311e6e2af8c668ff15008766f688447ad1cd633a4072c8d9"
+    },
+    {
+      "path": "src/lerobot/policies/pi0/configuration_pi0.py",
+      "sha256": "ec9ac485df10f85fb500ad14e8514ad0716e89eda843b8c9e03ab01d01713f8b"
+    },
+    {
+      "path": "src/lerobot/policies/pi0/README.md",
+      "sha256": "4a810f0f8983ada6ce9209b3f9621b8cb3c6ec019b98d38494ce1b6f01dd43ee"
+    },
+    {
+      "path": "src/lerobot/policies/pi0/modeling_pi0.py",
+      "sha256": "c32e988bea423a0372fece9eaccbdbd45cd06c3c749cd02452f7d6d69ed348e3"
+    },
+    {
+      "path": "src/lerobot/policies/pi0/__init__.py",
+      "sha256": "22eadfdca8b5dee11b8fff07cb8a9093bc9374b85c18c7794e46b00043f4a47b"
+    },
+    {
+      "path": "src/lerobot/policies/pi0/processor_pi0.py",
+      "sha256": "fc8fe6f705820f910738b0e966c10ede259dd1639b50b18a226bf1ef596a1e48"
+    },
+    {
+      "path": "src/lerobot/policies/vqbet/README.md",
+      "sha256": "b80931a074f1bebf79b33bcac668edf999cc657c3665937e697da4e263ce3837"
+    },
+    {
+      "path": "src/lerobot/policies/vqbet/modeling_vqbet.py",
+      "sha256": "b586b8a35fb38ae2164560f12ba90c7cebd78ecf9c6e52f019e7038a18c8fb5b"
+    },
+    {
+      "path": "src/lerobot/policies/vqbet/configuration_vqbet.py",
+      "sha256": "c32f9c394c65344153f233d45fe359f3088e69af0fbd7a7f16fef2daecad6393"
+    },
+    {
+      "path": "src/lerobot/policies/vqbet/vqbet_utils.py",
+      "sha256": "2e9a5c39dca48a3e8e3bf2e48fe4e42a1bb3bd175fef201897c03637ae39c708"
+    },
+    {
+      "path": "src/lerobot/policies/vqbet/processor_vqbet.py",
+      "sha256": "3e0b1686f63b968c21c506c3b0d8e2e8047dc0f5c9c40384116c5be62fe1a38d"
+    },
+    {
+      "path": "src/lerobot/policies/pi0_fast/modeling_pi0_fast.py",
+      "sha256": "4cc1a94ec913c3b5d85657b5f636ebd72ed0e72819e0ef1cb0bd24714b7c2c82"
+    },
+    {
+      "path": "src/lerobot/policies/pi0_fast/__init__.py",
+      "sha256": "92a84e39e2b016b5cba452765d3408047c82beeeed6612b7c474c51a97b80d7e"
+    },
+    {
+      "path": "src/lerobot/policies/pi0_fast/processor_pi0_fast.py",
+      "sha256": "a5bfaf30d0bddfa466ba8ee3b92aaf809b57ea57ec1134f505a7b463db0e735e"
+    },
+    {
+      "path": "src/lerobot/policies/pi0_fast/configuration_pi0_fast.py",
+      "sha256": "3c7e54c5504e2fcccfe4c5e5be7c5e1bad35b0e6b6b4242aa02b47eaa7b5644a"
+    },
+    {
+      "path": "src/lerobot/policies/smolvla/smolvlm_with_expert.py",
+      "sha256": "b70356145870c7da1e92a2195ee4626f7e9f9387576c6bed5ba2bfefae2a38d9"
+    },
+    {
+      "path": "src/lerobot/policies/smolvla/README.md",
+      "sha256": "518995d5cb706f7e70e8aa606b71c53279f6d6cf6ed8a988c15bb903cc5af16c"
+    },
+    {
+      "path": "src/lerobot/policies/smolvla/modeling_smolvla.py",
+      "sha256": "3bdbaeecbd0dd3908d08507c13ed3517e63d2a653555322e2428066efb77b5f4"
+    },
+    {
+      "path": "src/lerobot/policies/smolvla/processor_smolvla.py",
+      "sha256": "eeb3714ca4b926d7f4d72c63ce5877497705108736eaf53cdc7362d8dfef2644"
+    },
+    {
+      "path": "src/lerobot/policies/smolvla/configuration_smolvla.py",
+      "sha256": "6c55f3dea30a3c9571ecaa3dccf599dab9240a6eaa658b3fbc507273778b49aa"
+    },
+    {
+      "path": "src/lerobot/policies/sac/processor_sac.py",
+      "sha256": "6380100cc2d549a145cc6daedad29b271e80d51d08cfd142f63591131d36d0c6"
+    },
+    {
+      "path": "src/lerobot/policies/sac/configuration_sac.py",
+      "sha256": "50228a1e7bda86672dec1fa225122a8cb980f2b0853b35f072b42caa5ca2f4a4"
+    },
+    {
+      "path": "src/lerobot/policies/sac/modeling_sac.py",
+      "sha256": "17645d83180cd510366db583d4f1cb50958a9fd78481dfbfcf88d6e6ef853ef7"
+    },
+    {
+      "path": "src/lerobot/policies/wall_x/modeling_wall_x.py",
+      "sha256": "e3a27c63e570d0e5be12c73a127ccdd5e8a57a44ed40e5fed42d8eead2f47811"
+    },
+    {
+      "path": "src/lerobot/policies/wall_x/processor_wall_x.py",
+      "sha256": "9f7717d334a5831b5c5c5a214af5e3a94e21531c9480923c5e3aa75ac6569e39"
+    },
+    {
+      "path": "src/lerobot/policies/wall_x/README.md",
+      "sha256": "84b9278b4d4c70b3c2600f618244dd3c04dec48a2a86d972c30e9c5e438ffe83"
+    },
+    {
+      "path": "src/lerobot/policies/wall_x/constant.py",
+      "sha256": "3e9968c6c544f9408b299d57a547cd3a5696a7fe27fce9061b1287c831c96529"
+    },
+    {
+      "path": "src/lerobot/policies/wall_x/utils.py",
+      "sha256": "7f0583f85f3423e9d81953ddfffaf3081e17088c121be319f1aacdf05e155550"
+    },
+    {
+      "path": "src/lerobot/policies/wall_x/__init__.py",
+      "sha256": "9f780e34d2e553bd967882b1e2f2765df3a4ae65b50b857ec09006e85c82589f"
+    },
+    {
+      "path": "src/lerobot/policies/wall_x/configuration_wall_x.py",
+      "sha256": "229d731fed4762ba04abe10862a8a0ecf8e64a8bf401ef7c1d430062cf99eb92"
+    },
+    {
+      "path": "src/lerobot/policies/act/README.md",
+      "sha256": "146d6951776b64e59dc001ea3b0a899c69d3556dab58ae890f6cf2c34764e0d2"
+    },
+    {
+      "path": "src/lerobot/policies/act/processor_act.py",
+      "sha256": "25ea62c315f8b85a58ee0b8ddea7e488bc87b806eb46307bf2b06ef6b50a86f4"
+    },
+    {
+      "path": "src/lerobot/policies/act/modeling_act.py",
+      "sha256": "69301fff11cbb8f4ba7bfe473a55ba488c3d2f89c25ecdfe512347a93b4ad04f"
+    },
+    {
+      "path": "src/lerobot/policies/act/configuration_act.py",
+      "sha256": "11aa9037f981a957d63632561c795fac243e7898ee9302f7afac2f5d45920f7b"
+    },
+    {
+      "path": "src/lerobot/policies/xvla/configuration_florence2.py",
+      "sha256": "4801e6759a91ffa9b113491945a115cfeb481f9813a1369b06ece47c1173f9da"
+    },
+    {
+      "path": "src/lerobot/policies/xvla/modeling_xvla.py",
+      "sha256": "d8fc952243f764a33157be2518fddd38ebc071d53fa66a5f9dea8d775f787dbf"
+    },
+    {
+      "path": "src/lerobot/policies/xvla/configuration_xvla.py",
+      "sha256": "8cbce94ddb34bf43609e2f8a0f8a7b0d2efb40348f36ae0001684d44f7a2d8a5"
+    },
+    {
+      "path": "src/lerobot/policies/xvla/soft_transformer.py",
+      "sha256": "92da48b75f7ba14583fe2be89f9eb15157361252084ae18643e279648db817cc"
+    },
+    {
+      "path": "src/lerobot/policies/xvla/utils.py",
+      "sha256": "4693b9b0e1db410d05d730d17c2268d91534a887218b5c863a28f26ee3c6bf0e"
+    },
+    {
+      "path": "src/lerobot/policies/xvla/action_hub.py",
+      "sha256": "86357301855bf28a27e2e7a8a0f6b79264a915786a94a2232b152cff586cf9bf"
+    },
+    {
+      "path": "src/lerobot/policies/xvla/__init__.py",
+      "sha256": "d55239023813d56be288c49063241cd0f390bb0c7ad46f14975ecfe4606d37dd"
+    },
+    {
+      "path": "src/lerobot/policies/xvla/modeling_florence2.py",
+      "sha256": "f9ea930f0d0c1136cf5c3b90d340ad071f1568333ebefbb31851ed489b24d701"
+    },
+    {
+      "path": "src/lerobot/policies/xvla/processor_xvla.py",
+      "sha256": "a701e1707afe5384ccc1be5cf8dd903a0f2232fb6ec4b5f860af663117ec6f7c"
+    },
+    {
+      "path": "src/lerobot/policies/groot/action_head/cross_attention_dit.py",
+      "sha256": "64628c16af5bfe598c96c320f255af3e77b7d00560726d5a338af43b8d47cd6f"
+    },
+    {
+      "path": "src/lerobot/policies/groot/action_head/__init__.py",
+      "sha256": "dd7d5f5e544e1d2923bf4f1aa548504255938f58a6e74a119356573e6ce9e36e"
+    },
+    {
+      "path": "src/lerobot/policies/groot/action_head/flow_matching_action_head.py",
+      "sha256": "1e8aca948f32add81aa0207de178b97a660262658434746174ddcdb3f586422e"
+    },
+    {
+      "path": "src/lerobot/policies/groot/action_head/action_encoder.py",
+      "sha256": "5b47ecc30f3e08a66ae29ec33cd63bc0519abb52cb78d86e67004ea9049c13d2"
+    },
+    {
+      "path": "src/lerobot/policies/groot/eagle2_hg_model/configuration_eagle2_5_vl.py",
+      "sha256": "cad789f4f795d1e804f1ab4f955bfe9ae71c7bd5f06f188fe739534a2157c7b9"
+    },
+    {
+      "path": "src/lerobot/policies/groot/eagle2_hg_model/modeling_eagle2_5_vl.py",
+      "sha256": "e4d2888795d7f515d18e8e7eb7be0c30736ed0b27a0f725479412a93a3c07005"
+    },
+    {
+      "path": "src/lerobot/policies/groot/eagle2_hg_model/image_processing_eagle2_5_vl_fast.py",
+      "sha256": "e54164a6269261f622d7d3059cf5510973bd0cdcdbf4551b3c83e2fda5a4d5e7"
+    },
+    {
+      "path": "src/lerobot/policies/groot/eagle2_hg_model/processing_eagle2_5_vl.py",
+      "sha256": "e8bcd31b81b6458b6e25b05bbc805e9ee3f05c7dd2e674b1d75d12d23d5c3ac8"
+    },
+    {
+      "path": "src/lerobot/policies/sac/reward_model/processor_classifier.py",
+      "sha256": "c988c66b56834ee69bd14eacb6a584fe920af07b4b086c6a47eed77191f86e86"
+    },
+    {
+      "path": "src/lerobot/policies/sac/reward_model/configuration_classifier.py",
+      "sha256": "db3a02e5b675fcc21e2e16df1e0d88eafc4abad19f9b17f222ed971e86f54e38"
+    },
+    {
+      "path": "src/lerobot/policies/sac/reward_model/modeling_classifier.py",
+      "sha256": "3c6d676f510adab7f1193829b8d6d2494102434242ce7d2d14edd379a455000a"
+    },
+    {
+      "path": "src/lerobot/policies/wall_x/qwen_model/configuration_qwen2_5_vl.py",
+      "sha256": "c8358931ea213fe9afd065de3b7a83463d1d1ff40aecf5e700e48b908d7479f7"
+    },
+    {
+      "path": "src/lerobot/policies/wall_x/qwen_model/qwen2_5_vl_moe.py",
+      "sha256": "11754ba61f0095d15a2e8fa609da15946762aa5089c0472f11bd68c66b985342"
+    },
+    {
+      "path": "src/lerobot/teleoperators/omx_leader/omx_leader.py",
+      "sha256": "ae844d3ee5f26bcdd033f09e2ee42daf2ce4d50923cd573aadc6515bf29ccf16"
+    },
+    {
+      "path": "src/lerobot/teleoperators/omx_leader/__init__.py",
+      "sha256": "57302a5e34096658a8493f8aaa393b1dd8b52a1e6355e09099910c2ec2a7b2db"
+    },
+    {
+      "path": "src/lerobot/teleoperators/omx_leader/config_omx_leader.py",
+      "sha256": "cb1d8d4b776955edbb0370d5b9297014922b059f683a6d3d3988b27cff0e5f8d"
+    },
+    {
+      "path": "src/lerobot/teleoperators/openarm_leader/openarm_leader.py",
+      "sha256": "cf57c16cb5080a2a60030fd38e279d0eccc1280dc2ac75a44647130658f3b5e6"
+    },
+    {
+      "path": "src/lerobot/teleoperators/openarm_leader/__init__.py",
+      "sha256": "1dda47ccb128b52e1e8efe4bdbdbafa55036fce87d4a7bd313049783566f8088"
+    },
+    {
+      "path": "src/lerobot/teleoperators/openarm_leader/config_openarm_leader.py",
+      "sha256": "06add51a6ccee7459a98c8fd0c23cc033f448f4e59d3cda32af452e6abfd3d28"
+    },
+    {
+      "path": "src/lerobot/teleoperators/bi_openarm_leader/config_bi_openarm_leader.py",
+      "sha256": "1c344634e60857680a6a0e556c1a9c29824f131a60da6f232378a3e60c83d306"
+    },
+    {
+      "path": "src/lerobot/teleoperators/bi_openarm_leader/__init__.py",
+      "sha256": "970919ed4dce135bfa3ca5a2151254f1b2a5e085e598a53b66228f43097dbecf"
+    },
+    {
+      "path": "src/lerobot/teleoperators/bi_openarm_leader/bi_openarm_leader.py",
+      "sha256": "20c11e9586a088afd64688785a635df3953d118a73be3bcf5336fa7652db6bc3"
+    },
+    {
+      "path": "src/lerobot/teleoperators/so_leader/so_leader.py",
+      "sha256": "b00404bf82efc721a478b989652b99d2cc43246c9151be8c14437c64a020fd8a"
+    },
+    {
+      "path": "src/lerobot/teleoperators/so_leader/so100.md",
+      "sha256": "f25586ff96ba4af49184ce62e9a6861307ef03cde132b777e45da77b72e234c2"
+    },
+    {
+      "path": "src/lerobot/teleoperators/so_leader/so101.md",
+      "sha256": "6a755e96da7db54b9069aa107ec0210512e14125770fc20e4c5f3d4c2b989da3"
+    },
+    {
+      "path": "src/lerobot/teleoperators/so_leader/config_so_leader.py",
+      "sha256": "556aa8b0a3bf363c3cb2725d9acde994b2d43cec90490b42656d902e63fa66d8"
+    },
+    {
+      "path": "src/lerobot/teleoperators/so_leader/__init__.py",
+      "sha256": "18397673df13313383f282c0e00f4dcfb70a83137bb854b637162b092dfb442c"
+    },
+    {
+      "path": "src/lerobot/teleoperators/reachy2_teleoperator/config_reachy2_teleoperator.py",
+      "sha256": "71d44f6f816f90f6bc29f0a26f313f2cb5e0962c71c2dd94cfe81b432b3b4ea3"
+    },
+    {
+      "path": "src/lerobot/teleoperators/reachy2_teleoperator/__init__.py",
+      "sha256": "d39a261698ae19ecf1e575d7a7e09bae4b472eff3a898e7da00a4af11682d075"
+    },
+    {
+      "path": "src/lerobot/teleoperators/reachy2_teleoperator/reachy2_teleoperator.py",
+      "sha256": "0193d3ec56cc3f51fe614b63e199aaf20e4261e11bcaa5d5d1ba63ecf3276633"
+    },
+    {
+      "path": "src/lerobot/teleoperators/homunculus/homunculus_glove.py",
+      "sha256": "9c33c52a4412f471f7e2dfbc7206e0b0dcf606b1d72022cb54d252eacac935bc"
+    },
+    {
+      "path": "src/lerobot/teleoperators/homunculus/joints_translation.py",
+      "sha256": "727e1a242f1c913b337090fe1ccca146a93abdbbe3aa0130ed76a073affab13b"
+    },
+    {
+      "path": "src/lerobot/teleoperators/homunculus/__init__.py",
+      "sha256": "228da9986c2221e6a0ff5ae74fb01102331ac9fa3770edec8e7e3b7e2df1962c"
+    },
+    {
+      "path": "src/lerobot/teleoperators/homunculus/config_homunculus.py",
+      "sha256": "4d73d21d5d1fc6ec80ece3e0a05b2319ee07a7de48bb5b2e42e45b963db72f8e"
+    },
+    {
+      "path": "src/lerobot/teleoperators/homunculus/homunculus_arm.py",
+      "sha256": "2671f64d377342cab10fbff87f46514f7cec4208fe1685ffdf1c33cd8bcd1f91"
+    },
+    {
+      "path": "src/lerobot/teleoperators/gamepad/teleop_gamepad.py",
+      "sha256": "ba3281e6d3bbedba13ae23e2130a233b633ca998c30d1bc21586762534e46c42"
+    },
+    {
+      "path": "src/lerobot/teleoperators/gamepad/gamepad_utils.py",
+      "sha256": "38a121a67ff423ea5f0b9ec3d13a1ac3fb38fa1c7207daced807fd83d5e4220c"
+    },
+    {
+      "path": "src/lerobot/teleoperators/gamepad/__init__.py",
+      "sha256": "500e9c84a0cc28a9920d01270cb3378f12c4667b99056e8bb1261dbf1d0f4c7f"
+    },
+    {
+      "path": "src/lerobot/teleoperators/gamepad/configuration_gamepad.py",
+      "sha256": "a7d9b9faa048e816ddbffb83cd79507eb19008de95949a7b1134b42fe7dd6655"
+    },
+    {
+      "path": "src/lerobot/teleoperators/phone/phone_processor.py",
+      "sha256": "902889219a41701d415fcfedb60010d150b9f0e770a23c386d363091bc7ad6c5"
+    },
+    {
+      "path": "src/lerobot/teleoperators/phone/__init__.py",
+      "sha256": "23a407adc5e11b5a207f6fdb39bb6cec5328874899dab1e940cf2f8cbcc57433"
+    },
+    {
+      "path": "src/lerobot/teleoperators/phone/config_phone.py",
+      "sha256": "bcd93f16fb3ec07cc202970ecb467fee924251111e50630764da9a30690755ca"
+    },
+    {
+      "path": "src/lerobot/teleoperators/phone/teleop_phone.py",
+      "sha256": "da6f3f77e89aec2487074dcd4ded839f661abb1aaca2c38033db8ce2f78d0f3f"
+    },
+    {
+      "path": "src/lerobot/teleoperators/unitree_g1/exo_serial.py",
+      "sha256": "7e368c78f4827b00a123ddcd273bfb3293e282d1524d78ce906d7d9194570307"
+    },
+    {
+      "path": "src/lerobot/teleoperators/unitree_g1/exo_calib.py",
+      "sha256": "aff5e090f65f78e8d2008caea35a5a0441be8304a9cd54dfb70f3df07761b949"
+    },
+    {
+      "path": "src/lerobot/teleoperators/unitree_g1/exo_ik.py",
+      "sha256": "59efc82f076ca6be56cde4363f12472b3b822d2ac1f69a9d1be008e626089167"
+    },
+    {
+      "path": "src/lerobot/teleoperators/unitree_g1/config_unitree_g1.py",
+      "sha256": "2ea32b66123e59b9a689165844a209b582b782b6e41f37ffcc022174b73c9f86"
+    },
+    {
+      "path": "src/lerobot/teleoperators/unitree_g1/__init__.py",
+      "sha256": "58b24f4120a651a57c7f57c4e391348989aaeaea586a662c5ea5076396ec4443"
+    },
+    {
+      "path": "src/lerobot/teleoperators/unitree_g1/unitree_g1.py",
+      "sha256": "610d973b79e1145ce84962f5fc0b703fc01f8ec1d5951c8506f4f8f770fa831f"
+    },
+    {
+      "path": "src/lerobot/teleoperators/koch_leader/config_koch_leader.py",
+      "sha256": "56c35642f5b7910d1e8865be003f4285111f4c061329e82518451e13d6648fad"
+    },
+    {
+      "path": "src/lerobot/teleoperators/koch_leader/__init__.py",
+      "sha256": "015b250b5661ffc3a5a25abfbeb5b3e9f1aa8a0d399004c92dc8c714c50216ec"
+    },
+    {
+      "path": "src/lerobot/teleoperators/koch_leader/koch_leader.py",
+      "sha256": "c897c5cdbc3c91b41e96d68d022da4d7a509a18ec47933461b31ac929b4e28a0"
+    },
+    {
+      "path": "src/lerobot/teleoperators/bi_so_leader/config_bi_so_leader.py",
+      "sha256": "bf0b821b33050b164c2588355ff9490a8a1931646777b331ea65329979ed80fa"
+    },
+    {
+      "path": "src/lerobot/teleoperators/bi_so_leader/bi_so_leader.py",
+      "sha256": "2d52756debd0f95fc8b279c978f27c81e6c8f3be4a2446d2dca917eab1b10e11"
+    },
+    {
+      "path": "src/lerobot/teleoperators/bi_so_leader/__init__.py",
+      "sha256": "2a9be923dd486045f8f5cdadb94228a679120cb7869a254c83e1e626de8c38f8"
+    },
+    {
+      "path": "src/lerobot/teleoperators/openarm_mini/__init__.py",
+      "sha256": "ad7a1c2d0bd30b9957dca1e4088c92c5093c335479cf3188564a59e1c23b051b"
+    },
+    {
+      "path": "src/lerobot/teleoperators/openarm_mini/openarm_mini.py",
+      "sha256": "7930455c51176a86a22ddce38b86d6981e45d3beba6df48530a62e3bc32fb59c"
+    },
+    {
+      "path": "src/lerobot/teleoperators/openarm_mini/config_openarm_mini.py",
+      "sha256": "55824c2f77512b574a20675407fb83c806f111daf3ca14edce17e0b5e05f8436"
+    },
+    {
+      "path": "src/lerobot/teleoperators/keyboard/configuration_keyboard.py",
+      "sha256": "0a178bf8d9226ed7421123df8e18f2055f60abe262a78a54a9f766b703794ad0"
+    },
+    {
+      "path": "src/lerobot/teleoperators/keyboard/__init__.py",
+      "sha256": "1a83c9d7194110f8252dc6475efb3872b4d2f6db847e223b08f0b0c3dd5a8fb4"
+    },
+    {
+      "path": "src/lerobot/teleoperators/keyboard/teleop_keyboard.py",
+      "sha256": "1342e5fa5307842846c53c8abe2f15a8ab28a51684f9b4062f83eb8557e2796e"
+    },
+    {
+      "path": "src/lerobot/cameras/opencv/configuration_opencv.py",
+      "sha256": "2cedce42433f44333b12e21af71efb9efb52e88df7589a5363fb9a632d264dfe"
+    },
+    {
+      "path": "src/lerobot/cameras/opencv/camera_opencv.py",
+      "sha256": "01df87f692806b24f8a8002f9fac3ae3a78561d0311e65466b18907392956c2d"
+    },
+    {
+      "path": "src/lerobot/cameras/opencv/__init__.py",
+      "sha256": "bcd30663067446f6c72beea9a9c7fdfda0c26889ba9476f10c0e77855bdfc64a"
+    },
+    {
+      "path": "src/lerobot/cameras/zmq/image_server.py",
+      "sha256": "ca8eed0a9c09753c9dffaa4a3dfbbadaa359acf45c379140dc96fd5d39d21c8a"
+    },
+    {
+      "path": "src/lerobot/cameras/zmq/__init__.py",
+      "sha256": "1b42f41bac5fb6bb1b7a3a2894b1aac785aac33bc4810ca3766cadafb68a81a6"
+    },
+    {
+      "path": "src/lerobot/cameras/zmq/configuration_zmq.py",
+      "sha256": "616e85ae8f9ebd001afe2f640c47721cbbb44713755bb8fbf97e1e93b9c87cd6"
+    },
+    {
+      "path": "src/lerobot/cameras/zmq/camera_zmq.py",
+      "sha256": "5a8a4c39ac590b4b78ff3bb29aba898ab685bb4f5ed3c65f7646d5b61ec21c5d"
+    },
+    {
+      "path": "src/lerobot/cameras/realsense/__init__.py",
+      "sha256": "24932dc9ddb774eb3d1ced5a700275a7d3e2e554d68364ce82267a1d30efb432"
+    },
+    {
+      "path": "src/lerobot/cameras/realsense/configuration_realsense.py",
+      "sha256": "115489fc4ee4a9f7def4e6cf07da6b8387659e1ad1af187c4cd5552c924c9429"
+    },
+    {
+      "path": "src/lerobot/cameras/realsense/camera_realsense.py",
+      "sha256": "7a5aeb609aa451a72a35033ee366a70535c4d56f1f580cca6ce6fcf88ebc41e7"
+    },
+    {
+      "path": "src/lerobot/cameras/reachy2_camera/reachy2_camera.py",
+      "sha256": "74a22b931384cf26490b02016434283d8723ccab6abc5fe7fa6d6a6e10f0c2b0"
+    },
+    {
+      "path": "src/lerobot/cameras/reachy2_camera/__init__.py",
+      "sha256": "988265045944851cc9c043eaef551281cfc515234459f0c09a698369293a4df2"
+    },
+    {
+      "path": "src/lerobot/cameras/reachy2_camera/configuration_reachy2_camera.py",
+      "sha256": "f92ef6f67bc20e8de7a39d8ee34206af684060ba484925f861d24417d519eb22"
+    },
+    {
+      "path": "benchmarks/video/README.md",
+      "sha256": "58f9bf0a1de2affbfd4be1a6957a6841a8329a176c0df072c355efa627e53fe5"
+    },
+    {
+      "path": "benchmarks/video/run_video_benchmark.py",
+      "sha256": "424c0d3d436f7793ee20f78989951b3d26bbeb6eba30d74e409d996ccd4be225"
+    },
+    {
+      "path": "examples/backward_compatibility/replay.py",
+      "sha256": "be686321f49fea3472ae2a6742ac8ee9d029c9e1102f62d23a75c52dafad8e1e"
+    },
+    {
+      "path": "examples/dataset/load_lerobot_dataset.py",
+      "sha256": "e6ff231a0a3622b70c0bc1018b2069e125af7384dc858a932eaa299a02857166"
+    },
+    {
+      "path": "examples/dataset/use_dataset_tools.py",
+      "sha256": "d20796b778a155e6fb774361db1a5608c7ec05c04df8e737304891f86aa71f5c"
+    },
+    {
+      "path": "examples/dataset/use_dataset_image_transforms.py",
+      "sha256": "29a00b6427e173580fafe16da422f9d964a9429574085c054c086c87a0782ddb"
+    },
+    {
+      "path": "examples/rtc/eval_with_real_robot.py",
+      "sha256": "31f3862024f28e4fea1f0ed526731ce2858e2ea5adf7eed2eb1ae6de2499a8ed"
+    },
+    {
+      "path": "examples/rtc/eval_dataset.py",
+      "sha256": "41e9d46afb3625d642cc2deac0a88201ac6c3c9a0587e4c466e976f62bf031d9"
+    },
+    {
+      "path": "examples/lekiwi/record.py",
+      "sha256": "f6ec3547c86d256b6cf74269a9e29044be8ce0d1259b87ae9f509376e36ca856"
+    },
+    {
+      "path": "examples/lekiwi/evaluate.py",
+      "sha256": "69ab56c30ba4b06ece3c6a2eb8bfa59b2f416adc68ac59cc0c7f6951fbd144f8"
+    },
+    {
+      "path": "examples/lekiwi/teleoperate.py",
+      "sha256": "301a48c55e9ed0f6160e9d370a5429dc1c9f5b18127f0b8ba36971d80dbf9c79"
+    },
+    {
+      "path": "examples/lekiwi/replay.py",
+      "sha256": "b82a72b3f06e227ee67a1e77b25508360869999c9fac6217b83bed9a4cc17ed7"
+    },
+    {
+      "path": "examples/port_datasets/display_error_files.py",
+      "sha256": "77edd63c61f60b96d934966749b6336c59485640adb405d5d595da85842e5cfd"
+    },
+    {
+      "path": "examples/port_datasets/slurm_aggregate_shards.py",
+      "sha256": "edb0741cdf86b83fad995409a060191fe45c6f59b9eb612e1778dd7a899389ef"
+    },
+    {
+      "path": "examples/port_datasets/slurm_port_shards.py",
+      "sha256": "8f5fe8854c831fd906f2e7b72379fa514954fc10b67bb77e31e302dca4adb7fc"
+    },
+    {
+      "path": "examples/port_datasets/port_droid.py",
+      "sha256": "fd00c69964bc187ba13ee74f8998c29e2cf5c673948112f718363a577c4b86d1"
+    },
+    {
+      "path": "examples/port_datasets/slurm_upload.py",
+      "sha256": "b73a5a078b2efef3a7c068a7817da6fffebdb05974ffe06cc7a50aeb6fa8112a"
+    },
+    {
+      "path": "examples/unitree_g1/gr00t_locomotion.py",
+      "sha256": "3503b03ae58c7863c55f6e228dfc966ade13603c11e495158eb839964ef75ec9"
+    },
+    {
+      "path": "examples/unitree_g1/holosoma_locomotion.py",
+      "sha256": "b4aa7a212e0b1c96c9e4f5608dbb0ec9b79868797e29b99950145aa8a9f65e92"
+    },
+    {
+      "path": "examples/training/train_policy.py",
+      "sha256": "f0014eb5e3f6382922a91ab9cfca693ff647bdea2127eace01921b5b7783c619"
+    },
+    {
+      "path": "examples/training/train_with_streaming.py",
+      "sha256": "42d6bd81eba10dfa870751a10908ca755441479e772c79e1af9dbf247314b84d"
+    },
+    {
+      "path": "examples/so100_to_so100_EE/record.py",
+      "sha256": "a2f1dd68df0973c9039255fa0dbdc8b6a516263110cbe8ca6f92b8346233dde7"
+    },
+    {
+      "path": "examples/so100_to_so100_EE/evaluate.py",
+      "sha256": "1e8c2519802eac72124136881ffefea143f30ad7224284fdb73bf721ce87d803"
+    },
+    {
+      "path": "examples/so100_to_so100_EE/teleoperate.py",
+      "sha256": "731841c921093bf4fafd8f621d2cc8301f6d913c7c4fb4a4ba6d7c2b782d00be"
+    },
+    {
+      "path": "examples/so100_to_so100_EE/replay.py",
+      "sha256": "fabb5207d2299060aa04722f1cdac7235b4be47298c0ef144467a80d8e932070"
+    },
+    {
+      "path": "examples/phone_to_so100/record.py",
+      "sha256": "aeed27da5b5ee48523e2709f1922fa59c826cb0e5f11a14940ab7ef0d1c7608e"
+    },
+    {
+      "path": "examples/phone_to_so100/evaluate.py",
+      "sha256": "5fc48712d9b463b0247b5c8a72a4eef292e4ec09862cc18ae7a0504efd320ad3"
+    },
+    {
+      "path": "examples/phone_to_so100/teleoperate.py",
+      "sha256": "b06c44d6c1ed47dcf38372f5ffc8321007a0e2e9a3f19bb56d79e115a1d20e7c"
+    },
+    {
+      "path": "examples/phone_to_so100/replay.py",
+      "sha256": "f262a77f12c161529843d9cb1e1dea974b356a5441faa66aa57304f198a34a17"
+    },
+    {
+      "path": "examples/tutorial/diffusion/diffusion_training_example.py",
+      "sha256": "66e2575f015b352a34c010037a466b377b6933f20d1acbd733493dc68d9f23f5"
+    },
+    {
+      "path": "examples/tutorial/diffusion/diffusion_using_example.py",
+      "sha256": "d9f697eb8a03acaa04adb7f353908d449be3318d5ac8fc155f535ec5edc2ba7d"
+    },
+    {
+      "path": "examples/tutorial/rl/reward_classifier_example.py",
+      "sha256": "2e898add772d3133224c10fe0d2d4b72a626f3814b7c25cc5bb2b26e9caddfc9"
+    },
+    {
+      "path": "examples/tutorial/rl/hilserl_example.py",
+      "sha256": "06ca1f5da7986e9be46618dd296e1288511588ff3365a0a320a40050054a5f26"
+    },
+    {
+      "path": "examples/tutorial/async-inf/policy_server.py",
+      "sha256": "8fa277d7794448b094346521c6adce10d79057ddc7797ac8bac1f8b6d7c4341f"
+    },
+    {
+      "path": "examples/tutorial/async-inf/robot_client.py",
+      "sha256": "53946dbacf7a0b8c86527023422f331cedf507906bf9981e9246758aa9ba092b"
+    },
+    {
+      "path": "examples/tutorial/pi0/using_pi0_example.py",
+      "sha256": "547d75b473492f70980888df23f5f18ef85ee6dadd2bb9ceceef78434a218e58"
+    },
+    {
+      "path": "examples/tutorial/smolvla/using_smolvla_example.py",
+      "sha256": "853f4d55e1977b5f4b36b36d22dc97e40066f9a473c008b447f08e72913ce4f5"
+    },
+    {
+      "path": "examples/tutorial/act/act_using_example.py",
+      "sha256": "fd42cf26c1bbeb7a60dab17d100f131407641f22dc0bcf7cbb4bc297fd76e632"
+    },
+    {
+      "path": "examples/tutorial/act/act_training_example.py",
+      "sha256": "6f7b1c9a5dfb9a6ace100b31c770da1a5bdd7e17424115e59e859c0dc8a6dcef"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug-report.yml",
+      "sha256": "f1fe841c76b8e726eaa15d62c5b8fd857ae64297d35058ae12f6baaa4d7ce372"
+    },
+    {
+      "path": ".github/workflows/nightly.yml",
+      "sha256": "3281a546fc3a0b394d621228b116553e2fad4288579d315b9180548dc3319cf6"
+    },
+    {
+      "path": ".github/workflows/security.yml",
+      "sha256": "0eb406c3b252708489f4e4b9e71289f504e97d1d050bcc7fe5a01a28642e54df"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "sha256": "831c27aa1b41408b81a3ad39440070d15f354b2ee2337306383e38aa111a0519"
+    },
+    {
+      "path": ".github/workflows/documentation-upload-pr.yml",
+      "sha256": "2c28830e1529bf65b37a4e9e0f223450523b6b187d7eea471214cebed8919495"
+    },
+    {
+      "path": ".github/workflows/quality.yml",
+      "sha256": "3a456aeed1f3c64c8dae62f24115d4a8a274f55cdfafe10a4432aaccc60c1684"
+    },
+    {
+      "path": ".github/workflows/fast_tests.yml",
+      "sha256": "988dc181a0362901441e553862d5eb32ad9dad2038fd288011bde9bc38fd4ec2"
+    },
+    {
+      "path": ".github/workflows/full_tests.yml",
+      "sha256": "5ef390fcff413b4ae74deb931d1ddc24d30ba700ea9008d80b80ec663d2c7160"
+    },
+    {
+      "path": ".github/workflows/pr_labeler.yml",
+      "sha256": "f0e0ae2e308aed802acfc9a04fbc33bb9c95132bcaf1034a6a250130b110fb3f"
+    },
+    {
+      "path": ".github/workflows/issue_labeler.yml",
+      "sha256": "bdc4db48621080ce815f4c0b4a5d26208721cceb78ef3d291012ae3194f0f256"
+    },
+    {
+      "path": ".github/workflows/stale.yml",
+      "sha256": "f6040f33811586bed71b6ce8d054681635b51595e33ced3080f6504abfd35598"
+    },
+    {
+      "path": ".github/workflows/unbound_deps_tests.yml",
+      "sha256": "1708d6d6a743ab447048a03cd3fb8b5abacd24c3c923c1361b42fad20aac95f3"
+    },
+    {
+      "path": ".github/workflows/documentation.yml",
+      "sha256": "d71dff4947da988f9bef3f2a8e48b6638613e06451d53b280dccbf84fbe65cc9"
+    },
+    {
+      "path": "docs/source/_toctree.yml",
+      "sha256": "b26954d74903af4ce4239135306a36cd535a8ec0e453979a753b849325ebedf9"
+    },
+    {
+      "path": "docs/source/installation.mdx",
+      "sha256": "388cfbb6c6e94f3145c48e4e3b3fe3a9ee959d52092d057f75cbe740c4d8269b"
+    },
+    {
+      "path": "docs/source/pi05.mdx",
+      "sha256": "518773f8f9b7d8561199c1f9b840060950f1489188a3474f49900bf753eaa88f"
+    },
+    {
+      "path": "docs/source/envhub_leisaac.mdx",
+      "sha256": "9d95942019115ceb9aa5c8d4b3deccc8115af817bc0fdcc6a4afa4e4cd6d21db"
+    },
+    {
+      "path": "docs/source/metaworld.mdx",
+      "sha256": "a8f0ba54f1231c4197062085dc2099a637335df5e5fc687ba23b14423e0d1028"
+    },
+    {
+      "path": "docs/source/notebooks.mdx",
+      "sha256": "190d157d986e3a9827e547dfcc8dc0e2f28c2f791759d3ef9d4e36d6f8a75767"
+    },
+    {
+      "path": "docs/source/policy_walloss_README.md",
+      "sha256": "84b9278b4d4c70b3c2600f618244dd3c04dec48a2a86d972c30e9c5e438ffe83"
+    },
+    {
+      "path": "docs/source/omx.mdx",
+      "sha256": "cdcc7dcb33e9e47d71c485b94c87f4fa21117b72e42f29f8b0de4c4d98ae3099"
+    },
+    {
+      "path": "docs/source/il_robots.mdx",
+      "sha256": "86543f08a25556df3a38bcbbb3a0e1238f0518501a8a6c4d828584814b4905ef"
+    },
+    {
+      "path": "docs/source/policy_tdmpc_README.md",
+      "sha256": "6227f422719d11a585ba36fc8a724421d3005cbb34350029e3dc491518b8b388"
+    },
+    {
+      "path": "docs/source/libero.mdx",
+      "sha256": "c113b44eae4dc78c85ef31bfb80ee4de5bfcb032a87daf91db5e9c8bd246bf61"
+    },
+    {
+      "path": "docs/source/contributing.md",
+      "sha256": "44df2a48d3b47fe5a13e4c1f0ab4882d540b2096a391296c258b68a3bfd2e004"
+    },
+    {
+      "path": "docs/source/feetech.mdx",
+      "sha256": "008c5dd8da849a4bcc1eeda962c368a3185889271605b4344854bb2c6dd7fa73"
+    },
+    {
+      "path": "docs/source/using_dataset_tools.mdx",
+      "sha256": "e200778d6edd4bb1dfffc02a733d38c82777b5e560e4c7f2dad3cffa74650594"
+    },
+    {
+      "path": "docs/source/torch_accelerators.mdx",
+      "sha256": "9133eeeb5d28d43b8600065e9d5f13eb43945ed0c77f6c52bd99d6a56c4f8923"
+    },
+    {
+      "path": "docs/source/pi0.mdx",
+      "sha256": "a13214961906c597ffc6a79f8f41a422ea057dc047b15c18607f331cb8afab17"
+    },
+    {
+      "path": "docs/source/envhub_isaaclab_arena.mdx",
+      "sha256": "6d158744555557a0d66e2718ad498ffb9d6f64380b581e9e48f169592ff8f799"
+    },
+    {
+      "path": "docs/source/smolvla.mdx",
+      "sha256": "aa56c3ee5164703ee92a82fead4e71ae582f1f839476d4543364f85c485f3688"
+    },
+    {
+      "path": "docs/source/porting_datasets_v3.mdx",
+      "sha256": "a482bb4b713cc3ddab1ace44a605f6224df9d56ad70af378ff3ea27a490810fc"
+    },
+    {
+      "path": "docs/source/phone_teleop.mdx",
+      "sha256": "21bd5237d60aa6a0f267488fe8b59450753e09e62974859521528f22efdd0115"
+    },
+    {
+      "path": "docs/source/damiao.mdx",
+      "sha256": "41bc34bd914227f4e56db15b7607fa6bd4126cbe2fb2581ccc1ed5840f36a4ba"
+    },
+    {
+      "path": "docs/source/pi0fast.mdx",
+      "sha256": "bade810ba1bd359fd9637a400adefe5465dde5f657c7edb49c9c03800534c71d"
+    },
+    {
+      "path": "docs/source/bring_your_own_policies.mdx",
+      "sha256": "b0d82f1937e07d0672d379ffe1e71332cdb3ad74e91088871f6553b811ca7f1a"
+    },
+    {
+      "path": "docs/source/hilserl_sim.mdx",
+      "sha256": "ddb524e8edc12c8ad03722fe982438c7d69cf5c06ec95b5a497d3943c540f524"
+    },
+    {
+      "path": "docs/source/streaming_video_encoding.mdx",
+      "sha256": "c803e682889444c6c7419c03c3aa87417aa5efbfcb1b71442a9c6e99409d1f3e"
+    },
+    {
+      "path": "docs/source/env_processor.mdx",
+      "sha256": "c9571d67de0bbd674cde0699cb099c79f8dabff32bb0c5f47718e7a595044058"
+    },
+    {
+      "path": "docs/source/cameras.mdx",
+      "sha256": "812a69022c2dbb110bad82602551e282fbc24ac4a6e2bc0de310fec948041238"
+    },
+    {
+      "path": "docs/source/policy_groot_README.md",
+      "sha256": "8233fadd1925681e278be5951f212a1faf8de89dd7c15ca878d44dae4a255118"
+    },
+    {
+      "path": "docs/source/debug_processor_pipeline.mdx",
+      "sha256": "215853ef14049d9965bd368aade4bd45e1fbdb73b79d67eedbe54ca9f531ac42"
+    },
+    {
+      "path": "docs/source/index.mdx",
+      "sha256": "b4eddaec15c99ee8dbbda451e1be982354e568481c45a0f73423af825899d014"
+    },
+    {
+      "path": "docs/source/backwardcomp.mdx",
+      "sha256": "ac50309e5f99894467e67df2fb85620e5c5ad9ae03b7d57a3b93cf9e536012de"
+    },
+    {
+      "path": "docs/source/so100.mdx",
+      "sha256": "f25586ff96ba4af49184ce62e9a6861307ef03cde132b777e45da77b72e234c2"
+    },
+    {
+      "path": "docs/source/hope_jr.mdx",
+      "sha256": "7208b9ba6380b1240cf5a5dbf8557948e83c48645d751a66786400f558dc5b7b"
+    },
+    {
+      "path": "docs/source/lekiwi.mdx",
+      "sha256": "805e9f28dee9aabba51c3ad8210ce1705326e3ff9d2f842b088ba6ff30487f77"
+    },
+    {
+      "path": "docs/source/async.mdx",
+      "sha256": "4d6aa57be657482e0d110cc511c6c60d9ac731e2b9ea0dff47041b60175a6916"
+    },
+    {
+      "path": "docs/source/so101.mdx",
+      "sha256": "6a755e96da7db54b9069aa107ec0210512e14125770fc20e4c5f3d4c2b989da3"
+    },
+    {
+      "path": "docs/source/sarm.mdx",
+      "sha256": "62663379de45864f0d1d4ed2ba1f1efdde13c36aace666ec5c820cb860f3e2a0"
+    },
+    {
+      "path": "docs/source/groot.mdx",
+      "sha256": "abb3c7edb5f6726feafbc4ecc3ac7327d0b6c782a6566f24d0f73f69e3f0c0bb"
+    },
+    {
+      "path": "docs/source/envhub.mdx",
+      "sha256": "56aac75e3e97839c0b584c6a9fe147b4b741cc3b9182124c57029e1be5835dbc"
+    },
+    {
+      "path": "docs/source/multi_gpu_training.mdx",
+      "sha256": "b7ef89e00bad66ce16d813a0cb0dbaa74d3a94d310265798e5f7cb2024e69efc"
+    },
+    {
+      "path": "docs/source/walloss.mdx",
+      "sha256": "211a84a836c5bc19d006b10cceaeb5d11aa754e457ad045045a57226b6f2b147"
+    },
+    {
+      "path": "docs/source/peft_training.mdx",
+      "sha256": "d7db392f6cedd93f44f887c4a07ff6b40186f3d164ebd03a77c28f0839866759"
+    },
+    {
+      "path": "docs/source/lerobot-dataset-v3.mdx",
+      "sha256": "a2987fa7835c5d54dc8111afc3f1b1ba6a2d032983f2d3430901875d74e74fed"
+    },
+    {
+      "path": "docs/source/rtc.mdx",
+      "sha256": "d5082e3dd5028cba7bf5b6291d72705965d072fd57a7e6e172616126f7b03a74"
+    },
+    {
+      "path": "docs/source/implement_your_own_processor.mdx",
+      "sha256": "80c271fe17c2393b3983f5999c86a98d31818b429966623bc80fb13819cd686c"
+    },
+    {
+      "path": "docs/source/processors_robots_teleop.mdx",
+      "sha256": "0ddf9acfc9a24ac33399992c5e6dae8be07dba2f3d385032267eab35c0abac06"
+    },
+    {
+      "path": "docs/source/policy_smolvla_README.md",
+      "sha256": "518995d5cb706f7e70e8aa606b71c53279f6d6cf6ed8a988c15bb903cc5af16c"
+    },
+    {
+      "path": "docs/source/koch.mdx",
+      "sha256": "b5e0c2b1c5c3cc249fa2f36f519eb0ec44762995df8f39592f7d44714bdf8ba3"
+    },
+    {
+      "path": "docs/source/introduction_processors.mdx",
+      "sha256": "807ffcfe113f943304f59548e99e88151c9e79d3d419de1260c8e5942eac1079"
+    },
+    {
+      "path": "docs/source/openarm.mdx",
+      "sha256": "4efa66a15baf736fef56506da2d880d0faabbac0ed55d3558b15a64592c47c07"
+    },
+    {
+      "path": "docs/source/xvla.mdx",
+      "sha256": "b67c33e7854953a3d48230ae7ad32fd14330f1f6299d265b4f0d66bee33093de"
+    },
+    {
+      "path": "docs/source/policy_vqbet_README.md",
+      "sha256": "b80931a074f1bebf79b33bcac668edf999cc657c3665937e697da4e263ce3837"
+    },
+    {
+      "path": "docs/source/dataset_subtask.mdx",
+      "sha256": "a3e94b79d035455af2ab29c00985a84db7ba529d04d1dbe3974374a28625ed91"
+    },
+    {
+      "path": "docs/source/earthrover_mini_plus.mdx",
+      "sha256": "f0e8ad38c49d1e750b118e5e6241ea8ecc2e8a574477cd424e56029dd6781aed"
+    },
+    {
+      "path": "docs/source/integrate_hardware.mdx",
+      "sha256": "00227719951e400f88d0fa5b2e5842a174b2bac3bc6b5718587a3b168a10fabd"
+    },
+    {
+      "path": "docs/source/reachy2.mdx",
+      "sha256": "efcf42183ec6993664d550d4db2fa39348b8befd2fb5fa674c1ce3e9d1d8b1a3"
+    },
+    {
+      "path": "docs/source/unitree_g1.mdx",
+      "sha256": "ae5ee79f12c13f4f306ddf7200304f33aa6db7435ebb13fd68992b75acaf4010"
+    },
+    {
+      "path": "docs/source/policy_act_README.md",
+      "sha256": "146d6951776b64e59dc001ea3b0a899c69d3556dab58ae890f6cf2c34764e0d2"
+    },
+    {
+      "path": "docs/source/act.mdx",
+      "sha256": "d06e43b32f434a2a59a4c1769ff91f1a2f0b1699046b6d5a6c7e0a9ca90e0008"
+    },
+    {
+      "path": "docs/source/hilserl.mdx",
+      "sha256": "2a565f452d486bdb3253ee2d941bbb832f3be90a7b45ef39fb04a3cf7cecc1cf"
+    },
+    {
+      "path": "docs/source/policy_diffusion_README.md",
+      "sha256": "0cae7913f1322708cd024ebc0bd07f4736ca2ba3bf52cdcc3a90999f76116b5e"
+    }
+  ],
+  "local_compatibility_patch": "compat/torch-2.11-bounds.patch"
+}

@@ -1,0 +1,258 @@
+[
+  {
+    "task": "bowl_plate",
+    "state_lag_mae": {
+      "-1": 0.003708791249578901,
+      "0": 0.0,
+      "1": 0.003708791249578901
+    },
+    "cameras": {
+      "front": {
+        "timestamp_error": 0.0,
+        "mae": {
+          "identity": 38.3667958577474,
+          "rotate180": 51.10735575358073,
+          "flip_vertical": 48.03485616048177,
+          "flip_horizontal": 47.99591573079427,
+          "BGR": 39.17630513509115
+        },
+        "best": "identity"
+      },
+      "wrist": {
+        "timestamp_error": 0.0,
+        "mae": {
+          "identity": 2.0510050455729165,
+          "rotate180": 79.77056884765625,
+          "flip_vertical": 72.98483276367188,
+          "flip_horizontal": 27.957600911458332,
+          "BGR": 16.998341878255207
+        },
+        "best": "identity"
+      }
+    }
+  },
+  {
+    "task": "plate_stove",
+    "state_lag_mae": {
+      "-1": 0.0023645578555281555,
+      "0": 3.753803370769178e-06,
+      "1": 0.0023619432964232016
+    },
+    "cameras": {
+      "front": {
+        "timestamp_error": 0.0,
+        "mae": {
+          "identity": 58.646830240885414,
+          "rotate180": 73.22255452473958,
+          "flip_vertical": 62.578898111979164,
+          "flip_horizontal": 73.451904296875,
+          "BGR": 61.777730305989586
+        },
+        "best": "identity"
+      },
+      "wrist": {
+        "timestamp_error": 0.0,
+        "mae": {
+          "identity": 1.106475830078125,
+          "rotate180": 67.08522542317708,
+          "flip_vertical": 64.95022583007812,
+          "flip_horizontal": 23.6343994140625,
+          "BGR": 18.023040771484375
+        },
+        "best": "identity"
+      }
+    }
+  },
+  {
+    "task": "middle_drawer",
+    "state_lag_mae": {
+      "-1": 0.006073315666383737,
+      "0": 2.974238800495674e-09,
+      "1": 0.00607331875127027
+    },
+    "cameras": {
+      "front": {
+        "timestamp_error": 0.0,
+        "mae": {
+          "identity": 2.978581746419271,
+          "rotate180": 74.37365214029948,
+          "flip_vertical": 57.5396982828776,
+          "flip_horizontal": 53.45789082845052,
+          "BGR": 14.034205118815104
+        },
+        "best": "identity"
+      },
+      "wrist": {
+        "timestamp_error": 0.0,
+        "mae": {
+          "identity": 2.267115275065104,
+          "rotate180": 93.81385803222656,
+          "flip_vertical": 100.52924092610677,
+          "flip_horizontal": 34.14954121907552,
+          "BGR": 12.379287719726562
+        },
+        "best": "identity"
+      }
+    }
+  },
+  {
+    "task": "milk_basket",
+    "state_lag_mae": {
+      "-1": 0.0037380403989974343,
+      "0": 4.368230027493334e-11,
+      "1": 0.003738040310990447
+    },
+    "cameras": {
+      "front": {
+        "timestamp_error": 0.0,
+        "mae": {
+          "identity": 37.532185872395836,
+          "rotate180": 51.68049112955729,
+          "flip_vertical": 50.92469278971354,
+          "flip_horizontal": 45.06548055013021,
+          "BGR": 38.48919677734375
+        },
+        "best": "identity"
+      },
+      "wrist": {
+        "timestamp_error": 0.0,
+        "mae": {
+          "identity": 35.60274759928385,
+          "rotate180": 82.84324645996094,
+          "flip_vertical": 82.47396341959636,
+          "flip_horizontal": 46.66117858886719,
+          "BGR": 38.15416971842448
+        },
+        "best": "identity"
+      }
+    }
+  },
+  {
+    "task": "butter_basket",
+    "state_lag_mae": {
+      "-1": 0.0035133621687017348,
+      "0": 3.482990942844381e-10,
+      "1": 0.003513362288830304
+    },
+    "cameras": {
+      "front": {
+        "timestamp_error": 0.0,
+        "mae": {
+          "identity": 9.216074625651041,
+          "rotate180": 51.71483357747396,
+          "flip_vertical": 50.6903076171875,
+          "flip_horizontal": 24.110483805338543,
+          "BGR": 15.07489013671875
+        },
+        "best": "identity"
+      },
+      "wrist": {
+        "timestamp_error": 0.0,
+        "mae": {
+          "identity": 2.6201883951822915,
+          "rotate180": 71.88468424479167,
+          "flip_vertical": 65.97938028971355,
+          "flip_horizontal": 23.009857177734375,
+          "BGR": 15.715952555338541
+        },
+        "best": "identity"
+      }
+    }
+  },
+  {
+    "task": "tomato_basket",
+    "state_lag_mae": {
+      "-1": 0.004539934454747709,
+      "0": 1.034802860683865e-10,
+      "1": 0.0045399346242484175
+    },
+    "cameras": {
+      "front": {
+        "timestamp_error": 5.684341886080802e-14,
+        "mae": {
+          "identity": 38.443196614583336,
+          "rotate180": 53.16876220703125,
+          "flip_vertical": 49.26933797200521,
+          "flip_horizontal": 43.21894327799479,
+          "BGR": 40.77978515625
+        },
+        "best": "identity"
+      },
+      "wrist": {
+        "timestamp_error": 5.684341886080802e-14,
+        "mae": {
+          "identity": 2.1970062255859375,
+          "rotate180": 53.11234029134115,
+          "flip_vertical": 54.00782775878906,
+          "flip_horizontal": 17.727798461914062,
+          "BGR": 15.976231892903646
+        },
+        "best": "identity"
+      }
+    }
+  },
+  {
+    "task": "bowl_cookie_plate",
+    "state_lag_mae": {
+      "-1": 0.003768721087880067,
+      "0": 1.4684461743043838e-10,
+      "1": 0.00376872092581948
+    },
+    "cameras": {
+      "front": {
+        "timestamp_error": 5.684341886080802e-14,
+        "mae": {
+          "identity": 43.928812662760414,
+          "rotate180": 109.18869018554688,
+          "flip_vertical": 90.00191243489583,
+          "flip_horizontal": 85.03715006510417,
+          "BGR": 44.72887166341146
+        },
+        "best": "identity"
+      },
+      "wrist": {
+        "timestamp_error": 5.684341886080802e-14,
+        "mae": {
+          "identity": 46.281402587890625,
+          "rotate180": 110.16375732421875,
+          "flip_vertical": 108.90964762369792,
+          "flip_horizontal": 66.58815511067708,
+          "BGR": 47.543548583984375
+        },
+        "best": "identity"
+      }
+    }
+  },
+  {
+    "task": "bowl_center_plate",
+    "state_lag_mae": {
+      "-1": 0.0026605745355639493,
+      "0": 6.335580816193582e-11,
+      "1": 0.002660574512894965
+    },
+    "cameras": {
+      "front": {
+        "timestamp_error": 0.0,
+        "mae": {
+          "identity": 41.30542500813802,
+          "rotate180": 61.6621348063151,
+          "flip_vertical": 50.18553161621094,
+          "flip_horizontal": 61.59613545735677,
+          "BGR": 41.61338806152344
+        },
+        "best": "identity"
+      },
+      "wrist": {
+        "timestamp_error": 0.0,
+        "mae": {
+          "identity": 48.62620544433594,
+          "rotate180": 78.01469421386719,
+          "flip_vertical": 71.97971089680989,
+          "flip_horizontal": 62.97582499186198,
+          "BGR": 49.49999491373698
+        },
+        "best": "identity"
+      }
+    }
+  }
+]
