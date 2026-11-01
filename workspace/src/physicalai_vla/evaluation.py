@@ -58,10 +58,13 @@ def log_evaluation(directory, mode='offline'):
     from .io import read_json,digest,config
     directory=Path(directory);summary=read_json(directory/'summary.json');protocol=read_json(directory/'protocol.json')
     c=config()
+    execution=read_json(directory/'execution.json') if (directory/'execution.json').exists() else {'simulator_workers':1}
     with wandb.init(project=os.environ.get('WANDB_PROJECT',c['wandb_project']),entity=os.environ.get('WANDB_ENTITY'),
                     mode=mode,job_type='eval',group=directory.name,dir=str(directory),
-                    config={'protocol':protocol,'protocol_hash':digest(directory/'protocol.json'),'summary_hash':digest(directory/'summary.json')}) as run:
+                    config={'protocol':protocol,'protocol_hash':digest(directory/'protocol.json'),'summary_hash':digest(directory/'summary.json'),'execution':execution}) as run:
         metrics={'eval/macro_success_rate':summary['macro_success_rate'],'eval/accepted':int(summary['accepted'])}
+        metrics['eval/simulator_workers']=execution['simulator_workers']
+        if 'wall_seconds' in execution:metrics['eval/wall_seconds']=execution['wall_seconds']
         for row in summary['tasks']:
             metrics[f'eval/{row["task"]}/success_rate']=row['success_rate']
             if row['collision_free_success_rate'] is not None:metrics[f'eval/{row["task"]}/collision_free_success_rate']=row['collision_free_success_rate']

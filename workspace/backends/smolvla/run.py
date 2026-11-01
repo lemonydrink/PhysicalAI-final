@@ -201,7 +201,7 @@ def train(manifest_path,output,steps=None,mode=None,smoke=False,resume=None):
     return output
 
 
-def evaluate(manifest_path,output,checkpoint=None,url='http://127.0.0.1:8011',task_key=None,episodes=10,max_steps=300,resume=False):
+def evaluate(manifest_path,output,checkpoint=None,url='http://127.0.0.1:8011',task_key=None,episodes=10,max_steps=300,resume=False,urls=None):
     import base64,io,time,uuid
     import imageio.v2 as imageio
     import numpy as np
@@ -225,8 +225,8 @@ def evaluate(manifest_path,output,checkpoint=None,url='http://127.0.0.1:8011',ta
     else:write_json(output/'protocol.json',protocol,exclusive=True)
     weight=Path(checkpoint)/'model.safetensors' if checkpoint else initial_directory()/'model.safetensors'
     bundle_hash=digest(weight)
-    def call(route,payload):
-        req=Request(url+route,data=json.dumps(payload,allow_nan=False).encode(),headers={'Content-Type':'application/json'})
+    def call(worker_url,route,payload):
+        req=Request(worker_url+route,data=json.dumps(payload,allow_nan=False).encode(),headers={'Content-Type':'application/json'})
         with urlopen(req,timeout=60) as response:return json.load(response)
     def batch(obs):
         images={}
@@ -240,23 +240,31 @@ def evaluate(manifest_path,output,checkpoint=None,url='http://127.0.0.1:8011',ta
                 images[key]=torch.from_numpy(a.copy()).permute(2,0,1).float()/255
         if settings().get('state_encoding') and obs.get('state_encoding')!=settings()['state_encoding']:raise ValueError('simulator state convention differs from training contract')
         return pre({**images,'observation.state':torch.tensor(obs['state'],dtype=torch.float32),'task':obs['instruction']})
-    for task in tasks:
-        for ep in range(episodes):
+    from parallel_policy import IsolatedPolicy
+    from concurrent.futures import ThreadPoolExecutor
+    shared=IsolatedPolicy(policy,batch,post)
+    worker_urls=urls or [url]
+    if not 1<=len(worker_urls)<=8 or len(set(worker_urls))!=len(worker_urls):raise ValueError('invalid worker URLs')
+    trials=[(task,ep) for task in tasks for ep in range(episodes)]
+    completed_before=sum((output/f'{task["key"]}_{ep:03d}.json').exists() for task,ep in trials)
+    started=time.monotonic()
+    def worker(index):
+        worker_url=worker_urls[index]
+        for task,ep in trials[index::len(worker_urls)]:
             record_path=output/f'{task["key"]}_{ep:03d}.json'
             if record_path.exists():
                 existing=read_json(record_path)
                 if existing['bundle_hash']!=bundle_hash or existing['protocol_hash']!=digest(output/'protocol.json') or existing['task']!=task['key'] or existing['episode_id']!=ep or not Path(existing['video']).is_file():raise ValueError('inconsistent completed evaluation trial')
                 continue
-            seed=42+task['dataset_task_index']*100000+ep;torch.manual_seed(seed);policy.reset()
-            obs=call('/reset',{'task':task['key'],'index':10+ep,'seed':seed})
+            seed=42+task['dataset_task_index']*100000+ep;context=shared.reset(seed)
+            obs=call(worker_url,'/reset',{'task':task['key'],'index':10+ep,'seed':seed})
             video=output/f'{task["key"]}_{ep:03d}.mp4';result={}
             with imageio.get_writer(video,fps=20,codec='libx264') as writer:
                 writer.append_data(np.array(Image.open(io.BytesIO(base64.b64decode(obs['front']))))[::-1,::-1])
                 for step in range(max_steps):
-                    with torch.inference_mode(),torch.autocast('cuda',dtype=torch.bfloat16):action=post(policy.select_action(batch(obs)))
-                    a=action.squeeze(0).float().cpu().numpy()
+                    a=shared.select(context,obs)
                     if a.shape!=(7,) or not np.isfinite(a).all():raise ValueError('invalid SmolVLA action')
-                    result=call('/step',{'episode':obs['episode'],'action':np.clip(a,-1,1).tolist()});obs=result['observation']
+                    result=call(worker_url,'/step',{'episode':obs['episode'],'action':np.clip(a,-1,1).tolist()});obs=result['observation']
                     writer.append_data(np.array(Image.open(io.BytesIO(base64.b64decode(obs['front']))))[::-1,::-1])
                     if result['success']:break
             record={'trial_id':str(uuid.uuid4()),'task':task['key'],'episode_id':ep,'backend':'simulation',
@@ -266,6 +274,14 @@ def evaluate(manifest_path,output,checkpoint=None,url='http://127.0.0.1:8011',ta
                     'collision':result['collision'],'collision_available':True,'collision_free_success':result['success'] and not result['collision']}
             write_json(output/f'{task["key"]}_{ep:03d}.json',record,exclusive=True)
             print(task['key'],ep,record['success'],flush=True)
+    with ThreadPoolExecutor(max_workers=len(worker_urls)) as pool:
+        futures=[pool.submit(worker,i) for i in range(len(worker_urls))]
+        for future in futures:future.result()
+    elapsed=time.monotonic()-started
+    write_json(output/'execution.json',dict(simulator_workers=len(worker_urls),shared_policy=True,
+               independent_trial_rng=True,worker_urls=worker_urls,wall_seconds=elapsed,
+               resumed_trials=completed_before,new_trials=len(trials)-completed_before,
+               new_trials_per_minute=(len(trials)-completed_before)*60/elapsed))
     return output
 
 
@@ -274,7 +290,7 @@ def main():
     sub.add_parser('download');sub.add_parser('plan')
     a=sub.add_parser('prepare');a.add_argument('--source',type=Path,required=True);a.add_argument('--output',type=Path,required=True);a.add_argument('--resume',action='store_true')
     a=sub.add_parser('evaluate');a.add_argument('--manifest',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
-    a.add_argument('--resume',action='store_true');a.add_argument('--checkpoint',type=Path);a.add_argument('--url',default='http://127.0.0.1:8011');a.add_argument('--task');a.add_argument('--episodes',type=int,default=10);a.add_argument('--max-steps',type=int,default=300)
+    a.add_argument('--worker-urls',nargs='+');a.add_argument('--resume',action='store_true');a.add_argument('--checkpoint',type=Path);a.add_argument('--url',default='http://127.0.0.1:8011');a.add_argument('--task');a.add_argument('--episodes',type=int,default=10);a.add_argument('--max-steps',type=int,default=300)
     a=sub.add_parser('train-epoch');a.add_argument('--manifest',type=Path,required=True);a.add_argument('--output',type=Path,required=True);a.add_argument('--resume',type=Path,required=True);a.add_argument('--wandb-mode',choices=['online','offline','disabled'])
     a=sub.add_parser('train');a.add_argument('--manifest',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
     a.add_argument('--resume',type=Path);a.add_argument('--steps',type=int);a.add_argument('--smoke',action='store_true');a.add_argument('--wandb-mode',choices=['online','offline','disabled'])
@@ -282,7 +298,7 @@ def main():
     if args.command=='plan':print(json.dumps(settings(),indent=2))
     elif args.command=='download':download()
     elif args.command=='prepare':print(prepare(args.source,args.output,args.resume))
-    elif args.command=='evaluate':print(evaluate(args.manifest,args.output,args.checkpoint,args.url,args.task,args.episodes,args.max_steps,args.resume))
+    elif args.command=='evaluate':print(evaluate(args.manifest,args.output,args.checkpoint,args.url,args.task,args.episodes,args.max_steps,args.resume,args.worker_urls))
     elif args.command=='train-epoch':
         from epoch_training import train_epoch
         print(train_epoch(args.manifest,args.output,args.resume,args.wandb_mode))

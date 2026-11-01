@@ -17,8 +17,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 938,
-      "sha256": "9710d371950eb8d7c72f45dc794549f322fa8f27e7db041d55d535bd9299d4df"
+      "bytes": 1026,
+      "sha256": "93f92bbaff58c657a5c7cf0a7a7a8bfe8c5ce436248c7d4c6a3f63a11f63f412"
     },
     {
       "path": "REPRODUCIBILITY.md",
@@ -29,6 +29,11 @@
       "path": "THIRD_PARTY_NOTICES.md",
       "bytes": 1154,
       "sha256": "4e65258e443b8c2a3fa595ddd75944d656450fe9cdf6a5cf1fdcee5aba80aee7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/PARALLEL_EVALUATION.md",
+      "bytes": 2272,
+      "sha256": "8fb5405ff9ed29519bd6bb80bb02f984967622eeb758a36ba590c82b77d84586"
     },
     {
       "path": "reports/2026-11-01-burgq/PUBLICATION_VALIDATION.json",
@@ -551,6 +556,16 @@
       "sha256": "cc2158e01dcb3727968a19be7c69afd537382b9166a388852ef604af693fb8c7"
     },
     {
+      "path": "reports/2026-11-01-burgq/parallel-plan.json",
+      "bytes": 1864,
+      "sha256": "f7c5bc97a1ab0ffb7bc9e84989ff91fa0e2e08cf78b599c14037b3453e5c2a94"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/parallel-switch.json",
+      "bytes": 213,
+      "sha256": "329293d0f4d7dfa0582a8892d326f2d4eda0a1d20d5ad09999f6696a094e9a18"
+    },
+    {
       "path": "reports/2026-11-01-burgq/plan.json",
       "bytes": 1717,
       "sha256": "8b90841ab3d0537aa504028f4251c18f6018d930fe03554ec5dd1f62890f0c77"
@@ -672,8 +687,8 @@
     },
     {
       "path": "workspace/backends/smolvla/README.md",
-      "bytes": 5489,
-      "sha256": "dca4610a93ad676e91709adfabdda497fdf41f66996ab69c2826531253d0347b"
+      "bytes": 5717,
+      "sha256": "739318d8b6ece8074d3db8a2201dc06e0541c1d57942b360fcad5c00643846c9"
     },
     {
       "path": "workspace/backends/smolvla/STAGED_ONE_EPOCH.md",
@@ -736,6 +751,11 @@
       "sha256": "738bcd10074f0acf633d932a99f2a478f13dbc54c52f738c519e341f3e7dc70e"
     },
     {
+      "path": "workspace/backends/smolvla/parallel_policy.py",
+      "bytes": 1515,
+      "sha256": "fada0e2e7d2db8d19ce6b730ff0641d40b39f15dabf0342332eec0fd0d29998e"
+    },
+    {
       "path": "workspace/backends/smolvla/prepare_raw.py",
       "bytes": 5054,
       "sha256": "19e5c8b04d67974525c3df5b09b82279ebe80698ef73ab49061c3a1f5f006803"
@@ -752,8 +772,8 @@
     },
     {
       "path": "workspace/backends/smolvla/run.py",
-      "bytes": 20307,
-      "sha256": "6302da5ad9467fb407412ec24e3c9ffaca2323e77e09989f2b8c19331119afff"
+      "bytes": 21377,
+      "sha256": "0aaf2913d54896ddcb020e2a4c162e236bcfb7f89c469185af85f4cb9bece89a"
     },
     {
       "path": "workspace/backends/smolvla/source.json",
@@ -762,8 +782,8 @@
     },
     {
       "path": "workspace/backends/smolvla/staged_job.py",
-      "bytes": 7068,
-      "sha256": "b9fb697dce1d1fbded70e0c98d9c3ac82d6707173230fe66f3349bd31751be53"
+      "bytes": 8523,
+      "sha256": "f27df6e57257e26fa1db443addadfb7dce9df9c7f56fbec99b6a3d2e6000e019"
     },
     {
       "path": "workspace/backends/smolvla/staged_training.py",
@@ -784,6 +804,11 @@
       "path": "workspace/backends/smolvla/tests/test_one_pass.py",
       "bytes": 2034,
       "sha256": "1f4302680c319c360fce77179e507ab937d038e46c825909f5ff710ce440bde3"
+    },
+    {
+      "path": "workspace/backends/smolvla/tests/test_parallel_policy.py",
+      "bytes": 1540,
+      "sha256": "0790572e7f19d40306733906ad9bc053eddabb90be41754566adc414c99b2f0c"
     },
     {
       "path": "workspace/backends/smolvla/tests/test_raw_prepare.py",
@@ -3917,8 +3942,8 @@
     },
     {
       "path": "workspace/src/physicalai_vla/evaluation.py",
-      "bytes": 4235,
-      "sha256": "695c52da8c216a69627aa40fc60f09bec8005437bd8b9a2172acd6d2f54657d2"
+      "bytes": 4546,
+      "sha256": "dd20ffbd89cc7f0a7f1bcf6045af9235248b3a08694529b0bdd5571e3f3df63c"
     },
     {
       "path": "workspace/src/physicalai_vla/io.py",
@@ -3942,8 +3967,8 @@
     },
     {
       "path": "workspace/src/physicalai_vla/simulation.py",
-      "bytes": 8460,
-      "sha256": "3d2770de25dfc127f455e89bf79e447b4fcc8256c60bde912c16c5dff5d89768"
+      "bytes": 8517,
+      "sha256": "2e185433400545283149b331aa46a23d1575657f12305d1f70e2c4e12e81ed83"
     },
     {
       "path": "workspace/src/physicalai_vla/training.py",

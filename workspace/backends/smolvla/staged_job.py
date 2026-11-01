@@ -53,15 +53,43 @@ def select(job):
                evaluation_scope='checkpoint selection on paired 80 trials; not an independent held-out confirmation'))
 
 
+
+def evaluate_parallel(args,env,plan):
+    workers=int(plan.get('evaluation_workers',1))
+    if workers==1:return command(args,env)
+    if workers!=4:raise ValueError('parallel experiment requires four simulators')
+    servers=[];urls=[]
+    try:
+        for index in range(workers):
+            port=plan['sim_port']+10+index;urls.append(f'http://127.0.0.1:{port}')
+            worker_env=dict(env,PHYSICALAI_SIM_INSTANCE=str(port),OMP_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1',MKL_NUM_THREADS='1')
+            servers.append(subprocess.Popen([str(ROOT/'.venv/bin/vla'),'serve','--kind','sim','--port',str(port)],cwd=ROOT,env=worker_env))
+        for server,url in zip(servers,urls):
+            for _ in range(120):
+                if server.poll() is not None:raise RuntimeError('parallel simulator exited')
+                try:
+                    with urlopen(url+'/health',timeout=2) as response:
+                        if response.status==200:break
+                except OSError:time.sleep(1)
+            else:raise TimeoutError('parallel simulator startup')
+        command(args+['--worker-urls',*urls],dict(env,OMP_NUM_THREADS='2'))
+    finally:
+        for server in servers:
+            if server.poll() is None:server.terminate()
+        for server in servers:
+            try:server.wait(timeout=20)
+            except subprocess.TimeoutExpired:server.kill();server.wait()
+
+
 def evaluate_checkpoint(job,checkpoint=None):
     env=environment(job);plan=read_json(job/'plan.json');manifest=Path(plan.get('evaluation_manifest_path',HERE/'data/full-v1/manifest.json'))
     step=read_json(checkpoint/'state.json')['step'] if checkpoint else 0
     output=job/f'eval-{step:06d}' if checkpoint else job/'baseline80'
-    status(job,'checkpoint_evaluation' if checkpoint else 'baseline',checkpoint=str(checkpoint) if checkpoint else None,planned_trials=80,optimizer_step=step)
+    status(job,'checkpoint_evaluation' if checkpoint else 'baseline',checkpoint=str(checkpoint) if checkpoint else None,planned_trials=80,optimizer_step=step,simulator_workers=plan.get('evaluation_workers',1))
     args=[HERE/'.venv/bin/python',HERE/'run.py','evaluate','--manifest',manifest,'--output',output,'--url',f'http://127.0.0.1:{plan["sim_port"]}',
           '--episodes','10','--max-steps','300','--resume']
     if checkpoint:args+=['--checkpoint',checkpoint]
-    command(args,env);command([ROOT/'.venv/bin/vla','score',output,'--per-task','10'],env)
+    evaluate_parallel(args,env,plan);command([ROOT/'.venv/bin/vla','score',output,'--per-task','10'],env)
     summary=read_json(output/'summary.json')
     if not summary['all_trials_present']:raise ValueError('paired rollout incomplete')
     command([ROOT/'.venv/bin/vla','log-eval',output,'--wandb-mode','offline'],env)

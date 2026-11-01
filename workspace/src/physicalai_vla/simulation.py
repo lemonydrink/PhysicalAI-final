@@ -14,7 +14,7 @@ from .codec import absolute_to_delta
 def setup_libero():
     source=ROOT/'third_party/libero'
     os.environ.setdefault('MUJOCO_GL','egl')
-    private=ROOT/'runs/libero_config';private.mkdir(parents=True,exist_ok=True)
+    private=ROOT/'runs'/('libero_config_'+os.environ.get('PHYSICALAI_SIM_INSTANCE','default'));private.mkdir(parents=True,exist_ok=True)
     os.environ['LIBERO_CONFIG_PATH']=str(private)
     import yaml
     base=source/'libero/libero'

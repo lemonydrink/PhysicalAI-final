@@ -1,3 +1,5 @@
+現行BurgQ実験の評価はシミュレーター4台＋共有モデルへ切替済み。plan.jsonのevaluation_workers=4。trial別RNG/action queueを分離し、評価のexecution.jsonとW&Bに実行情報を保存する。
+
 # SmolVLA：8task追加学習
 
 現行：BurgQの学習前80回評価→batch32・1epoch SFT。[データ整合監査](BURGQ_DATA_AUDIT.md)で重複軌道による検証漏洩を修正済み。学習365,887フレーム、11,434更新。以下の待機・旧主系統の記述は過去の実験経緯。
