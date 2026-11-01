@@ -1,0 +1,19 @@
+[Unit]
+Description=Compose eight complete final ROS2 task episodes with prompts into one MP4
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+
+[Service]
+Type=exec
+WorkingDirectory=/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2
+ExecStart=/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/.venv/bin/python -u /home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/scripts/compose_eight_task_video.py --job /home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101 --wait
+Environment=PYTHONUNBUFFERED=1
+StandardOutput=append:/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/video-queue.log
+StandardError=append:/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/video-queue.log
+Restart=on-failure
+RestartSec=60
+TimeoutStopSec=30
+KillMode=control-group
+
+[Install]
+WantedBy=default.target

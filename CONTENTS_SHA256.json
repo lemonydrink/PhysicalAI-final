@@ -17,8 +17,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 1131,
-      "sha256": "60e181e15ea2c9dddf118e40da1dc34b9643f8004b4b05964a2d25457be32697"
+      "bytes": 1238,
+      "sha256": "bdd91f9e3fef585aa27a6adb1c1c07ac11ef29c50d71a6d4a9453a97ee642dd5"
     },
     {
       "path": "REPRODUCIBILITY.md",
@@ -36,9 +36,19 @@
       "sha256": "a0051c24a1998dabe75991032e6c2bc975ad34f5b97b4ee364be2ff986168d39"
     },
     {
+      "path": "deployment/physicalai-smolvla-final-video.service.example",
+      "bytes": 932,
+      "sha256": "ebab1a1ffb919b2b84a6d596daaa83d52b17145ec11624b28563458648bf9e36"
+    },
+    {
       "path": "reports/2026-11-01-burgq/FINAL_ROS2_AND_HARDWARE.md",
       "bytes": 6492,
       "sha256": "bba15e489600cf00f67f54c7eefa7f4a82665114c56c3b9e4f5e439b7970f318"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/FINAL_VIDEO_RESERVATION.md",
+      "bytes": 1641,
+      "sha256": "0ac6ad73220fb37febb4ef1f3fb8ac1b0190dd5d599dcfa59b335b785259aea0"
     },
     {
       "path": "reports/2026-11-01-burgq/PARALLEL_EVALUATION.md",
@@ -64,6 +74,16 @@
       "path": "reports/2026-11-01-burgq/ROS2_VALIDATION.json",
       "bytes": 668,
       "sha256": "018ea5ffecc8c6fe3c6f5f1dc6c302d15f6bfdc30ee485438ad02df6280cbdee"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/VIDEO_LAYOUT_BASELINE_PREVIEW.jpg",
+      "bytes": 53374,
+      "sha256": "a16a5c35bb0d4d09ef0eb87aaaf40ef70e100f1d471f1df65e7ce46eb6087bc4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/VIDEO_LAYOUT_PREFLIGHT.json",
+      "bytes": 7456,
+      "sha256": "673a2bdf3285224dbe0fde69591f44a38d0f4a04e081fac40e83ce5815b3c682"
     },
     {
       "path": "reports/2026-11-01-burgq/audit/camera_canonical.png",
@@ -562,8 +582,8 @@
     },
     {
       "path": "reports/2026-11-01-burgq/final-ros2-plan.json",
-      "bytes": 2272,
-      "sha256": "894848f07b4868f447b44f3aa4367ccf99cda2b0d1954cce6ab9ab273dd85aeb"
+      "bytes": 2877,
+      "sha256": "8c67e3ea28040fb7bdec5b4b3bb436290aedb835e6890f077894a18d6719889f"
     },
     {
       "path": "reports/2026-11-01-burgq/manifests/full-v1-evaluation.json",
@@ -3896,6 +3916,11 @@
       "sha256": "bba15e489600cf00f67f54c7eefa7f4a82665114c56c3b9e4f5e439b7970f318"
     },
     {
+      "path": "workspace/docs/FINAL_VIDEO_RESERVATION.md",
+      "bytes": 1641,
+      "sha256": "0ac6ad73220fb37febb4ef1f3fb8ac1b0190dd5d599dcfa59b335b785259aea0"
+    },
+    {
       "path": "workspace/docs/IMPLEMENTATION_STATUS.md",
       "bytes": 5019,
       "sha256": "73d38d7a4734a29341e67ce486f57b2027a8fba2b15567bff2342fb5af48e195"
@@ -3969,6 +3994,11 @@
       "path": "workspace/scripts/build_ros.sh",
       "bytes": 218,
       "sha256": "7cec03cda064343b5106de6fbd245587d49dba2f37cb70d9621a55fbad58c61a"
+    },
+    {
+      "path": "workspace/scripts/compose_eight_task_video.py",
+      "bytes": 8281,
+      "sha256": "ae1a7c9b189d9688076dcfdc981343dedc2c614b2143712f0640294347935700"
     },
     {
       "path": "workspace/scripts/download_eight_dataset.py",

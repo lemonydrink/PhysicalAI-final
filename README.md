@@ -6,6 +6,7 @@ BurgQ SmolVLAをLIBERO-PLUSの指定8タスクへ追加学習するシミュレ�
 
 - [4台並列評価への切替記録](reports/2026-11-01-burgq/PARALLEL_EVALUATION.md)
 - [最終ROS 2評価の予約と実機移行範囲](reports/2026-11-01-burgq/FINAL_ROS2_AND_HARDWARE.md)
+- [プロンプト付き8タスク連結MP4の予約](reports/2026-11-01-burgq/FINAL_VIDEO_RESERVATION.md)
 - [実験レポート](reports/2026-11-01-burgq/REPORT.md)
 - [8タスクの成功動画](reports/2026-11-01-burgq/videos/)
 - [設定・監査・80試行の結果](reports/2026-11-01-burgq/)
