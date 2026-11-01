@@ -1,0 +1,19 @@
+{
+  "trial_id": "2a9970e5-673e-4af6-96d6-91e6cf22840b",
+  "task": "butter_basket",
+  "episode_id": 3,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "1e7f3074a40c3f82fe213727ca5477cefa7b7979f9513f214770ba590e1df7e3",
+  "protocol_hash": "cd2a06a9faad0a8e344af9366972afdaf57c832861ad40cbe0b798c21e444f25",
+  "initial_state_hash": "54f9288d649bb5edbb3184d2300692dc0453223129bd538d3cbf61cf07c26862",
+  "seed": 1600045,
+  "initial_state_index": 13,
+  "video": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/eval-010000/butter_basket_003.mp4",
+  "steps": 149,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true
+}

@@ -1,0 +1,19 @@
+{
+  "trial_id": "17afa9c3-3863-47e6-a1cb-6a1ac356d9ab",
+  "task": "tomato_basket",
+  "episode_id": 3,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "3b26de2045ae0ed7407582382370f5608044e0bf85e5eb63e4b348f4d59257f3",
+  "protocol_hash": "8387038f34382e461d4d48ee6c35257728c149e5560acc1c2eaea701c2123c00",
+  "initial_state_hash": "a67998427fd8208d85950e0c342c560cf3c7a6684e6beac89c6f089f59c9474c",
+  "seed": 2000045,
+  "initial_state_index": 13,
+  "video": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/eval-004000/tomato_basket_003.mp4",
+  "steps": 126,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true
+}

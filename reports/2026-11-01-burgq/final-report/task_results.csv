@@ -1,0 +1,9 @@
+task,prompt,baseline_successes,baseline_collision_free_successes,model_sft_successes,model_sft_collision_free_successes,ros2_final_successes,ros2_final_collision_free_successes,model_delta_pp
+milk_basket,pick up the milk and place it in the basket,8,8,10,10,9,9,20
+tomato_basket,pick up the tomato sauce and place it in the basket,9,9,10,10,10,10,10
+butter_basket,pick up the butter and place it in the basket,10,10,10,10,10,10,0
+bowl_center_plate,pick up the black bowl from table center and place it on the plate,9,8,10,8,9,9,10
+bowl_cookie_plate,pick up the black bowl next to the cookie box and place it on the plate,8,6,10,3,10,5,20
+bowl_plate,put the bowl on the plate,10,10,10,10,10,10,0
+middle_drawer,open the middle drawer of the cabinet,9,9,10,10,10,10,10
+plate_stove,push the plate to the front of the stove,10,0,8,2,10,5,-20

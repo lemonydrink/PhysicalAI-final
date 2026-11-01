@@ -1,0 +1,18 @@
+{
+  "report_date": "2026-11-02",
+  "trial_json_count": 640,
+  "evaluation_runs": 8,
+  "trials_per_run": 80,
+  "all_80_comparison_initial_state_hashes_match": true,
+  "protocol_matches_except_checkpoint": true,
+  "training_steps_contiguous_1_to_11434": true,
+  "training_order_permutation_verified": true,
+  "raw_trial_summary_and_collision_counts_reconciled": true,
+  "all_80_ros2_action_counts_match": true,
+  "selected_eight_source_video_hashes_and_trial_ids_match": true,
+  "final_compilation_hash_matches": true,
+  "all_local_report_links_exist": true,
+  "chart_visually_inspected": true,
+  "claims_separate_model_comparison_and_ros2_integration": true,
+  "caution": "Post-selection comparison; not a causal transport comparison; no physical-robot success claim."
+}

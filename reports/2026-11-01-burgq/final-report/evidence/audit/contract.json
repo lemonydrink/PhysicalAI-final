@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "optimizer_updates_during_audit": 0,
+  "initial_model": "BurgQ/smolvla-libero-bs32-100k",
+  "initial_revision": "238fb0654cd598e287f8b6c2d64bd09af239c76f",
+  "all_initial_tensors_match": true,
+  "tensor_count": 500,
+  "loss_dim": 7,
+  "normalizer_roundtrip": true,
+  "trainable_weights_fp32": true,
+  "weight_sha256": "88638a6aa1399327d79418265b224b883e7af6b5a7855c3b0aa6b7929ff1f971",
+  "camera_contract": "same audited canonical camera transforms as predecessor",
+  "predecessor_contract_sha256": "c51b46d072be04d2ce27973f4a834081850d023abbc7a37e5bef1a41cc2fc95b",
+  "state_encoding": "libero_quat2axisangle"
+}

@@ -1,0 +1,10 @@
+{
+  "stage": "complete",
+  "updated_at": "2026-11-01T17:39:15.448049+00:00",
+  "best_checkpoint": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/train-002/ckpt-011434",
+  "best_success_rate": 0.975,
+  "baseline_success_rate": 0.9125,
+  "better_than_baseline": true,
+  "optimizer_steps": 11434,
+  "epochs": 1
+}

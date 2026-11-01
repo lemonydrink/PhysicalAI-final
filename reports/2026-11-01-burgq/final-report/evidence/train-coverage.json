@@ -1,0 +1,10 @@
+{
+  "train_frames": 365887,
+  "consumed_frames": 365887,
+  "unique_observations": 365887,
+  "epoch": 1.0,
+  "optimizer_steps": 11434,
+  "order_sha256": "9c84592357552d0d597bddaf5b2e2e1bace35e5890646c9bd89f468f5b8608ca",
+  "validation_samples": 38829,
+  "validation_loss": 0.7283037016318624
+}

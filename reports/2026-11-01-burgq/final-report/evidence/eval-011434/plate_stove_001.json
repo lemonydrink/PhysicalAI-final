@@ -1,0 +1,19 @@
+{
+  "trial_id": "4d0d728b-dbc4-421c-a339-2d627aa014bb",
+  "task": "plate_stove",
+  "episode_id": 1,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "7538f906c9988f5a5e500f7cb03d26ae12afb4504058888ffd695a81e6c1f050",
+  "protocol_hash": "77fb17dc8a9a440cb45642ac00ecdddded5511e9ac5068269fb3a26a7e611e20",
+  "initial_state_hash": "701e9b1d0e22e38d16f3b8157233cbeb6f3519e970bfaa2381b94ec3e2dd98bd",
+  "seed": 3600043,
+  "initial_state_index": 11,
+  "video": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/eval-011434/plate_stove_001.mp4",
+  "steps": 118,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true
+}

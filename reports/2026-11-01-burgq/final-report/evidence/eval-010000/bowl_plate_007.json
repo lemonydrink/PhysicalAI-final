@@ -1,0 +1,19 @@
+{
+  "trial_id": "5c0c9f02-891d-479b-b5d8-153b826e39bc",
+  "task": "bowl_plate",
+  "episode_id": 7,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "1e7f3074a40c3f82fe213727ca5477cefa7b7979f9513f214770ba590e1df7e3",
+  "protocol_hash": "cd2a06a9faad0a8e344af9366972afdaf57c832861ad40cbe0b798c21e444f25",
+  "initial_state_hash": "35afed4b1f24c4ea62a71205e05fbec061021acf5f9cb0cda04756058cdf8a19",
+  "seed": 900049,
+  "initial_state_index": 17,
+  "video": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/eval-010000/bowl_plate_007.mp4",
+  "steps": 73,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true
+}

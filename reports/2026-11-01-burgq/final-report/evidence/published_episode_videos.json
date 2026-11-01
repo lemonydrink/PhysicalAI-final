@@ -1,0 +1,50 @@
+[
+  {
+    "task": "milk_basket",
+    "episode_id": 0,
+    "path": "assets/episodes/milk_basket_000.mp4",
+    "sha256": "8a8959a440baf7e2a145798edf99382679a44712ce54c62a3c6cb88a9608ba72"
+  },
+  {
+    "task": "tomato_basket",
+    "episode_id": 0,
+    "path": "assets/episodes/tomato_basket_000.mp4",
+    "sha256": "988be2e52de966862d6103a657bd1388d3f85b840926d358f75506c412b4d340"
+  },
+  {
+    "task": "butter_basket",
+    "episode_id": 0,
+    "path": "assets/episodes/butter_basket_000.mp4",
+    "sha256": "fb854cd571cf1dc9056563359ef0a2aab054c4ddcf9c110f318c5ea03e17c664"
+  },
+  {
+    "task": "bowl_center_plate",
+    "episode_id": 1,
+    "path": "assets/episodes/bowl_center_plate_001.mp4",
+    "sha256": "b3609942a715cd8885739ac98b2390dee5f6e8804ba9c87c15baedb16d6097c1"
+  },
+  {
+    "task": "bowl_cookie_plate",
+    "episode_id": 0,
+    "path": "assets/episodes/bowl_cookie_plate_000.mp4",
+    "sha256": "2c58e4f6925f95b930fbac6134b652f2a5510bb7561d89d386c6ffd8fa30d864"
+  },
+  {
+    "task": "bowl_plate",
+    "episode_id": 0,
+    "path": "assets/episodes/bowl_plate_000.mp4",
+    "sha256": "4f133d8ddfbfa3426a09e1d20f362e43f7df666e0b46bfa7be1eea957e72b0e3"
+  },
+  {
+    "task": "middle_drawer",
+    "episode_id": 0,
+    "path": "assets/episodes/middle_drawer_000.mp4",
+    "sha256": "ced0542b293b8729c7c316133d000725b528f1abfad432cd86864763d1e722e0"
+  },
+  {
+    "task": "plate_stove",
+    "episode_id": 0,
+    "path": "assets/episodes/plate_stove_000.mp4",
+    "sha256": "17223de7f2f2db5a74b7fd274a7bb6d0a680519c1c8040aad09f60c2f189230e"
+  }
+]

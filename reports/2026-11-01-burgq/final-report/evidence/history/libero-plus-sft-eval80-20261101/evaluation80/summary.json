@@ -1,0 +1,122 @@
+{
+  "backend": "simulation",
+  "macro_success_rate": 0.0625,
+  "target": 0.7,
+  "tasks": [
+    {
+      "task": "milk_basket",
+      "completed_trials": 10,
+      "planned_trials": 10,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.2775327998628892
+      ],
+      "success_video": false,
+      "infra_errors": 0,
+      "collision_free_success_rate": 0.0
+    },
+    {
+      "task": "tomato_basket",
+      "completed_trials": 10,
+      "planned_trials": 10,
+      "successes": 1,
+      "success_rate": 0.1,
+      "wilson95": [
+        0.017876213095072896,
+        0.4041500267952385
+      ],
+      "success_video": true,
+      "infra_errors": 0,
+      "collision_free_success_rate": 0.1
+    },
+    {
+      "task": "butter_basket",
+      "completed_trials": 10,
+      "planned_trials": 10,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.2775327998628892
+      ],
+      "success_video": false,
+      "infra_errors": 0,
+      "collision_free_success_rate": 0.0
+    },
+    {
+      "task": "bowl_center_plate",
+      "completed_trials": 10,
+      "planned_trials": 10,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.2775327998628892
+      ],
+      "success_video": false,
+      "infra_errors": 0,
+      "collision_free_success_rate": 0.0
+    },
+    {
+      "task": "bowl_cookie_plate",
+      "completed_trials": 10,
+      "planned_trials": 10,
+      "successes": 0,
+      "success_rate": 0.0,
+      "wilson95": [
+        0.0,
+        0.2775327998628892
+      ],
+      "success_video": false,
+      "infra_errors": 0,
+      "collision_free_success_rate": 0.0
+    },
+    {
+      "task": "bowl_plate",
+      "completed_trials": 10,
+      "planned_trials": 10,
+      "successes": 1,
+      "success_rate": 0.1,
+      "wilson95": [
+        0.017876213095072896,
+        0.4041500267952385
+      ],
+      "success_video": true,
+      "infra_errors": 0,
+      "collision_free_success_rate": 0.1
+    },
+    {
+      "task": "middle_drawer",
+      "completed_trials": 10,
+      "planned_trials": 10,
+      "successes": 2,
+      "success_rate": 0.2,
+      "wilson95": [
+        0.05668215145437519,
+        0.5098375284633583
+      ],
+      "success_video": true,
+      "infra_errors": 0,
+      "collision_free_success_rate": 0.2
+    },
+    {
+      "task": "plate_stove",
+      "completed_trials": 10,
+      "planned_trials": 10,
+      "successes": 1,
+      "success_rate": 0.1,
+      "wilson95": [
+        0.017876213095072896,
+        0.4041500267952385
+      ],
+      "success_video": true,
+      "infra_errors": 0,
+      "collision_free_success_rate": 0.0
+    }
+  ],
+  "all_trials_present": true,
+  "all_success_videos_present": false,
+  "accepted": false
+}

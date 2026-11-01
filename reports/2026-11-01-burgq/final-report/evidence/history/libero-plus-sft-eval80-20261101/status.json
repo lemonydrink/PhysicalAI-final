@@ -1,0 +1,10 @@
+{
+  "stage": "complete",
+  "updated_at": "2026-10-31T16:02:27.137506+00:00",
+  "pid": 56990,
+  "checkpoint": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/libero-plus-sft-eval80-20261101/train-001/ckpt-010000",
+  "summary": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/libero-plus-sft-eval80-20261101/evaluation80/summary.json",
+  "completed_trials": 80,
+  "macro_success_rate": 0.0625,
+  "target_met": false
+}

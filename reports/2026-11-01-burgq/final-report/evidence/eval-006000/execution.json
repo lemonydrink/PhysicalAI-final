@@ -1,0 +1,15 @@
+{
+  "simulator_workers": 4,
+  "shared_policy": true,
+  "independent_trial_rng": true,
+  "worker_urls": [
+    "http://127.0.0.1:18041",
+    "http://127.0.0.1:18042",
+    "http://127.0.0.1:18043",
+    "http://127.0.0.1:18044"
+  ],
+  "wall_seconds": 367.98424089798937,
+  "resumed_trials": 0,
+  "new_trials": 80,
+  "new_trials_per_minute": 13.044036854096234
+}

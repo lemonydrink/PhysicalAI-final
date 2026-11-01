@@ -1,0 +1,19 @@
+{
+  "trial_id": "952ceecc-15d5-469a-b309-57723dd9409d",
+  "task": "middle_drawer",
+  "episode_id": 3,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "7538f906c9988f5a5e500f7cb03d26ae12afb4504058888ffd695a81e6c1f050",
+  "protocol_hash": "77fb17dc8a9a440cb45642ac00ecdddded5511e9ac5068269fb3a26a7e611e20",
+  "initial_state_hash": "e5b97fdef12134f93f883a9e933d7ad5d4b0033d6d2069a8cc715ca8b7c8aa0e",
+  "seed": 700045,
+  "initial_state_index": 13,
+  "video": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/eval-011434/middle_drawer_003.mp4",
+  "steps": 128,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true
+}

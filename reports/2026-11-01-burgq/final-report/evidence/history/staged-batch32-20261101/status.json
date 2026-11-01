@@ -1,0 +1,11 @@
+{
+  "stage": "stopped_by_user",
+  "updated_at": "2026-11-01T12:56:55.940572+00:00",
+  "optimizer_step": 2000,
+  "total_optimizer_steps": 11391,
+  "batch_size": 32,
+  "gradient_accumulation_steps": 1,
+  "reason": "User requested immediate switch to BurgQ experiment",
+  "last_observed_optimizer_step": 2928,
+  "last_saved_optimizer_step": 2000
+}

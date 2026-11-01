@@ -1,0 +1,19 @@
+{
+  "trial_id": "1d592da4-52dd-477b-897f-f5a419a20832",
+  "task": "milk_basket",
+  "episode_id": 6,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "b7744aea0e2f847d62bb2124c21f3376d076f7dfc6b0ad551f25419a0d6ba3bc",
+  "protocol_hash": "3a1b8cde06e8e3274758d7f26894e4e9bc99d3993481b396d996e78a7e6172a1",
+  "initial_state_hash": "c6343dc02743b76512620fb171d6c6c1dfa1ed11f48cb075666c96fa59d187b3",
+  "seed": 800048,
+  "initial_state_index": 16,
+  "video": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/eval-008000/milk_basket_006.mp4",
+  "steps": 136,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true
+}

@@ -1,0 +1,16 @@
+{
+  "groups": 350,
+  "validation_groups": 34,
+  "old_validation_leaked_episodes": 306,
+  "counts": {
+    "train": {
+      "episodes": 2779,
+      "frames": 365887
+    },
+    "validation": {
+      "episodes": 292,
+      "frames": 38829
+    }
+  },
+  "trajectory_overlap": 0
+}

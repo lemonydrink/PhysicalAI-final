@@ -17,8 +17,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 1238,
-      "sha256": "bdd91f9e3fef585aa27a6adb1c1c07ac11ef29c50d71a6d4a9453a97ee642dd5"
+      "bytes": 1876,
+      "sha256": "7aa46045dac15b02f84ac5fff8d9ed778128a7e5d16214752ffee5a886d894a8"
     },
     {
       "path": "REPRODUCIBILITY.md",
@@ -62,8 +62,8 @@
     },
     {
       "path": "reports/2026-11-01-burgq/REPORT.md",
-      "bytes": 8803,
-      "sha256": "7f4ccabd84ee1a4b77a9db58baed44a92805e10919b9607a87b88c23fe9c5654"
+      "bytes": 8981,
+      "sha256": "c012794b1698e63710a18a618abcc5f36cc0103e8d78bf288775fa416c1daa73"
     },
     {
       "path": "reports/2026-11-01-burgq/ROS2_PREFLIGHT.json",
@@ -581,6 +581,3551 @@
       "sha256": "41e0bff8a5287d7ee1344638eed6f541dc1224b63a3869e1c4bbfa19363ab59d"
     },
     {
+      "path": "reports/2026-11-01-burgq/final-report/REPORT.md",
+      "bytes": 22173,
+      "sha256": "a9756e4226e8b5abafac4c1928893710426cc3f8fec1e06c4223372c7600e778"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/VERIFICATION.json",
+      "bytes": 770,
+      "sha256": "96a11dc825cb30edd5ec85fb682facf60fb00ec681b728e94779f585660ab59d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/analysis.json",
+      "bytes": 15847,
+      "sha256": "962c08fbcee48be6f49cc043362345fe5a881acd78d3001159a188cef1b133da"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/analyze_experiment.py",
+      "bytes": 7751,
+      "sha256": "9b5465947ed2136a4c56989af91715970b4fbbc19a28fd621b4e2b09715bdf45"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/assets/episodes/bowl_center_plate_001.mp4",
+      "bytes": 57640,
+      "sha256": "b3609942a715cd8885739ac98b2390dee5f6e8804ba9c87c15baedb16d6097c1"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/assets/episodes/bowl_cookie_plate_000.mp4",
+      "bytes": 79712,
+      "sha256": "2c58e4f6925f95b930fbac6134b652f2a5510bb7561d89d386c6ffd8fa30d864"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/assets/episodes/bowl_plate_000.mp4",
+      "bytes": 55751,
+      "sha256": "4f133d8ddfbfa3426a09e1d20f362e43f7df666e0b46bfa7be1eea957e72b0e3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/assets/episodes/butter_basket_000.mp4",
+      "bytes": 66365,
+      "sha256": "fb854cd571cf1dc9056563359ef0a2aab054c4ddcf9c110f318c5ea03e17c664"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/assets/episodes/middle_drawer_000.mp4",
+      "bytes": 82713,
+      "sha256": "ced0542b293b8729c7c316133d000725b528f1abfad432cd86864763d1e722e0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/assets/episodes/milk_basket_000.mp4",
+      "bytes": 65799,
+      "sha256": "8a8959a440baf7e2a145798edf99382679a44712ce54c62a3c6cb88a9608ba72"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/assets/episodes/plate_stove_000.mp4",
+      "bytes": 82724,
+      "sha256": "17223de7f2f2db5a74b7fd274a7bb6d0a680519c1c8040aad09f60c2f189230e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/assets/episodes/tomato_basket_000.mp4",
+      "bytes": 69824,
+      "sha256": "988be2e52de966862d6103a657bd1388d3f85b840926d358f75506c412b4d340"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/assets/final_ros2_eight_tasks_prompted.mp4",
+      "bytes": 8104027,
+      "sha256": "7c81491228d60fc3789b8bcf4beb3e4645d1b179999525731c8c01a40868cb62"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/checkpoint_results.csv",
+      "bytes": 791,
+      "sha256": "162130d6ac92ede27ea04251d2332b9108c50ea734aa9587528154bf16c527bf"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/audit/contract.json",
+      "bytes": 635,
+      "sha256": "a3778871de58644a692bcbbe9637f25dd024494d53ce163a3ff451643a5028bc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/audit/dataset_alignment.json",
+      "bytes": 3172,
+      "sha256": "67a246530bc438ab76183e0df45b3c56104faa64a7cad9e4ff97c57955d836d5"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/audit/group_split.json",
+      "bytes": 274,
+      "sha256": "87027fda5d821e3c9eee8e6fac68aac555d0345768243c302f173226741fb177"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/audit/raw_conversion_verification.json",
+      "bytes": 282,
+      "sha256": "b7326ec0c3cf8b703c1ac942e41bafee4911604193a6930c342077c480bc0806"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_center_plate_000.json",
+      "bytes": 769,
+      "sha256": "4126555cf73739c31bb13f3abcefc1dcb32b1ead137d42a541e0c9b0842f771e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_center_plate_001.json",
+      "bytes": 769,
+      "sha256": "ffda83c102bec286355a5a15647384ee79b6d94cc1c8bca62194a7f174d4f1c4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_center_plate_002.json",
+      "bytes": 769,
+      "sha256": "0908d643f8d9f8e1f8f12021aeb00bd0d6399e734a44938307fd1501aae5c319"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_center_plate_003.json",
+      "bytes": 770,
+      "sha256": "a99bf9402ea89c3e2e90d4aca3ea6cc3b10a96e548ece5beaba5d935e181bfa5"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_center_plate_004.json",
+      "bytes": 769,
+      "sha256": "c19203b515766e799afbc2a52fba5771dc09d8e697da1a992079905b5a2f2d60"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_center_plate_005.json",
+      "bytes": 769,
+      "sha256": "f02ce33c9110f4881c2d0b0bd4f719658df37528aa4bea1bf338ed8041dba2c8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_center_plate_006.json",
+      "bytes": 769,
+      "sha256": "3162e4c4e1c672da730717a1aa094a4edf48fd56feed888aa8d48940ad0689f1"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_center_plate_007.json",
+      "bytes": 769,
+      "sha256": "4a713b0ea718792b02afd96f1c27a53cfda06a3a958a366b8184405626857783"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_center_plate_008.json",
+      "bytes": 771,
+      "sha256": "f77fb2a6c7c194246770ef64c3fe47026d7940d1a851d2c9e34b6acfb7ec64df"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_center_plate_009.json",
+      "bytes": 769,
+      "sha256": "8781629d5ac643ef369bbbe4eb4c3ac3343bba17f075727a31998ecb6d251221"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_cookie_plate_000.json",
+      "bytes": 770,
+      "sha256": "0d97a82d87f9cf6cf60b557d47a44569cc00ea2ad05615d71cbc0829d6b63088"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_cookie_plate_001.json",
+      "bytes": 769,
+      "sha256": "c4e9570f53068a079f9d1319888b00923ad06364fa6490d0c1fe04a701c221ea"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_cookie_plate_002.json",
+      "bytes": 770,
+      "sha256": "443ab9b8fc4399c2349763357d838ce53fc6bf22a402dc8227fd48471a2d9fa3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_cookie_plate_003.json",
+      "bytes": 771,
+      "sha256": "641369e2633e02b289e8c6ad33acf88d2b665d3e9f471bc0ca78baee424d7530"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_cookie_plate_004.json",
+      "bytes": 770,
+      "sha256": "896659038ab30d586633526933cbfdcd3321c39c98d191d18d41dde9ea63a509"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_cookie_plate_005.json",
+      "bytes": 769,
+      "sha256": "ddf01ab8c98d519b4f40ee40e6cf9abb813ccbbf43044c05519457bd994fb56c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_cookie_plate_006.json",
+      "bytes": 769,
+      "sha256": "04db39c49bce9ec587a16894cf8cecf4995de271ae0eeee8d50d2102b91058f6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_cookie_plate_007.json",
+      "bytes": 772,
+      "sha256": "95855c17ae69658db748087575cba95fd5561d5bcd218d64c8dc5cec484c6eae"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_cookie_plate_008.json",
+      "bytes": 769,
+      "sha256": "2e56947ec50af866f2bc23f6c1d3addfeb16f91712675dc5bd63333d86bf6c29"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_cookie_plate_009.json",
+      "bytes": 769,
+      "sha256": "8a8c1a7e067a90e41dd9f2e2e1d32b8216eef666b9dd3feefb2d22165c31a761"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_plate_000.json",
+      "bytes": 755,
+      "sha256": "e88eef9030e945b06e4a6a684180d116e65bc432a5c9f0eae034f124a156f8ff"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_plate_001.json",
+      "bytes": 755,
+      "sha256": "61cf78b971f06de39372f0cdfaf07ea9baf28f31002f61135cbf9acd76a05fda"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_plate_002.json",
+      "bytes": 755,
+      "sha256": "89a86fc6516638635f05cf173856c6163b91d4f4a06c1ae7ea549cdaf579e2e0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_plate_003.json",
+      "bytes": 755,
+      "sha256": "ca1979ed6829d0e13c4aad849c70e865c05358e5b1b2441162a9fedb6b92e283"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_plate_004.json",
+      "bytes": 755,
+      "sha256": "e3c6162fd3f5dbc61afe62d94249933785010bced0e5bb8d18536f18973ce407"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_plate_005.json",
+      "bytes": 755,
+      "sha256": "1be5bf824d9d825a3a5dab57a2c3c70d33baa5cbcf4eb2aaa70538876fb8cbb6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_plate_006.json",
+      "bytes": 755,
+      "sha256": "fbea24aba4ea9d75279e9f51a2fb3766dce9c5b77d1f4b6d376c9dee27b64573"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_plate_007.json",
+      "bytes": 755,
+      "sha256": "71c7b2359c1540d82846da3151bd45805a1e9291d2e89022055d6a0d4d6b2f1a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_plate_008.json",
+      "bytes": 755,
+      "sha256": "076f7ffc5b0b1f7b95e8d116d9aae9cdeb261e1af2b45b8a63c2b69b0e23c3fc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/bowl_plate_009.json",
+      "bytes": 755,
+      "sha256": "329ef3364877e7d5d4342e4a54e30923a183e8b5723301c00889183c78f69d03"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/butter_basket_000.json",
+      "bytes": 763,
+      "sha256": "897b6b6871a7ced4113622796b2f6e18211f57ac85b4c99451d8dff62f408fc1"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/butter_basket_001.json",
+      "bytes": 763,
+      "sha256": "ba9db39198df458138f0cc22f292ce1b04a04f0a7e3b9fb37bf11459f49c09bf"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/butter_basket_002.json",
+      "bytes": 763,
+      "sha256": "1b2f878f34aab64cde860002717b857e18b4166d6d8599635e151ada910abc4b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/butter_basket_003.json",
+      "bytes": 763,
+      "sha256": "06f779fd53da3871686f85176ee62704af2d11c9419d0834a2538d6c6a1754f0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/butter_basket_004.json",
+      "bytes": 763,
+      "sha256": "8a9323b6c976db0615620f4400f0c5e02e69d68c74f21330488957f5f43dd672"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/butter_basket_005.json",
+      "bytes": 763,
+      "sha256": "136ffc3df86326f1db833623f7ef5809f2f372a88dcd0d2c96fa36cc567c5b86"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/butter_basket_006.json",
+      "bytes": 763,
+      "sha256": "159efb8e2173f13437374684bca39e472d0fa039ea2d4beb2a8f0092c609fbd2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/butter_basket_007.json",
+      "bytes": 763,
+      "sha256": "7401708c5f4c67b109a5468fa1476fcb7c5d765fbea00f13df6d583c27ff7021"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/butter_basket_008.json",
+      "bytes": 763,
+      "sha256": "5703e46430194978c3107fb17d60f19c8a10fab0daed02715964055bad734537"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/butter_basket_009.json",
+      "bytes": 763,
+      "sha256": "7c14118c2d7f4beb02256db03c9263929092b36061008c52dd210ed897202386"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/middle_drawer_000.json",
+      "bytes": 762,
+      "sha256": "f6bdd584c982dc1e101e89b85a0f10f09b6b5608fb10c7d442aead558a461a2f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/middle_drawer_001.json",
+      "bytes": 762,
+      "sha256": "8c2a0486103738562a68f919b17fc641dec9799862f08a8a417b9ffaa485942b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/middle_drawer_002.json",
+      "bytes": 762,
+      "sha256": "4706bb77ff82bce1962d3fcf5b8e395e54237a9033d7378ff7542412c3f53b25"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/middle_drawer_003.json",
+      "bytes": 762,
+      "sha256": "bc4fa5208e7db964b5acb8f15688402138887ab91c110a6b4bb6a2d53df0b359"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/middle_drawer_004.json",
+      "bytes": 762,
+      "sha256": "e1676e517629de725310b453e6008418dac09db2e1f206f9030b090354dad31c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/middle_drawer_005.json",
+      "bytes": 762,
+      "sha256": "342577bd8607a3e6e3af2166861b3457d2258ead7968602fa57ff4197fdb1c43"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/middle_drawer_006.json",
+      "bytes": 762,
+      "sha256": "cff5b4c4ecb006c62d0338af82d17939e9cbeceef73ef0ed7bfceada369555e3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/middle_drawer_007.json",
+      "bytes": 762,
+      "sha256": "c8b856b418f716e2030a7483d2112b54a2cd208b655c466ee0205267c78a186f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/middle_drawer_008.json",
+      "bytes": 764,
+      "sha256": "d1576de07b8cedecf331978725c0d1d290aff9ad20d850d1d34e1111d39ebcd7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/middle_drawer_009.json",
+      "bytes": 762,
+      "sha256": "fb5febe93551aabb766002c21ede59811c7252ad31acd19fd910464d52592f00"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/milk_basket_000.json",
+      "bytes": 758,
+      "sha256": "cce6b0428341fdcd2a95fad16b4e4a1c3f89982ff5ea2ff09db93c8e7f23a77c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/milk_basket_001.json",
+      "bytes": 760,
+      "sha256": "8c2493c2424e46533b7f60ba972495e2ffca49d47f9864c26ba2493615a2aa6b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/milk_basket_002.json",
+      "bytes": 758,
+      "sha256": "13a67ca7e26e3ee400be0ef97de86edc30de37c08246dea5197e14b43bb935fa"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/milk_basket_003.json",
+      "bytes": 758,
+      "sha256": "672e1b9eb1113e6935633964a08067f8684747ef6c20fd889ab9c8902f7ff95e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/milk_basket_004.json",
+      "bytes": 758,
+      "sha256": "ed4e5cdf850ebe0c463b00b9fd44221fc4ad183ae22874b02653e1a15c300e96"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/milk_basket_005.json",
+      "bytes": 760,
+      "sha256": "dff35f088cfd0c3968e07ddd0f30ee9290ef078b78340c06d214647f0e851462"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/milk_basket_006.json",
+      "bytes": 758,
+      "sha256": "e132a9ee3257a6e2fe517f7f793ef235d5e182b62ea96a83eed19811e87d2663"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/milk_basket_007.json",
+      "bytes": 758,
+      "sha256": "d1a6b45948f7af82018b1dfc55afbc5eeee8caace87dd43ddfa4336de2e8c35c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/milk_basket_008.json",
+      "bytes": 758,
+      "sha256": "628962f34deac199c3598fedf79a326fb22a45f3ad8db1823b4e7a7a3e686f93"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/milk_basket_009.json",
+      "bytes": 758,
+      "sha256": "ec932ad2697b20e0fa978639a823be7b99aaad9ad035780fe4419529842e0e96"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/plate_stove_000.json",
+      "bytes": 759,
+      "sha256": "92fc7a795a507c7afef3c23fa0928f878cde7995bcb246884b1e9fbc708be82a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/plate_stove_001.json",
+      "bytes": 759,
+      "sha256": "35a7be7df403e9a5b759a899d330e034d39548cb68ee29afe0d09f17bf22cd7e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/plate_stove_002.json",
+      "bytes": 759,
+      "sha256": "9641f8a3a4aa07efd2aa7d04e000d61024df25074e478d0866d43bc83f89176b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/plate_stove_003.json",
+      "bytes": 759,
+      "sha256": "a37eb51b3b489754b09c9d017afb14360cfd2e22944b9c3d57fc6b4fdb3f3079"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/plate_stove_004.json",
+      "bytes": 759,
+      "sha256": "070a1f791c566595052c527a7abb5b35d2956125801885dbb2dfd220c7a8cda0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/plate_stove_005.json",
+      "bytes": 759,
+      "sha256": "e6fae1767b85a963f3caa0e2a5819909937322613bbe6d3654d25e6866086253"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/plate_stove_006.json",
+      "bytes": 759,
+      "sha256": "014be6b595f6d1103873a3ffb19357bae297bfd7c9933c0b4beaa9fadc81edc5"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/plate_stove_007.json",
+      "bytes": 759,
+      "sha256": "1ec227c6d2af002e312dfa4516de79f3d379bb27d5f8147cad6d09a88c06d5e5"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/plate_stove_008.json",
+      "bytes": 759,
+      "sha256": "5be32b3edf76c25e18ff8b09f2b6b8bb265ca148084e429676031ed9905a50fd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/plate_stove_009.json",
+      "bytes": 759,
+      "sha256": "1706482492e624ff2b2e707b5177877ce8c3710ca16e1df9695a72f7235b3bf2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/protocol.json",
+      "bytes": 567,
+      "sha256": "6c3b4e3aeb03f721b982f3afa8aecd95a05bd45e223038841ff3cf74997dfac9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/summary.json",
+      "bytes": 2830,
+      "sha256": "bc90634130641df2771bbb819fc075a97eb4e91df6b01aadfe032a1296e6cc54"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/tomato_basket_000.json",
+      "bytes": 763,
+      "sha256": "a9fccd4da3a78cb73e61ee97901f78a6f9baa919672f94add919ba1a48632b0a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/tomato_basket_001.json",
+      "bytes": 763,
+      "sha256": "ef35b92fa493c447eb433c691e02a10ca4329080b62a5d60300dfde6d429cc22"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/tomato_basket_002.json",
+      "bytes": 763,
+      "sha256": "c467cfd4ffa2ce51bcc0d40ce631869f9c9a40c37742ef42da12f64ec1f04fda"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/tomato_basket_003.json",
+      "bytes": 763,
+      "sha256": "6b68f2de8fc0280653dc7ee4763e1154da44d735337d431bc383934d62dfc48f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/tomato_basket_004.json",
+      "bytes": 763,
+      "sha256": "2ab3e8277ec3c639871be84d9a9450222c22a2bdddf1572d8eb613acc356e3a5"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/tomato_basket_005.json",
+      "bytes": 763,
+      "sha256": "7b4e3b958f974388d7ff48fc24a27fbb8c39f8fa395e17e404759ef57532072d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/tomato_basket_006.json",
+      "bytes": 765,
+      "sha256": "70a00aa882e6aa2fe358dae491b102d2f5a9be0427192dc3cdcf672933ebfb62"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/tomato_basket_007.json",
+      "bytes": 763,
+      "sha256": "7d4da9c39fabb644d85fb1ecda43867dcf71ed851bffc96cceebaaf0fd003cb3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/tomato_basket_008.json",
+      "bytes": 763,
+      "sha256": "58a78e8a7ad114d24d6102a4e18ba70d7c21cc68d8764a46e79ead854ac299ed"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/baseline80/tomato_basket_009.json",
+      "bytes": 763,
+      "sha256": "41e0bff8a5287d7ee1344638eed6f541dc1224b63a3869e1c4bbfa19363ab59d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/best_checkpoint.json",
+      "bytes": 853,
+      "sha256": "93e43fba49cd27f26d690c2abc15b47d2510348cb6bccd5f93f158ead046d858"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_center_plate_000.json",
+      "bytes": 770,
+      "sha256": "4ab1eb8a6a7bb3c77af0b2dd631547865681d34c22d1bb8bb291bc0eaa1e22d4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_center_plate_001.json",
+      "bytes": 770,
+      "sha256": "61b0af06eef7eb3b16e4989da736d840205fc5fcf3eea586e0136c233211c084"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_center_plate_002.json",
+      "bytes": 770,
+      "sha256": "f2dcca67293958ab0794a7c6aedf930c27151d5701443f1411d39523225d4fd7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_center_plate_003.json",
+      "bytes": 771,
+      "sha256": "76c9d5ca5befb0146d9959ef889af656629db2adb22563a6098f83b98b2aa457"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_center_plate_004.json",
+      "bytes": 770,
+      "sha256": "ef11796090976c1dea4e03036895488f72e3194bf0b9aee5c03bf501ae10c389"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_center_plate_005.json",
+      "bytes": 770,
+      "sha256": "042709207de67bb7a3368d5eeee5fd223c6132c473aec82137db90b8c2e00fba"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_center_plate_006.json",
+      "bytes": 770,
+      "sha256": "adf62d280e05e173454d1771f6d0ee95586ecba433362f9502bf01ccb59bff48"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_center_plate_007.json",
+      "bytes": 770,
+      "sha256": "3f8cec46abd47c73f38406e02d24c5c8d41ec0aea6fa7d93b6d161f80ae45005"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_center_plate_008.json",
+      "bytes": 772,
+      "sha256": "5f8aa53e186f607f8449db8608b1984b4e9ae49bcb1ea6287d34c361573e1baa"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_center_plate_009.json",
+      "bytes": 773,
+      "sha256": "8e0db343a397ab0728245e336caf8b27e5340429eafb9cec6a9d3babc222f5f0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_cookie_plate_000.json",
+      "bytes": 771,
+      "sha256": "1f7b013070bec3f602cd8de5a3a010b8308d9f9200ac7276060a8e14a8a1170f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_cookie_plate_001.json",
+      "bytes": 772,
+      "sha256": "ef9e0ad5966264bd7fa8401dd89db5933c65b5311e19018df2c632e47ade56ad"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_cookie_plate_002.json",
+      "bytes": 771,
+      "sha256": "2b1779769b22ab379c8854485b753875cc514b9706d1d7881b60f64c1106ce0b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_cookie_plate_003.json",
+      "bytes": 771,
+      "sha256": "25eec9589b8294342a92f8dabb5a0f2799f44bd8beba820fc1e27ce786cc34b4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_cookie_plate_004.json",
+      "bytes": 771,
+      "sha256": "4b32ccba32582abecd4786a2e5c353813a470e69bb815e5d54fd55b16a0577ca"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_cookie_plate_005.json",
+      "bytes": 771,
+      "sha256": "9d2392e75ce8178a2a8b5baaa6fcd88d055f54cdf4edbde1781573bbe5b75b6e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_cookie_plate_006.json",
+      "bytes": 771,
+      "sha256": "0a99f7aa86acab9a5990ae50b013497ac17729459fa5efdb539b8c03bb709230"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_cookie_plate_007.json",
+      "bytes": 771,
+      "sha256": "a691f8c66e5cfd731b4d0d28e4f0a88c7deda44e5b8e2c367c5f74c2783fac64"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_cookie_plate_008.json",
+      "bytes": 771,
+      "sha256": "a61c5dced68655a4d1f39a3cc1b0620ba7c8680d8bc422521613dd8cb68e6cd9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_cookie_plate_009.json",
+      "bytes": 770,
+      "sha256": "c4c72e5ae068b3691eaa04bd8e78788b6216084c21d1e3d397a87cc5030a4e30"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_plate_000.json",
+      "bytes": 756,
+      "sha256": "2d6061d00998a052fcad7877d7833a40a03a24b124aaa7d203db109e2d103054"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_plate_001.json",
+      "bytes": 756,
+      "sha256": "d212e913131881c2228431108373e66bdf2c0696fea752f097d9ad16baa25ff3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_plate_002.json",
+      "bytes": 756,
+      "sha256": "f88027f3d0bfd1d8631ffde017c0b229e9d5e65ab7ad881844de619fd94e60ef"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_plate_003.json",
+      "bytes": 756,
+      "sha256": "d76cc879fc15a68b282c2c992480e7d8ef07b361cc33e4a76f438e9e333157ab"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_plate_004.json",
+      "bytes": 756,
+      "sha256": "7e4635ac96f2730c0c4a4f82a9b89396d55e951e3e72cbcb767f274416c22b8b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_plate_005.json",
+      "bytes": 756,
+      "sha256": "9169b3b1021d2d21a84f228ab9d7bbc98187d4d87dd3602ba8d516eecd8efb5c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_plate_006.json",
+      "bytes": 756,
+      "sha256": "bc2b19e54981a2a13b546ee2e4ba191f95d097c0913698d8621a53b53e8735cb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_plate_007.json",
+      "bytes": 756,
+      "sha256": "e051f8fc5dbd8c1daa1bdfb5d50d796b88e064a55a9d4383a7999a9f00afb06a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_plate_008.json",
+      "bytes": 759,
+      "sha256": "e5ea32eae6bc5a5bf43b85c1c9ace80ccbab1e3349c56d813f8df9bc8bcd6284"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/bowl_plate_009.json",
+      "bytes": 756,
+      "sha256": "eac315c29c909b897d1509d852e86062323b9d6310e404d3ab55938a82872240"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/butter_basket_000.json",
+      "bytes": 764,
+      "sha256": "b2420ac18a3ad8632078bb5d51aa2d83ee0972d4bb88002b997938339f5c996e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/butter_basket_001.json",
+      "bytes": 764,
+      "sha256": "034413f5513a0c91ab364144beeaa2003942447bb9c243645e47b7b9635dbd82"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/butter_basket_002.json",
+      "bytes": 766,
+      "sha256": "3471dadd8ecaf6c072ced6e2acc828cdb91b66eae911269365242de40ae23131"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/butter_basket_003.json",
+      "bytes": 764,
+      "sha256": "a693f51a87706176b1abafa9bedb2dcadaceca0d16c1feaa8eef605692b79667"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/butter_basket_004.json",
+      "bytes": 764,
+      "sha256": "baffb0482577ac399e18140f3cd1c75b2a963740212af3b4882cd2f1cdbfa813"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/butter_basket_005.json",
+      "bytes": 764,
+      "sha256": "dbc08a01952a394c5f5bd0e51d244e8ceb928ecf1a0bb9ba41db87241b635cfa"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/butter_basket_006.json",
+      "bytes": 764,
+      "sha256": "963dc377f0190f70ba8d2f196fe88137c3c0785326ae38a54ffc175b9525bdab"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/butter_basket_007.json",
+      "bytes": 764,
+      "sha256": "5c9d709dadfa6ed07f0aa80a93ec61e4c723619381504abe7e3deb2307e4f66f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/butter_basket_008.json",
+      "bytes": 764,
+      "sha256": "369987cfa4739fef5a00e1c40cabc2f93a2b33c47e80788fe25df8fc0b065485"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/butter_basket_009.json",
+      "bytes": 764,
+      "sha256": "552ab8d127f2efe949f2f336e3fd9e62dc732891f66d17e89e91020185a3519b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/execution.json",
+      "bytes": 268,
+      "sha256": "dfa399616a6e3f31816bc8867429d5cf69196c4053a8e2f167251635c785146f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/middle_drawer_000.json",
+      "bytes": 763,
+      "sha256": "274b230e3adab20cc5d92b12d543d90bc31b45d6dbdcffebd2672e4d66b65d3b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/middle_drawer_001.json",
+      "bytes": 763,
+      "sha256": "eede28536ccae165d8b5a0bf9e29cfe831a5021ffd6798d6dace5bd8ccec48ad"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/middle_drawer_002.json",
+      "bytes": 763,
+      "sha256": "57fd589c1372de90a3723cace6b868691341ccde9526aa7ab4b8d2278ea55e19"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/middle_drawer_003.json",
+      "bytes": 763,
+      "sha256": "7bca5e040ea0646872572d385ceb476d1a03fe394a644b3aa64564b65ddf7eab"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/middle_drawer_004.json",
+      "bytes": 763,
+      "sha256": "575786862c0aed0a265de862472cb1a0cdc3f1daf9b9b5cc530656bdabb0c765"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/middle_drawer_005.json",
+      "bytes": 763,
+      "sha256": "f154f59cca80849545d4b2f0f79925412c475b77a27d6fcddc43e20aa06d5e5f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/middle_drawer_006.json",
+      "bytes": 763,
+      "sha256": "ec5676405e854363a429b7b566ff01571acd34babe8134414d833e193f01b228"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/middle_drawer_007.json",
+      "bytes": 763,
+      "sha256": "0b56af81f92dffe7176b3f6bd7de3530f92562fd97060dc1ec7489a9b873d771"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/middle_drawer_008.json",
+      "bytes": 763,
+      "sha256": "1217868362e8bb4ec2fcb1026c0a7be18cce955a814e793941711721213f650d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/middle_drawer_009.json",
+      "bytes": 763,
+      "sha256": "a5a7678c805649fd40ceee32cf69cbb39adbf43aabd03b23e97ecbc240354b69"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/milk_basket_000.json",
+      "bytes": 761,
+      "sha256": "89676c2f4b14053d5caa810003379de498c9d43da8beae38b67a99d22653983f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/milk_basket_001.json",
+      "bytes": 759,
+      "sha256": "1623eeeea318696654e33b8f18cc0ee2295e88b4b9e1511eda3c14044f64a1d3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/milk_basket_002.json",
+      "bytes": 761,
+      "sha256": "9f5106217f189d2350efdc30c9fd9c355382c32ac10c1fe47eeb9d9a7d4582b9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/milk_basket_003.json",
+      "bytes": 761,
+      "sha256": "fd330cafea96f6d11bfbe36ceed37d3967ff1c4fd95611a4975138dd3430ba09"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/milk_basket_004.json",
+      "bytes": 761,
+      "sha256": "94fef4600b318ff84e5737cc8a36b6d3400263f80716a6dbf7a60efe1595a787"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/milk_basket_005.json",
+      "bytes": 759,
+      "sha256": "1c02199010dd01b597a1c4031fb5cae0c197e94091ef8b9d8552d9ab6e97841a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/milk_basket_006.json",
+      "bytes": 759,
+      "sha256": "5acc4e946a7d7e4aee8a8d955fc67a92e8d23a2ab52e5b7083256e40f201f39d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/milk_basket_007.json",
+      "bytes": 759,
+      "sha256": "457a7e1061a61ae87b2a7d47d2c6d97cfe06f9a576f80630605a5428be4902db"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/milk_basket_008.json",
+      "bytes": 759,
+      "sha256": "c7ea33adb5957c6f964471ff406e8affd73c74d3ef7d550525a17719aa0985dd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/milk_basket_009.json",
+      "bytes": 761,
+      "sha256": "d7276d396917bf13a0486e040e81e79da84d604dedf0c89ea14187155e147c07"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/plate_stove_000.json",
+      "bytes": 760,
+      "sha256": "e69fd95d13eccf16ad6d135dbdfb9e7c4dabaea352dd43e62da1ae477c8016e4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/plate_stove_001.json",
+      "bytes": 760,
+      "sha256": "050ff69eee04aaac817418cf19135f77534d1401b8ad036960ab595d03d7ced9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/plate_stove_002.json",
+      "bytes": 760,
+      "sha256": "d0e6c91395d210ff339b31252379a65602898d73076e3eb849fe3e5de482402e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/plate_stove_003.json",
+      "bytes": 760,
+      "sha256": "468df92a6eb745bb3f36a70b4c978ed9978a258470240eef8c9e2acf5ec2d9c7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/plate_stove_004.json",
+      "bytes": 760,
+      "sha256": "e0122509bb6bb143ebf33258529b6cb2fba9288c5ee1cc425099da0d1ebb23dd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/plate_stove_005.json",
+      "bytes": 760,
+      "sha256": "cfb2e245bb7da996920a2999013e148b0afe77b7fca15b21f77cbfb40079568c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/plate_stove_006.json",
+      "bytes": 761,
+      "sha256": "bf80b3f460809ebef1ffedc8f9c81f66bf4d4ddac83f1c0c01e2e96c570764f7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/plate_stove_007.json",
+      "bytes": 760,
+      "sha256": "fb9191311d3520acda99d49825e4110b11321052ca1a2b7ce8b8c611b2f27334"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/plate_stove_008.json",
+      "bytes": 760,
+      "sha256": "965bffa80193435df9f46de651d5ca7cb6de99bf777b6a68e2315e59786ae5e5"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/plate_stove_009.json",
+      "bytes": 760,
+      "sha256": "0f90a5686eea309a2cb2c4f277c5115c0a57919bce7241ece15d27f9b981d1b6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/protocol.json",
+      "bytes": 689,
+      "sha256": "c65a18349e902b02730241bb7942ce62a78e48fc104537e1ffcaed659c145f64"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/summary.json",
+      "bytes": 2827,
+      "sha256": "bbe95be32e37333ae29cd68405dcb2ad43895655293826dfb04ffff1fb2e2d2d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/tomato_basket_000.json",
+      "bytes": 764,
+      "sha256": "326e47012145be6d435d2a22a0948e2490896b1c0cb25c8a8784bbb3fccbfc19"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/tomato_basket_001.json",
+      "bytes": 764,
+      "sha256": "5d6138e92c7b4d5f85b6794b19c4837cf6ba180aa92f0b9657baad9c3ec50fa6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/tomato_basket_002.json",
+      "bytes": 764,
+      "sha256": "edcff5a1e5e42739a4ad78eb4492bf6cb8506e3c1761ff246b2021a8e330bfad"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/tomato_basket_003.json",
+      "bytes": 764,
+      "sha256": "8a8d977c450708e386bb58d8421e6c39edd7922aa17d1a765f4b85f745fcf306"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/tomato_basket_004.json",
+      "bytes": 764,
+      "sha256": "bf46069d96728d8c29329d15fcaa7b87e842d8a04dd1fb89e6a453f621de2a57"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/tomato_basket_005.json",
+      "bytes": 764,
+      "sha256": "f85499d4ef412147a4e3d93cbf8e7ac88ad183e711460ad368df58dff0ac9336"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/tomato_basket_006.json",
+      "bytes": 764,
+      "sha256": "ad4534c1f46296c2d5db6680a4a41e68dccee6ed19b25621a1b5809e77ee9a74"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/tomato_basket_007.json",
+      "bytes": 764,
+      "sha256": "1780a7c1c59583b06dc41f0a5a7ffbc390b89b811bcf4ebbcb57b16852d4ee4b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/tomato_basket_008.json",
+      "bytes": 764,
+      "sha256": "f6789b35bfc53822bb49c12d24a287e6d05ff63ed31dd2fea4e6c51caa4c9c2f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-002000/tomato_basket_009.json",
+      "bytes": 764,
+      "sha256": "d02cfbea5e7ae3c8400f43444ddc251d11e7067f96df49cb53c22ce2f55e11f7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_center_plate_000.json",
+      "bytes": 770,
+      "sha256": "1f73e80a4bc498f12d8dbd4c15aad8dd15574eba29def8665b3dcb502fd41eec"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_center_plate_001.json",
+      "bytes": 770,
+      "sha256": "3b7693f48a8f2a0040650b3124af83d60fe92ab45adc45f49f36c59853149631"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_center_plate_002.json",
+      "bytes": 770,
+      "sha256": "094543fd30fc4aaf5ce48be822dee5447986165b396d8a0548835d039b87c487"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_center_plate_003.json",
+      "bytes": 770,
+      "sha256": "eb212c081a0492c95ebe9fafc8852a771cffbf2b098d9a4f1d2571a780f62565"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_center_plate_004.json",
+      "bytes": 770,
+      "sha256": "f8cc74c650250455b2d751a7765df11bf9d1b20e5a89499b02532a509bcd5398"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_center_plate_005.json",
+      "bytes": 770,
+      "sha256": "b5ca1b88ecec9b6b7629575de94312e3d1ad6530d3a4059ae31bca5e0039458f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_center_plate_006.json",
+      "bytes": 770,
+      "sha256": "f920baa45da0e6a3ef999fe5b21e96610c9cf209e9850094763c3ce54b8861d1"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_center_plate_007.json",
+      "bytes": 770,
+      "sha256": "29c5f69e58d88285fd6be4b0dd5679f250d69b04fb1c2dce5170f810d110a914"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_center_plate_008.json",
+      "bytes": 772,
+      "sha256": "dcb93544b851a026ae7994ad36b89bb70102d324fc354b00976f9e85a8b63f25"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_center_plate_009.json",
+      "bytes": 770,
+      "sha256": "8d744cbf1c3f91c5f7362b141b5f4714955d5fdee4d366e97191880cdf62acde"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_cookie_plate_000.json",
+      "bytes": 771,
+      "sha256": "053b85105dde5f27d53b7ded52d98dae7b2b43688eb678541c38ffec89fc5b44"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_cookie_plate_001.json",
+      "bytes": 772,
+      "sha256": "e6b2fdd82dd2cac7598acfbc02a94fbcff7558366a0e0e5fa518b6cb63f56148"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_cookie_plate_002.json",
+      "bytes": 770,
+      "sha256": "c8d70ac778d394d512ae38bdf225b6e6f7e4b5d2fc5cdad98db3df36520e3ab7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_cookie_plate_003.json",
+      "bytes": 771,
+      "sha256": "5b758fed560e9c7a10f094fa4734d7b485bb81378cfdc375d601b6c2ab65047b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_cookie_plate_004.json",
+      "bytes": 771,
+      "sha256": "c01212a17028d502327841d8bdc8f2aea793ad6ef2f04d77ddf612f9995ebcdb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_cookie_plate_005.json",
+      "bytes": 771,
+      "sha256": "47ea02655d8e4be5da066f8c414b9f79f3477bffe6fc913f5dcbbac0b45a9815"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_cookie_plate_006.json",
+      "bytes": 771,
+      "sha256": "77a164a4acb6342c2a4c6a83b5fa100dd6aed77568982594ca75a0934f380c4a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_cookie_plate_007.json",
+      "bytes": 771,
+      "sha256": "547e437555342dd081726e95cad46f9bf985d3e907463b0dfc82ddc76b79848a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_cookie_plate_008.json",
+      "bytes": 771,
+      "sha256": "1a828153938bb617923045867ca4cfb9d132425f77af6a1791d35a583721323f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_cookie_plate_009.json",
+      "bytes": 771,
+      "sha256": "df6f53bbc61dfcc21a277cd9e75099a35dc0f4055ef19ac4b7c0e6fdd300fb96"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_plate_000.json",
+      "bytes": 756,
+      "sha256": "9676ca31829f4a34cc4847376cfb8f3fc387ad5619f32855fc9c9944c3d8a3d7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_plate_001.json",
+      "bytes": 756,
+      "sha256": "16b7c2507221f9386f3b265a0e4f839412d14f4d39ce2c25cd596be9d7258ca0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_plate_002.json",
+      "bytes": 756,
+      "sha256": "623a0108a6890c19c227b13638f86a07202e5fac6efcb85cbfa5cc6b200551bc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_plate_003.json",
+      "bytes": 756,
+      "sha256": "98f82a756ee4966dceb1a5fe9b3c6d612532a6aac40a185013daf00f45f372f6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_plate_004.json",
+      "bytes": 756,
+      "sha256": "97603b1698a5f1d7e05330cb8c2e90461236b4b71ff26ceee7a128a295ad936b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_plate_005.json",
+      "bytes": 756,
+      "sha256": "43bb40d8e373fb49e862b89fa7e1e5519101a3eb17bdf5b6829b157227f45245"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_plate_006.json",
+      "bytes": 756,
+      "sha256": "dfcdd2efb87756251a97ccfd7792fa865ab9d994b61d434c797b537e7fbb4e93"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_plate_007.json",
+      "bytes": 756,
+      "sha256": "5b26db838b551c0abf7ebc40b6b2231c12616686c3d8f18f4273bab3e1f9b64a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_plate_008.json",
+      "bytes": 759,
+      "sha256": "48261e6b1651dba848331235f4e309fcae2f769ad1925d153d30657072d43479"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/bowl_plate_009.json",
+      "bytes": 756,
+      "sha256": "c9cc5df4dca7c351aa5d7c6e0971b4c60f2f39639b7df87dbee4305cd1af7f26"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/butter_basket_000.json",
+      "bytes": 764,
+      "sha256": "d16e1590c9d440e007a85b63e509340439fc62ea91d56878513b4c3d0ffd56ca"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/butter_basket_001.json",
+      "bytes": 764,
+      "sha256": "d8eacedb903217d76bf480eba594c4d5b996cbea37aa902fa124abda389aa096"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/butter_basket_002.json",
+      "bytes": 764,
+      "sha256": "a6919cf2f7d53a6abd68b9438e6308aa0c082fbc35b1136ef04c0cd2769edd55"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/butter_basket_003.json",
+      "bytes": 764,
+      "sha256": "3288363b8c98a5de851cf09cef8859f315502a5da704ed3f1ea7c49a2a7e9452"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/butter_basket_004.json",
+      "bytes": 764,
+      "sha256": "be3fdc1305669f3d9012efa62bd8775f72a9c8f7b3874de32e2c1c18b09e6be7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/butter_basket_005.json",
+      "bytes": 764,
+      "sha256": "a3b811e7b839cf0921e299435c23fd8ec609a7e68d1f953b2fe9fe36573c40d7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/butter_basket_006.json",
+      "bytes": 764,
+      "sha256": "240bb7242fc0a8d247bbc2ac6dda0745c29fbc60def3edb12f22dfecce731ac9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/butter_basket_007.json",
+      "bytes": 764,
+      "sha256": "1ebf19cad6852fe4d9fd65211daeca700b36f372f759a006855ba21cfa651206"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/butter_basket_008.json",
+      "bytes": 764,
+      "sha256": "45a50c27edd1a229ab903408306d708aa06663036d64b1c661f61beb738a10db"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/butter_basket_009.json",
+      "bytes": 764,
+      "sha256": "6aae1170b912d047d61f93a0a31a580b70d151e19de09c00dd8da1a376797ca7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/execution.json",
+      "bytes": 357,
+      "sha256": "b6e555f992de105aa44d8164211d271dd58ac86f045511a7f1f3c8a794bde4fb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/middle_drawer_000.json",
+      "bytes": 763,
+      "sha256": "0427006afe9a507241faea9bcf86603528c96298630847489fa5e1d28baf1b46"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/middle_drawer_001.json",
+      "bytes": 763,
+      "sha256": "d15d8d084a0332835df272b871e091de9fde774ed171ef59e7000b7b64613b88"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/middle_drawer_002.json",
+      "bytes": 763,
+      "sha256": "583a35b086b239b2332c505c1a3149433a6ff4ddc6217c4114106c9f93bf264e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/middle_drawer_003.json",
+      "bytes": 763,
+      "sha256": "c85e72252868676bf3284e6b04730f11dee0873bcf8c5ad7c2fc539a58ff2dfb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/middle_drawer_004.json",
+      "bytes": 763,
+      "sha256": "1bbae6428580586c8b084a92fa0e6000e31a3073d1b40e9b09381beedb1a52be"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/middle_drawer_005.json",
+      "bytes": 763,
+      "sha256": "a760bbefac8431d0d08ae82f5c4c722d0dd36f98a1b8b6329529df7fac75ffc6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/middle_drawer_006.json",
+      "bytes": 763,
+      "sha256": "0ea35233eb2756fee89df8b347501cbce1d64bfa4b4bf78b0ae652615950322f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/middle_drawer_007.json",
+      "bytes": 763,
+      "sha256": "9fd46052207755ecc4ebdeb057f78e49d6bcc596ee6454b9e0a40e9d2aaa625c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/middle_drawer_008.json",
+      "bytes": 763,
+      "sha256": "120f51e109f7dc3d14763d9d652c081f1dd917385a02b4f89490967e9946e1e6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/middle_drawer_009.json",
+      "bytes": 763,
+      "sha256": "8859f8c362633b325962352f946d5fc5a257fe1943b7525bf4d7cb78166d1f31"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/milk_basket_000.json",
+      "bytes": 759,
+      "sha256": "26dcd53344006c41c2ce5c62977201bd4c9fde3620234423eecd6b7e7ba7052b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/milk_basket_001.json",
+      "bytes": 759,
+      "sha256": "2506fcf0a206e783672bbc23e6f5ebc9a9bca2bb4f94a00acb2d65a8d7a223eb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/milk_basket_002.json",
+      "bytes": 759,
+      "sha256": "4597c2f8fb057b5d03373d2f492bc35aa076cb554dba74612f248dcdda7eb5c3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/milk_basket_003.json",
+      "bytes": 759,
+      "sha256": "1f997dd45c34ade810080a3288400e6c6b65767c7cb17581b6852baafb063187"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/milk_basket_004.json",
+      "bytes": 759,
+      "sha256": "3ad85323238909d303a428597bcee6204576540eba3450fb162893c5a9f6f889"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/milk_basket_005.json",
+      "bytes": 759,
+      "sha256": "d48047b68e236f5979ee10d48ebbd48459a6dbbf14b61c1a07ace5a2d6050298"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/milk_basket_006.json",
+      "bytes": 759,
+      "sha256": "5bb3db2eaac39931528ab4fa643d2d8ae7f42860c70ac7bdf9e3b4c79a6dc3c6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/milk_basket_007.json",
+      "bytes": 759,
+      "sha256": "6700584b1b28e037bf430146ba98bebeff248746dfa0ff5c67849f181c4509fa"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/milk_basket_008.json",
+      "bytes": 759,
+      "sha256": "f1e2d500252c799b0ef87944e085efdaff963366b87e66f82605da9c1cf2db24"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/milk_basket_009.json",
+      "bytes": 759,
+      "sha256": "6bb05e04eab47e4107476ac776ab47a72680e6028cc59e1c923aff1f32c14999"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/plate_stove_000.json",
+      "bytes": 760,
+      "sha256": "af6b67ba088d7d0b69767f752b2834c6bfb04f6c6cfd856f0f33b7991c5e6f9f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/plate_stove_001.json",
+      "bytes": 760,
+      "sha256": "c14ced484938da851d037e87a4b486697c2b055b3b4819ad77cc4855cf9f4336"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/plate_stove_002.json",
+      "bytes": 760,
+      "sha256": "2ad103ab2a8728605d668cc329dfcbad5ecf004874c4b1d07eacc082cea73f7a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/plate_stove_003.json",
+      "bytes": 760,
+      "sha256": "39c708d2c46d0ccc77fe798ac690c4e1b32e91f696ee6e63f338f149a3c82d81"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/plate_stove_004.json",
+      "bytes": 760,
+      "sha256": "be6f262efbed0e8370f73369569b46784ee4ab980d9ee0f7aa41a9b5a4d9d2f1"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/plate_stove_005.json",
+      "bytes": 760,
+      "sha256": "6a6bed28de150c6568a43b51956913c794b36034ef59e0edf54d578cc8956420"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/plate_stove_006.json",
+      "bytes": 760,
+      "sha256": "3f46b7115308d2c187dfef902d1a9fa599757795838baa6073935c252f323327"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/plate_stove_007.json",
+      "bytes": 760,
+      "sha256": "e86e1d1a73f99b106ed1db574dd64f1719680cce908851ad45033053cac1b4a2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/plate_stove_008.json",
+      "bytes": 760,
+      "sha256": "7b2b7572924b626057974ea78d9c3d3efb98bdcba68f25681e23744a408bd929"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/plate_stove_009.json",
+      "bytes": 760,
+      "sha256": "b75a5ba18e025761609a0bd9f5791bb321e3172a172b3b084841ab6c66f7294f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/protocol.json",
+      "bytes": 689,
+      "sha256": "8387038f34382e461d4d48ee6c35257728c149e5560acc1c2eaea701c2123c00"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/summary.json",
+      "bytes": 2830,
+      "sha256": "7e785bf5eed0d877aa685fd60809cf305c29c34bff01cd9425cb1dcc5a183fb9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/tomato_basket_000.json",
+      "bytes": 764,
+      "sha256": "6bf8cbb336971c829aa202b1d36ebb6681f25cfef16b9df03c7f0df25c252c39"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/tomato_basket_001.json",
+      "bytes": 764,
+      "sha256": "9040e6799dce5e886709b609533af7352831a5c0e5a73a235e04281074063490"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/tomato_basket_002.json",
+      "bytes": 764,
+      "sha256": "90623ce8d000080ae02f8f1add38263b8722b2256be4c5c2ffd71d50381177d2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/tomato_basket_003.json",
+      "bytes": 764,
+      "sha256": "1f032ba5f94c1b6550ef17951d103e747996c70fa3e1380ca2d6ec5d7595af87"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/tomato_basket_004.json",
+      "bytes": 764,
+      "sha256": "56f2ea0952bd461f1d00932ae18ceefea9759da4fc36d9b8f2280ca3c42ece9c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/tomato_basket_005.json",
+      "bytes": 764,
+      "sha256": "47d6fdcc984c1d2a1bb55343a7df3b5fe90bb84fb62b6d20e178a0ef300f2f76"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/tomato_basket_006.json",
+      "bytes": 764,
+      "sha256": "5c3a2c672073593053b2b8888a1fc82eda54b3878d62aae74d130df4021b1b54"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/tomato_basket_007.json",
+      "bytes": 764,
+      "sha256": "d18df7683aa4b073f132bba7ec4e7ff9b600ea0988b4834b39c7e74f6c73ce6f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/tomato_basket_008.json",
+      "bytes": 764,
+      "sha256": "483bcc745e3078aec649ceb7653bd62da33a3d41d0fba0335e0c365811efaa73"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-004000/tomato_basket_009.json",
+      "bytes": 764,
+      "sha256": "ce188f7e3858a443a0dd121a3586a19c47ea708676ea3a7e2b59013aa5274987"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_center_plate_000.json",
+      "bytes": 770,
+      "sha256": "fc12d58fcefe3436be8decf60bff56715f2f5c0cfac67f548c66bf4991fbce18"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_center_plate_001.json",
+      "bytes": 770,
+      "sha256": "2006ca6edcda39330dd940e261726425bbb5b90d3c0d4bdd4b5ac0f5532e6e5c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_center_plate_002.json",
+      "bytes": 770,
+      "sha256": "cc67e9a5a3742a89e3806b572fcb1ecabe4913139ef49e34d7c9c23dd3b0b525"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_center_plate_003.json",
+      "bytes": 770,
+      "sha256": "6bbd61af933ec22788c7ac735fd4be78f70ff060dc4fe028e9072688e15ce3b2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_center_plate_004.json",
+      "bytes": 770,
+      "sha256": "759eb98aff4ca7819a64da6c7153d9f43cdef164c7b9c7575d2b6b2e7387a300"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_center_plate_005.json",
+      "bytes": 770,
+      "sha256": "3837098262a779134b39e6a2082eeb8fd9a33fb95dca84cb19b2d500d6fc6a13"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_center_plate_006.json",
+      "bytes": 770,
+      "sha256": "dc62ce86371222e035887dada8da6bc58b46981829c283fa9065c4d4db9cd753"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_center_plate_007.json",
+      "bytes": 770,
+      "sha256": "3995a2b60961234466e4c6e3ed855bc56c034aa320c61959b4a1b0211a1bc4ef"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_center_plate_008.json",
+      "bytes": 772,
+      "sha256": "1d9c78e04491d6ddafe15d6b13416cc21626b662a53729b2b8d04d53540ca1b5"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_center_plate_009.json",
+      "bytes": 770,
+      "sha256": "764ef567361a30c4285b6167ec2f79d3ac8c5c4572a37dccd4e842cc2b62655c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_cookie_plate_000.json",
+      "bytes": 771,
+      "sha256": "eab1400ac74050de7f1327acd41813f6fceb2d06a185100c0e4ceb7615f79bc4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_cookie_plate_001.json",
+      "bytes": 771,
+      "sha256": "6d1be6611731814415934d4acca56dcb535b3b4c606d6e70d1152631d93c2e86"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_cookie_plate_002.json",
+      "bytes": 771,
+      "sha256": "1a4bdaaf6068baaa090b1a38447a8ae00f79e08b1b8b245d19b7a9fb96fa356f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_cookie_plate_003.json",
+      "bytes": 771,
+      "sha256": "0f8af89fd523e25a2169f45aef68be19425a799fe940492ee4b75f2914d37332"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_cookie_plate_004.json",
+      "bytes": 771,
+      "sha256": "463c2245abb3cc1aeda361a57e2ef45f05af836999af142c3e05e8820e3d46c6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_cookie_plate_005.json",
+      "bytes": 771,
+      "sha256": "54a5a75186211a537bbcd7052e1fdd049dd967dd514dcd41f02217ac4e7b1f69"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_cookie_plate_006.json",
+      "bytes": 771,
+      "sha256": "62352b01016bcc9292fc59cd84771941421680487e256567a78638c693a33fcb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_cookie_plate_007.json",
+      "bytes": 771,
+      "sha256": "c492809806c5a878bf0a5275170fe7edd4bd42f1b8b0e9004cc4319c19c02b4e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_cookie_plate_008.json",
+      "bytes": 771,
+      "sha256": "3c95108f4150e7be68e7ceabb9e3c9ffdb3805033777f75ec6cefccfffdf5af3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_cookie_plate_009.json",
+      "bytes": 771,
+      "sha256": "17e81e22b8c3096a41879d6f910a98092fef1982247cfdee63253f3b14c8dfba"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_plate_000.json",
+      "bytes": 756,
+      "sha256": "9c611a82259797272f0e93d0a29fa3a19548582b89571e89002269994d1abd0d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_plate_001.json",
+      "bytes": 756,
+      "sha256": "864cb49007cfddf62a03cd04d0de4b93bf3fde9891b3cca3cb23a80f4a3142c6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_plate_002.json",
+      "bytes": 756,
+      "sha256": "96738dab78804900ae27a35c4d7f16a19fbe0801ad6759cce011381b3a3d9c97"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_plate_003.json",
+      "bytes": 756,
+      "sha256": "f3b35bfd077b6dab5729ad3f4cf3853e87269fd74be0f4ff4fc5e6c58ac9a827"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_plate_004.json",
+      "bytes": 756,
+      "sha256": "b785fc693a7a16a5437c78c51e3b158e1decca685589f52cfd17b84bddadfdca"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_plate_005.json",
+      "bytes": 756,
+      "sha256": "707873e7cbabdcfcf2698c749cdd936b37cb2ba28a01d814f50f3ae2f646f3df"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_plate_006.json",
+      "bytes": 756,
+      "sha256": "803c3cee2642138bff7ee8310af7e66746e7369cb37b154bc8b5703bca6863f4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_plate_007.json",
+      "bytes": 756,
+      "sha256": "abd4be2c3b178aaf672a9017ee991c1998c2ebba98bacc49e4097a82352726a1"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_plate_008.json",
+      "bytes": 756,
+      "sha256": "140effba8106a17e83155b51fd9a1b21ff838ccd920dc4305e1a8dd73619b980"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/bowl_plate_009.json",
+      "bytes": 756,
+      "sha256": "4b6a8a0eb5abb72490b773c9309a09e64557784fa777087a4ba7e08ffe73f2f8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/butter_basket_000.json",
+      "bytes": 764,
+      "sha256": "065e967b287412a74a58ed694d6eac6ddd37b3ae3cc30cb8ca4e234e13173aa6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/butter_basket_001.json",
+      "bytes": 764,
+      "sha256": "a43aa23d4641ebf2ef4d7437937cee69d1eb295057e272dfcb59310a34615a8d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/butter_basket_002.json",
+      "bytes": 764,
+      "sha256": "f25603feb61568b890167453cad9f021c6d3f697302c9133715f12d53874c638"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/butter_basket_003.json",
+      "bytes": 764,
+      "sha256": "9bcf2e0b3e173bd06e4868af72d02290fa5d3f78257cc6575684e972c79e061c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/butter_basket_004.json",
+      "bytes": 764,
+      "sha256": "89e0780ac4f52bfa9c1b0c568e9a2f2d6e9a886b8334734503ffcff158ed7d02"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/butter_basket_005.json",
+      "bytes": 764,
+      "sha256": "d872a2f983b0c852126aa94639dafb9fdccfbd89da742288b125ee5191e9e0d0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/butter_basket_006.json",
+      "bytes": 764,
+      "sha256": "0743085019f127ea9ecf4aa3ac574f6e4d4074fb6cdbf39631a01256a3e05736"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/butter_basket_007.json",
+      "bytes": 764,
+      "sha256": "659c47222ea7bf60ea75e537a928eee3fe93b4b6776b0e9f1c7e3f19c8e9d9be"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/butter_basket_008.json",
+      "bytes": 764,
+      "sha256": "c161cb32fb35a19046dc115673a83c9d1b1a769ca1ecf824c0592a0ad0ffff83"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/butter_basket_009.json",
+      "bytes": 764,
+      "sha256": "76a0dade7c8a0d9bd0317a305fb507a5224c6cdc9ead0d3fe5a8ffd26f915490"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/execution.json",
+      "bytes": 358,
+      "sha256": "1017f42d649436ceba41e0ae8c674733dc50bd1eaa32b74f9923289ab629999b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/middle_drawer_000.json",
+      "bytes": 763,
+      "sha256": "2e2e6064721934b5a6687e27d260be3b1f5203be6f43fb58e874bcfe148a965b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/middle_drawer_001.json",
+      "bytes": 763,
+      "sha256": "c7f6a03a44fe7c57345f3fdfb502b8e892f17aacaabbe6c3be9f664fd3b56a1f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/middle_drawer_002.json",
+      "bytes": 763,
+      "sha256": "832a5b767de020ed10ad22c5d036d168ee3ead5ed66b03cb0418ff5b126614ba"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/middle_drawer_003.json",
+      "bytes": 763,
+      "sha256": "c7b4fdda2628f48d55611ecfb6d80c35d50254c5eb1f578d9bc9fa71a3cede25"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/middle_drawer_004.json",
+      "bytes": 763,
+      "sha256": "61d13861e81bd6bee8d7c1cc22f2ea1901c4b0189a99a3b1d4e0454c026cc6dc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/middle_drawer_005.json",
+      "bytes": 763,
+      "sha256": "7c0d282079bbe2c34356884e384df61016e35f7aaa3fca3a2f3532b823219a8a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/middle_drawer_006.json",
+      "bytes": 763,
+      "sha256": "6dad28c764256aa80520d398d7ad3a82b4b0b8fa330e484f1c9397648c528973"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/middle_drawer_007.json",
+      "bytes": 764,
+      "sha256": "92551211fcc1864ff91792f407b469c74154b05eba38526d7ea459cd18a1d50a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/middle_drawer_008.json",
+      "bytes": 763,
+      "sha256": "d7b886545676dca8dd4a749021cb2e30a248528005993a92f2da5079d02abdf7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/middle_drawer_009.json",
+      "bytes": 763,
+      "sha256": "bb39af258db456e0dee00dbe56ae1047458ba40a840f6b751eced0c0dd3fbd45"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/milk_basket_000.json",
+      "bytes": 761,
+      "sha256": "95e28886a8207d9ced6b1cdfaec538924f775b5657dd2edc70c94678b203273b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/milk_basket_001.json",
+      "bytes": 759,
+      "sha256": "98a226ba52ae06362c8a4bc2428f1da18ca251c1a780c1f6a792d9b881a75544"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/milk_basket_002.json",
+      "bytes": 759,
+      "sha256": "0a938ce59c59f6af784cc1c3549279d223951b1d325a5a51091e7e504aaf34b8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/milk_basket_003.json",
+      "bytes": 761,
+      "sha256": "f8c42e5e1e731f7ac80e51c8ef5d3abbc79f65e1ac11eb9191acd00924ba227e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/milk_basket_004.json",
+      "bytes": 759,
+      "sha256": "d7e4463d452a13e465edc8e0f429990586fe4650c8928b73fe01adf46ab51553"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/milk_basket_005.json",
+      "bytes": 759,
+      "sha256": "e02bd3cbb282c942f255a70551a96a57d46aa722fe3bdcd03a53bbe09d17716c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/milk_basket_006.json",
+      "bytes": 759,
+      "sha256": "f17259ee520b48ec201c6aff88ecb596ccf624bce1f1cba8862ee9e0d3fc6f77"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/milk_basket_007.json",
+      "bytes": 759,
+      "sha256": "a3d4885e2ab396f643fdca9f87d163c9fb094b978127b48f0d79500d6d5bbfdc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/milk_basket_008.json",
+      "bytes": 759,
+      "sha256": "8e2fb80b88b55a92b8cd0749f76a6173922e961ee76b01ace1793976e9973925"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/milk_basket_009.json",
+      "bytes": 759,
+      "sha256": "aafe8e4428e6156ef18419c11c82aa8b925ebfc72a51de9530a2c9366c4bd9bb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/plate_stove_000.json",
+      "bytes": 760,
+      "sha256": "4bdc5fac6176e535727793d452f926137b841094273c0685d53f16df60c56724"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/plate_stove_001.json",
+      "bytes": 760,
+      "sha256": "824b1da3d5bd9db3f25833d86e65fc09c6979601e148888962226e1b4a0255e3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/plate_stove_002.json",
+      "bytes": 760,
+      "sha256": "2955d2fe6be76b983b4ac79584f5dc543249d3171fb5d2af2a7ff4aca7c95005"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/plate_stove_003.json",
+      "bytes": 760,
+      "sha256": "2bdfd4cd4bb215e50b47f907d5fd14663e8e16045c7241ffc294e49abb6b1549"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/plate_stove_004.json",
+      "bytes": 760,
+      "sha256": "b0254017a870cd4ca7d65dc6b509393d1ade043ece575fe79d4ecd1a8d138f71"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/plate_stove_005.json",
+      "bytes": 760,
+      "sha256": "07c091f0eed3ec358ac695fb097ede2d1ab27fd7f2ef34fdd5ccd7d9a6ebfa88"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/plate_stove_006.json",
+      "bytes": 760,
+      "sha256": "c62aee0f577be505ddcfb7b3d9b175194bc809875f7eaeb34c9a7a1806b95b8e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/plate_stove_007.json",
+      "bytes": 760,
+      "sha256": "72f3bc25540f74a0401e2584112f85d5299b511f3257f68543ed41350da574bb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/plate_stove_008.json",
+      "bytes": 760,
+      "sha256": "36f721a8f06f18952dc21d406aa1c806a8b4c86a2cd558ce58c98eb32dc8799e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/plate_stove_009.json",
+      "bytes": 760,
+      "sha256": "cbad24b5d38f60ee27e4820a393b0fbe0795383de9eedfd097e9a85cac521b2d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/protocol.json",
+      "bytes": 689,
+      "sha256": "c34cbbba17667833191cdfc5fdb8adb2612f64def930590590ae14298ee1dd79"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/summary.json",
+      "bytes": 2829,
+      "sha256": "c9625366b7337a8badb702bf8ac400886093c99b873b4dbfddae562022b82d37"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/tomato_basket_000.json",
+      "bytes": 764,
+      "sha256": "eb3ef3838b0893fe8781b9e842fa70da09c258ede482a51c5f35f40a9b663d82"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/tomato_basket_001.json",
+      "bytes": 764,
+      "sha256": "50bd5af3085d970cecc9e6f1d02a416f479a47f0cc3ef5593188994c150c857b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/tomato_basket_002.json",
+      "bytes": 764,
+      "sha256": "aa36fc1ca3a0f9916f00ed6d133ae9388c55eab4cecc1b0c1210d9160ff8c54f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/tomato_basket_003.json",
+      "bytes": 764,
+      "sha256": "e78044cc32bd35b0c11ba519f6cabd492dcfa6df6179552b420469807e412116"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/tomato_basket_004.json",
+      "bytes": 764,
+      "sha256": "19833913827837987ebf53c2e3f490f5a21d2ddeaed229030f4ee124a42868b4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/tomato_basket_005.json",
+      "bytes": 764,
+      "sha256": "c16ee09552a297e9947382d5787f055d0304faba6f96268a189226a85f6891b3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/tomato_basket_006.json",
+      "bytes": 764,
+      "sha256": "ec5ab3a3c563fb7bc32127a5ef159f4b509b97cb4ea3ff0af38a835c0230847d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/tomato_basket_007.json",
+      "bytes": 764,
+      "sha256": "39ada832747b3206895aa753b4afb92fd804a1ebeede83b9793ace94bf9a7b66"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/tomato_basket_008.json",
+      "bytes": 764,
+      "sha256": "39e5b4ad95603ba7ac65bbd86a7631cfb16cbd7430f206283a120475b43cc7f8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-006000/tomato_basket_009.json",
+      "bytes": 764,
+      "sha256": "a7dd06747362181f863167bf9c417a8e523d87d90cb313ee81084b30b56b108c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_center_plate_000.json",
+      "bytes": 770,
+      "sha256": "7e518fb071f66612e6110a2823c5e20bf70d2b72458479274b588a1fbc317fae"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_center_plate_001.json",
+      "bytes": 770,
+      "sha256": "296ad7ff6282d09d334ec8fe9ce43fdc7f3363e3e63ce473cbe933b6859de209"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_center_plate_002.json",
+      "bytes": 770,
+      "sha256": "7693163ce13cf0a3909397bd02025ca690d345995730617007c5d5b17e1b1ac4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_center_plate_003.json",
+      "bytes": 772,
+      "sha256": "255a783b86f6ceaa3d962c55d77a62d9b68477326b2e607447073bab57cef9e3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_center_plate_004.json",
+      "bytes": 770,
+      "sha256": "2c55302a7493f4cfab27ecd4f6a1000de160271dc5ecfef2a9affc9e1d7abc6d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_center_plate_005.json",
+      "bytes": 770,
+      "sha256": "68908ca8cdd8bb123f074f098759bd59f06c2f632ead96677d379877eda26e7a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_center_plate_006.json",
+      "bytes": 770,
+      "sha256": "7f4dfc83e96655e0788f78b808321ab6273ff09b5d505340610488909746842b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_center_plate_007.json",
+      "bytes": 770,
+      "sha256": "cc63f4a189abaf0ba692efdb39611083a5b659b72aee068719673d88528c3c1a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_center_plate_008.json",
+      "bytes": 772,
+      "sha256": "a318ef396465f629478883c1d5223a61c5edae36b38331e879a72bc980019018"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_center_plate_009.json",
+      "bytes": 770,
+      "sha256": "ae275fc0475f0a1b2a250122a2cd86997ef4a57f13f16fea2e228e5323a420c2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_cookie_plate_000.json",
+      "bytes": 771,
+      "sha256": "f878f0f069c737ebe32a00608ff710d84b883e55fc876d4b64884ad91ca0c4bf"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_cookie_plate_001.json",
+      "bytes": 771,
+      "sha256": "018e2f66c9af476fcea98d5f49164679070265e4296f4545bfd952348e04b0f6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_cookie_plate_002.json",
+      "bytes": 772,
+      "sha256": "19c2dc86cd6a8624ce60bbe6be1aa7ebd21bcb73fedb4c766c84f28451a5224c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_cookie_plate_003.json",
+      "bytes": 771,
+      "sha256": "f499c0a79c32dd8ad93899a8571ca2fa40530b35db0a868bed09c031c12a9eff"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_cookie_plate_004.json",
+      "bytes": 771,
+      "sha256": "3a372418d8096c1988519a627bc6025ac63b67f69692a9a437376c9b45854eee"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_cookie_plate_005.json",
+      "bytes": 771,
+      "sha256": "414e24aa2c858ab564c74c8b07394de58f32f313941dc83127bbb411ce540f2e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_cookie_plate_006.json",
+      "bytes": 771,
+      "sha256": "534608ec1f389cca7f632fb4238c924b7a3413057bf160c396d6e743a7fabcc5"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_cookie_plate_007.json",
+      "bytes": 771,
+      "sha256": "27d7b8093de4b61f51171446c935abaa7b0a6dfab98629d6cf9e61c2e10acf60"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_cookie_plate_008.json",
+      "bytes": 771,
+      "sha256": "51d672685cc3683b56c84f342294b98fbf3cf243c60b64ab9d9484e444788097"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_cookie_plate_009.json",
+      "bytes": 770,
+      "sha256": "1751a62ca316d07baa80c26f6c5428cf12d9c089d01709c95265b36d9af88879"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_plate_000.json",
+      "bytes": 756,
+      "sha256": "78c97b1783d1630ece93cf442412e0fa082cd458e1e23b8d1f48fdff761f7386"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_plate_001.json",
+      "bytes": 756,
+      "sha256": "a3f5983fa4c7db01809c790d32f4c16c3bf059560dd2f3e1e5b6e0dbddba13e3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_plate_002.json",
+      "bytes": 756,
+      "sha256": "4e7f46a0611560ae30afd94bafebeb7531515b1bbdde5786498a3d114643328c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_plate_003.json",
+      "bytes": 756,
+      "sha256": "e9a68eacb70ef37693667e8d42d69a6e344cdff5b8649a1e7009ce7992c37af1"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_plate_004.json",
+      "bytes": 756,
+      "sha256": "dd108ae9aec3213ce10954d1e5024804ccd5d44d9586a48d8047a4b3d230c113"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_plate_005.json",
+      "bytes": 756,
+      "sha256": "6a51a48382febc3893b7ae16e33c1796702c68587e740eeeabf454600f3cd667"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_plate_006.json",
+      "bytes": 756,
+      "sha256": "38605facaef782257d1f8024048e890567e1d7cbd8f9c3dfe70c5036c342535f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_plate_007.json",
+      "bytes": 756,
+      "sha256": "3b051a8d7e7d1928a1e3a2b5b77a677bc2af928184bcfdee38141b2fdcb6a93c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_plate_008.json",
+      "bytes": 756,
+      "sha256": "256ccb2368eb6761b23792629e50d114826e4c4ef9e98497fe83acddc3109a2b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/bowl_plate_009.json",
+      "bytes": 756,
+      "sha256": "f17a18cb34534c4ca5969eaaa4c34027933b84e62776bfeda67d9e94f4ed5b1c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/butter_basket_000.json",
+      "bytes": 764,
+      "sha256": "5839954d010f2980fdfd2a73e0cd423ecc7f5a4edc956f78ff7ceed9894aecfd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/butter_basket_001.json",
+      "bytes": 764,
+      "sha256": "0754ef6edde115d1f5b44b0f2dbf29baf95f8f1f7f811d37bae1ccbf4e1fb279"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/butter_basket_002.json",
+      "bytes": 766,
+      "sha256": "1b1177ec5d9764d11b0feeb39c9869f142f112e5f85049b3fd9492797575eef5"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/butter_basket_003.json",
+      "bytes": 764,
+      "sha256": "fb021e48bad8c8601c8486ef7026a2a127824096b4bea1738ec64c083bde08c8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/butter_basket_004.json",
+      "bytes": 764,
+      "sha256": "e5610d3f0ff5dbe9d74f988f202a4aa4f98153113f7b2506d9f83b254384ae26"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/butter_basket_005.json",
+      "bytes": 764,
+      "sha256": "a3021e7f5c4edf89f2ae5e4d85dfbcb021ab748c39922689811c347ef857079c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/butter_basket_006.json",
+      "bytes": 764,
+      "sha256": "d7089477747761bca1fba1e6fc6d5e5d9b1e56b7c89fefa2d67975789e3cd198"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/butter_basket_007.json",
+      "bytes": 764,
+      "sha256": "84a8b9aa4c0c7bde12512031aa300a3e721034bcde383fe8b1126a089adf839c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/butter_basket_008.json",
+      "bytes": 764,
+      "sha256": "205a8d3c6cd8539221e719bac3af4ae237854f240cfb206b62794d2e9af144b4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/butter_basket_009.json",
+      "bytes": 764,
+      "sha256": "256c03d52a1b83e46016b6bbb46b53eb88345b0c289eb7bbf6d648f80601a997"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/execution.json",
+      "bytes": 357,
+      "sha256": "dd7debbce224ac3169b25b64d12184d81e38ac4ca68152c9c093b29074556cb3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/middle_drawer_000.json",
+      "bytes": 763,
+      "sha256": "5b247944b0d16fa3755ad99d8047ac199cabbe5d9157f2cb857404247cf2b3dc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/middle_drawer_001.json",
+      "bytes": 763,
+      "sha256": "157e8633d266383b00866de464116fa540769d2976c1d8f707fc5334cb362d5a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/middle_drawer_002.json",
+      "bytes": 763,
+      "sha256": "50221d1561f96fe5c29c2af539c3e2826ffdb5a8a34e1c6c5edac9f23b6d2fb0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/middle_drawer_003.json",
+      "bytes": 763,
+      "sha256": "41cd726e8f895a74af8507502ae2e04c79f36ead6e7364916ce3fd7f10f33e1f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/middle_drawer_004.json",
+      "bytes": 763,
+      "sha256": "9713a101c15189ab3cd997eebcc9a77a99308a652c8e1a24fb84694680299f0a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/middle_drawer_005.json",
+      "bytes": 763,
+      "sha256": "3b01018ac88066b94cf029fd5158b1b7f0ec30fcfff6ce25023918ec860dfe86"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/middle_drawer_006.json",
+      "bytes": 763,
+      "sha256": "9cdcbb6bd9b15a54343907c6cb51433ecccaa0b8e80f65f0d017d198335f25ca"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/middle_drawer_007.json",
+      "bytes": 763,
+      "sha256": "53153607b70b59cfa0537961551ecbf6df4213d335a9b4cd4e1600f94cc10b9d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/middle_drawer_008.json",
+      "bytes": 763,
+      "sha256": "02393807087c0553710327b7cf8969eb1bc7f6ba3e93be5fff5ea648e326e147"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/middle_drawer_009.json",
+      "bytes": 763,
+      "sha256": "f22e05ab00fa915a330f18464c21e87497c36da6e435f8f3642be31c57536cfc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/milk_basket_000.json",
+      "bytes": 759,
+      "sha256": "545a96694cde45385b0bbcc028488a8191d644b86676d1475987ae6fa34cf3ec"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/milk_basket_001.json",
+      "bytes": 759,
+      "sha256": "264111eb55861030046ea4b1dd88d294d69570c21367c9cf2d207460e0ad37e9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/milk_basket_002.json",
+      "bytes": 759,
+      "sha256": "19c697a00ca89bb6e1470d0b8ee9ef69eb9fd174f5cabb25c3925fc8fdebe8f8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/milk_basket_003.json",
+      "bytes": 759,
+      "sha256": "702aabb7de7c5a6f4628dcf60b585305f4be80db531f8898ff6825c5a01bd3b0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/milk_basket_004.json",
+      "bytes": 759,
+      "sha256": "375b44daf5544941c25099cb9f4aa5a76b5f21c7833881ca294027cb6513d736"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/milk_basket_005.json",
+      "bytes": 759,
+      "sha256": "5f291a80d4a0c2d3fa264c0dda0ad393445b48c3025f7d1fa6f9c06a2961b1d6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/milk_basket_006.json",
+      "bytes": 759,
+      "sha256": "22d285bb3170d87b13d11b63eca9a94d9457cb976b3eed7f93f4664a1ffd23f9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/milk_basket_007.json",
+      "bytes": 759,
+      "sha256": "65f2f864f6d00c785e5c0711d095736f91115b5310740a883f8f72320dc3f9e7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/milk_basket_008.json",
+      "bytes": 759,
+      "sha256": "681844ad9b4233b242d159e5de9d7dd18a472e9bb3314bf85f8757d1c962b171"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/milk_basket_009.json",
+      "bytes": 759,
+      "sha256": "4e23bb8c2eceb11f2a39c616eb0070be2bd4156c62c2ac7f0e967c8754452360"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/plate_stove_000.json",
+      "bytes": 760,
+      "sha256": "dc1f876825b0713dc94d8c92217bda8a79224c26218c4ee8f34264cb2d1ddf0c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/plate_stove_001.json",
+      "bytes": 760,
+      "sha256": "5c542ad325dcd2aa38d3762d7e7b0bc24eb3023611775c761b83bace3f0c6001"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/plate_stove_002.json",
+      "bytes": 760,
+      "sha256": "b2b91c56df68f9d55baaaff5b8677b60f2b9817a99e3ce9cc4c584c1fe5e0850"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/plate_stove_003.json",
+      "bytes": 760,
+      "sha256": "8242c63e532acc588f5537c6a73120e38bf6020f3f65025ffbec86b40407529c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/plate_stove_004.json",
+      "bytes": 760,
+      "sha256": "4bb9e1930b9068ab996fdc206b009cb76fb26020884bea045ada3321aa08b1e3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/plate_stove_005.json",
+      "bytes": 760,
+      "sha256": "1f70d614fc5b0c55f2eb779009049fcc950eedcd5e90a89ae71e59826d54358d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/plate_stove_006.json",
+      "bytes": 760,
+      "sha256": "4ea0705ca08aa7a93674fd58956893386ab573cc7a0164734dd9a1631844a757"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/plate_stove_007.json",
+      "bytes": 760,
+      "sha256": "70ee95c99fae2d34b400602da0e586d71af9480b87fcdf0943e081fde617a8a1"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/plate_stove_008.json",
+      "bytes": 761,
+      "sha256": "2978d38481293b35d8b662ce75bf9405a92449559032be9974c2b3e465e9a2fd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/plate_stove_009.json",
+      "bytes": 762,
+      "sha256": "7a36c5b9d995b1e3c3fd7f5aa59e50e2307581753d95086bf52931d5b96b6fbb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/protocol.json",
+      "bytes": 689,
+      "sha256": "3a1b8cde06e8e3274758d7f26894e4e9bc99d3993481b396d996e78a7e6172a1"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/summary.json",
+      "bytes": 2830,
+      "sha256": "ed95450bfed3c9ec765ad7717c1ec52b0fd1ef01ecf8f3a10f9b4f2d869a20f5"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/tomato_basket_000.json",
+      "bytes": 766,
+      "sha256": "1697822687013eadd146a657aafa47fd3abcdc975d7765bebcea8f54dda1a6da"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/tomato_basket_001.json",
+      "bytes": 764,
+      "sha256": "9c1bd9c0cf6b3a61db4cd70695a7e76f26f5deb3a8e6d034a5e683a1031ad5dd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/tomato_basket_002.json",
+      "bytes": 764,
+      "sha256": "fe8b839f0c9eff37be07e91c866ef014cabd788eefb010118c8037ced1befafe"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/tomato_basket_003.json",
+      "bytes": 764,
+      "sha256": "a54415325ee8c2e8baf7158901d937d4a88aafcdd0e7c745913ddc911ec99cf5"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/tomato_basket_004.json",
+      "bytes": 764,
+      "sha256": "07e28938def1af2ab52a68afe5bf43afdcb57c2009a99cf711191c810be2b0dc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/tomato_basket_005.json",
+      "bytes": 764,
+      "sha256": "6cb33eb591d8cce5458b5d6f579c0420ae6a80396d387f406b0c1d6618e2d2ec"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/tomato_basket_006.json",
+      "bytes": 764,
+      "sha256": "37577d355530cccb425e0208f720dcc55a096e97c198e0b1f339cbf57525d3bd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/tomato_basket_007.json",
+      "bytes": 764,
+      "sha256": "d92e43ed477fda20678db221544998dd8301d0357438e74d4e6c1ba767e0c2cd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/tomato_basket_008.json",
+      "bytes": 764,
+      "sha256": "48efb21293d2f2aeddcc13229f75c53b307ad61870962b7432b683762f414629"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-008000/tomato_basket_009.json",
+      "bytes": 764,
+      "sha256": "6a423aa11b492c8f54960e8524cdd6f0268f8ad914c686dfd7f0d4430a05533b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_center_plate_000.json",
+      "bytes": 770,
+      "sha256": "ab7272f67efe4e35626372c2c9ec747333e292826d938c84d6212605ddea9730"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_center_plate_001.json",
+      "bytes": 770,
+      "sha256": "e759c80371a1b30176197a50b6adc67aca1584ff9a8e9b3e26b39d752ab6a02b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_center_plate_002.json",
+      "bytes": 770,
+      "sha256": "ac05083d6921b79942df199bcd4490d9544e410105ce7a146d1ea580bbbf10b9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_center_plate_003.json",
+      "bytes": 770,
+      "sha256": "6eb8c3503ec70e995e9968a2e6e6907891bcfdad5630e104d659096f3b383c8c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_center_plate_004.json",
+      "bytes": 770,
+      "sha256": "368fd5118e2754cd3f91342c8b2b7295227573b1a3efbc9f3710ca518e2b06e0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_center_plate_005.json",
+      "bytes": 770,
+      "sha256": "0b1e3f56ecc4ecf6010b079df1be8ddd5085b4777cd9bed53b9b922d56efcb3b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_center_plate_006.json",
+      "bytes": 770,
+      "sha256": "f86a2b3fb0387e4af81805b935d296f90d254a27de5fe46d585f05acd283ee41"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_center_plate_007.json",
+      "bytes": 770,
+      "sha256": "2b82a0b6fa00021ec20bb7e4b843cbb899d3d17b28fd1f6f4394c3ebf41d5673"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_center_plate_008.json",
+      "bytes": 772,
+      "sha256": "69012c4c1ae467d27a516d25c50b2829ffabc96c32d1d8ca3d80ae28da8f7819"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_center_plate_009.json",
+      "bytes": 770,
+      "sha256": "d51c707f03379c32b4a232a0a11f78c90d82763a1f46e6fe13ab379765e33aa7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_cookie_plate_000.json",
+      "bytes": 771,
+      "sha256": "d36ad0be99856cd7364fea2ed413d192bcea436eaf8cb6b7266253b4047a9683"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_cookie_plate_001.json",
+      "bytes": 771,
+      "sha256": "a4438b4c3939f87450c5bc8af79ab9ffa0c76bd79c73319a448ae1a6e38bad55"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_cookie_plate_002.json",
+      "bytes": 773,
+      "sha256": "addf20f40e4f863fedbfb7dd1b3fa5428f824c57f83186479a57ae24d69e5442"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_cookie_plate_003.json",
+      "bytes": 771,
+      "sha256": "6528b5bd9c703e67519429a229c239ce86292696505e830a34a630c0f48e24b2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_cookie_plate_004.json",
+      "bytes": 771,
+      "sha256": "8ef39ba7e3c7cf0ea964ff187ba41ef4560a98c998c2bc7cbd81267a769cca3e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_cookie_plate_005.json",
+      "bytes": 771,
+      "sha256": "375477ec782b31105a7302700d90db98e3ece8a25d17d1bf4e4a6f0d72831390"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_cookie_plate_006.json",
+      "bytes": 771,
+      "sha256": "a05cfc668fab9308eb18c64a9e45cdf88fea292c2356a7051e576e9e772b2ad2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_cookie_plate_007.json",
+      "bytes": 771,
+      "sha256": "073ac94c467fbe569d699ed32d05f657f6d9bcf03a66a432eb187bf500d3d725"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_cookie_plate_008.json",
+      "bytes": 773,
+      "sha256": "76fca43bcabd3a0b3cf1c066038b8fbb36b27a66481c34ae2d85f501530106e7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_cookie_plate_009.json",
+      "bytes": 770,
+      "sha256": "23cba2e54508f00c4ea23dc48ff4d3ac849db80825413f1f877af9876124639b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_plate_000.json",
+      "bytes": 756,
+      "sha256": "db245a162bd8bbaf7db8c2dd68e4d73ae3e2412c779d6abc56d123bc9fdf736f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_plate_001.json",
+      "bytes": 756,
+      "sha256": "51e8cd0403f05e85fe5b46b6c15ad6aec8dfe6ee5961344c75297428e705b80f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_plate_002.json",
+      "bytes": 756,
+      "sha256": "df022a23d00aa5b2d5772bad952e3bf1a584469439987ceaa3c83a56b5c5a78f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_plate_003.json",
+      "bytes": 756,
+      "sha256": "901dfb10907803336ec5e687d7c3fb4d5a6e81117b23cbbcb1a842debcc32dab"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_plate_004.json",
+      "bytes": 756,
+      "sha256": "453599d06dc8d9756daf95209818facab27df04eea86b692df2c7e553b72a13e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_plate_005.json",
+      "bytes": 756,
+      "sha256": "6fb55d2c741acca96eb634652d11ed971c5044b0b8af0f11581c26e2f2d4e08b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_plate_006.json",
+      "bytes": 756,
+      "sha256": "0fb799560bb0409c129ac74dcbde1673d57a1682ddf62ba58895913f051df183"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_plate_007.json",
+      "bytes": 756,
+      "sha256": "39c47be8d63e57ceb8295b8fc1607ef9b7840f3ad6d6b1cf0c3f69a394a6c522"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_plate_008.json",
+      "bytes": 756,
+      "sha256": "1bf5f9ffed663f6426df3520e5286f3937f1f3bf52e15667036792db4bf30c26"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/bowl_plate_009.json",
+      "bytes": 756,
+      "sha256": "b70231bc49827df6aa6e542df71c7f5cf20fa729861640ed0bf965e7fcfc7a5c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/butter_basket_000.json",
+      "bytes": 764,
+      "sha256": "51b7ba5614cc7b846a4b4fe5fac0a3789a7c1b547cb197bb50e975550ec94136"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/butter_basket_001.json",
+      "bytes": 764,
+      "sha256": "9381127e730628d5eb83b4c6fcbaf09f03cb31d0633779cfbe07098553a4dfa9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/butter_basket_002.json",
+      "bytes": 766,
+      "sha256": "aaa36e57b5c78dde3b0d55a81a0dc1f5e26e7e7e6c68f361b289c9f553e97a7c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/butter_basket_003.json",
+      "bytes": 764,
+      "sha256": "a337588daf81ae88d97896c740c8d26335c8ebf0ed29946ad5ccec2b234a070f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/butter_basket_004.json",
+      "bytes": 764,
+      "sha256": "838854ee9616776f7f1cb8e520b6ec51315b08e3be41d26c3781b0a95a6c5fb3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/butter_basket_005.json",
+      "bytes": 764,
+      "sha256": "db034646bda78de39ef3e32974cb494672c8ff83e425f05701403095618255a0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/butter_basket_006.json",
+      "bytes": 764,
+      "sha256": "6a2706e81d0082676b3373f1681b34394ee0d859a693eb885315f5a1eb58ef5e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/butter_basket_007.json",
+      "bytes": 764,
+      "sha256": "9adaec03cd8c90c514c4114e04d9f9665f166440d6019d364c0f03a98803428a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/butter_basket_008.json",
+      "bytes": 764,
+      "sha256": "9228ade8d3ef3a52b0d62aa8555ac75b6c3e1dbe4b15e8e4bf16ef5ac2f571a3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/butter_basket_009.json",
+      "bytes": 764,
+      "sha256": "db2c38dc9af694a8864e9ec221510292854664da8783c5c99afa433a05d99584"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/execution.json",
+      "bytes": 358,
+      "sha256": "cf6ed969494cd9ce4c886b6d680fc4e9869fb7c520738234f391af13306c3b43"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/middle_drawer_000.json",
+      "bytes": 763,
+      "sha256": "f33ac05c677b07a23ce6cd493038e00b71fc43d5c8b0b146312fde3f24e4ca66"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/middle_drawer_001.json",
+      "bytes": 764,
+      "sha256": "4389f145146ffcb39030b92ef955e5fd54b598d1466a9c6df3191276887cbcfb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/middle_drawer_002.json",
+      "bytes": 763,
+      "sha256": "d4896f8f36ed635c056befd74100e0a07e536833f9bdbbde5287589e77a88796"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/middle_drawer_003.json",
+      "bytes": 763,
+      "sha256": "e326595b7e56d06dcac0a5f3037d0bc7d97dcca1efad98bb598dd5b5348a0067"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/middle_drawer_004.json",
+      "bytes": 763,
+      "sha256": "273df1c7afee6c08ffe69a38a305cb71fe552eb20a34bbd375c0b708b6fd0806"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/middle_drawer_005.json",
+      "bytes": 763,
+      "sha256": "b3a9fcc9d5e494df0e5a3a5e51f1ba5296f24f5e85e7b77c6b935b98228bb249"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/middle_drawer_006.json",
+      "bytes": 763,
+      "sha256": "30182627a6c374b76b900a7788410614c88fd23d3a3e7f6330dbc61d0fee40dc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/middle_drawer_007.json",
+      "bytes": 763,
+      "sha256": "2f2e017de578ad9413bfd7dea462d06f7d35ce3a961af2dd5cb750becd2ef520"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/middle_drawer_008.json",
+      "bytes": 763,
+      "sha256": "fa215bd8dfa6359a6e20b43fbcd244cf03c449328854f898015339522a7c6db8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/middle_drawer_009.json",
+      "bytes": 763,
+      "sha256": "cb8d1cbb1930e5a830c531661978097a04350bfdb6d923283db0696de8fe9326"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/milk_basket_000.json",
+      "bytes": 759,
+      "sha256": "e4bcf2691622de73b6aee229142e26819dd54873330e7c1d556a3775413aa5ec"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/milk_basket_001.json",
+      "bytes": 759,
+      "sha256": "f7942a8f61a9fcf93c7fafb65273c847f89e8a3dc3491aaf65290e706c5f5e97"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/milk_basket_002.json",
+      "bytes": 759,
+      "sha256": "2d0882f7c578e15fe9b0a40e0b0296980978a821143a1ef19fd58908343a10f2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/milk_basket_003.json",
+      "bytes": 759,
+      "sha256": "d28240c1b4fd30f8401ccfd9f3ae8bddb06bf87d2f6310e734088be02f23ea62"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/milk_basket_004.json",
+      "bytes": 761,
+      "sha256": "2b5b8576c08bbc57b3c48b3c5a34064a9fa8a95173e44d31a74d299284e128fe"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/milk_basket_005.json",
+      "bytes": 759,
+      "sha256": "74b369f38ca6ae53867e427409de3a5b3914fbf7772a9d2735dc09b0705cba91"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/milk_basket_006.json",
+      "bytes": 759,
+      "sha256": "9b3301ca4ef02dfb0ad2f4b33e1645d4e83cb352bf313a13de675c6d765b1c8f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/milk_basket_007.json",
+      "bytes": 759,
+      "sha256": "c815ff6d7bfed0174bbc6da7a18444c9fbe08e938fc37f2d864e7071e693138b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/milk_basket_008.json",
+      "bytes": 759,
+      "sha256": "28dd878d4c7164ad036c57e619df58211320ebaa3ab06e34b0ac261455a30afa"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/milk_basket_009.json",
+      "bytes": 759,
+      "sha256": "8390ce8be744b805fbfe1f8e1cf1399acb41afaad011886a1cf9a7c07ffd9a1a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/plate_stove_000.json",
+      "bytes": 760,
+      "sha256": "cfc54aaf20af13f301b9590fc275f2914b31a1810db0de163369bb0fd75fa99b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/plate_stove_001.json",
+      "bytes": 760,
+      "sha256": "430bf9120ee2f8e45ee41cc05a8bd6c0e2adc2e3cf80279806260ec43d9c924a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/plate_stove_002.json",
+      "bytes": 760,
+      "sha256": "947021f569346c27e213103af647685590816d7e65f08cc59440d8ceefc6951d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/plate_stove_003.json",
+      "bytes": 760,
+      "sha256": "62a7c9d776072845c4ddf301fba19295653029ee6af0783979d204285af0b57e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/plate_stove_004.json",
+      "bytes": 760,
+      "sha256": "45c2ef12d70fbde3d05a5a7fc32af3e0e85413cf0de7ed74cb03d8b8d2442644"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/plate_stove_005.json",
+      "bytes": 760,
+      "sha256": "6e9111bde280ede29af888dd9a91e7fecbcc3fcd1a17d9c2c039a5de03953dd0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/plate_stove_006.json",
+      "bytes": 760,
+      "sha256": "3660ac217fac3f5b4d2822c22d71e21884f5a83dda302ca441168f8237fd2d57"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/plate_stove_007.json",
+      "bytes": 760,
+      "sha256": "eb28fef33c219d590845297d6efc097b05ed703c8c13f3d6cb0cf32d32c1db66"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/plate_stove_008.json",
+      "bytes": 760,
+      "sha256": "21d8718a0f8c17f6f429adf2fb8779220a4556dc8f68d5f187c66d1a2052b8ac"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/plate_stove_009.json",
+      "bytes": 762,
+      "sha256": "03746a3222cbdc62eb1526ef4bc9cd63c5c2f84f26bbb685539996262c13ac1d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/protocol.json",
+      "bytes": 689,
+      "sha256": "cd2a06a9faad0a8e344af9366972afdaf57c832861ad40cbe0b798c21e444f25"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/summary.json",
+      "bytes": 2828,
+      "sha256": "03f7097823e3ab8c59aee48338d46ade46ce8315837961821e3ee5d9abb604e5"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/tomato_basket_000.json",
+      "bytes": 764,
+      "sha256": "7fea513755a354b68aec9aa60b3403c4cc60140fee3f47bc093bb169c5e38d93"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/tomato_basket_001.json",
+      "bytes": 764,
+      "sha256": "2c3009097196a949b01b77e810539d5fef7f10511f728fe9defdff9e40ed7e43"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/tomato_basket_002.json",
+      "bytes": 764,
+      "sha256": "1c78474ce5976b93a9ed1531d42cf2f743b6866b1845aaad20c84c20daac799b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/tomato_basket_003.json",
+      "bytes": 764,
+      "sha256": "63d3a5c81a38fa8c00494ec52197fcb98cca428e4598457aeacd2c46e351da98"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/tomato_basket_004.json",
+      "bytes": 764,
+      "sha256": "00ca873cd9c909ff197b1093f78be84820eee6611bd3a5ef0424080f45bc436f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/tomato_basket_005.json",
+      "bytes": 764,
+      "sha256": "e1b3925c2dfb7ec470deed050cc7e12f17bfca66ec040261bf4aa789738c54fc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/tomato_basket_006.json",
+      "bytes": 764,
+      "sha256": "3dd857dab0eba80540a0d539f9cb95772ed982b6d21388707e47c675f1e0d284"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/tomato_basket_007.json",
+      "bytes": 764,
+      "sha256": "6d8525e2fc4b49c77d13d421da7050139d2fdc592484d4465df1694ea6d8c2da"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/tomato_basket_008.json",
+      "bytes": 764,
+      "sha256": "3f9120235841878f11a69c99edcf483478d3d29623f1bf537283e12127d4df4e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-010000/tomato_basket_009.json",
+      "bytes": 764,
+      "sha256": "302fad0474222973b6c38c33e55b65a13332ed71c314f067cb741dd3325d13f2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_center_plate_000.json",
+      "bytes": 770,
+      "sha256": "6ad5f1f378f77d270950eab2e37fb18f42c8736be4140e00a4546e659d1b148f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_center_plate_001.json",
+      "bytes": 770,
+      "sha256": "e434526c5cac9ba6b478bcb58ae36b709e0ab84d7b2135b56c15683dd0630d26"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_center_plate_002.json",
+      "bytes": 770,
+      "sha256": "dd3b38abd57812eed00eca9826805b1502b14df23a7681d23489a6727cc6871d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_center_plate_003.json",
+      "bytes": 770,
+      "sha256": "4c6cc1df64295c0eefda391252b9f7811860baf5662d9611f91f1bb9c4a3295e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_center_plate_004.json",
+      "bytes": 770,
+      "sha256": "174fdbeb847650b4e475b102e4f169e9b1fc946523106a8373b117c413f62591"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_center_plate_005.json",
+      "bytes": 770,
+      "sha256": "8091d05346dfc6578abd80c31757955d893ae2d68a78a8e5bf092d77f7558126"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_center_plate_006.json",
+      "bytes": 770,
+      "sha256": "2036619287ac9334223a11b010976d3143950c322b42ad0d5fba0b936d49b17e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_center_plate_007.json",
+      "bytes": 770,
+      "sha256": "d3ad899d4390d76fda846fd060d8d2177dbf4891667f72fc49fc51c682872b7c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_center_plate_008.json",
+      "bytes": 770,
+      "sha256": "1752ba2dd2f16d877a81297a225e165722f2326bde1cf950b8685fcee162daea"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_center_plate_009.json",
+      "bytes": 770,
+      "sha256": "6fd7045859ae8bdfa198026bd908b312964c119c81159fe62b333b5e94764606"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_cookie_plate_000.json",
+      "bytes": 771,
+      "sha256": "c3e436ec8a8ab7a4492bac3dc5569b380ca49475268c0b91d264037a9eecd619"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_cookie_plate_001.json",
+      "bytes": 770,
+      "sha256": "7e67af2d28f709476e7f5aa2e49871a70904f138a11e6bb6c0dfd72e10c69043"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_cookie_plate_002.json",
+      "bytes": 771,
+      "sha256": "0cd63b2a0f530d261cc4d48ae3be45d88f8daecd7ab60fc8d0234339c3668fa2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_cookie_plate_003.json",
+      "bytes": 771,
+      "sha256": "cff8ff0d61cc62ac2550399ecb238f13442901ec002e1fa6609b4d1e56ab0c04"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_cookie_plate_004.json",
+      "bytes": 771,
+      "sha256": "6e14e7b1b1162589b83d93dff884d1b9731ec4ed454380fabc78a6285cd71ea1"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_cookie_plate_005.json",
+      "bytes": 771,
+      "sha256": "bf9545c1e88dcca9f39e3cf8abcfd0f1f8b8c4489383aedc01e41c7dc6019b3b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_cookie_plate_006.json",
+      "bytes": 771,
+      "sha256": "f4060abb6c5a1725280e370215a9894af39ca9c029df751dcd530f96974d1f71"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_cookie_plate_007.json",
+      "bytes": 771,
+      "sha256": "4e0c09906f376067e0b7586689d49576548dde2700d3b1776330216f99c280cd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_cookie_plate_008.json",
+      "bytes": 771,
+      "sha256": "1e6d6c7081a4e4da9ec854620e7aaef7364d95cb09ad44c49799af2d6456978d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_cookie_plate_009.json",
+      "bytes": 770,
+      "sha256": "60154f91a12e04e4fdcdcd1e29166b39508aada49c0e04c28ca4f96f0dd5ac00"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_plate_000.json",
+      "bytes": 756,
+      "sha256": "6f0ae013760ab3188df4a93c41f92cdc7138b869efd043da5d3576f13f69b36f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_plate_001.json",
+      "bytes": 756,
+      "sha256": "748d05503623fc71380503460a8bb60fbcf7b18f2e54c004dbbd78159f293303"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_plate_002.json",
+      "bytes": 756,
+      "sha256": "0e7321991c36e450965f64c1ae75ed8381e8d7ceac4862a999e39f130bf3aea0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_plate_003.json",
+      "bytes": 756,
+      "sha256": "1f88e7e84cd2da67540322a8aa9c7c90c9a79ebe88933dc813f71b4eb9e8024b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_plate_004.json",
+      "bytes": 756,
+      "sha256": "b1829d2f16fc79414a30718b8f830398976249270cde4a244bda4a5ad1712225"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_plate_005.json",
+      "bytes": 756,
+      "sha256": "f171b13f693bb87d5aa08751e416614332a4afe6aec42e147e7932e75511731f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_plate_006.json",
+      "bytes": 756,
+      "sha256": "3e5aa0588c513bf9633a8c457116f0d3565c15c9ef22d82cd71fb3d51a050222"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_plate_007.json",
+      "bytes": 756,
+      "sha256": "3f00347ce35e5885674c93d1e0e178371f42b33cfa1b744b5f3c0fcbb615b36c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_plate_008.json",
+      "bytes": 756,
+      "sha256": "35e6cfb0cc4a9844a3dd0fc34d7603fdee1700bf095f85c929bfd62df2dbdc76"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/bowl_plate_009.json",
+      "bytes": 756,
+      "sha256": "31a1381ba96f7388a01f324b4156a340ac1aeb77f086f86db300c3c1b2f90ca0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/butter_basket_000.json",
+      "bytes": 764,
+      "sha256": "bce19820f8f99a00a46f01a56e37367c1549aa8d6ee0e86b695a2007f5e0997e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/butter_basket_001.json",
+      "bytes": 764,
+      "sha256": "2d1670e06bf206011a6dfc83444e4f2977fefa5e06a0eccac4a14605ef22bb0b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/butter_basket_002.json",
+      "bytes": 764,
+      "sha256": "c94e6b3aa3055e3151419b72adc81967b5f4603c40955f8b78bf307e4fbb32f8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/butter_basket_003.json",
+      "bytes": 764,
+      "sha256": "a9872fb1db21903efaed05b419fb24f566ee0b09063a68d885426608940fd2fa"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/butter_basket_004.json",
+      "bytes": 764,
+      "sha256": "64e88c3885afd5618159e52adb28ccbb05d57f81516735c696ae1139b0cb63a3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/butter_basket_005.json",
+      "bytes": 764,
+      "sha256": "578a0bf8549e333f792c2e83d1f50899f2ec35719eb5e450e54d45ee1eb492a5"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/butter_basket_006.json",
+      "bytes": 764,
+      "sha256": "32f255f77083def20bf0fff5978e1412252543a13e9b12949d4d71a62547e3b0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/butter_basket_007.json",
+      "bytes": 764,
+      "sha256": "6df7df8e7cb8e0fcd3762dab061443ba66a956b722e62d4c8aec859fdbd9e99b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/butter_basket_008.json",
+      "bytes": 764,
+      "sha256": "1123b6db12354ad3e86a82e4462dc495d3f9dd638840cf3054ae83dd850ebcf6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/butter_basket_009.json",
+      "bytes": 764,
+      "sha256": "56699d2b672b19ab1c4689e00b41b86c0a05a3fc6ee5e34524183a232486da9f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/execution.json",
+      "bytes": 357,
+      "sha256": "e68418016254214d1b0b98080e1c50fcc131d310fbeb0770e1c0c9d3df1d13fb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/middle_drawer_000.json",
+      "bytes": 763,
+      "sha256": "3db357b6933f125dbd67261afa81bd9e0897db03efc07ada8a4d3b11685b4443"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/middle_drawer_001.json",
+      "bytes": 763,
+      "sha256": "13f38f0bf557f089b2360cda8839808d5da9c686bf4720c522cef21a860e91ef"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/middle_drawer_002.json",
+      "bytes": 763,
+      "sha256": "4eed6898acaa15079b6db042cc6b3191a47729484e0ce7aac15e6dc271da7829"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/middle_drawer_003.json",
+      "bytes": 763,
+      "sha256": "cce26d7887e05dd747dba34433b741e489acba04af53cf2eca73bb5b58bed3a3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/middle_drawer_004.json",
+      "bytes": 763,
+      "sha256": "1c3dcec2f8a3290e1dbc8151b88b38c366199eab469e9fb85272632618401766"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/middle_drawer_005.json",
+      "bytes": 763,
+      "sha256": "71f5b29d57999d4de40247b40d6ddce3f905406c266b248b50f7b681b6e244f8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/middle_drawer_006.json",
+      "bytes": 763,
+      "sha256": "bd87ee590b3443f547953f5b84d1512425f12a8f7a787a53bd13ae67baa289c9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/middle_drawer_007.json",
+      "bytes": 763,
+      "sha256": "44c79a865a34b54ff8652f08d92461a7b68ae6aa4be658cb566eba8aff71abc5"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/middle_drawer_008.json",
+      "bytes": 763,
+      "sha256": "3f9ec66e511cf6e6efa0b8a3d5c67f00c5f62794ff9df6cdad26fb5414eeeedc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/middle_drawer_009.json",
+      "bytes": 763,
+      "sha256": "d9da60d1e7f54d2300d8253c35b6ed0c5bccffaa9aa29cea81c45db91cfd70e2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/milk_basket_000.json",
+      "bytes": 759,
+      "sha256": "089d088e64edb2471e826346e3d2ab961a44864ff34037c9b283fb01171dba3e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/milk_basket_001.json",
+      "bytes": 759,
+      "sha256": "2c8357a8c142b3a4acb4b7048d989646359873fed43c062620774f53418a042f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/milk_basket_002.json",
+      "bytes": 759,
+      "sha256": "bbbf566822dd4412f4be5e8b73e3a63c15380dd2be3c70dde9452464c2066eb8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/milk_basket_003.json",
+      "bytes": 759,
+      "sha256": "734eb693f6b3e83197d10628ceddbb315e2b47e505409ad7c81e553210600837"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/milk_basket_004.json",
+      "bytes": 759,
+      "sha256": "9e24cfea8ce9cc9f879b48880bb122cf3173a29aa9ccc23ce1bf3089d0620fb4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/milk_basket_005.json",
+      "bytes": 759,
+      "sha256": "cbf56c76fe9c53ffa1cc1e406e4aafe187e27f837a2d410f40daea2cf9bfc396"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/milk_basket_006.json",
+      "bytes": 759,
+      "sha256": "4fe275aaeb349133f48af84ff0136242015147cddb21b599e58b3da4a25da8e9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/milk_basket_007.json",
+      "bytes": 759,
+      "sha256": "3caf5febe602e905420896f6511773c95f86fbb06f2abb872da636a87e4d1085"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/milk_basket_008.json",
+      "bytes": 759,
+      "sha256": "83ea31ecdfa0c780eb8703fc5074017dd854a24cb8cc289360c4fd8a6e0459ab"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/milk_basket_009.json",
+      "bytes": 759,
+      "sha256": "fcf70048125664915cfc90fb93f80b33872858d5197acc3482b6d468c8eee5ee"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/plate_stove_000.json",
+      "bytes": 760,
+      "sha256": "0dcc2bcfaf01b729536978f45dcb398040747cfd5d18f3c44cfa072d725d9258"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/plate_stove_001.json",
+      "bytes": 760,
+      "sha256": "9c431976eb7880791841181f1599d7a55369b6312b13bbdea578b4eaa9536330"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/plate_stove_002.json",
+      "bytes": 762,
+      "sha256": "5d7b2e0f5be38d634630dbd8efa8af3358520426a5ed34a9bc6ec937a64fd253"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/plate_stove_003.json",
+      "bytes": 760,
+      "sha256": "ebf36430b479df125cc8de3422e21f40dbcad6e6f4936c9fe246ed143e609519"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/plate_stove_004.json",
+      "bytes": 760,
+      "sha256": "3d9a7d31b211bc28040b71c5303e3c485476d4fab5fd0926509166f0dac636e9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/plate_stove_005.json",
+      "bytes": 760,
+      "sha256": "954eeb6b1d2cfbb6d985b5148fa70f87119c283d38b88e4e67b80b16710a626b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/plate_stove_006.json",
+      "bytes": 760,
+      "sha256": "7a592c4605a159df0e8baef2f13f5bd005034e111a4d46a7a5f59f8663c47fe3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/plate_stove_007.json",
+      "bytes": 760,
+      "sha256": "2c834778789858ffab59ab336357c9ed729579427db1cf022940320a3e87ca6a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/plate_stove_008.json",
+      "bytes": 760,
+      "sha256": "89a2e67914ea26e0468d21e2cf5aaba18d039f971b36fd562cac2086dbf94f5b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/plate_stove_009.json",
+      "bytes": 761,
+      "sha256": "6a8376073a3e13201537dba2ba5cb492e94188a85da45b55e5806e0276d6b8bb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/protocol.json",
+      "bytes": 689,
+      "sha256": "77fb17dc8a9a440cb45642ac00ecdddded5511e9ac5068269fb3a26a7e611e20"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/summary.json",
+      "bytes": 2832,
+      "sha256": "51c77e790205c77ce52d38f10c23cfdcad8bc874747364b8b6386d202cff0b2f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/tomato_basket_000.json",
+      "bytes": 764,
+      "sha256": "7e38a84a503b46c3242d4be5ed3b91ccb4e07ff77889ef5ba4a5ce89214384d7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/tomato_basket_001.json",
+      "bytes": 764,
+      "sha256": "d03df036cea004b560d1399e56e933878b28359de2b74590a01c00db13d5e2dc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/tomato_basket_002.json",
+      "bytes": 764,
+      "sha256": "e038a5537c19e370b03fa6f1becf33139cbdaea5abb71bd51ccf2aace13faea9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/tomato_basket_003.json",
+      "bytes": 764,
+      "sha256": "85ae2df5e3d29c677e535127c33cb2059f36631a115fa8feb3b2cdc1acc89507"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/tomato_basket_004.json",
+      "bytes": 764,
+      "sha256": "e5e0e66ba3e155e5b4593775480463f20929be8932838a00985fed0fada95f27"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/tomato_basket_005.json",
+      "bytes": 764,
+      "sha256": "826bd70dd0a302f50b42b36de8ea80cc85e602c44df11b27dc0bbb01710aa582"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/tomato_basket_006.json",
+      "bytes": 764,
+      "sha256": "d27c1e679f1a6b4b53a6176b67fa0b587035a44d91f707bd207cd061943fede6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/tomato_basket_007.json",
+      "bytes": 764,
+      "sha256": "7c39dfa01ae3040658da47325bf255d56a3caf16c34239d20641e4e76ad53c51"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/tomato_basket_008.json",
+      "bytes": 764,
+      "sha256": "f613ea5aa4c08436ba6f663ca009abfe9e50e50673a13f60666847d01704df2a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/eval-011434/tomato_basket_009.json",
+      "bytes": 764,
+      "sha256": "2990077e0ce017c3cbafc265586b32cdada6382e5e1475866a3f0175b69bda50"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_center_plate_000.json",
+      "bytes": 940,
+      "sha256": "4208178d3d0b9e2d50583317950f4bca11b9a26a3d999ab1ef0c9690728704c3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_center_plate_001.json",
+      "bytes": 935,
+      "sha256": "ae94d2ba3562e10a17fee77df1e1b0b71a5c48d865086680c86562717964548e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_center_plate_002.json",
+      "bytes": 935,
+      "sha256": "b6a0788531f745695a9425f2df15d4e8d4afc0de63b7c94ad2e1ddb3f0d73032"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_center_plate_003.json",
+      "bytes": 938,
+      "sha256": "ba725024243c2c30e4f5017c932414dd9407ea31803dde97a3650a634bf79e9f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_center_plate_004.json",
+      "bytes": 935,
+      "sha256": "c10321aba923d27a4c17a57ac6d6b28c27019308c97a970e6abf4b887865e7bf"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_center_plate_005.json",
+      "bytes": 935,
+      "sha256": "f343b270fad911e4c46b6a74779133c95d343ef49c58b5080e09b13b327bf89f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_center_plate_006.json",
+      "bytes": 935,
+      "sha256": "15c1801ceeb1972894d1c897b3a45f44c5713067c637b1ccba35c6a69107d961"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_center_plate_007.json",
+      "bytes": 935,
+      "sha256": "057212797762f56c5e03d30ce3170a383dbad1cb1bb35ca7d1646b184ecfba78"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_center_plate_008.json",
+      "bytes": 935,
+      "sha256": "023511cfe5366229bc9b50bb52eea35efff9ecbbb768c493aa1205552943505b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_center_plate_009.json",
+      "bytes": 935,
+      "sha256": "b029354c8f5340dfc0d818c376ccdb2d286d4e324292f0c25e2b906d11249629"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_cookie_plate_000.json",
+      "bytes": 938,
+      "sha256": "16b5a8c9769129504d3293b58a136fabf809c44e0558eb9fbe78f8581a2a0c31"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_cookie_plate_001.json",
+      "bytes": 938,
+      "sha256": "1b7f4312dd67b310c452c5129f73e4e66b11d749cab98c8dcf1710590f185542"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_cookie_plate_002.json",
+      "bytes": 938,
+      "sha256": "1e66510cd727d03504829c6ed21915c590d76a9adfdde5749d598173cd4f17fc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_cookie_plate_003.json",
+      "bytes": 938,
+      "sha256": "e2e9ce426b860d903df0a144011935673cf63501c0682835d6b0af1bd8f1ed67"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_cookie_plate_004.json",
+      "bytes": 938,
+      "sha256": "d071d4306292445d7df9315329aedc30ae17bdee6421a4812d3953805912fe39"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_cookie_plate_005.json",
+      "bytes": 938,
+      "sha256": "d11df63dbef4d018c2ca1ad9bf0a197cd06c040295756b036946cd1feb3a3d8b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_cookie_plate_006.json",
+      "bytes": 938,
+      "sha256": "b0b1a4a1fe2c89e8dcaac96c92558b949d82db2226c0cee00e6688a2e1de1b1b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_cookie_plate_007.json",
+      "bytes": 938,
+      "sha256": "83bf8f4b9d16893009855487b932050bd907f9859f1cce92c6945bed78efb6cd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_cookie_plate_008.json",
+      "bytes": 938,
+      "sha256": "e8ed2f72ac25107fb8abcced96fe09cb14287c94d391a6d2c1f2b8ca699cd946"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_cookie_plate_009.json",
+      "bytes": 938,
+      "sha256": "22be634f6edee7860887db4bb1a53490026dd79dc100d5d8723c078570ade239"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_plate_000.json",
+      "bytes": 921,
+      "sha256": "611ac80d10cb416d507ceb26bd83c8a4e546c84290e0ac2f2cb0bdbb453a2995"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_plate_001.json",
+      "bytes": 921,
+      "sha256": "df21678b91f00a651b13a23563b2ba22d74ef9ff8f3c9f11eccc25ecd93cccad"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_plate_002.json",
+      "bytes": 921,
+      "sha256": "0fb9d5ae60bbbf3f18ce6bd813e1de0fb99682d5e7f5f953695a9b96c086c983"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_plate_003.json",
+      "bytes": 921,
+      "sha256": "8744b4e230fc7370002afdd4c4325492134f0cd32468fdeafcc0b278e58ece95"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_plate_004.json",
+      "bytes": 921,
+      "sha256": "3efd71a4355bf614c0745fb3e736cd1baf711b3dd088200970dd2e341151b812"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_plate_005.json",
+      "bytes": 921,
+      "sha256": "473532aa5f1900cd940fe85757ba41b2c425349385fcae7d8e9e44570ecaa2c9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_plate_006.json",
+      "bytes": 921,
+      "sha256": "ceea214996bf575573552a321a792131cadc77e1295a3eaaad0ffd1baedc1927"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_plate_007.json",
+      "bytes": 921,
+      "sha256": "d322d86f694206af4adb0ac74a5fea8f62ca0116153555cb50f2a749f0be0464"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_plate_008.json",
+      "bytes": 921,
+      "sha256": "07f9291792936b3be7a4b567a3a841e31c9a901f6fa2bfaafd54e5f649d5811e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/bowl_plate_009.json",
+      "bytes": 921,
+      "sha256": "ed53b8424ef9dd27741c6f45e293b18189d2bf6e94acaed263a285468274b79b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/butter_basket_000.json",
+      "bytes": 931,
+      "sha256": "59736d5abda4b7888f800f74b07c08e33552b8d855ab13feb726ec083688e9ae"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/butter_basket_001.json",
+      "bytes": 931,
+      "sha256": "5b61f7c26888e27a2915b5819f37db8460283aada494d40a265803aab123d2fb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/butter_basket_002.json",
+      "bytes": 931,
+      "sha256": "0e2b4c84ae76432a7f389ce93d5be534ee0538c07755e2874bb33576b6f55b6c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/butter_basket_003.json",
+      "bytes": 931,
+      "sha256": "cd8bc6588cece8167559fba2c2a7a94b9b4dc6b614bda21e0f07a125e14878c4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/butter_basket_004.json",
+      "bytes": 931,
+      "sha256": "c47831f83365a3f75d16a1ca6ce532404c43a3988c85352c4e386137b9b476bd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/butter_basket_005.json",
+      "bytes": 931,
+      "sha256": "c4ad97bc6610014682de55bf75d7ad998ae9a17c76902a24e91e5af394a102f9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/butter_basket_006.json",
+      "bytes": 931,
+      "sha256": "3bdd6002c0ca4154cca2ab17c29833f6ad5a80941505a859b61fdfbfac67a607"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/butter_basket_007.json",
+      "bytes": 931,
+      "sha256": "d69e9144150157dad148355b2fccd733d2c54994b9c2133d887bac9954b56d81"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/butter_basket_008.json",
+      "bytes": 931,
+      "sha256": "a534c27d7babc4ad36f02dccde09a15ff7758f3094af704a821ba3bcaf2f7de8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/butter_basket_009.json",
+      "bytes": 931,
+      "sha256": "ec00331061f4de8c220fd00c62f29f6d8705300a85e8f5108c18876ff461ccd6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/execution.json",
+      "bytes": 296,
+      "sha256": "b0b289edab0b0a66667224fc0a73ab34b593deb09e7449bfb90c6023fe4a182a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/middle_drawer_000.json",
+      "bytes": 930,
+      "sha256": "43c033ebec0e59d8af3cc715b2b48feb5f4be9af7bc95cb77f31801f05296946"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/middle_drawer_001.json",
+      "bytes": 930,
+      "sha256": "1b0426576ab2feb6d1269e751a358d2daade70f661a9a20618b6a2d720f1642b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/middle_drawer_002.json",
+      "bytes": 930,
+      "sha256": "5b8ae70c8f01d3459e92c233634e517f2e1607f6501f5edc5946a8cbc19e37ce"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/middle_drawer_003.json",
+      "bytes": 930,
+      "sha256": "8db2855e6c5e99cf2833e2ecd1cf45b3cc1c9bf4abf801c2449527cd030ee4ab"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/middle_drawer_004.json",
+      "bytes": 930,
+      "sha256": "54d0ad2bf4c8e59db6a00088863eb4912f5605030e8619598f2f3eed457b6bfa"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/middle_drawer_005.json",
+      "bytes": 930,
+      "sha256": "c2aeb66f658d93883d94de1e32f8bc13b59be215c73b27e2dd5b6e22c3eb8343"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/middle_drawer_006.json",
+      "bytes": 930,
+      "sha256": "9397c05ffaf07fd6ec9c13172e3e8a48c739c09577d0821f70dac8ee48cf5f86"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/middle_drawer_007.json",
+      "bytes": 930,
+      "sha256": "1a94ccd6b872875eba408c31aceca0af2727309b4fb1fb81bc82fe05cb276b68"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/middle_drawer_008.json",
+      "bytes": 930,
+      "sha256": "09ddcb64f3dd549181d58e437a21a31060a66f973ac750fe69119460c4796ffc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/middle_drawer_009.json",
+      "bytes": 930,
+      "sha256": "4648bc2bf9d0beea5d2753dffacdd566c7975466d27d1e943289095acf62d1fd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/milk_basket_000.json",
+      "bytes": 926,
+      "sha256": "f832646b36704f6bc099a7a6b6a12ece524c838012cc0b2dfb5ec716e12119d2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/milk_basket_001.json",
+      "bytes": 926,
+      "sha256": "00cf7d816993402a7e748eafcb2f8fdea806fd5263de0d7a4d462ab605b6d8be"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/milk_basket_002.json",
+      "bytes": 926,
+      "sha256": "083119740fd6752b671e31c8100a2f8443abc1ad56cfe4f4542767a1f5dd11df"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/milk_basket_003.json",
+      "bytes": 926,
+      "sha256": "2eaff33187fcacfbbb66bb835b62c5e3364833958014f2581ed0b529d240d62c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/milk_basket_004.json",
+      "bytes": 928,
+      "sha256": "2cee8a5fe8518b262a38c99fe1ba261891693e6c431d816334300dc2e6a9990e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/milk_basket_005.json",
+      "bytes": 926,
+      "sha256": "86cd90151b01e206eb62d08107966fbb8aed5394ac33ead7c157dd287ae3d8fd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/milk_basket_006.json",
+      "bytes": 926,
+      "sha256": "f895e926ad7b6d7b02cf34a1bc6cd2c2c707e5c4ce63f5ac2db4a3405f0f570f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/milk_basket_007.json",
+      "bytes": 926,
+      "sha256": "ded775239c7bda4927f32f0e2460c060eb33bea7283a8f5a44aba41fc725ab52"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/milk_basket_008.json",
+      "bytes": 926,
+      "sha256": "94a534e3ef109f16b4502327538094a1cb0c6f0d6510bf9039694033171b1a0a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/milk_basket_009.json",
+      "bytes": 926,
+      "sha256": "d32a0f90137e2c3cc31718df241425e2e41279c1a05b5552b6db24daae070653"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/plate_stove_000.json",
+      "bytes": 927,
+      "sha256": "5fa26bf0b6c1552ef2b7c7f8472f97079b7c0ee52513a96936f44e21bbee84f0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/plate_stove_001.json",
+      "bytes": 927,
+      "sha256": "f0886839aa8e5b4b78f7c6e7eddba72f71bdade1599bfad5b2e2a628e08f7074"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/plate_stove_002.json",
+      "bytes": 927,
+      "sha256": "6b5173112c3c834d8ab921ec1e88ae538bcb8c1b4089d9f38280f1eea907e4f4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/plate_stove_003.json",
+      "bytes": 927,
+      "sha256": "363e2a19350693df402c6d080a02e69ab4f2982edd0e64b80548848a0a45c023"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/plate_stove_004.json",
+      "bytes": 927,
+      "sha256": "d4f33830c3b6deb1853f5dce067c8ee2873c757359663f3cf7d1ea217dc150d8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/plate_stove_005.json",
+      "bytes": 927,
+      "sha256": "a028a90d342890e055f7702ee82101f3ab2d94a08c90b6b39f5f30b9bc012d25"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/plate_stove_006.json",
+      "bytes": 927,
+      "sha256": "fab133d5e5babdaf924691d73941b41925da40682705f6af2a90add9da7c9b2f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/plate_stove_007.json",
+      "bytes": 927,
+      "sha256": "6acab925876808d4603197c2c876765a7b66d78c02cad57a3752b6ed12eec446"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/plate_stove_008.json",
+      "bytes": 927,
+      "sha256": "9a19260a110d6a93bd08e4b3c37024e705840ba62222cd0ee7852f39f947d362"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/plate_stove_009.json",
+      "bytes": 927,
+      "sha256": "fdc87fdd79f1b78c0224570f1b1b4d4bf2b922e893a2706e3ed6dc3081d9a067"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/protocol.json",
+      "bytes": 861,
+      "sha256": "9f38af9072bf27275c075a7cee0ac7d6678b0f76bc303455164fedc1deb3a2d6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/summary.json",
+      "bytes": 2830,
+      "sha256": "e575aa1b3825ad8b0b76038ac43d96ec97cf0f71ab59d5185a2ec77028130d33"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/tomato_basket_000.json",
+      "bytes": 931,
+      "sha256": "9af111f9c487da12aeb07349d03c37c5001bf2bf12e2f7eab582f3ba3724f96f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/tomato_basket_001.json",
+      "bytes": 931,
+      "sha256": "fe12e65867675db47b51c44ddae021b98aae81040e271154aae43ffd849db815"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/tomato_basket_002.json",
+      "bytes": 931,
+      "sha256": "ffeef1e4fdd700b62bee1745b55ad6a4e44e54674dc2a1ca5e3b2b5d1a34a282"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/tomato_basket_003.json",
+      "bytes": 931,
+      "sha256": "83fd891a4a0ca4b3a4451117a5005d0d602b622dbb1718f236a37b1c7e41638f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/tomato_basket_004.json",
+      "bytes": 931,
+      "sha256": "9b823c5b218a329894040e3014e05d91fe0e5a26e705ec0e62aa1b1ce9209894"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/tomato_basket_005.json",
+      "bytes": 931,
+      "sha256": "d9fbabfe2190958a03fa02759665ce33afad98567cf0a51c87f587507b05083e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/tomato_basket_006.json",
+      "bytes": 931,
+      "sha256": "1ead2829e2298c81fb718fc92a6766d10d354ba2684498ad7aee31a7194111a3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/tomato_basket_007.json",
+      "bytes": 931,
+      "sha256": "3178c2f2a0cc2d3a2ce4464a862979985f63ebd9450a4560aad5673506dac5be"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/tomato_basket_008.json",
+      "bytes": 931,
+      "sha256": "f462d185cfe5520110a0ef8d4baa31c29a4e882e37f584aa913748a8415868a3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final-ros2-best80/tomato_basket_009.json",
+      "bytes": 931,
+      "sha256": "16a0410d983c15f2695b54ee5e32c3c756d02c7d447cfc78347667c4a12572e9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/final_ros2_result.json",
+      "bytes": 3483,
+      "sha256": "1f8e62cccaa87af6c78b051dae4b5236b6eef05ed8ab6e32cce275c514f850d8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/history/libero-plus-one-pass-20261101/evaluation80/summary.json",
+      "bytes": 2760,
+      "sha256": "65c0c3f9d05b76252683707a4e099f648ebce0cc80703b3d404425497542a6e9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/history/libero-plus-one-pass-20261101/status.json",
+      "bytes": 478,
+      "sha256": "bd56e365c7eb8307cffbfe71dc047cd6f0558a59aed65a18b135ff8a6228fe61"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/history/libero-plus-sft-eval80-20261101/evaluation80/summary.json",
+      "bytes": 2778,
+      "sha256": "e05609a9a519db0078fae154e7a55414b1f60761ec42f4367042cc87f8ee09fd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/history/libero-plus-sft-eval80-20261101/status.json",
+      "bytes": 468,
+      "sha256": "96d8a66fa121e5561f7aa48a0cf075c25e49ad4a81fbc4b1159beede55b6bf66"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/history/sft-eval80-20261030/evaluation80/summary.json",
+      "bytes": 2731,
+      "sha256": "fc4c40ac398454f06137a13b7cadfa3be3aba331f6c7c2f83fd188e9088454ce"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/history/sft-eval80-20261030/status.json",
+      "bytes": 444,
+      "sha256": "6bac464e3eb79f96bcaafe2bb6122ea8a6cc49b9b186127a15e941f87ee95276"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/history/staged-batch32-20261101/baseline80/summary.json",
+      "bytes": 2830,
+      "sha256": "4db1da1ebf656720be85ab2d67e79f14ff3f398f67c740aa7d0fa78141f301c7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/history/staged-batch32-20261101/eval-002000/summary.json",
+      "bytes": 2830,
+      "sha256": "9dbe48c2631bbd035c51e16d83fa15e30f9ec0dda8492beda792959471b8227a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/history/staged-batch32-20261101/status.json",
+      "bytes": 345,
+      "sha256": "fb4db9163de7e8a52f627b8cc70bdbbdcd5538dd86c090fc486566874e080f6d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/history/staged-one-epoch-20261101/baseline80/summary.json",
+      "bytes": 2830,
+      "sha256": "4db1da1ebf656720be85ab2d67e79f14ff3f398f67c740aa7d0fa78141f301c7"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/history/staged-one-epoch-20261101/eval-002000/summary.json",
+      "bytes": 2830,
+      "sha256": "9dbe48c2631bbd035c51e16d83fa15e30f9ec0dda8492beda792959471b8227a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/history/staged-one-epoch-20261101/status.json",
+      "bytes": 135,
+      "sha256": "022c594e70a9b2788dba70539c97a2b2e16c4fc84d05b3cc29ee2a5a8a8c4a5a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/plan.json",
+      "bytes": 2950,
+      "sha256": "0ba34a36d46e0c6525ab272910bdca4e59b84cfb2b716c40f80497f64b1dd1fd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/published_episode_videos.json",
+      "bytes": 1549,
+      "sha256": "b31eb0ea2dd08ca5491f7a2ea0951d43bab8a756e669c37a94c54f19d5b9272f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/ros2_preflight.json",
+      "bytes": 1147,
+      "sha256": "34524fa6dcc56d468c62f53d05b90aaf4868a16b5fd31252e12c06c41d71dc5f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/status.json",
+      "bytes": 378,
+      "sha256": "f906d3ccda8f6441112773edae46a64dfcec49cdc4311439e72c0b11a11cd3dd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/train-coverage.json",
+      "bytes": 293,
+      "sha256": "d04ff7ae18b8f9c0e4f9040211d18d170b6b7f726d887e1265933d09131182cf"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/train-run.json",
+      "bytes": 2859,
+      "sha256": "8046a8129895e8295017f1c0afb77bb67cb04a84b1ab08f9b1b6560fde000e80"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/training-complete.json",
+      "bytes": 367,
+      "sha256": "417f51576c810e9e0e907517a83d9523f21e2adf1628ba660281c431094c8e19"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/training_config.json",
+      "bytes": 1738,
+      "sha256": "1f01b3b1657ff1ec05f173d44a9becf517620323d30ea81ae778c5e5295b1cdb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/training_metrics.jsonl",
+      "bytes": 3543315,
+      "sha256": "bc04ccc30035568dda50c52cc847bd1737753975144b46968f1f2dfc73e091b0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/video-status.json",
+      "bytes": 317,
+      "sha256": "15089a4e0507d1e9420df1f3236c16fbfce9b14922dc804c1472af754eccf963"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/evidence/video_manifest.json",
+      "bytes": 8707,
+      "sha256": "59675ca91a5bb443bc4da4995b5f7741375887dd1ac08bcc19c4ba1675c49b00"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/model_performance.png",
+      "bytes": 97829,
+      "sha256": "f6af0f3a3d55b397f7b11a57f278674a738700337b54f731fe56e826b2beef9f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/task_results.csv",
+      "bytes": 846,
+      "sha256": "80e823aabae280696505b32dfa0b341744aa8564fa0bd8445cf731b5933e095d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/write_report.py",
+      "bytes": 23316,
+      "sha256": "dbe6d50dfc8515da224ea6a83e86e5913f4a5158ac89a9cef1ce815079584c9f"
+    },
+    {
       "path": "reports/2026-11-01-burgq/final-ros2-plan.json",
       "bytes": 2950,
       "sha256": "0ba34a36d46e0c6525ab272910bdca4e59b84cfb2b716c40f80497f64b1dd1fd"
@@ -737,8 +4282,8 @@
     },
     {
       "path": "workspace/README.md",
-      "bytes": 7997,
-      "sha256": "a3fb50d9326e6ef49717da52b9af886b7f1498aa841095aa050675c29b710219"
+      "bytes": 8269,
+      "sha256": "6a3b52e5263ac4c1dee13632f5659fb23e21487a4c3cb3b90a6c5dbab46d2445"
     },
     {
       "path": "workspace/backends/smolvla/BATCH32.md",
