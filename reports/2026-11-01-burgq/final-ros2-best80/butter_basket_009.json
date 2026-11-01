@@ -1,0 +1,26 @@
+{
+  "trial_id": "39a860ce-7014-48a7-b12e-860e626d5858",
+  "task": "butter_basket",
+  "episode_id": 9,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "7538f906c9988f5a5e500f7cb03d26ae12afb4504058888ffd695a81e6c1f050",
+  "protocol_hash": "9f38af9072bf27275c075a7cee0ac7d6678b0f76bc303455164fedc1deb3a2d6",
+  "initial_state_hash": "4d1920739d9f3672a456d5c71f4c523e344801f875ec4707df275479b79c48c0",
+  "seed": 1600051,
+  "initial_state_index": 29,
+  "video": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/final-ros2-best80/butter_basket_009.mp4",
+  "steps": 152,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true,
+  "transport": "ros2_dds",
+  "ros2_namespace": "/physicalai/final/worker_1",
+  "ros2_counts": {
+    "actions": 152,
+    "observations": 152,
+    "stops": 0
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "trial_id": "e42ea003-98d8-40f1-ad77-36f8bda9b43b",
+  "task": "bowl_center_plate",
+  "episode_id": 0,
+  "backend": "simulation",
+  "success": false,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "7538f906c9988f5a5e500f7cb03d26ae12afb4504058888ffd695a81e6c1f050",
+  "protocol_hash": "9f38af9072bf27275c075a7cee0ac7d6678b0f76bc303455164fedc1deb3a2d6",
+  "initial_state_hash": "86c32e500c2d681050de51b451bf325b3c8abbefc58b02fc198edea233d4458c",
+  "seed": 600042,
+  "initial_state_index": 20,
+  "video": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/final-ros2-best80/bowl_center_plate_000.mp4",
+  "steps": 300,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": false,
+  "transport": "ros2_dds",
+  "ros2_namespace": "/physicalai/final/worker_0",
+  "ros2_counts": {
+    "actions": 300,
+    "observations": 300,
+    "stops": 0
+  }
+}

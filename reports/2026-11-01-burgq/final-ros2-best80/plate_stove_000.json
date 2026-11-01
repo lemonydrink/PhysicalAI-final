@@ -1,0 +1,26 @@
+{
+  "trial_id": "3fe30423-289f-4cce-b8f0-a78266408021",
+  "task": "plate_stove",
+  "episode_id": 0,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "7538f906c9988f5a5e500f7cb03d26ae12afb4504058888ffd695a81e6c1f050",
+  "protocol_hash": "9f38af9072bf27275c075a7cee0ac7d6678b0f76bc303455164fedc1deb3a2d6",
+  "initial_state_hash": "84c2cc08df529ca20c8894698d30e5a1395b2f3236d559d0d499423408f7afd8",
+  "seed": 3600042,
+  "initial_state_index": 20,
+  "video": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/final-ros2-best80/plate_stove_000.mp4",
+  "steps": 122,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true,
+  "transport": "ros2_dds",
+  "ros2_namespace": "/physicalai/final/worker_0",
+  "ros2_counts": {
+    "actions": 122,
+    "observations": 122,
+    "stops": 0
+  }
+}

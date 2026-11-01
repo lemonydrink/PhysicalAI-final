@@ -1,0 +1,20 @@
+{
+  "checkpoint": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/train-002/ckpt-011434",
+  "step": 11434,
+  "evaluation": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/eval-011434",
+  "macro_success_rate": 0.975,
+  "task_success_rates": {
+    "milk_basket": 1.0,
+    "tomato_basket": 1.0,
+    "butter_basket": 1.0,
+    "bowl_center_plate": 1.0,
+    "bowl_cookie_plate": 1.0,
+    "bowl_plate": 1.0,
+    "middle_drawer": 1.0,
+    "plate_stove": 0.8
+  },
+  "baseline_success_rate": 0.9125,
+  "better_than_baseline": true,
+  "selection_rule": "max total successes; ties: max minimum task rate, max tasks with success, earlier step",
+  "evaluation_scope": "checkpoint selection on paired 80 trials; not an independent held-out confirmation"
+}

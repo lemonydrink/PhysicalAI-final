@@ -49,16 +49,19 @@ def select_episodes(evaluation,tasks):
     return chosen
 
 
-def compose(evaluation,output,tasks_path,preview=False):
+def compose(evaluation,output,tasks_path,preview=False,intro_seconds=0.,transition_hold_seconds=0.):
     import imageio.v2 as imageio
     import numpy as np
     from PIL import Image,ImageDraw,ImageFont
     output=Path(output);output.parent.mkdir(parents=True,exist_ok=True)
     manifest_path=output.with_suffix('.json');chosen=select_episodes(evaluation,read(tasks_path)['tasks'])
+    if intro_seconds<0 or transition_hold_seconds<0:raise ValueError('timing must be nonnegative')
+    intro_frames=round(intro_seconds*20);hold_frames=round(transition_hold_seconds*20)
+    recipe='collision-aware-success-only-v3-timing' if intro_frames or hold_frames else 'collision-aware-success-only-v2'
     identity=[(x['source_sha256'],x['prompt'],x['episode_id']) for x in chosen]
     if output.exists() and manifest_path.exists():
         old=read(manifest_path)
-        if old.get('render_recipe')=='collision-aware-success-only-v2' and [(x['source_sha256'],x['prompt'],x['episode_id']) for x in old['chapters']]==identity and digest(output)==old['output_sha256']:return old
+        if old.get('render_recipe')==recipe and old.get('intro_frames',0)==intro_frames and old.get('transition_hold_frames',0)==hold_frames and [(x['source_sha256'],x['prompt'],x['episode_id']) for x in old['chapters']]==identity and digest(output)==old['output_sha256']:return old
         raise ValueError('output already exists with different provenance')
     partial=output.with_name(output.stem+'.partial.mp4');fps=20;offset=0
     font_file=Path('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')
@@ -67,6 +70,27 @@ def compose(evaluation,output,tasks_path,preview=False):
     # CPU encoding, two threads; no additional model/GPU process.
     with imageio.get_writer(partial,fps=fps,codec='libx264',pixelformat='yuv420p',quality=8,
                             output_params=['-movflags','+faststart','-threads','2']) as writer:
+        if intro_frames:
+            title=Image.new('RGB',(1280,720),(10,18,32));draw=ImageDraw.Draw(title)
+            heading=ImageFont.truetype(str(font_file),52);body=ImageFont.truetype(str(font_file),21)
+            draw.text((44,28),'SmolVLA × ROS 2',font=heading,fill=(120,215,255))
+            draw.text((46,100),'8-task manipulation experiment',font=font,fill='white')
+            draw.text((46,144),'Franka Panda simulation  |  Original motion speed: 1×',font=small,fill=(182,195,215))
+            for index,chapter in enumerate(chosen):
+                x=44+(index//4)*620;y=200+(index%4)*116
+                draw.rounded_rectangle((x,y,x+592,y+104),radius=10,fill=(23,37,57))
+                draw.text((x+14,y+12),f'{index+1:02d}',font=body,fill=(120,215,255))
+                lines=[];line=''
+                for word in chapter['prompt'].split():
+                    candidate=(line+' '+word).strip()
+                    if line and draw.textlength(candidate,font=body)>510:lines.append(line);line=word
+                    else:line=candidate
+                if line:lines.append(line)
+                if len(lines)>3:raise ValueError('intro prompt exceeds card')
+                draw.multiline_text((x+57,y+12),'\n'.join(lines),font=body,fill='white',spacing=4)
+            draw.text((44,681),'Eight successful episodes; simulation evaluation, real hardware not tested.',font=small,fill=(182,195,215))
+            for _ in range(intro_frames):writer.append_data(np.asarray(title))
+            offset=intro_frames
         for index,chapter in enumerate(chosen):
             reader=imageio.get_reader(chapter['source']);meta=reader.get_meta_data()
             if abs(float(meta.get('fps',0))-fps)>.01:raise ValueError('source is not native 20 fps')
@@ -85,11 +109,16 @@ def compose(evaluation,output,tasks_path,preview=False):
                     image=Image.fromarray(frame).convert('RGB');scale=min(1280/image.width,720/image.height)
                     image=image.resize((round(image.width*scale),round(image.height*scale)),Image.Resampling.LANCZOS)
                     canvas=Image.new('RGB',(1280,720),'black');canvas.paste(image,((1280-image.width)//2,(720-image.height)//2))
-                    writer.append_data(np.asarray(Image.alpha_composite(canvas.convert('RGBA'),overlay).convert('RGB')));count+=1
+                    last_frame=np.asarray(Image.alpha_composite(canvas.convert('RGBA'),overlay).convert('RGB'))
+                    writer.append_data(last_frame);count+=1
             finally:reader.close()
             if count!=chapter['steps']+1:raise ValueError(f'Incomplete episode {chapter["task"]}: frames={count}, steps={chapter["steps"]}')
             chapter.update(start_frame=offset,end_frame_exclusive=offset+count,frames=count,start_seconds=offset/fps,end_seconds=(offset+count)/fps)
-            offset+=count;print(chapter['task'],count,'frames',outcome,flush=True)
+            offset+=count
+            gap=hold_frames if index<len(chosen)-1 else 0
+            chapter.update(hold_frames=gap,hold_start_frame=offset,hold_end_frame_exclusive=offset+gap)
+            for _ in range(gap):writer.append_data(last_frame)
+            offset+=gap;print(chapter['task'],count,'motion frames',gap,'hold frames',outcome,flush=True)
     # Decode the generated MP4 before exposing it as a completed deliverable.
     reader=imageio.get_reader(partial)
     try:
@@ -97,7 +126,9 @@ def compose(evaluation,output,tasks_path,preview=False):
     finally:reader.close()
     partial.replace(output)
     result=dict(output=str(output.resolve()),output_sha256=digest(output),width=1280,height=720,fps=fps,frames=offset,duration_seconds=offset/fps,
-                render_recipe='collision-aware-success-only-v2',chapters=chosen,task_count=8,
+                render_recipe=recipe,intro_frames=intro_frames,intro_seconds=intro_frames/fps,
+                transition_hold_frames=hold_frames,transition_hold_seconds=hold_frames/fps,total_transition_holds=7,
+                motion_speed_multiplier=1.,chapters=chosen,task_count=8,
                 all_selected_collision_free=all(r['selected_collision_free'] for r in chosen),
                 collision_free_task_count=sum(r['selected_collision_free'] for r in chosen),
                 collision_fallback_tasks=[r['task'] for r in chosen if r['collision']],
@@ -129,10 +160,10 @@ def wait_and_compose(job):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--job',type=Path);p.add_argument('--wait',action='store_true')
-    p.add_argument('--evaluation',type=Path);p.add_argument('--output',type=Path);p.add_argument('--tasks',type=Path,default=ROOT/'data/tasks.resolved.json');p.add_argument('--preview',action='store_true');a=p.parse_args()
+    p.add_argument('--evaluation',type=Path);p.add_argument('--output',type=Path);p.add_argument('--tasks',type=Path,default=ROOT/'data/tasks.resolved.json');p.add_argument('--preview',action='store_true');p.add_argument('--intro-seconds',type=float,default=0.);p.add_argument('--transition-hold-seconds',type=float,default=0.);a=p.parse_args()
     if a.wait:
         if not a.job:p.error('--job required with --wait')
         wait_and_compose(a.job.resolve())
     else:
         if not a.evaluation or not a.output:p.error('--evaluation and --output required')
-        compose(a.evaluation,a.output,a.tasks,a.preview)
+        compose(a.evaluation,a.output,a.tasks,a.preview,a.intro_seconds,a.transition_hold_seconds)

@@ -41,9 +41,24 @@
       "sha256": "ebab1a1ffb919b2b84a6d596daaa83d52b17145ec11624b28563458648bf9e36"
     },
     {
+      "path": "reports/2026-11-01-burgq/FINAL_BEST_CHECKPOINT.json",
+      "bytes": 853,
+      "sha256": "93e43fba49cd27f26d690c2abc15b47d2510348cb6bccd5f93f158ead046d858"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/FINAL_COMPLETED.md",
+      "bytes": 1471,
+      "sha256": "40905e1c2458d2d5dd88834de597dc66d8a2ee66960017053cafbf396baf02ef"
+    },
+    {
       "path": "reports/2026-11-01-burgq/FINAL_ROS2_AND_HARDWARE.md",
       "bytes": 6492,
       "sha256": "bba15e489600cf00f67f54c7eefa7f4a82665114c56c3b9e4f5e439b7970f318"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/FINAL_ROS2_RESULT.json",
+      "bytes": 3483,
+      "sha256": "1f8e62cccaa87af6c78b051dae4b5236b6eef05ed8ab6e32cce275c514f850d8"
     },
     {
       "path": "reports/2026-11-01-burgq/FINAL_VIDEO_RESERVATION.md",
@@ -579,6 +594,21 @@
       "path": "reports/2026-11-01-burgq/baseline80/tomato_basket_009.json",
       "bytes": 763,
       "sha256": "41e0bff8a5287d7ee1344638eed6f541dc1224b63a3869e1c4bbfa19363ab59d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-deliverables/final_ros2_eight_tasks_prompted_intro5_pause1.json",
+      "bytes": 9677,
+      "sha256": "9cddf6d96077d6ee7083e22a9d5aaf90e63f996fd0699676e5feac670075183d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-deliverables/final_ros2_eight_tasks_prompted_intro5_pause1.mp4",
+      "bytes": 8508215,
+      "sha256": "7cd7bc77d22c20ca623fa31062ee7653560e17f4812ad8bc8b8d1ef2a5d6a606"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-deliverables/intro_preview.jpg",
+      "bytes": 75318,
+      "sha256": "a44568a43e81b4ac0668a0970ebc1af02aa862262352d033f58cab90314bfe6a"
     },
     {
       "path": "reports/2026-11-01-burgq/final-report/REPORT.md",
@@ -4126,6 +4156,426 @@
       "sha256": "dbe6d50dfc8515da224ea6a83e86e5913f4a5158ac89a9cef1ce815079584c9f"
     },
     {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/RESULT.md",
+      "bytes": 1019,
+      "sha256": "a27f0a0aa758dea7a5a052b7bbb06ccffd2efcaf10d53498da73dc49fb164a52"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_center_plate_000.json",
+      "bytes": 940,
+      "sha256": "4208178d3d0b9e2d50583317950f4bca11b9a26a3d999ab1ef0c9690728704c3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_center_plate_001.json",
+      "bytes": 935,
+      "sha256": "ae94d2ba3562e10a17fee77df1e1b0b71a5c48d865086680c86562717964548e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_center_plate_002.json",
+      "bytes": 935,
+      "sha256": "b6a0788531f745695a9425f2df15d4e8d4afc0de63b7c94ad2e1ddb3f0d73032"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_center_plate_003.json",
+      "bytes": 938,
+      "sha256": "ba725024243c2c30e4f5017c932414dd9407ea31803dde97a3650a634bf79e9f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_center_plate_004.json",
+      "bytes": 935,
+      "sha256": "c10321aba923d27a4c17a57ac6d6b28c27019308c97a970e6abf4b887865e7bf"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_center_plate_005.json",
+      "bytes": 935,
+      "sha256": "f343b270fad911e4c46b6a74779133c95d343ef49c58b5080e09b13b327bf89f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_center_plate_006.json",
+      "bytes": 935,
+      "sha256": "15c1801ceeb1972894d1c897b3a45f44c5713067c637b1ccba35c6a69107d961"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_center_plate_007.json",
+      "bytes": 935,
+      "sha256": "057212797762f56c5e03d30ce3170a383dbad1cb1bb35ca7d1646b184ecfba78"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_center_plate_008.json",
+      "bytes": 935,
+      "sha256": "023511cfe5366229bc9b50bb52eea35efff9ecbbb768c493aa1205552943505b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_center_plate_009.json",
+      "bytes": 935,
+      "sha256": "b029354c8f5340dfc0d818c376ccdb2d286d4e324292f0c25e2b906d11249629"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_cookie_plate_000.json",
+      "bytes": 938,
+      "sha256": "16b5a8c9769129504d3293b58a136fabf809c44e0558eb9fbe78f8581a2a0c31"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_cookie_plate_001.json",
+      "bytes": 938,
+      "sha256": "1b7f4312dd67b310c452c5129f73e4e66b11d749cab98c8dcf1710590f185542"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_cookie_plate_002.json",
+      "bytes": 938,
+      "sha256": "1e66510cd727d03504829c6ed21915c590d76a9adfdde5749d598173cd4f17fc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_cookie_plate_003.json",
+      "bytes": 938,
+      "sha256": "e2e9ce426b860d903df0a144011935673cf63501c0682835d6b0af1bd8f1ed67"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_cookie_plate_004.json",
+      "bytes": 938,
+      "sha256": "d071d4306292445d7df9315329aedc30ae17bdee6421a4812d3953805912fe39"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_cookie_plate_005.json",
+      "bytes": 938,
+      "sha256": "d11df63dbef4d018c2ca1ad9bf0a197cd06c040295756b036946cd1feb3a3d8b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_cookie_plate_006.json",
+      "bytes": 938,
+      "sha256": "b0b1a4a1fe2c89e8dcaac96c92558b949d82db2226c0cee00e6688a2e1de1b1b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_cookie_plate_007.json",
+      "bytes": 938,
+      "sha256": "83bf8f4b9d16893009855487b932050bd907f9859f1cce92c6945bed78efb6cd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_cookie_plate_008.json",
+      "bytes": 938,
+      "sha256": "e8ed2f72ac25107fb8abcced96fe09cb14287c94d391a6d2c1f2b8ca699cd946"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_cookie_plate_009.json",
+      "bytes": 938,
+      "sha256": "22be634f6edee7860887db4bb1a53490026dd79dc100d5d8723c078570ade239"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_plate_000.json",
+      "bytes": 921,
+      "sha256": "611ac80d10cb416d507ceb26bd83c8a4e546c84290e0ac2f2cb0bdbb453a2995"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_plate_001.json",
+      "bytes": 921,
+      "sha256": "df21678b91f00a651b13a23563b2ba22d74ef9ff8f3c9f11eccc25ecd93cccad"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_plate_002.json",
+      "bytes": 921,
+      "sha256": "0fb9d5ae60bbbf3f18ce6bd813e1de0fb99682d5e7f5f953695a9b96c086c983"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_plate_003.json",
+      "bytes": 921,
+      "sha256": "8744b4e230fc7370002afdd4c4325492134f0cd32468fdeafcc0b278e58ece95"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_plate_004.json",
+      "bytes": 921,
+      "sha256": "3efd71a4355bf614c0745fb3e736cd1baf711b3dd088200970dd2e341151b812"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_plate_005.json",
+      "bytes": 921,
+      "sha256": "473532aa5f1900cd940fe85757ba41b2c425349385fcae7d8e9e44570ecaa2c9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_plate_006.json",
+      "bytes": 921,
+      "sha256": "ceea214996bf575573552a321a792131cadc77e1295a3eaaad0ffd1baedc1927"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_plate_007.json",
+      "bytes": 921,
+      "sha256": "d322d86f694206af4adb0ac74a5fea8f62ca0116153555cb50f2a749f0be0464"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_plate_008.json",
+      "bytes": 921,
+      "sha256": "07f9291792936b3be7a4b567a3a841e31c9a901f6fa2bfaafd54e5f649d5811e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/bowl_plate_009.json",
+      "bytes": 921,
+      "sha256": "ed53b8424ef9dd27741c6f45e293b18189d2bf6e94acaed263a285468274b79b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/butter_basket_000.json",
+      "bytes": 931,
+      "sha256": "59736d5abda4b7888f800f74b07c08e33552b8d855ab13feb726ec083688e9ae"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/butter_basket_001.json",
+      "bytes": 931,
+      "sha256": "5b61f7c26888e27a2915b5819f37db8460283aada494d40a265803aab123d2fb"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/butter_basket_002.json",
+      "bytes": 931,
+      "sha256": "0e2b4c84ae76432a7f389ce93d5be534ee0538c07755e2874bb33576b6f55b6c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/butter_basket_003.json",
+      "bytes": 931,
+      "sha256": "cd8bc6588cece8167559fba2c2a7a94b9b4dc6b614bda21e0f07a125e14878c4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/butter_basket_004.json",
+      "bytes": 931,
+      "sha256": "c47831f83365a3f75d16a1ca6ce532404c43a3988c85352c4e386137b9b476bd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/butter_basket_005.json",
+      "bytes": 931,
+      "sha256": "c4ad97bc6610014682de55bf75d7ad998ae9a17c76902a24e91e5af394a102f9"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/butter_basket_006.json",
+      "bytes": 931,
+      "sha256": "3bdd6002c0ca4154cca2ab17c29833f6ad5a80941505a859b61fdfbfac67a607"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/butter_basket_007.json",
+      "bytes": 931,
+      "sha256": "d69e9144150157dad148355b2fccd733d2c54994b9c2133d887bac9954b56d81"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/butter_basket_008.json",
+      "bytes": 931,
+      "sha256": "a534c27d7babc4ad36f02dccde09a15ff7758f3094af704a821ba3bcaf2f7de8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/butter_basket_009.json",
+      "bytes": 931,
+      "sha256": "ec00331061f4de8c220fd00c62f29f6d8705300a85e8f5108c18876ff461ccd6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/execution.json",
+      "bytes": 296,
+      "sha256": "b0b289edab0b0a66667224fc0a73ab34b593deb09e7449bfb90c6023fe4a182a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/middle_drawer_000.json",
+      "bytes": 930,
+      "sha256": "43c033ebec0e59d8af3cc715b2b48feb5f4be9af7bc95cb77f31801f05296946"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/middle_drawer_001.json",
+      "bytes": 930,
+      "sha256": "1b0426576ab2feb6d1269e751a358d2daade70f661a9a20618b6a2d720f1642b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/middle_drawer_002.json",
+      "bytes": 930,
+      "sha256": "5b8ae70c8f01d3459e92c233634e517f2e1607f6501f5edc5946a8cbc19e37ce"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/middle_drawer_003.json",
+      "bytes": 930,
+      "sha256": "8db2855e6c5e99cf2833e2ecd1cf45b3cc1c9bf4abf801c2449527cd030ee4ab"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/middle_drawer_004.json",
+      "bytes": 930,
+      "sha256": "54d0ad2bf4c8e59db6a00088863eb4912f5605030e8619598f2f3eed457b6bfa"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/middle_drawer_005.json",
+      "bytes": 930,
+      "sha256": "c2aeb66f658d93883d94de1e32f8bc13b59be215c73b27e2dd5b6e22c3eb8343"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/middle_drawer_006.json",
+      "bytes": 930,
+      "sha256": "9397c05ffaf07fd6ec9c13172e3e8a48c739c09577d0821f70dac8ee48cf5f86"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/middle_drawer_007.json",
+      "bytes": 930,
+      "sha256": "1a94ccd6b872875eba408c31aceca0af2727309b4fb1fb81bc82fe05cb276b68"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/middle_drawer_008.json",
+      "bytes": 930,
+      "sha256": "09ddcb64f3dd549181d58e437a21a31060a66f973ac750fe69119460c4796ffc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/middle_drawer_009.json",
+      "bytes": 930,
+      "sha256": "4648bc2bf9d0beea5d2753dffacdd566c7975466d27d1e943289095acf62d1fd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/milk_basket_000.json",
+      "bytes": 926,
+      "sha256": "f832646b36704f6bc099a7a6b6a12ece524c838012cc0b2dfb5ec716e12119d2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/milk_basket_001.json",
+      "bytes": 926,
+      "sha256": "00cf7d816993402a7e748eafcb2f8fdea806fd5263de0d7a4d462ab605b6d8be"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/milk_basket_002.json",
+      "bytes": 926,
+      "sha256": "083119740fd6752b671e31c8100a2f8443abc1ad56cfe4f4542767a1f5dd11df"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/milk_basket_003.json",
+      "bytes": 926,
+      "sha256": "2eaff33187fcacfbbb66bb835b62c5e3364833958014f2581ed0b529d240d62c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/milk_basket_004.json",
+      "bytes": 928,
+      "sha256": "2cee8a5fe8518b262a38c99fe1ba261891693e6c431d816334300dc2e6a9990e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/milk_basket_005.json",
+      "bytes": 926,
+      "sha256": "86cd90151b01e206eb62d08107966fbb8aed5394ac33ead7c157dd287ae3d8fd"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/milk_basket_006.json",
+      "bytes": 926,
+      "sha256": "f895e926ad7b6d7b02cf34a1bc6cd2c2c707e5c4ce63f5ac2db4a3405f0f570f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/milk_basket_007.json",
+      "bytes": 926,
+      "sha256": "ded775239c7bda4927f32f0e2460c060eb33bea7283a8f5a44aba41fc725ab52"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/milk_basket_008.json",
+      "bytes": 926,
+      "sha256": "94a534e3ef109f16b4502327538094a1cb0c6f0d6510bf9039694033171b1a0a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/milk_basket_009.json",
+      "bytes": 926,
+      "sha256": "d32a0f90137e2c3cc31718df241425e2e41279c1a05b5552b6db24daae070653"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/plate_stove_000.json",
+      "bytes": 927,
+      "sha256": "5fa26bf0b6c1552ef2b7c7f8472f97079b7c0ee52513a96936f44e21bbee84f0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/plate_stove_001.json",
+      "bytes": 927,
+      "sha256": "f0886839aa8e5b4b78f7c6e7eddba72f71bdade1599bfad5b2e2a628e08f7074"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/plate_stove_002.json",
+      "bytes": 927,
+      "sha256": "6b5173112c3c834d8ab921ec1e88ae538bcb8c1b4089d9f38280f1eea907e4f4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/plate_stove_003.json",
+      "bytes": 927,
+      "sha256": "363e2a19350693df402c6d080a02e69ab4f2982edd0e64b80548848a0a45c023"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/plate_stove_004.json",
+      "bytes": 927,
+      "sha256": "d4f33830c3b6deb1853f5dce067c8ee2873c757359663f3cf7d1ea217dc150d8"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/plate_stove_005.json",
+      "bytes": 927,
+      "sha256": "a028a90d342890e055f7702ee82101f3ab2d94a08c90b6b39f5f30b9bc012d25"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/plate_stove_006.json",
+      "bytes": 927,
+      "sha256": "fab133d5e5babdaf924691d73941b41925da40682705f6af2a90add9da7c9b2f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/plate_stove_007.json",
+      "bytes": 927,
+      "sha256": "6acab925876808d4603197c2c876765a7b66d78c02cad57a3752b6ed12eec446"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/plate_stove_008.json",
+      "bytes": 927,
+      "sha256": "9a19260a110d6a93bd08e4b3c37024e705840ba62222cd0ee7852f39f947d362"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/plate_stove_009.json",
+      "bytes": 927,
+      "sha256": "fdc87fdd79f1b78c0224570f1b1b4d4bf2b922e893a2706e3ed6dc3081d9a067"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/protocol.json",
+      "bytes": 861,
+      "sha256": "9f38af9072bf27275c075a7cee0ac7d6678b0f76bc303455164fedc1deb3a2d6"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/summary.json",
+      "bytes": 2830,
+      "sha256": "e575aa1b3825ad8b0b76038ac43d96ec97cf0f71ab59d5185a2ec77028130d33"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/tomato_basket_000.json",
+      "bytes": 931,
+      "sha256": "9af111f9c487da12aeb07349d03c37c5001bf2bf12e2f7eab582f3ba3724f96f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/tomato_basket_001.json",
+      "bytes": 931,
+      "sha256": "fe12e65867675db47b51c44ddae021b98aae81040e271154aae43ffd849db815"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/tomato_basket_002.json",
+      "bytes": 931,
+      "sha256": "ffeef1e4fdd700b62bee1745b55ad6a4e44e54674dc2a1ca5e3b2b5d1a34a282"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/tomato_basket_003.json",
+      "bytes": 931,
+      "sha256": "83fd891a4a0ca4b3a4451117a5005d0d602b622dbb1718f236a37b1c7e41638f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/tomato_basket_004.json",
+      "bytes": 931,
+      "sha256": "9b823c5b218a329894040e3014e05d91fe0e5a26e705ec0e62aa1b1ce9209894"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/tomato_basket_005.json",
+      "bytes": 931,
+      "sha256": "d9fbabfe2190958a03fa02759665ce33afad98567cf0a51c87f587507b05083e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/tomato_basket_006.json",
+      "bytes": 931,
+      "sha256": "1ead2829e2298c81fb718fc92a6766d10d354ba2684498ad7aee31a7194111a3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/tomato_basket_007.json",
+      "bytes": 931,
+      "sha256": "3178c2f2a0cc2d3a2ce4464a862979985f63ebd9450a4560aad5673506dac5be"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/tomato_basket_008.json",
+      "bytes": 931,
+      "sha256": "f462d185cfe5520110a0ef8d4baa31c29a4e882e37f584aa913748a8415868a3"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-ros2-best80/tomato_basket_009.json",
+      "bytes": 931,
+      "sha256": "16a0410d983c15f2695b54ee5e32c3c756d02c7d447cfc78347667c4a12572e9"
+    },
+    {
       "path": "reports/2026-11-01-burgq/final-ros2-plan.json",
       "bytes": 2950,
       "sha256": "0ba34a36d46e0c6525ab272910bdca4e59b84cfb2b716c40f80497f64b1dd1fd"
@@ -7542,8 +7992,8 @@
     },
     {
       "path": "workspace/scripts/compose_eight_task_video.py",
-      "bytes": 9596,
-      "sha256": "bdffc677290c5a42922e5c71d6100d8ee85b38385fc535f6bb9cc1d2218f7df9"
+      "bytes": 12220,
+      "sha256": "6ba5e2d8e441463de20b1ce582675376c86643a0c99998b64f57b493c8838822"
     },
     {
       "path": "workspace/scripts/download_eight_dataset.py",
