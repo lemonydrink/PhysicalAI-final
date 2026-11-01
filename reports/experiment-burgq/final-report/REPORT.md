@@ -1,6 +1,6 @@
 # BurgQ SmolVLAの8タスクSFTとROS 2実行を分けて評価した最終報告
 
-[PDF版（3ページ）](REPORT_3P.pdf)
+[PDF版（5ページ）](REPORT_5P.pdf)
 
 ## 要旨
 

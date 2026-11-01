@@ -23,7 +23,7 @@
     {
       "path": "README.md",
       "bytes": 2123,
-      "sha256": "4099826b2934319f58a160da54c7bc2f032746c154a686c05ecc765d319fa658"
+      "sha256": "d71d75fa6d0098731069d1518f94f19d09531626ea330747c2876fa3180c732a"
     },
     {
       "path": "REPRODUCIBILITY.md",
@@ -628,7 +628,7 @@
     {
       "path": "reports/experiment-burgq/final-report/REPORT.md",
       "bytes": 24130,
-      "sha256": "5d0a4882b867d7ed8e72b3d395212eda8badcda4dcd7b4b793080ac4986a923c"
+      "sha256": "6080d59cdf59e6c215676c5e0d199c99b86e91a3fcbcf4ba41cd5a9f122ca858"
     },
     {
       "path": "reports/experiment-burgq/final-report/REPORT_3P.pdf",
@@ -639,6 +639,16 @@
       "path": "reports/experiment-burgq/final-report/REPORT_3P.tex",
       "bytes": 10004,
       "sha256": "c54006f6f6dea62640af49997c9c3ec3405d71b248cde445b065fcc7b5c5b45d"
+    },
+    {
+      "path": "reports/experiment-burgq/final-report/REPORT_5P.pdf",
+      "bytes": 737228,
+      "sha256": "a4425353011c0675a3014e36736b445e9941c7104df3fcdca3bcc9d527393847"
+    },
+    {
+      "path": "reports/experiment-burgq/final-report/REPORT_5P.tex",
+      "bytes": 15955,
+      "sha256": "14e55d8dd7f857811fcd63c52e78de64873d7624e8b2a9f6f9a807ad684b8a5b"
     },
     {
       "path": "reports/experiment-burgq/final-report/VERIFICATION.json",
