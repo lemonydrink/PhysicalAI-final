@@ -2,8 +2,8 @@
   "pending": [],
   "started": [
     {
-      "job": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101",
-      "reason": "user-requested immediate switch; predecessor stopped_by_user"
+      "job": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run",
+      "reason": "switch to BurgQ after predecessor stopped before completion"
     }
   ]
 }

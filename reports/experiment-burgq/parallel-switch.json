@@ -1,0 +1,7 @@
+{
+  "requested_workers": 4,
+  "checkpoint": 2000,
+  "preserved_completed_trials_before_restart": 18,
+  "training_recipe_changed": false,
+  "tests": "14 passed"
+}

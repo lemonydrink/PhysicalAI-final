@@ -1,14 +1,14 @@
-# BurgQモデルの次実験予約（2026-11-01）
+# BurgQモデルの次実験実行計画
 
-**その後のユーザー指示により即時開始へ変更。** 先行のbatch32学習はユーザー指定で停止し、BurgQはGPU監査を通過して学習前80回評価を実行中。以下の正常終了待ちは、当初の予約条件の記録。開始条件の上書きはplan.jsonに保存した。
+**その後の実験計画の変更により即時開始へ変更。** 先行のbatch32学習は実験条件で停止し、BurgQはGPU監査を通過して学習前80回評価を実行中。以下の正常終了待ちは、当初の実行計画条件の記録。開始条件の上書きはplan.jsonに保存した。
 
 最新の入力・分割は [データ整合監査](BURGQ_DATA_AUDIT.md) を参照。学習365,887フレーム、11,434更新、warmup572。旧分割の11,391更新計画を置き換えた。
 
 対象: https://huggingface.co/BurgQ/smolvla-libero-bs32-100k
 
-## 予約条件と順序
+## 実行計画条件と順序
 
-現在の `staged-batch32-20261101` をそのまま継続する。
+現在の `staged-batch32-run` をそのまま継続する。
 この先行ジョブのstatusがcompleteとなり、サービス `physicalai-smolvla-batch32.service` もinactiveになるまで、新実験は待機する。
 単なるsystemd After指定ではなく、この両条件を30秒間隔で確認する。失敗・停止中の先行ジョブを正常完了と見なして追い越さない。
 
@@ -53,10 +53,10 @@
 
 ## ジョブと記録
 
-予約サービス: `physicalai-smolvla-burgq-queued.service`
+実行計画サービス: `physicalai-smolvla-burgq-queued.service`
 
 出力:
-`/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/`
+`${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/`
 
 設定: `configs/burgq-staged-batch32.json`
 
@@ -73,7 +73,7 @@
 systemctl --user status physicalai-smolvla-burgq-queued.service
 ```
 
-会話を閉じても待機・実行を続ける。PCとユーザーサービスが稼働している必要がある。
+会話を閉じても待機・実行を続ける。PCと実験実施者サービスが稼働している必要がある。
 待機中にactive_backendの現行モデルを変更しない。先行ジョブが終了して新モデルのpreflightを通過した時点で切り替える。
 
 W&Bはoffline、project physicalai-smolvla-eight、新しいjob group/outputへ保存する。APIキーはコードに保持せず、通常の `wandb login`、WANDB_PROJECT / WANDB_ENTITY / WANDB_MODE、学習CLIの--wandb-mode online|offline|disabledが利用可能。登録済みジョブはoffline固定。

@@ -1,0 +1,19 @@
+{
+  "trial_id": "faff43f7-bc46-4354-a0f9-f88719093dff",
+  "task": "middle_drawer",
+  "episode_id": 4,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "b7744aea0e2f847d62bb2124c21f3376d076f7dfc6b0ad551f25419a0d6ba3bc",
+  "protocol_hash": "3a1b8cde06e8e3274758d7f26894e4e9bc99d3993481b396d996e78a7e6172a1",
+  "initial_state_hash": "622de4a27f0152ef0ed826280e73df33d4a533da037057139cd85f5cf4d8226b",
+  "seed": 700046,
+  "initial_state_index": 14,
+  "video": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/eval-008000/middle_drawer_004.mp4",
+  "steps": 113,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true
+}

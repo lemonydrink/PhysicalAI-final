@@ -1,0 +1,9 @@
+{
+  "stage": "complete",
+  "best_checkpoint": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/train-002/ckpt-011434",
+  "best_success_rate": 0.975,
+  "baseline_success_rate": 0.9125,
+  "better_than_baseline": true,
+  "optimizer_steps": 11434,
+  "epochs": 1
+}

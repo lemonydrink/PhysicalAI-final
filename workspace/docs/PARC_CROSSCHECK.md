@@ -1,6 +1,6 @@
 # PARC既存事実との照合 v0.1
 
-照合日：2026-10-30／対象snapshot：PARC2026_final HEAD `eeddacf7b79bb2f9089b6a013410f0a0913f7ea2`（照合開始時git statusはclean）。既存PARCファイルを変更せず参照した。
+既存PARCファイルを変更せず参照した。
 
 ## 判定ルール
 
@@ -23,7 +23,7 @@
 
 **コード/設定＋実行記録**：過去T2の初期重みは`2toINF/X-VLA-Libero`、revision `129e71460678b7236cee6fc9707f09d9fa0c3590`。新原案は`lerobot/xvla-libero`である。同じモデル名でも実装・processor・checkpoint互換を仮定しない。
 
-根拠：[model config](../../PARC2026_final/experiments/T2-Xvla-libero/config/model.json)、[実行manifest](../../PARC2026_final/runs/T2-Xvla-libero/20260903T152306Z/run.json)。
+根拠：[model config](../../PARC2026_final/experiments/T2-Xvla-libero/config/model.json)、[実行manifest](../../PARC2026_final/runs/T2-Xvla-libero/runT152306Z/run.json)。
 
 **反映**：D-02に「過去upstream版再現」と「LeRobot版移行」の比較を追加する。過去LoRAをLeRobot版へそのままロードする経路は承認済み互換経路ではない。
 
@@ -31,7 +31,7 @@
 
 **コード/設定**：過去も`Sylvest/libero_plus_lerobot`、固定revision `22c57433fef692b5b9ecc0795344daac7fa867a5`、source fps=20。過去選択は`holdout=false`で、今回の90/10 validation分割とは異なる。過去manifest hashは`13d771ec56c6ccfbbc063e724b9c52d1b06defa59d0ca91a8bf2541c9e5838b5`とrun manifestに記録されている。
 
-根拠：[data config](../../PARC2026_final/experiments/T2-Xvla-libero/config/data.json)、[run manifest](../../PARC2026_final/runs/T2-Xvla-libero/20260903T152306Z/run.json)。
+根拠：[data config](../../PARC2026_final/experiments/T2-Xvla-libero/config/data.json)、[run manifest](../../PARC2026_final/runs/T2-Xvla-libero/runT152306Z/run.json)。
 
 **反映**：dataset IDは未知から「過去固定revisionあり」に更新。ただしraw実体・全件統計・新8タスクの内容は未再検証。過去全件学習済みモデルを用いる場合、新設validationが初期重みの学習から独立とは保証できない。SFTのtrain/val非重複とpretraining汚染を分けて報告する。
 
@@ -81,7 +81,7 @@
 
 improvedのparameter_summaryは総879,482,456、更新11,868,760（約1.35%）。内訳はVLM LoRA 4,849,664、policy LoRA 3,178,496、Soft Prompt 983,040、action 2,857,560。Soft Promptのみの学習ではない。
 
-根拠：[step1記録](../../PARC2026_final/runs/T2-Xvla-libero/preflight-batch4/ckpt-1/state.json)、[step82468記録](../../PARC2026_final/runs/T2-Xvla-libero/20260903T152306Z/ckpt-82468/state.json)、[checkpoint index](../../PARC2026_final/runs/T2EXP-005-xvla-libero-improved/production-two-phase-20260904-r2/checkpoint_index.json)、[parameter summary](../../PARC2026_final/runs/T2EXP-005-xvla-libero-improved/production-two-phase-20260904-r2/parameter_summary.json)。
+根拠：[step1記録](../../PARC2026_final/runs/T2-Xvla-libero/preflight-batch4/ckpt-1/state.json)、[step82468記録](../../PARC2026_final/runs/T2-Xvla-libero/runT152306Z/ckpt-82468/state.json)、[checkpoint index](../../PARC2026_final/runs/T2EXP-005-xvla-libero-improved/production-two-phase-run-r2/checkpoint_index.json)、[parameter summary](../../PARC2026_final/runs/T2EXP-005-xvla-libero-improved/production-two-phase-run-r2/parameter_summary.json)。
 
 **反映**：Soft Prompt単独は今回の新しい比較条件。過去LoRA構成を比較候補に追加する。過去batch4稼働だけで今回のLeRobot版・16 GB条件・5 Hz推論を保証しない。学習step_timeは推論latencyではない。
 
@@ -89,7 +89,7 @@ improvedのparameter_summaryは総879,482,456、更新11,868,760（約1.35%）�
 
 **実行記録/台帳**：improvedの`best_eval=null`、selection_metric=rollout_success_rate。experiment.jsonのprimary_valueもnull、decision pending。今回確認した証拠から、新8タスク80%達成やこのcheckpoint採用済みとは言えない。planned台帳と学習済み成果物が併存するためstatusだけの判定は不十分。
 
-根拠：[checkpoint index](../../PARC2026_final/runs/T2EXP-005-xvla-libero-improved/production-two-phase-20260904-r2/checkpoint_index.json)、[experiment台帳](../../PARC2026_final/experiments/T2EXP-005-xvla-libero-improved/experiment.json)。
+根拠：[checkpoint index](../../PARC2026_final/runs/T2EXP-005-xvla-libero-improved/production-two-phase-run-r2/checkpoint_index.json)、[experiment台帳](../../PARC2026_final/experiments/T2EXP-005-xvla-libero-improved/experiment.json)。
 
 **反映**：既存checkpointは比較用候補。全PARC評価を網羅して不存在と証明したものではなく、性能主張には当該bundleの監査済み評価JSONを追加取得する。
 
@@ -119,7 +119,7 @@ improvedのparameter_summaryは総879,482,456、更新11,868,760（約1.35%）�
 
 ## 今回の確認試験
 
-PARC `.venv/bin/python -m pytest -q`で以下の既存試験を実行し、**4 passed**（2026-10-30）。
+PARC `.venv/bin/python -m pytest -q`で以下の既存試験を実行し、**4 passed**。
 
 - `experiments/T2-Xvla-libero/tests/test_t2_xvla_layout.py`
 - `experiments/T2EXP-005-xvla-libero-improved/tests/test_action_adapter.py`
@@ -128,7 +128,7 @@ PARC `.venv/bin/python -m pytest -q`で以下の既存試験を実行し、**4 p
 
 ## 追加照合：予選資料で確認できた成功実績（F-14〜F-17）
 
-追記日：2026-10-30。初回照合は本選側に偏っていた。以下はそれを補完する予選の証拠であり、「PARCには学習後の成功評価が確認できない」という全体への解釈を訂正する。F-10は本選improved実験についての記述としてのみ有効。
+初回照合は本選側に偏っていた。以下はそれを補完する予選の証拠であり、「PARCには学習後の成功評価が確認できない」という全体への解釈を訂正する。F-10は本選improved実験についての記述としてのみ有効。
 
 ### F-14：採用した学習法と提出物
 
@@ -138,7 +138,7 @@ PARC `.venv/bin/python -m pytest -q`で以下の既存試験を実行し、**4 p
 
 ### F-15：採用body-frame版のローカル評価は20/20成功
 
-[保存されたDocker body-frame 100k評価JSON](../../PARC2026/PARC2026_pre/experiments/XVLA_libero/artifacts/local_eval/docker-body-100k-5ep/server_8000.json)には、track1/libero_t1、4task、各5episode、計20episode、mean_success_rate=1.0、各task success_rate=1.0、mean_collision_rate=0.0が記録されている。timestampは2026-08-08T01:32:29.364190+00:00、seed42、max steps300。ファイル名のDocker表記と報告を根拠に呼称しており、今回Docker実行やruntime完全再現を行ったわけではない。
+[保存されたDocker body-frame 100k評価JSON](../../PARC2026/PARC2026_pre/experiments/XVLA_libero/artifacts/local_eval/docker-body-100k-5ep/server_8000.json)には、track1/libero_t1、4task、各5episode、計20episode、mean_success_rate=1.0、各task success_rate=1.0、mean_collision_rate=0.0が記録されている。timestampは中間評価、seed42、max steps300。ファイル名のDocker表記と報告を根拠に呼称しており、今回Docker実行やruntime完全再現を行ったわけではない。
 
 **結論**：予選には追加学習後の成功評価の保存実績がある。「学習完了だけ」との先の説明は予選まで含めると不正確だった。20試行のローカルsim結果であり、公式リーダーボードの得点、独立holdoutでの一般化、新8task、実機70%の証明ではない。
 

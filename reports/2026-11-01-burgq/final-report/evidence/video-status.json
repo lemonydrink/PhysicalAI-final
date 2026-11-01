@@ -1,8 +1,0 @@
-{
-  "stage": "complete",
-  "output": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/deliverables/final_ros2_eight_tasks_prompted.mp4",
-  "duration_seconds": 48.65,
-  "all_eight_successful": true,
-  "collision_free_tasks": 8,
-  "collision_fallback_tasks": []
-}

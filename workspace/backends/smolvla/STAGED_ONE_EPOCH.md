@@ -1,6 +1,6 @@
-# 段階的SFT＋Rollout選択：1epoch（2026-11-01）
+# 段階的SFT＋Rollout選択：1epoch
 
-ユーザー指定の新設定で公開モデルから学習し直す。以前の10,000stepや1巡追加学習の重み・optimizerは継承しない。
+実験条件の新設定で公開モデルから学習し直す。以前の10,000stepや1巡追加学習の重み・optimizerは継承しない。
 
 ## 実行順序
 
@@ -84,7 +84,7 @@ baselineとcheckpoint評価はすべて同じ80条件（8タスク各10、初期
 
 サービス: `physicalai-smolvla-staged-one-epoch.service`
 
-ジョブ: `/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/staged-one-epoch-20261101/`
+ジョブ: `${WORKSPACE}/backends/smolvla/runs/staged-one-epoch-run/`
 
 - plan.json / status.json / job.log
 - audit/contract.json、simulator_contract.json、監査画像
@@ -96,7 +96,7 @@ baselineとcheckpoint評価はすべて同じ80条件（8タスク各10、初期
 - source/: 設定・コード・lockとsimulatorソースのsnapshot
 
 中断後は完成済みbaselineと最新checkpointを再利用する。checkpointのrollout未完了分を完了してから次の学習へ進む。
-会話を閉じてもジョブを継続する。PCとユーザーサービスが稼働している必要がある。
+会話を閉じてもジョブを継続する。PCと実験実施者サービスが稼働している必要がある。
 
 ```bash
 systemctl --user status physicalai-smolvla-staged-one-epoch.service
@@ -105,7 +105,7 @@ systemctl --user status physicalai-smolvla-staged-one-epoch.service
 ## W&Bと手動実行
 
 ```bash
-cd /home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2
+cd ${WORKSPACE}
 wandb login
 export SMOLVLA_CONFIG="$PWD/backends/smolvla/configs/staged-one-epoch.json"
 # baseline完了後に手動で起動する場合（登録済みジョブとは同時実行しない）
@@ -113,7 +113,7 @@ WANDB_PROJECT=physicalai-smolvla-eight WANDB_MODE=offline \
   backends/smolvla/.venv/bin/python backends/smolvla/staged_training.py \
   --manifest backends/smolvla/data/full-v1/manifest.json \
   --output backends/smolvla/runs/staged-manual \
-  --job backends/smolvla/runs/staged-one-epoch-20261101
+  --job backends/smolvla/runs/staged-one-epoch-run
 ```
 
 WANDB_ENTITY、WANDB_PROJECT、WANDB_MODEまたは--wandb-mode online|offline|disabledで変更可能。

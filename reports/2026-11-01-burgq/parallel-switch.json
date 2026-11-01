@@ -1,8 +1,0 @@
-{
-  "requested_workers": 4,
-  "checkpoint": 2000,
-  "preserved_completed_trials_before_restart": 18,
-  "switch_at": "2026-11-01T14:03:19.533023+00:00",
-  "training_recipe_changed": false,
-  "tests": "14 passed"
-}

@@ -1,4 +1,4 @@
-最終評価はbest checkpointをROS 2 DDS経由・2並列・別初期状態80回で評価する予約を追加。実機移行の範囲と未検証事項は ../../docs/FINAL_ROS2_AND_HARDWARE.md を参照。
+最終評価はbest checkpointをROS 2 DDS経由・2並列・別初期状態80回で評価する実行計画を追加。実機移行の範囲と未検証事項は ../../docs/FINAL_ROS2_AND_HARDWARE.md を参照。
 
 現行BurgQ実験の評価はシミュレーター4台＋共有モデルへ切替済み。plan.jsonのevaluation_workers=4。trial別RNG/action queueを分離し、評価のexecution.jsonとW&Bに実行情報を保存する。
 
@@ -6,7 +6,7 @@
 
 現行：BurgQの学習前80回評価→batch32・1epoch SFT。[データ整合監査](BURGQ_DATA_AUDIT.md)で重複軌道による検証漏洩を修正済み。学習365,887フレーム、11,434更新。以下の待機・旧主系統の記述は過去の実験経緯。
 
-当初の実験予約：[BurgQモデルの学習前80回評価→batch32・1epoch SFT](BURGQ_QUEUED.md)。現在のbatch32ジョブが正常終了し、プロセスも退出するまで待機する。
+当初の実験実行計画：[BurgQモデルの学習前80回評価→batch32・1epoch SFT](BURGQ_QUEUED.md)。現在のbatch32ジョブが正常終了し、プロセスも退出するまで待機する。
 
 現在の実行は[batch32・勾配蓄積1での継続学習](BATCH32.md)。完了済みbaselineを再利用し、保存済み2,000stepから直接再開する。
 
@@ -14,7 +14,7 @@
 
 現在は[全データ1巡の追加学習・全件検証](ONE_PASS.md)を実行中。`configs/libero-plus-one-pass.json`と`train-epoch`を使用する。
 
-2026-11-01の主系統は **LIBERO-PLUS学習済みモデルからのSFT**。設定は`configs/libero-plus-sft.json`、詳細は[現行SFT](LIBERO_PLUS_SFT.md)。`SMOLVLA_CONFIG`で設定を指定する。以下の汎用baseの記述・旧ジョブは前回実験の記録。
+当該段階の主系統は **LIBERO-PLUS学習済みモデルからのSFT**。設定は`configs/libero-plus-sft.json`、詳細は[現行SFT](LIBERO_PLUS_SFT.md)。`SMOLVLA_CONFIG`で設定を指定する。以下の汎用baseの記述・旧ジョブは前回実験の記録。
 
 主系統の切替先。X-VLAの既存結果を学習成果に数えず、汎用`lerobot/smolvla_base`から原案8taskを追加学習して評価する。
 
@@ -25,7 +25,7 @@
 - 独立した`uv.lock`とローカルコピーのLeRobot source/hashを保持。旧環境へ追加インストールしない。
 
 ```bash
-cd /home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2
+cd ${WORKSPACE}
 uv sync --locked --project backends/smolvla
 backends/smolvla/.venv/bin/python backends/smolvla/run.py download
 backends/smolvla/.venv/bin/python backends/smolvla/run.py prepare \
@@ -54,7 +54,7 @@ full学習にはpartial=falseのfull datasetが必要。少数episodeのsmokeで
 
 ## 登録済みの本学習・評価ジョブ
 
-[予約内容と実行状況](QUEUED_JOB.md)：全件データ準備 → batch4で10,000step SFT → 8タスク×10回評価。ジョブを起動済み。完了・70%達成の判定は`status.json`と評価結果で確認する。
+[実行計画内容と実行状況](QUEUED_JOB.md)：全件データ準備 → batch4で10,000step SFT → 8タスク×10回評価。ジョブを起動済み。完了・70%達成の判定は`status.json`と評価結果で確認する。
 
 ## 現在の検証結果
 

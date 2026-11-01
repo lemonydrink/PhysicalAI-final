@@ -1,12 +1,12 @@
-現行実験は完了。[モデル比較と最終ROS 2評価を分けた最終報告](../reports/2026-11-01-burgq/final-report/REPORT.md)を参照。HTTPモデル比較91.25%→97.5%、最終ROS 2評価97.5%（別初期状態）。以下は過去の作業履歴です。
+現行実験は完了。[モデル比較と最終ROS 2評価を分けた最終報告](../reports/experiment-burgq/final-report/REPORT.md)を参照。HTTPモデル比較91.25%→97.5%、最終ROS 2評価97.5%（別初期状態）。以下は過去の作業履歴です。
 
 # 公開スナップショットについて
 
-現行BurgQ実験の学習前baselineは73/80（91.25%）、追加学習はbatch32で進行中です。[最新レポート](../reports/2026-11-01-burgq/REPORT.md)を参照してください。以下は過去の作業履歴を含む元READMEです。
+現行BurgQ実験の学習前baselineは73/80（91.25%）、追加学習はbatch32で進行中です。[最新レポート](../reports/experiment-burgq/REPORT.md)を参照してください。以下は過去の作業履歴を含む元READMEです。
 
 # 現在の主系統：SmolVLA
 
-ユーザー指定により、**汎用SmolVLAから原案8taskを追加学習する構成へ切替中**です。batch4を維持します。[SmolVLA実装・実行手順](backends/smolvla/README.md)と`configs/active_backend.json`を参照してください。SmolVLAの70%目標は未達・未評価です。
+実験条件として、**汎用SmolVLAから原案8taskを追加学習する構成へ切替中**です。batch4を維持します。[SmolVLA実装・実行手順](backends/smolvla/README.md)と`configs/active_backend.json`を参照してください。SmolVLAの70%目標は未達・未評価です。
 
 以下はX-VLAの既存参照実装と評価履歴であり、その97.5%を今回の学習成果には数えません。
 
@@ -19,7 +19,7 @@
 ## 導入と資産
 
 ```bash
-cd /home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2
+cd ${WORKSPACE}
 bash scripts/bootstrap.sh
 ```
 

@@ -1,4 +1,4 @@
-# LIBERO-PLUS版からの8タスクSFT（2026-11-01）
+# LIBERO-PLUS版からの8タスクSFT
 
 初期モデルは取得済み `lerobot/smolvla_libero_plus@7bb70aa5bc92b82c9239142775d3a173103567ff`。
 初期重みSHA256は `a67a056ab0761afa5f5efef8edd45065cef4494735231b7eeeb8328e71fcfb72`。
@@ -20,11 +20,11 @@
 
 サービス名: `physicalai-smolvla-libero-sft-eval80.service`
 
-保存先: `/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/libero-plus-sft-eval80-20261101/`
+保存先: `${WORKSPACE}/backends/smolvla/runs/libero-plus-sft-eval80-run/`
 
 `status.json`で進行段階、`job.log`で実行ログ、`train-*/metrics.jsonl`で実際の更新stepを確認できる。
 学習済みモデルは`train-*/ckpt-010000/`、評価は`evaluation80/summary.json`へ保存する。
-会話を閉じても継続する。PCとユーザーサービスが動いている必要がある。
+会話を閉じても継続する。PCと実験実施者サービスが動いている必要がある。
 
 ```bash
 systemctl --user status physicalai-smolvla-libero-sft-eval80.service
@@ -33,7 +33,7 @@ systemctl --user status physicalai-smolvla-libero-sft-eval80.service
 手動で別runを実行する場合（登録済みジョブと同時実行しない）：
 
 ```bash
-cd /home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2
+cd ${WORKSPACE}
 wandb login
 export SMOLVLA_CONFIG="$PWD/backends/smolvla/configs/libero-plus-sft.json"
 WANDB_PROJECT=physicalai-smolvla-eight WANDB_MODE=offline \

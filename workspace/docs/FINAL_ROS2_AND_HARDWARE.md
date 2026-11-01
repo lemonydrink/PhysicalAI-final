@@ -1,8 +1,8 @@
 # 最終80回評価と実機移行の実装範囲
 
-2026-11-01。現在の実験はシミュレーション専用。実機での成功を確認したという意味ではない。
+現在の実験はシミュレーション専用。実機での成功を確認したという意味ではない。
 
-## 予約した最終評価
+## 実行計画した最終評価
 
 1. 学習・途中checkpoint評価を最後まで完了する。途中のHTTP評価は4並列。
 2. rolloutで選んだbest checkpointを固定し、学習サービスがinactiveになるまで待つ。GPU上の学習プロセスやoptimizerを保持したまま最終評価を重ねない。
@@ -10,7 +10,7 @@
 4. 8タスク各10回、計80回をROS 2 DDS経由で実行。選択用index10〜19と別のindex20〜29を使う。全タスク50初期状態ありを確認済み。
 5. 成功率、非対象物変位によるcollision-free成功率、通信エラー、動画、protocol、モデルhash、DDS action数を保存しW&Bへ記録する。
 
-最終80回の出力は `backends/smolvla/runs/burgq-staged-batch32-20261101/final-ros2-best80/`。
+最終80回の出力は `backends/smolvla/runs/burgq-staged-batch32-run/final-ros2-best80/`。
 `RESULT.md` と `final_ros2_result.json` は完了時に生成する。現時点で最終性能は未確定。
 `physicalai-smolvla-final-ros2.service` は有効化済み。学習・モデル選択の正常終了とプロセス退出を待機する。終了済みの学習や評価を推測で完了扱いにはしない。
 
@@ -68,6 +68,6 @@ Frankaの型式・firmware・driver/control interfaceが未指定で実機未準
 シミュレーターの位置gainを無条件に実機へコピーしない。制限で動作が変わればpolicyの閉ループ性能も実機で再評価する。
 
 実機adapterの `/health` はhardware modeとcommissioning済みcapabilitiesを返し、実測観測を `/reset`・`/step` で返し、`/stop` を確実に実装する必要がある。
-ROS robot nodeは `--allow-commissioned-hardware` が指定され、必要capabilityが全て確認された場合だけhardware adapterを受け付ける。今回の予約はこのフラグを付けずsimulationだけを起動する。
+ROS robot nodeは `--allow-commissioned-hardware` が指定され、必要capabilityが全て確認された場合だけhardware adapterを受け付ける。今回の実行計画はこのフラグを付けずsimulationだけを起動する。
 
 したがって現時点の成果は「実機移行を想定した制御境界・ガードと、ROS 2によるシミュレーション制御」である。「このまま実機に接続すれば必ず8タスクを遂行する」という主張はしない。

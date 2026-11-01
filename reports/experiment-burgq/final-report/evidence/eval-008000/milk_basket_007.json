@@ -1,0 +1,19 @@
+{
+  "trial_id": "358366fb-735f-43de-954e-5d222bd5e5d8",
+  "task": "milk_basket",
+  "episode_id": 7,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "b7744aea0e2f847d62bb2124c21f3376d076f7dfc6b0ad551f25419a0d6ba3bc",
+  "protocol_hash": "3a1b8cde06e8e3274758d7f26894e4e9bc99d3993481b396d996e78a7e6172a1",
+  "initial_state_hash": "4ca292d7cf2ebd1d765fa1c58c3cd748ec72edb937d6b135c28beb5ef347b9a4",
+  "seed": 800049,
+  "initial_state_index": 17,
+  "video": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/eval-008000/milk_basket_007.mp4",
+  "steps": 201,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true
+}

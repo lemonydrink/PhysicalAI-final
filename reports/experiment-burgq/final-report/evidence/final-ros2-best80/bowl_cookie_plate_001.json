@@ -1,0 +1,26 @@
+{
+  "trial_id": "b38cbc9e-f6ac-41f2-b774-486e7e47687f",
+  "task": "bowl_cookie_plate",
+  "episode_id": 1,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "7538f906c9988f5a5e500f7cb03d26ae12afb4504058888ffd695a81e6c1f050",
+  "protocol_hash": "9f38af9072bf27275c075a7cee0ac7d6678b0f76bc303455164fedc1deb3a2d6",
+  "initial_state_hash": "37374a758b8fe00057b18c282c0e94194cec7b1a2bc416563b17b5bb65f390dc",
+  "seed": 400043,
+  "initial_state_index": 21,
+  "video": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/final-ros2-best80/bowl_cookie_plate_001.mp4",
+  "steps": 107,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true,
+  "transport": "ros2_dds",
+  "ros2_namespace": "/physicalai/final/worker_1",
+  "ros2_counts": {
+    "actions": 107,
+    "observations": 107,
+    "stops": 0
+  }
+}

@@ -1,6 +1,6 @@
-# 学習データ全件を1巡して検証（2026-11-01）
+# 学習データ全件を1巡して検証
 
-直近のLIBERO-PLUS版SFT checkpoint `runs/libero-plus-sft-eval80-20261101/train-001/ckpt-010000` から継続する。
+直近のLIBERO-PLUS版SFT checkpoint `runs/libero-plus-sft-eval80-run/train-001/ckpt-010000` から継続する。
 
 - 学習: 2,765episode、364,505フレーム。すべての観測時刻を1回ずつシャッフル順で使用し、ランダムな復元抽出は行わない。
 - 以前の229,020個は「50stepを末尾まで取れる開始点」の数だった。今回の全件処理では末尾49step以内も含める。エピソード終端以降のactionはpaddingし、損失から除外する。別episodeのactionを跨いで使わない。
@@ -17,7 +17,7 @@
 
 ジョブ: `physicalai-smolvla-one-pass.service`
 
-出力: `/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/libero-plus-one-pass-20261101/`
+出力: `${WORKSPACE}/backends/smolvla/runs/libero-plus-one-pass-run/`
 
 `status.json`、`job.log`、`train-*/metrics.jsonl`で進捗を確認する。
 `epoch`は今回の追加1巡の進捗で、完了時に1となる。`coverage/consumed_frames`の完了値は364505。
@@ -28,18 +28,18 @@ W&B offlineへ設定、train loss、validation loss、LR、step、epoch、消化
 systemctl --user status physicalai-smolvla-one-pass.service
 ```
 
-会話を閉じても継続する。PCとユーザーサービスの稼働が必要。
+会話を閉じても継続する。PCと実験実施者サービスの稼働が必要。
 
 ## 手動実行例（登録済みジョブと同時に実行しない）
 
 ```bash
-cd /home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2
+cd ${WORKSPACE}
 wandb login
 export SMOLVLA_CONFIG="$PWD/backends/smolvla/configs/libero-plus-one-pass.json"
 WANDB_PROJECT=physicalai-smolvla-eight WANDB_MODE=offline \
   backends/smolvla/.venv/bin/python backends/smolvla/run.py train-epoch \
   --manifest backends/smolvla/data/full-v1/manifest.json \
-  --resume backends/smolvla/runs/libero-plus-sft-eval80-20261101/train-001/ckpt-010000 \
+  --resume backends/smolvla/runs/libero-plus-sft-eval80-run/train-001/ckpt-010000 \
   --output backends/smolvla/runs/one-pass-manual
 ```
 

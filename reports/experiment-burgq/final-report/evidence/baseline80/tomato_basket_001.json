@@ -1,0 +1,19 @@
+{
+  "trial_id": "08452d06-b753-4062-a7ea-c07b1bd7b5ee",
+  "task": "tomato_basket",
+  "episode_id": 1,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "88638a6aa1399327d79418265b224b883e7af6b5a7855c3b0aa6b7929ff1f971",
+  "protocol_hash": "6c3b4e3aeb03f721b982f3afa8aecd95a05bd45e223038841ff3cf74997dfac9",
+  "initial_state_hash": "358993a6b8dc977fc288ec95f06973014419783950f92347617c167707dab273",
+  "seed": 2000043,
+  "initial_state_index": 11,
+  "video": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/baseline80/tomato_basket_001.mp4",
+  "steps": 130,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true
+}

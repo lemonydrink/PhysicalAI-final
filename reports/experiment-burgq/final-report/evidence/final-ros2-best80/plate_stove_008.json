@@ -1,0 +1,26 @@
+{
+  "trial_id": "0d31403c-6f17-4ca6-869e-70ebc3977e43",
+  "task": "plate_stove",
+  "episode_id": 8,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "7538f906c9988f5a5e500f7cb03d26ae12afb4504058888ffd695a81e6c1f050",
+  "protocol_hash": "9f38af9072bf27275c075a7cee0ac7d6678b0f76bc303455164fedc1deb3a2d6",
+  "initial_state_hash": "bc8cc7b426f2fe87d831aad3062f232ec7f0e63e56fbb6ad6ffca001ba657da5",
+  "seed": 3600050,
+  "initial_state_index": 28,
+  "video": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/final-ros2-best80/plate_stove_008.mp4",
+  "steps": 113,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true,
+  "transport": "ros2_dds",
+  "ros2_namespace": "/physicalai/final/worker_0",
+  "ros2_counts": {
+    "actions": 113,
+    "observations": 113,
+    "stops": 0
+  }
+}

@@ -1,12 +1,12 @@
-# batch32へ切り替え（2026-11-01）
+# batch32へ切り替え
 
-ユーザー指示によりphysical batchを4→32、gradient accumulationを8→1へ変更。
+実験計画の変更によりphysical batchを4→32、gradient accumulationを8→1へ変更。
 有効batch32、LR/scheduler、7D loss、FP32 trainable weights/BF16 autocast、weight decay、clip、入力規約、1epochの終端は維持する。
 
 - 新設定: `configs/staged-batch32.json`
-- 新ジョブ: `runs/staged-batch32-20261101/`
+- 新ジョブ: `runs/staged-batch32-run/`
 - サービス: `physicalai-smolvla-batch32.service`
-- 再開元: `runs/staged-one-epoch-20261101/train-001/ckpt-002000`
+- 再開元: `runs/staged-one-epoch-run/train-001/ckpt-002000`
 - 重み、AdamW状態、Torch RNG、学習順序の消化位置64,000/364,505を継承。
 - 未保存だった約400更新分は再実行する。最終学習軌跡における1巡の消化件数は変わらない。
 - baseline80と2,000step評価は完了済みの結果を参照し、再評価せず学習から直接続行する。

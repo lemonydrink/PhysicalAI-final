@@ -1,0 +1,19 @@
+{
+  "trial_id": "0548a0fb-476e-4a9e-9e5a-7d189a2c6581",
+  "task": "butter_basket",
+  "episode_id": 6,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "7538f906c9988f5a5e500f7cb03d26ae12afb4504058888ffd695a81e6c1f050",
+  "protocol_hash": "77fb17dc8a9a440cb45642ac00ecdddded5511e9ac5068269fb3a26a7e611e20",
+  "initial_state_hash": "2b1f58931050d53198cfc733dd6f22fab8f06154faed67f8725e31f90b34c1da",
+  "seed": 1600048,
+  "initial_state_index": 16,
+  "video": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/eval-011434/butter_basket_006.mp4",
+  "steps": 156,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true
+}

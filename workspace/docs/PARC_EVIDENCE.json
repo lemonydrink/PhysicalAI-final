@@ -1,5 +1,4 @@
 {
-  "date": "2026-10-30",
   "parc_head": "eeddacf7b79bb2f9089b6a013410f0a0913f7ea2",
   "scope": "Local read-only crosscheck; no GPU/rollout/hardware validation",
   "tests": {
@@ -23,7 +22,7 @@
       "sha256": "51f69abd51f4b3024bd7961000a4e4fd951dfc755378570863c6c8deddc321d2"
     },
     {
-      "path": "PARC2026_final/runs/T2-Xvla-libero/20260903T152306Z/run.json",
+      "path": "PARC2026_final/runs/T2-Xvla-libero/runT152306Z/run.json",
       "bytes": 1982,
       "sha256": "6bee07942fc447573c3752ad0ef589a8c1603716172ceabebd620df24b36bc6d"
     },
@@ -78,17 +77,17 @@
       "sha256": "26e7830bfbe73ff1d0a5d977d67b4ac06dc10e6e24afeb225e7249ec796b5930"
     },
     {
-      "path": "PARC2026_final/runs/T2-Xvla-libero/20260903T152306Z/ckpt-82468/state.json",
+      "path": "PARC2026_final/runs/T2-Xvla-libero/runT152306Z/ckpt-82468/state.json",
       "bytes": 22,
       "sha256": "f9184b19973d7ba7800b2ce520f2d6614dd673d7a800bbc22106f74982d805e0"
     },
     {
-      "path": "PARC2026_final/runs/T2EXP-005-xvla-libero-improved/production-two-phase-20260904-r2/checkpoint_index.json",
+      "path": "PARC2026_final/runs/T2EXP-005-xvla-libero-improved/production-two-phase-run-r2/checkpoint_index.json",
       "bytes": 246,
       "sha256": "a509d65b195b6fd875c7075f179c33ab3e0432f14203aaf3d75c9acfd0b066a1"
     },
     {
-      "path": "PARC2026_final/runs/T2EXP-005-xvla-libero-improved/production-two-phase-20260904-r2/parameter_summary.json",
+      "path": "PARC2026_final/runs/T2EXP-005-xvla-libero-improved/production-two-phase-run-r2/parameter_summary.json",
       "bytes": 53178,
       "sha256": "f0ace548314ce3c15dcd787ef12934836219f73d866ca6698c37bd34b861f219"
     },

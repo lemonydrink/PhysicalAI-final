@@ -1,9 +1,7 @@
 # 原案登録情報
 
-- 登録日：2026-10-30（Asia/Tokyo）
 - 受領タイトル：X-VLA × LIBERO-PLUS × ROS2／8タスク対応・Franka Panda制御システム 技術設計書 v1.0
-- 位置づけ：ユーザー提供のたたき台・未確定版
-- 受領ファイル：`/home/lemonydrink/.codex/attachments/8768295a-cd8b-42cb-8959-3d5f42cc91c5/貼り付けたテキスト.txt`
+- 位置づけ：実験実施者提供のたたき台・未確定版
 - 保存先：`technical_design_v1.0_original.txt`
 - SHA-256：`d61d5a1aa52454c63d30e6fb9f2c004b21807a3945463b0643441bdb335c7360`
 

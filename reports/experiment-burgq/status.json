@@ -1,0 +1,7 @@
+{
+  "stage": "training",
+  "optimizer_step": 0,
+  "total_optimizer_steps": 11434,
+  "batch_size": 32,
+  "gradient_accumulation_steps": 1
+}

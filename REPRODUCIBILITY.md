@@ -28,9 +28,9 @@ LeRobotの旧config読み込み互換性のため、BurgQ configの `pretrained_
 
 ## データ・設定の再構築
 
-`reports/2026-11-01-burgq/manifests/` は元取得情報、評価用旧split、監査後のgrouped-v2 splitを記録する。画像・actionそのものは同梱しない。
+`reports/experiment-burgq/manifests/` は元取得情報、評価用旧split、監査後のgrouped-v2 splitを記録する。画像・actionそのものは同梱しない。
 
-raw取得→`prepare-raw`→元軌道の操作列hash単位でsplit→manifest作成→入力監査の順で行う。学習splitは365,887フレーム。監査時のgroup作成スクリプトは `reports/2026-11-01-burgq/audit/source/` に保存しているが、元環境のパスや比較用元データの準備が必要であり、そのまま実行する一般CLIではない。
+raw取得→`prepare-raw`→元軌道の操作列hash単位でsplit→manifest作成→入力監査の順で行う。学習splitは365,887フレーム。監査時のgroup作成スクリプトは `reports/experiment-burgq/audit/source/` に保存しているが、元環境のパスや比較用元データの準備が必要であり、そのまま実行する一般CLIではない。
 
 別ディレクトリではmanifest内のHDF5パス、plan内のconfig・train/eval manifest・predecessor・監査のパス、必要なローカルモデル参照先を再設定する。移設後はconfig/manifest hashが変わるため監査を実施し直す。公開済みpassed/hashを新しいデータに流用して検査を迂回しない。
 
@@ -48,7 +48,7 @@ backends/smolvla/.venv/bin/python backends/smolvla/staged_job.py --help
 backends/smolvla/.venv/bin/python backends/smolvla/staged_training.py --help
 ```
 
-準備・再監査済みのjobを指定して `staged_job.py --job <job>` を起動すると、simulator起動→baseline80→SFT→2,000更新ごとのrollout→best選択を行う。保存済みplanは実験証跡で、コピーするだけで別PCに予約サービスが登録されるわけではない。
+準備・再監査済みのjobを指定して `staged_job.py --job <job>` を起動すると、simulator起動→baseline80→SFT→2,000更新ごとのrollout→best選択を行う。保存済みplanは実験証跡で、コピーするだけで別PCに実行計画サービスが登録されるわけではない。
 
 W&Bのオンライン利用時は `wandb login` を実行し、`WANDB_PROJECT`・`WANDB_ENTITY` を設定する。学習CLIは `--wandb-mode online|offline|disabled` に対応する。記録されたjob wrapperはoffline固定のため、オンライン化する場合はwrapperの環境設定とCLI指定も変更する。APIキーを設定やコードへ書き込まない。
 
@@ -65,6 +65,6 @@ ROS 2メッセージ定義とbridgeスクリプトは `workspace/ros2_ws/src/` �
 
 `workspace/scripts/run_smolvla_ros.sh` はこのROS環境とML環境を分ける。`PHYSICALAI_ROS_ENV` で別のROS環境設定を指定できる。公開 `.service.example` は元ホストのパスを証跡として保持するため、別ホストへそのまま登録せず配置先を修正する。
 
-`backends/smolvla/final_ros2.py --job <audited-job> --policy-smoke` が2並列の実環境DDS配線と短いpolicy rolloutを確認し、`--wait` が学習・モデル選択とプロセス退出後の最終80回を予約する。最終評価はindex20〜29、2並列、best checkpoint、ROS 2 DDS。中間評価は4並列HTTPを維持する。
+`backends/smolvla/final_ros2.py --job <audited-job> --policy-smoke` が2並列の実環境DDS配線と短いpolicy rolloutを確認し、`--wait` が学習・モデル選択とプロセス退出後の最終80回を実行計画する。最終評価はindex20〜29、2並列、best checkpoint、ROS 2 DDS。中間評価は4並列HTTPを維持する。
 
-実機は未検証。vendor driver、実測カメラ/座標/制御gainの校正、独立watchdog・非常停止・controller commissioningが必要。詳細は `workspace/docs/FINAL_ROS2_AND_HARDWARE.md` を参照。デフォルトの予約はsimulationのみで実機を有効化しない。
+実機は未検証。vendor driver、実測カメラ/座標/制御gainの校正、独立watchdog・非常停止・controller commissioningが必要。詳細は `workspace/docs/FINAL_ROS2_AND_HARDWARE.md` を参照。デフォルトの実行計画はsimulationのみで実機を有効化しない。

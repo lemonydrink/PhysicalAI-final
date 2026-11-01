@@ -1,0 +1,26 @@
+{
+  "trial_id": "71f81a88-93be-45e5-a1f3-70f4bd88b3ed",
+  "task": "milk_basket",
+  "episode_id": 0,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "7538f906c9988f5a5e500f7cb03d26ae12afb4504058888ffd695a81e6c1f050",
+  "protocol_hash": "9f38af9072bf27275c075a7cee0ac7d6678b0f76bc303455164fedc1deb3a2d6",
+  "initial_state_hash": "b6d820d1057b6ccaf9ae01f84d0261bf8cebd04ade72b5c22e9556c2f8bc8a19",
+  "seed": 800042,
+  "initial_state_index": 20,
+  "video": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/final-ros2-best80/milk_basket_000.mp4",
+  "steps": 130,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true,
+  "transport": "ros2_dds",
+  "ros2_namespace": "/physicalai/final/worker_0",
+  "ros2_counts": {
+    "actions": 130,
+    "observations": 130,
+    "stops": 0
+  }
+}

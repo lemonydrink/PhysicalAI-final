@@ -1,6 +1,6 @@
 # LIBERO-PLUS学習済みSmolVLAの取得記録
 
-ユーザー指定により、次に使用するモデルとして `lerobot/smolvla_libero_plus` を取得した。
+実験条件として、次に使用するモデルとして `lerobot/smolvla_libero_plus` を取得した。
 
 - 固定revision: `7bb70aa5bc92b82c9239142775d3a173103567ff`（過去PARCで使用した版）
 - 保存先: `models/libero-plus-7bb70aa5/`

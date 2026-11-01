@@ -1,0 +1,8 @@
+{
+  "stage": "complete",
+  "checkpoint": "${WORKSPACE}/backends/smolvla/runs/libero-plus-one-pass-run/train-001/ckpt-101127",
+  "summary": "${WORKSPACE}/backends/smolvla/runs/libero-plus-one-pass-run/evaluation80/summary.json",
+  "completed_trials": 80,
+  "macro_success_rate": 0.037500000000000006,
+  "target_met": false
+}

@@ -1,12 +1,12 @@
 # 詳細要件定義書 v0.7
 
-作成日：2026-10-30／状態：Draft／対象：X-VLA・LIBERO-PLUS・ROS 2・Franka Panda
+
 
 PARC照合結果：[PARC_CROSSCHECK.md](PARC_CROSSCHECK.md)。過去のコード・設定・実行記録を区別し、以下の追補を実装要件に含める。
 
-## 最新モデル方針：SmolVLAへの切替（2026-10-30）
+## 最新モデル方針：SmolVLAへの切替
 
-ユーザーの提案によりSmolVLAを主系統とする。本節は従来の2toINF版を使用する要件に優先する。X-VLAのコード・重み・評価結果は比較履歴として保持する。
+実験実施者の提案によりSmolVLAを主系統とする。本節は従来の2toINF版を使用する要件に優先する。X-VLAのコード・重み・評価結果は比較履歴として保持する。
 
 - 初期点は汎用`lerobot/smolvla_base`、固定revision `5e8d12a6e2975b0e5e5fce7c8caf47c371d257b6`。LIBERO専用fine-tuned重みからの評価だけで今回の成果とはしない。
 - 原案8taskのsimデータで**追加学習**し、同じSmolVLA初期点・同じ入力/正規化・同じ評価初期状態とpaired比較する。X-VLAの97.5%をSmolVLAの性能として扱わない。
@@ -15,9 +15,9 @@ PARC照合結果：[PARC_CROSSCHECK.md](PARC_CROSSCHECK.md)。過去のコード
 - 学習/推論依存は`backends/smolvla`へ分離する。LeRobotのNumPy2/Transformers4.57系と、既存MuJoCo側のNumPy1/旧Transformers系を同一venvへ混ぜない。
 - 目標は追加学習後のモデルで成功率70%以上と全8task成功動画。損失低下・smoke完了は合格にしない。最終成功率と学習による変化を別に報告する。
 
-## 最新スコープ確定：シミュレーションで完結（2026-10-30）
+## 最新スコープ確定：シミュレーションで完結
 
-ユーザー回答により、**対象は原案8タスク、実機は使用せず全工程をシミュレーションで実施**と確定した。この節は下記の実機を前提とする記述に優先する。
+実験条件の確定により、**対象は原案8タスク、実機は使用せず全工程をシミュレーションで実施**と確定した。この節は下記の実機を前提とする記述に優先する。
 
 - 70%は固定モデル・固定protocolによるLIBERO-PLUS/MuJoCoの8task macro task completion率で測定する。各10回/合計80回を初期protocolとする。collision指標は別記録し、task completionと混同しない。
 - 動画はシミュレーションの8taskすべての成功実行を連続記録する。実機撮影ではない。
@@ -26,13 +26,13 @@ PARC照合結果：[PARC_CROSSCHECK.md](PARC_CROSSCHECK.md)。過去のコード
 - 起点は2toINF版、batch4。PARC由来のbody/controller frameは別profileで評価し、採用条件を記録する。
 - 学習・推論PythonとROS Pythonは別プロセスとし、ローカルHTTP IPCとROS msgを介して接続する。今回の学習/シミュレーション用venvは既存PARCの環境から独立する。
 
-## 0. 最新の目標と優先要件（2026-10-30）
+## 0. 最新の目標と優先要件
 
-本節は初期案および下記の競合する記述に優先する。ユーザー確定事項は **2toINF版を使用すること、成功率70%のモデルを得ること、8タスクすべての成功動画を撮影すること**。以下では実機の8タスクmacro平均70%以上として具体化する。実機での測定、macro平均か各task最低70%か、試行数は実装計画上の提案であり、ユーザーが明示指定した値とは区別する。
+本節は初期案および下記の競合する記述に優先する。実験実施者確定事項は **2toINF版を使用すること、成功率70%のモデルを得ること、8タスクすべての成功動画を撮影すること**。以下では実機の8タスクmacro平均70%以上として具体化する。実機での測定、macro平均か各task最低70%か、試行数は実装計画上の提案であり、実験実施者が明示指定した値とは区別する。
 
 ### 0.1 モデルと対象範囲
 
-学習batch sizeは**4（ユーザー指定）**。初期構成は単一GPU・gradient accumulation=1を提案し、この場合の実効batchは4とする。予選のbatch2は過去の再現条件として記録し、今回の設定には用いない。batch4のforward/backward・保存復元時のVRAM/host RAMを確認し、OOM時に無断でbatchを下げず、対処を記録して再検討する。
+学習batch sizeは**4（実験条件）**。初期構成は単一GPU・gradient accumulation=1を提案し、この場合の実効batchは4とする。予選のbatch2は過去の再現条件として記録し、今回の設定には用いない。batch4のforward/backward・保存復元時のVRAM/host RAMを確認し、OOM時に無断でbatchを下げず、対処を記録して再検討する。
 
 - 採用実装は **2toINF upstream版X-VLA**。初期checkpointは過去PARCと同じ`2toINF/X-VLA-Libero`、revision `129e71460678b7236cee6fc9707f09d9fa0c3590`を復元の第一候補とする。LeRobot版への移行は既定工程から外す。別revisionが必要なら理由と互換性を記録する。
 - 対象は8タスクすべて。第3節の原案8taskを候補集合として保持するが、過去PARC T2とは異なるため、どちらの集合を採用するかD-13で確定する。撮影件数8件は確定事項とし再確認しない。
@@ -53,7 +53,7 @@ GOAL-04：checkpoint選択用の開発試行と最終評価の初期条件・tri
 
 DEMO-01：**各8taskにつき最低1本**、ロボットの操作開始からGOAL-03の完了状態確認までを示す連続動画を保存する。途中の人手介入や別試行の継ぎ合わせを成功動画として扱わない。可能なら最終評価の成功trialから採用し、別撮影なら別trial IDとして明示する。
 
-DEMO-02：納品物は凍結model bundle（差分時は取得可能なbase重み参照とhashを含む）、processor/codec/実行設定、80trial案の結果一覧・集計、8本以上の成功動画、実行ログ参照。各動画にtask key、日時、trial ID、model hash、達成条件と介入有無を対応付ける。公開・アップロードは別の依頼時に行う。
+DEMO-02：納品物は凍結model bundle（差分時は取得可能なbase重み参照とhashを含む）、processor/codec/実行設定、80trial案の結果一覧・集計、8本以上の成功動画、実行ログ参照。各動画にtask key、日時、trial ID、model hash、達成条件と介入有無を対応付ける。公開・アップロードは別の要件時に行う。
 
 DEMO-03：成功率合格と全task動画は独立した条件。macro70%を満たしても1taskの成功動画がなければ未完了。8taskの動画が揃っても固定評価70%未満なら未完了。
 
@@ -77,7 +77,7 @@ AT-DEMO：8taskすべてについてDEMO-01〜03の成功動画と記録が揃�
 
 ## 2. 既存環境と再利用境界
 
-| 項目 | 2026-10-30に確認した事実 | 実装前に必要な確認 |
+| 項目 | 確認した事実 | 実装前に必要な確認 |
 |---|---|---|
 | ホスト | Ubuntu 24.04、x86_64（先行導入記録） | 実装開始時の再採取 |
 | ROS 2 | `PhysicalAI/ros2/pixi.lock`が存在、Jazzy導入・送受信試験の先行記録 | バージョン・RMW・Python・C++ ABI採取 |
@@ -336,12 +336,12 @@ xvla-libero-plus-ros2/
 
 | 版 | 日付 | 変更 |
 |---|---|---|
-| 0.1 | 2026-10-30 | 原案保存、詳細要件案、判断台帳、受け入れ試験を作成 |
-| 0.2 | 2026-10-30 | PARC証拠照合、PARC-01〜08、D-13/14を追加。旧条件の無条件流用を防止 |
-| 0.3 | 2026-10-30 | 2toINF版と成功動画へ目標変更（v0.4で評価目標を再追加） |
-| 0.4 | 2026-10-30 | 成功率70%と8taskすべての成功動画を目標化。macro・各10回は評価契約案として明示 |
-| 0.5 | 2026-10-30 | 予選成功記録を追加。学習baselineを予選LoRA構成へ変更し、frame別の評価差を必須監査化 |
-| 0.6 | 2026-10-30 | ユーザー指定により今回の学習batch sizeを4に確定。予選batch2と区別 |
+| 0.1 | — | 原案保存、詳細要件案、判断台帳、受け入れ試験を作成 |
+| 0.2 | — | PARC証拠照合、PARC-01〜08、D-13/14を追加。旧条件の無条件流用を防止 |
+| 0.3 | — | 2toINF版と成功動画へ目標変更（v0.4で評価目標を再追加） |
+| 0.4 | — | 成功率70%と8taskすべての成功動画を目標化。macro・各10回は評価契約案として明示 |
+| 0.5 | — | 予選成功記録を追加。学習baselineを予選LoRA構成へ変更し、frame別の評価差を必須監査化 |
+| 0.6 | — | 実験条件として今回の学習batch sizeを4に確定。予選batch2と区別 |
 
 ## 15. PARC照合による追加要件
 
@@ -365,7 +365,7 @@ PARC-08：EVAL-02のpaired比較でseed変更だけを新規初期条件と数�
 
 ### 予選成功実績の追加要件
 
-PARC-09：予選のbody-frame版100k LoRAに4task×5回=20/20成功・衝突率0%の保存結果がある。学習方法の実績baselineとして採用し、過去batch2・LoRA＋Soft Prompt＋Action層と推論frame/前処理を根拠として復元する。ただし今回の学習batchはユーザー指定の4へ変更し、過去との変更点として記録する。詳細は照合書F-14/15。
+PARC-09：予選のbody-frame版100k LoRAに4task×5回=20/20成功・衝突率0%の保存結果がある。学習方法の実績baselineとして採用し、過去batch2・LoRA＋Soft Prompt＋Action層と推論frame/前処理を根拠として復元する。ただし今回の学習batchは実験条件の4へ変更し、過去との変更点として記録する。詳細は照合書F-14/15。
 
 PARC-10：別controller-frame経路では同100kのcompletion35%・collision-free32.5%が残る。変換器を「過去にあるから正しい」とせず、body/controller frameとstate-action同時刻/1stepずれを固定protocolで比較する。D-03/D-14とAT-03にこの比較を組み込む。
 
@@ -373,14 +373,14 @@ PARC-11：100k/一定LR1e-4は再現条件であり必達の推奨最適値で�
 
 ## 16. 根拠資料と検証の限界
 
-2026-10-30に以下の一次資料ページへアクセスした。存在と概要確認であり、採用commitのコード・dataset全件・実機互換性を検証したものではない。実装前にD-01〜D-03で固定revisionと根拠行を登録する。
+以下の一次資料ページへアクセスした。存在と概要確認であり、採用commitのコード・dataset全件・実機互換性を検証したものではない。実装前にD-01〜D-03で固定revisionと根拠行を登録する。
 
 - [X-VLA upstream](https://github.com/2toinf/X-VLA)：原実装とLeRobot実装を区別するための参照。
 - [LeRobot X-VLA LIBERO model card](https://huggingface.co/lerobot/xvla-libero)：LIBERO向けcheckpointの候補。
 - [LIBERO-PLUS upstream](https://github.com/sylvestf/LIBERO-plus)：suite・variant・評価実装の参照。
 - [franka_ros2 upstream](https://github.com/frankarobotics/franka_ros2)：対象robotと対応branchを調査する参照。
-- ユーザー提供原案：`source/technical_design_v1.0_original.txt`。
+- 実験実施者提供原案：`source/technical_design_v1.0_original.txt`。
 
 本書内の数値・API案はプロジェクト提案であり、上記資料がそのまま保証する値ではない。
 
-| 0.7 | 2026-10-30 | ユーザー指定：原案8task・シミュレーションで完結。実機工程を対象外へ変更 |
+| 0.7 | — | 実験条件：原案8task・シミュレーションで完結。実機工程を対象外へ変更 |

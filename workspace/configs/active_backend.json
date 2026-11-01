@@ -9,7 +9,7 @@
   "performance_verified": false,
   "initial_model": "BurgQ/smolvla-libero-bs32-100k",
   "initial_revision": "238fb0654cd598e287f8b6c2d64bd09af239c76f",
-  "current_job": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101",
+  "current_job": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run",
   "gradient_accumulation_steps": 1,
   "effective_batch_size": 32,
   "preprocessing_profile": "libero_raw_v1"

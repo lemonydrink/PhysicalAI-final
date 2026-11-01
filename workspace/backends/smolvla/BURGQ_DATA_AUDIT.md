@@ -1,4 +1,4 @@
-# BurgQ × LIBERO-PLUS データ整合監査（2026-11-01）
+# BurgQ × LIBERO-PLUS データ整合監査
 
 判定：追加学習に使用できる。検証分割の重複を修正し、監査済みmanifest/configのSHA256が一致する場合だけ学習を許可する。
 
@@ -50,7 +50,7 @@ staged_training.pyはaudit/dataset_alignment.jsonのpassedと、実際のconfig�
 ## 検証と証跡
 
 backend既存テスト12件成功。uv pip check、uv lock --check、構文、学習CLIを確認。
-詳細は runs/burgq-staged-batch32-20261101/audit/ 以下：
+詳細は runs/burgq-staged-batch32-run/audit/ 以下：
 
 - dataset_alignment.json：最終判定と固定hash、制約。
 - reference_numeric_comparison.json：全操作列の照合とタスク別分布。

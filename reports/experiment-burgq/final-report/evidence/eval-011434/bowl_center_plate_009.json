@@ -1,0 +1,19 @@
+{
+  "trial_id": "4030fcff-081a-4389-aa54-f840d1926bd4",
+  "task": "bowl_center_plate",
+  "episode_id": 9,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "7538f906c9988f5a5e500f7cb03d26ae12afb4504058888ffd695a81e6c1f050",
+  "protocol_hash": "77fb17dc8a9a440cb45642ac00ecdddded5511e9ac5068269fb3a26a7e611e20",
+  "initial_state_hash": "8b4a7bfbf0fff7d6bf560b38e4cf156bf967a1ee574e0e8b90944781ca52c664",
+  "seed": 600051,
+  "initial_state_index": 19,
+  "video": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/eval-011434/bowl_center_plate_009.mp4",
+  "steps": 92,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true
+}

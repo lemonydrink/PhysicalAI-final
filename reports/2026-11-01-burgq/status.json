@@ -1,8 +1,0 @@
-{
-  "stage": "training",
-  "updated_at": "2026-11-01T13:23:48.476589+00:00",
-  "optimizer_step": 0,
-  "total_optimizer_steps": 11434,
-  "batch_size": 32,
-  "gradient_accumulation_steps": 1
-}

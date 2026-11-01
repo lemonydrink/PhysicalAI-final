@@ -1,0 +1,26 @@
+{
+  "trial_id": "fc1b7c6c-ec37-48d1-9ea6-80bd110c3b29",
+  "task": "middle_drawer",
+  "episode_id": 1,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "7538f906c9988f5a5e500f7cb03d26ae12afb4504058888ffd695a81e6c1f050",
+  "protocol_hash": "9f38af9072bf27275c075a7cee0ac7d6678b0f76bc303455164fedc1deb3a2d6",
+  "initial_state_hash": "3311d0238aa74cf924b650834b01722adb77bec14703c0630afb0ca6c2f6aaa2",
+  "seed": 700043,
+  "initial_state_index": 21,
+  "video": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/final-ros2-best80/middle_drawer_001.mp4",
+  "steps": 126,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true,
+  "transport": "ros2_dds",
+  "ros2_namespace": "/physicalai/final/worker_1",
+  "ros2_counts": {
+    "actions": 126,
+    "observations": 126,
+    "stops": 0
+  }
+}

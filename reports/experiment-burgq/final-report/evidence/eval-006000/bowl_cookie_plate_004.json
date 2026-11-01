@@ -1,0 +1,19 @@
+{
+  "trial_id": "78b5250a-0ef7-4029-bd2e-ed1268420526",
+  "task": "bowl_cookie_plate",
+  "episode_id": 4,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "772d8d64d8b9ae0748ab4d3d749b05f3c03538709f5813fb0fb6f344e96c0307",
+  "protocol_hash": "c34cbbba17667833191cdfc5fdb8adb2612f64def930590590ae14298ee1dd79",
+  "initial_state_hash": "42f14bceb4a4442495e345b5e2cae5a449eaa30105c546c8349a09bbba379d34",
+  "seed": 400046,
+  "initial_state_index": 14,
+  "video": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/eval-006000/bowl_cookie_plate_004.mp4",
+  "steps": 108,
+  "collision": true,
+  "collision_available": true,
+  "collision_free_success": false
+}

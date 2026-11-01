@@ -1,0 +1,5 @@
+{
+  "stage": "training",
+  "optimizer_step": 2000,
+  "macro_success_rate": 0.975
+}

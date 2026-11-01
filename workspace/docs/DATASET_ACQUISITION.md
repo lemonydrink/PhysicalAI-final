@@ -22,7 +22,7 @@ revisionを `22c57433fef692b5b9ecc0795344daac7fa867a5` に固定する。
 選択対象ファイルはparquet 3,071本、動画6,142本、合計9,213本。メタデータは別途保存する。
 
 ```bash
-cd /home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2
+cd ${WORKSPACE}
 .venv/bin/python scripts/download_eight_dataset.py --workers 8
 ```
 
@@ -35,7 +35,7 @@ manifestにはepisodeごとの元ファイル、SHA256、件数、固定revision
 学習前にepisode単位のtrain/validation分割と、trainだけからの正規化統計の作成が必要。
 取得完了は学習完了・成功率70%達成を意味しない。
 
-## 取得完了記録（2026-10-30）
+## 取得完了記録
 
 全3,071エピソード・404,716フレーム・9,213ファイルの取得と全件検証が完了。対象ファイル合計2,971,651,522 bytes（約2.77 GiB、メタデータ・キャッシュを除く）。タスク欠落・重複episode indexなし。両視点の全動画の復号・フレーム数一致を確認。
 

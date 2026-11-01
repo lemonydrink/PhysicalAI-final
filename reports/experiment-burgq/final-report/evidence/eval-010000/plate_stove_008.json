@@ -1,0 +1,19 @@
+{
+  "trial_id": "24b91ab4-1178-4996-8e9f-c166c1652fd8",
+  "task": "plate_stove",
+  "episode_id": 8,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "1e7f3074a40c3f82fe213727ca5477cefa7b7979f9513f214770ba590e1df7e3",
+  "protocol_hash": "cd2a06a9faad0a8e344af9366972afdaf57c832861ad40cbe0b798c21e444f25",
+  "initial_state_hash": "6a4808ac7cb06158895e7044b50d4d29ab6178ea6e15bb7d44823225b5d91b90",
+  "seed": 3600050,
+  "initial_state_index": 18,
+  "video": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/eval-010000/plate_stove_008.mp4",
+  "steps": 114,
+  "collision": true,
+  "collision_available": true,
+  "collision_free_success": false
+}

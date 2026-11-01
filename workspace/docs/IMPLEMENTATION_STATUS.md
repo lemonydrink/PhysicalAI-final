@@ -1,6 +1,6 @@
 > この文書はX-VLAの参照評価履歴です。現在のSmolVLA追加学習の成果ではありません。主系統は`backends/smolvla`へ切替中です。
 
-# 実装・評価結果（2026-10-30）
+# 実装・評価結果
 
 原案8タスクのシミュレーションで、2toINFベースモデル＋controller-frame同期実行が **78/80成功（97.5%）**。同じ全80trialに対するPARC式collision-free成功は **58/80（72.5%）**。8タスクすべてに成功動画があり、下表はcollision-freeな成功trialから1本ずつ選んだ。
 
@@ -39,6 +39,6 @@
 
 本学習は未実施。state/actionの時間整合・教師再生監査が未完のため、未検証Codecでの長時間SFTをゲートしている。ベースモデルで今回の70%目標を満たしたため、長時間の追加学習は開始していない。
 
-ROS非同期profileはmeasured-proprio・観測age上限1秒・sim時間pauseであり、同期profileと別条件。ROS経由の8task成功率、動画評価、trajectory fusion、実時間保証は未検証。実機制御はユーザー指定により対象外。
+ROS非同期profileはmeasured-proprio・観測age上限1秒・sim時間pauseであり、同期profileと別条件。ROS経由の8task成功率、動画評価、trajectory fusion、実時間保証は未検証。実機制御は実験条件として対象外。
 
 評価結果のW&B online送信は、自動承認レビューがローカルprotocol/configを外部へ送る点を理由に拒否した。回避送信せず、ローカルofflineへ保存した。online接続確認runと、この評価payload送信の可否は別である。

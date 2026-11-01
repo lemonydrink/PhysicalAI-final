@@ -1,0 +1,9 @@
+{
+  "stage": "complete",
+  "training_complete": true,
+  "final_ros2_complete": true,
+  "final_macro_success_rate": 0.975,
+  "final_accepted": true,
+  "best_checkpoint": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/train-002/ckpt-011434",
+  "hardware_tested": false
+}

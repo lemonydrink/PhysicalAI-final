@@ -1,0 +1,26 @@
+{
+  "trial_id": "ab4dc276-c58b-4266-82ab-205e3e7bed80",
+  "task": "bowl_center_plate",
+  "episode_id": 7,
+  "backend": "simulation",
+  "success": true,
+  "infra_error": false,
+  "intervention": false,
+  "bundle_hash": "7538f906c9988f5a5e500f7cb03d26ae12afb4504058888ffd695a81e6c1f050",
+  "protocol_hash": "9f38af9072bf27275c075a7cee0ac7d6678b0f76bc303455164fedc1deb3a2d6",
+  "initial_state_hash": "854bdfcd51ad77834b2872be857a610c949dee635c402d31fb482ba8b0fcdabf",
+  "seed": 600049,
+  "initial_state_index": 27,
+  "video": "${WORKSPACE}/backends/smolvla/runs/burgq-staged-batch32-run/final-ros2-best80/bowl_center_plate_007.mp4",
+  "steps": 88,
+  "collision": false,
+  "collision_available": true,
+  "collision_free_success": true,
+  "transport": "ros2_dds",
+  "ros2_namespace": "/physicalai/final/worker_1",
+  "ros2_counts": {
+    "actions": 88,
+    "observations": 88,
+    "stops": 0
+  }
+}
