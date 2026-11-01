@@ -1,5 +1,6 @@
 # PhysicalAI-final
 
+[最終レポートPDF（3ページ）](reports/experiment-burgq/final-report/REPORT_3P.pdf)
 BurgQ SmolVLAをLIBERO-PLUSの指定8タスクへ追加学習するシミュレーション実験。
 
 **学習・最終評価・動画生成は完了しました。**
