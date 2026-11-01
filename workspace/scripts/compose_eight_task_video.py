@@ -57,7 +57,7 @@ def compose(evaluation,output,tasks_path,preview=False,intro_seconds=0.,transiti
     manifest_path=output.with_suffix('.json');chosen=select_episodes(evaluation,read(tasks_path)['tasks'])
     if intro_seconds<0 or transition_hold_seconds<0:raise ValueError('timing must be nonnegative')
     intro_frames=round(intro_seconds*20);hold_frames=round(transition_hold_seconds*20)
-    recipe='collision-aware-success-only-v3-timing' if intro_frames or hold_frames else 'collision-aware-success-only-v2'
+    recipe='collision-aware-success-only-v4-plain-serif-intro' if intro_frames or hold_frames else 'collision-aware-success-only-v2'
     identity=[(x['source_sha256'],x['prompt'],x['episode_id']) for x in chosen]
     if output.exists() and manifest_path.exists():
         old=read(manifest_path)
@@ -71,24 +71,25 @@ def compose(evaluation,output,tasks_path,preview=False,intro_seconds=0.,transiti
     with imageio.get_writer(partial,fps=fps,codec='libx264',pixelformat='yuv420p',quality=8,
                             output_params=['-movflags','+faststart','-threads','2']) as writer:
         if intro_frames:
-            title=Image.new('RGB',(1280,720),(10,18,32));draw=ImageDraw.Draw(title)
-            heading=ImageFont.truetype(str(font_file),52);body=ImageFont.truetype(str(font_file),21)
-            draw.text((44,28),'SmolVLA × ROS 2',font=heading,fill=(120,215,255))
-            draw.text((46,100),'8-task manipulation experiment',font=font,fill='white')
-            draw.text((46,144),'Franka Panda simulation  |  Original motion speed: 1×',font=small,fill=(182,195,215))
+            title=Image.new('RGB',(1280,720),'white');draw=ImageDraw.Draw(title)
+            serif=Path('/usr/share/fonts/opentype/urw-base35/NimbusRoman-Regular.otf')
+            if not serif.exists():serif=Path('/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf')
+            heading=ImageFont.truetype(str(serif),48);body=ImageFont.truetype(str(serif),27)
+            subheading=ImageFont.truetype(str(serif),26)
+            draw.text((640,40),'SmolVLA + ROS 2',font=heading,fill='black',anchor='mt')
+            draw.text((640,102),'Eight-task manipulation experiment in simulation',font=subheading,fill='black',anchor='mt')
+            draw.line((80,150,1200,150),fill='black',width=1)
             for index,chapter in enumerate(chosen):
-                x=44+(index//4)*620;y=200+(index%4)*116
-                draw.rounded_rectangle((x,y,x+592,y+104),radius=10,fill=(23,37,57))
-                draw.text((x+14,y+12),f'{index+1:02d}',font=body,fill=(120,215,255))
+                x=80+(index//4)*620;y=194+(index%4)*112
+                draw.text((x,y),f'{index+1}.',font=body,fill='black')
                 lines=[];line=''
                 for word in chapter['prompt'].split():
                     candidate=(line+' '+word).strip()
                     if line and draw.textlength(candidate,font=body)>510:lines.append(line);line=word
                     else:line=candidate
                 if line:lines.append(line)
-                if len(lines)>3:raise ValueError('intro prompt exceeds card')
-                draw.multiline_text((x+57,y+12),'\n'.join(lines),font=body,fill='white',spacing=4)
-            draw.text((44,681),'Eight successful episodes; simulation evaluation, real hardware not tested.',font=small,fill=(182,195,215))
+                if len(lines)>3:raise ValueError('intro prompt exceeds list entry')
+                draw.multiline_text((x+36,y),'\n'.join(lines),font=body,fill='black',spacing=4)
             for _ in range(intro_frames):writer.append_data(np.asarray(title))
             offset=intro_frames
         for index,chapter in enumerate(chosen):

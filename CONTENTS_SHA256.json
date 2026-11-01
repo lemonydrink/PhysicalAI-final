@@ -47,8 +47,8 @@
     },
     {
       "path": "reports/2026-11-01-burgq/FINAL_COMPLETED.md",
-      "bytes": 1471,
-      "sha256": "40905e1c2458d2d5dd88834de597dc66d8a2ee66960017053cafbf396baf02ef"
+      "bytes": 1651,
+      "sha256": "45beab57c3062e77e9cfdd267a2a24048f0bf4c681e44c8548af01198f9a3116"
     },
     {
       "path": "reports/2026-11-01-burgq/FINAL_ROS2_AND_HARDWARE.md",
@@ -596,6 +596,16 @@
       "sha256": "41e0bff8a5287d7ee1344638eed6f541dc1224b63a3869e1c4bbfa19363ab59d"
     },
     {
+      "path": "reports/2026-11-01-burgq/final-deliverables/final_ros2_eight_tasks_plain_intro5_pause1.json",
+      "bytes": 9685,
+      "sha256": "b8e7f9e1a2847080e94a8aa6915da7323055ec5b961eab0b52c40e522bdf4c5f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-deliverables/final_ros2_eight_tasks_plain_intro5_pause1.mp4",
+      "bytes": 8490758,
+      "sha256": "a0530e8c79012fdff725b87782a1f0c44091443bcb560accd3f975c112479640"
+    },
+    {
       "path": "reports/2026-11-01-burgq/final-deliverables/final_ros2_eight_tasks_prompted_intro5_pause1.json",
       "bytes": 9677,
       "sha256": "9cddf6d96077d6ee7083e22a9d5aaf90e63f996fd0699676e5feac670075183d"
@@ -607,8 +617,8 @@
     },
     {
       "path": "reports/2026-11-01-burgq/final-deliverables/intro_preview.jpg",
-      "bytes": 75318,
-      "sha256": "a44568a43e81b4ac0668a0970ebc1af02aa862262352d033f58cab90314bfe6a"
+      "bytes": 67598,
+      "sha256": "d655c92dbd911dcec09b3d0d7a0de8cc56777f7329dfb834ad0d10536c4271a4"
     },
     {
       "path": "reports/2026-11-01-burgq/final-report/REPORT.md",
@@ -7992,8 +8002,8 @@
     },
     {
       "path": "workspace/scripts/compose_eight_task_video.py",
-      "bytes": 12220,
-      "sha256": "6ba5e2d8e441463de20b1ce582675376c86643a0c99998b64f57b493c8838822"
+      "bytes": 12211,
+      "sha256": "b2390e233e2ba936724ed023afb84994317498a3d78ed5c174b602af6917de37"
     },
     {
       "path": "workspace/scripts/download_eight_dataset.py",

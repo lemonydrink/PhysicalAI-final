@@ -14,10 +14,12 @@
 | middle_drawer | 10/10 | 10/10 |
 | plate_stove | 10/10 | 5/10 |
 
-[編集済みMP4](final-deliverables/final_ros2_eight_tasks_prompted_intro5_pause1.mp4)
+[編集済みMP4](final-deliverables/final_ros2_eight_tasks_plain_intro5_pause1.mp4)
 
 8本とも無衝突成功のepisodeを採用。左上に実際のpromptを表示する。動作部分は20fps・1倍速。冒頭に実験名と8タスク一覧を5秒、タスク間7か所に完了frameの1秒holdを追加した。元の48.65秒から60.65秒（1,213 frames）になった。episode内の間引き・速度変更・途中の切り貼りはない。
 
 同名JSONにsource hash・trial・prompt・chapter開始/終了・hold frame数を保存した。
 
 baselineの73/80は別の初期状態index10〜19・HTTP経路による評価。最終値との差だけで学習の因果効果を断定しない。元の中間レポートは当時のsnapshotとして保存する。
+
+冒頭画面は白背景・黒文字・serif書体の簡素な研究発表風の実験名と8タスク一覧に更新。冒頭5秒、タスク間7×1秒、全長60.65秒は維持。
