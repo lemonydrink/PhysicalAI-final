@@ -44,7 +44,7 @@
     "episodes_per_task": 1,
     "source": "final-ros2-best80",
     "prompt": "exact model dataset_instruction, top left",
-    "selection": "first successful episode, otherwise complete failed episode explicitly labelled",
+    "selection": "collision-free success first; only if none, successful episode with collision; never failed/unknown collision episode",
     "output": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/deliverables/final_ros2_eight_tasks_prompted.mp4",
     "resolution": [
       1280,
@@ -52,6 +52,7 @@
     ],
     "fps": 20,
     "final_evaluation_unit": "physicalai-smolvla-final-ros2.service",
-    "cpu_encoder_threads": 2
+    "cpu_encoder_threads": 2,
+    "show_collision_status": true
   }
 }

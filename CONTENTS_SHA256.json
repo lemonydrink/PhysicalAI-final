@@ -47,8 +47,8 @@
     },
     {
       "path": "reports/2026-11-01-burgq/FINAL_VIDEO_RESERVATION.md",
-      "bytes": 1641,
-      "sha256": "0ac6ad73220fb37febb4ef1f3fb8ac1b0190dd5d599dcfa59b335b785259aea0"
+      "bytes": 2072,
+      "sha256": "4a49607c3cf6e9e1cdfc336c05e24d6e1f886b6b1e1eb01d060ef824fc721a18"
     },
     {
       "path": "reports/2026-11-01-burgq/PARALLEL_EVALUATION.md",
@@ -77,13 +77,13 @@
     },
     {
       "path": "reports/2026-11-01-burgq/VIDEO_LAYOUT_BASELINE_PREVIEW.jpg",
-      "bytes": 53374,
-      "sha256": "a16a5c35bb0d4d09ef0eb87aaaf40ef70e100f1d471f1df65e7ce46eb6087bc4"
+      "bytes": 54825,
+      "sha256": "758c7812c81eb439c6ab7bdc454cd39500a3df39881b15fe5c67601ff6f9f830"
     },
     {
       "path": "reports/2026-11-01-burgq/VIDEO_LAYOUT_PREFLIGHT.json",
-      "bytes": 7456,
-      "sha256": "673a2bdf3285224dbe0fde69591f44a38d0f4a04e081fac40e83ce5815b3c682"
+      "bytes": 8674,
+      "sha256": "f3a80cb8a54b15edad4a010cbd2b0bcdd083e234afa2b05496e88622ea146f7e"
     },
     {
       "path": "reports/2026-11-01-burgq/audit/camera_canonical.png",
@@ -582,8 +582,8 @@
     },
     {
       "path": "reports/2026-11-01-burgq/final-ros2-plan.json",
-      "bytes": 2877,
-      "sha256": "8c67e3ea28040fb7bdec5b4b3bb436290aedb835e6890f077894a18d6719889f"
+      "bytes": 2950,
+      "sha256": "0ba34a36d46e0c6525ab272910bdca4e59b84cfb2b716c40f80497f64b1dd1fd"
     },
     {
       "path": "reports/2026-11-01-burgq/manifests/full-v1-evaluation.json",
@@ -3917,8 +3917,8 @@
     },
     {
       "path": "workspace/docs/FINAL_VIDEO_RESERVATION.md",
-      "bytes": 1641,
-      "sha256": "0ac6ad73220fb37febb4ef1f3fb8ac1b0190dd5d599dcfa59b335b785259aea0"
+      "bytes": 2072,
+      "sha256": "4a49607c3cf6e9e1cdfc336c05e24d6e1f886b6b1e1eb01d060ef824fc721a18"
     },
     {
       "path": "workspace/docs/IMPLEMENTATION_STATUS.md",
@@ -3997,8 +3997,8 @@
     },
     {
       "path": "workspace/scripts/compose_eight_task_video.py",
-      "bytes": 8281,
-      "sha256": "ae1a7c9b189d9688076dcfdc981343dedc2c614b2143712f0640294347935700"
+      "bytes": 9596,
+      "sha256": "bdffc677290c5a42922e5c71d6100d8ee85b38385fc535f6bb9cc1d2218f7df9"
     },
     {
       "path": "workspace/scripts/download_eight_dataset.py",

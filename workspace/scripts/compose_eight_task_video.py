@@ -34,9 +34,15 @@ def select_episodes(evaluation,tasks):
     for task in tasks:
         candidates=[r for r in records if r['task']==task['key'] and not r.get('infra_error') and r.get('video') and Path(r['video']).is_file() and Path(r['video']).stat().st_size>0]
         if not candidates:raise ValueError('No complete, non-infrastructure episode video for '+task['key'])
-        record=min(candidates,key=lambda r:(not r['success'],r['episode_id']))
+        candidates=[r for r in candidates if r['success'] and r.get('collision_available') is True and type(r.get('collision')) is bool]
+        if not candidates:raise ValueError('No successful episode with a verified collision result for '+task['key'])
+        for r in candidates:
+            if 'collision_free_success' in r and r['collision_free_success']!=(not r['collision']):raise ValueError('inconsistent collision flags: '+task['key'])
+        record=min(candidates,key=lambda r:(r['collision'],r['episode_id']))
         chosen.append(dict(task=task['key'],prompt=task['dataset_instruction'],success=record['success'],
-                           no_success_available=not any(r['success'] for r in candidates),episode_id=record['episode_id'],
+                           collision=record['collision'],selected_collision_free=not record['collision'],
+                           collision_free_success_candidates=sum(not r['collision'] for r in candidates),
+                           colliding_success_candidates=sum(r['collision'] for r in candidates),episode_id=record['episode_id'],
                            source=str(Path(record['video']).resolve()),source_sha256=digest(record['video']),
                            trial_id=record['trial_id'],bundle_hash=record['bundle_hash'],protocol_hash=record['protocol_hash'],steps=record['steps']))
     if len({r['bundle_hash'] for r in chosen})!=1 or len({r['protocol_hash'] for r in chosen})!=1:raise ValueError('mixed checkpoint/protocol videos are not permitted')
@@ -52,7 +58,7 @@ def compose(evaluation,output,tasks_path,preview=False):
     identity=[(x['source_sha256'],x['prompt'],x['episode_id']) for x in chosen]
     if output.exists() and manifest_path.exists():
         old=read(manifest_path)
-        if [(x['source_sha256'],x['prompt'],x['episode_id']) for x in old['chapters']]==identity and digest(output)==old['output_sha256']:return old
+        if old.get('render_recipe')=='collision-aware-success-only-v2' and [(x['source_sha256'],x['prompt'],x['episode_id']) for x in old['chapters']]==identity and digest(output)==old['output_sha256']:return old
         raise ValueError('output already exists with different provenance')
     partial=output.with_name(output.stem+'.partial.mp4');fps=20;offset=0
     font_file=Path('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')
@@ -69,7 +75,7 @@ def compose(evaluation,output,tasks_path,preview=False):
             overlay=Image.new('RGBA',(1280,720));draw=ImageDraw.Draw(overlay)
             height=20+len(lines)*34;draw.rectangle((0,0,1280,height),fill=(0,0,0,190))
             draw.multiline_text((16,12),'\n'.join(lines),font=font,fill='white',spacing=5)
-            outcome='SUCCESS' if chapter['success'] else 'FAILURE - no successful episode available'
+            outcome='SUCCESS / NO COLLISION' if chapter['selected_collision_free'] else 'SUCCESS / COLLISION'
             label=f"{index+1}/8 | {chapter['task']} | {outcome} | episode {chapter['episode_id']}"
             draw.rectangle((0,676,1280,720),fill=(0,0,0,200));draw.text((16,686),label,font=small,fill='white')
             if preview:draw.text((900,640),'BASELINE PREVIEW',font=small,fill=(255,220,80,255))
@@ -91,8 +97,13 @@ def compose(evaluation,output,tasks_path,preview=False):
     finally:reader.close()
     partial.replace(output)
     result=dict(output=str(output.resolve()),output_sha256=digest(output),width=1280,height=720,fps=fps,frames=offset,duration_seconds=offset/fps,
-                chapters=chosen,task_count=8,all_selected_episodes_successful=all(r['success'] for r in chosen),
-                selection_rule='first successful non-infrastructure episode by episode_id; otherwise first complete failed episode with FAILURE label',
+                render_recipe='collision-aware-success-only-v2',chapters=chosen,task_count=8,
+                all_selected_collision_free=all(r['selected_collision_free'] for r in chosen),
+                collision_free_task_count=sum(r['selected_collision_free'] for r in chosen),
+                collision_fallback_tasks=[r['task'] for r in chosen if r['collision']],
+                collision_metric='simulation non-target object displacement >1mm, not a physical contact sensor',
+                all_selected_episodes_successful=all(r['success'] for r in chosen),
+                selection_rule='first collision-free success by episode_id; only if none, first success with collision; no failures/unknown collision results',
                 prompt_source='tasks.resolved.json dataset_instruction: exact string supplied to policy',
                 no_episode_trimming=True,preview_baseline=preview,created_at=datetime.datetime.now(datetime.timezone.utc).isoformat())
     write(manifest_path,result);return result
@@ -111,7 +122,7 @@ def wait_and_compose(job):
     try:
         write(status_path,dict(stage='rendering',output=plan['output']))
         result=compose(job/'final-ros2-best80',plan['output'],ROOT/'data/tasks.resolved.json')
-        write(status_path,dict(stage='complete',output=result['output'],duration_seconds=result['duration_seconds'],all_eight_successful=result['all_selected_episodes_successful']))
+        write(status_path,dict(stage='complete',output=result['output'],duration_seconds=result['duration_seconds'],all_eight_successful=result['all_selected_episodes_successful'],collision_free_tasks=result['collision_free_task_count'],collision_fallback_tasks=result['collision_fallback_tasks']))
     except BaseException as exc:
         write(status_path,dict(stage='failed',error=repr(exc)));raise
 
