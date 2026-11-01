@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "workers": 2,
+  "transport": "ros2_dds",
+  "results": [
+    {
+      "worker": 0,
+      "namespace": "/physicalai/final/worker_0",
+      "dds_actions_verified": 3,
+      "expired_action_rejected": true,
+      "stop_acknowledged": true,
+      "reset_recovers": true
+    },
+    {
+      "worker": 1,
+      "namespace": "/physicalai/final/worker_1",
+      "dds_actions_verified": 3,
+      "expired_action_rejected": true,
+      "stop_acknowledged": true,
+      "reset_recovers": true
+    }
+  ],
+  "hardware_tested": false,
+  "timestamp": "2026-11-01T14:26:41.514411+00:00",
+  "transport_code_sha256": "07735ef9777de148e312711ddf356822407b0cf7189d7e09b7e3573827f66f07",
+  "tested_checkpoint": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/train-001/ckpt-002000",
+  "tested_weight_sha256": "ba0e7e2183f4ca73e009cc2e47289c6718c5f1a47ebb2627bf997c0979463c78",
+  "policy_smoke_output": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/ros2-policy-smoke-001",
+  "actual_policy_rollouts": 2,
+  "actual_policy_actions": 10
+}

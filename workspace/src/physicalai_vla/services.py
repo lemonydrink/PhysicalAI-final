@@ -57,14 +57,21 @@ def serve(kind,port,adapter=None):
             if state.get('env'):state['env'].close()
             state['env']=Environment(matches[0],pose_frame='controller');state['episode']=str(uuid.uuid4());state['sequence']=0
             state['obs']=state['env'].reset(int(payload.get('index',0)),int(payload.get('seed',42)))
-            state['scheduler'].reset(state['episode']);state['done']=False;state['bundle_hash']=None
+            state['scheduler'].reset(state['episode']);state['done']=False;state['bundle_hash']=None;state['stopped']=False
             return encode_observation(state['obs'],state['episode'],0)
+
+    @app.post('/stop')
+    def stop(payload:dict):
+        with lock:
+            state['stopped']=True
+            return {'stopped':True,'reason':payload.get('reason','requested')}
 
     @app.post('/step')
     def relative_step(payload:dict):
         if kind!='sim':raise HTTPException(400,'sim only')
         with lock:
             if 'env' not in state or payload.get('episode')!=state.get('episode'):raise HTTPException(409,'episode mismatch')
+            if state.get('stopped'):raise HTTPException(423,'driver stopped; reset required')
             if not state['done']:state['obs'],state['done']=state['env'].step(payload['action'])
             state['sequence']+=1
             return {'observation':encode_observation(state['obs'],state['episode'],state['sequence']),

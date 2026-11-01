@@ -1,0 +1,22 @@
+{
+  "model_family": "smolvla",
+  "initial_revision": "238fb0654cd598e287f8b6c2d64bd09af239c76f",
+  "checkpoint": "/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/train-001/ckpt-002000",
+  "manifest_sha256": "80937a5edd47ad83eef7eac55eac890435785f2faf9a5dc1c5696c6292925782",
+  "episodes_per_task": 2,
+  "max_steps": 5,
+  "initial_state_offset": 0,
+  "action_representation": "relative_osc",
+  "action_dt": 0.05,
+  "execution": "ROS 2 DDS action/observation with local HTTP interpreter adapters",
+  "transport": "ros2_dds",
+  "clock_domain": "same-host-monotonic",
+  "command_codec": "smolvla-relative-osc7-v1",
+  "simulator_workers": 2,
+  "preprocessing_profile": "libero_raw_v1",
+  "camera_transforms": {
+    "front": "rot180",
+    "wrist": "rot180"
+  },
+  "state_encoding": "libero_quat2axisangle"
+}

@@ -201,7 +201,7 @@ def train(manifest_path,output,steps=None,mode=None,smoke=False,resume=None):
     return output
 
 
-def evaluate(manifest_path,output,checkpoint=None,url='http://127.0.0.1:8011',task_key=None,episodes=10,max_steps=300,resume=False,urls=None):
+def evaluate(manifest_path,output,checkpoint=None,url='http://127.0.0.1:8011',task_key=None,episodes=10,max_steps=300,resume=False,urls=None,initial_state_offset=10,transport='http'):
     import base64,io,time,uuid
     import imageio.v2 as imageio
     import numpy as np
@@ -216,8 +216,10 @@ def evaluate(manifest_path,output,checkpoint=None,url='http://127.0.0.1:8011',ta
     if output.exists() and not resume:raise FileExistsError(output)
     output.mkdir(parents=True,exist_ok=True)
     protocol={'model_family':'smolvla','initial_revision':settings()['initial_revision'],'checkpoint':str(checkpoint) if checkpoint else None,
-              'manifest_sha256':digest(manifest_path),'episodes_per_task':episodes,'max_steps':max_steps,'initial_state_offset':10,
+              'manifest_sha256':digest(manifest_path),'episodes_per_task':episodes,'max_steps':max_steps,'initial_state_offset':initial_state_offset,
               'action_representation':'relative_osc','action_dt':.05,'execution':'synchronous HTTP simulation worker'}
+    if transport=='ros2':protocol.update(transport='ros2_dds',execution='ROS 2 DDS action/observation with local HTTP interpreter adapters',clock_domain='same-host-monotonic',command_codec='smolvla-relative-osc7-v1',simulator_workers=len(urls or [url]))
+    elif transport!='http':raise ValueError('unsupported transport')
     if settings().get('preprocessing_profile'):
         protocol.update(preprocessing_profile=settings()['preprocessing_profile'],camera_transforms=settings()['camera_transforms'],state_encoding=settings()['state_encoding'])
     if (output/'protocol.json').exists():
@@ -254,26 +256,41 @@ def evaluate(manifest_path,output,checkpoint=None,url='http://127.0.0.1:8011',ta
             record_path=output/f'{task["key"]}_{ep:03d}.json'
             if record_path.exists():
                 existing=read_json(record_path)
-                if existing['bundle_hash']!=bundle_hash or existing['protocol_hash']!=digest(output/'protocol.json') or existing['task']!=task['key'] or existing['episode_id']!=ep or not Path(existing['video']).is_file():raise ValueError('inconsistent completed evaluation trial')
+                if existing['bundle_hash']!=bundle_hash or existing['protocol_hash']!=digest(output/'protocol.json') or existing['task']!=task['key'] or existing['episode_id']!=ep or (not existing.get('infra_error') and not Path(existing['video']).is_file()):raise ValueError('inconsistent completed evaluation trial')
                 continue
-            seed=42+task['dataset_task_index']*100000+ep;context=shared.reset(seed)
-            obs=call(worker_url,'/reset',{'task':task['key'],'index':10+ep,'seed':seed})
-            video=output/f'{task["key"]}_{ep:03d}.mp4';result={}
-            with imageio.get_writer(video,fps=20,codec='libx264') as writer:
-                writer.append_data(np.array(Image.open(io.BytesIO(base64.b64decode(obs['front']))))[::-1,::-1])
-                for step in range(max_steps):
-                    a=shared.select(context,obs)
-                    if a.shape!=(7,) or not np.isfinite(a).all():raise ValueError('invalid SmolVLA action')
-                    result=call(worker_url,'/step',{'episode':obs['episode'],'action':np.clip(a,-1,1).tolist()});obs=result['observation']
+            obs={};result={};video=output/f'{task["key"]}_{ep:03d}.mp4'
+            seed=42+task['dataset_task_index']*100000+ep
+            try:
+                seed=42+task['dataset_task_index']*100000+ep;context=shared.reset(seed)
+                obs=call(worker_url,'/reset',{'task':task['key'],'index':initial_state_offset+ep,'seed':seed})
+                video=output/f'{task["key"]}_{ep:03d}.mp4';result={}
+                with imageio.get_writer(video,fps=20,codec='libx264') as writer:
                     writer.append_data(np.array(Image.open(io.BytesIO(base64.b64decode(obs['front']))))[::-1,::-1])
-                    if result['success']:break
-            record={'trial_id':str(uuid.uuid4()),'task':task['key'],'episode_id':ep,'backend':'simulation',
-                    'success':result['success'],'infra_error':False,'intervention':False,'bundle_hash':bundle_hash,
-                    'protocol_hash':digest(output/'protocol.json'),'initial_state_hash':result['initial_state_hash'],
-                    'seed':seed,'initial_state_index':10+ep,'video':str(video.resolve()),'steps':result['steps'],
-                    'collision':result['collision'],'collision_available':True,'collision_free_success':result['success'] and not result['collision']}
-            write_json(output/f'{task["key"]}_{ep:03d}.json',record,exclusive=True)
-            print(task['key'],ep,record['success'],flush=True)
+                    for step in range(max_steps):
+                        if transport=='ros2' and obs.get('transport')!='ros2':raise ValueError('DDS observation evidence missing')
+                        a=shared.select(context,obs)
+                        if a.shape!=(7,) or not np.isfinite(a).all():raise ValueError('invalid SmolVLA action')
+                        result=call(worker_url,'/step',{'episode':obs['episode'],'action':np.clip(a,-1,1).tolist(),'observation_time':obs['observation_time'],'bundle_hash':bundle_hash});obs=result['observation']
+                        writer.append_data(np.array(Image.open(io.BytesIO(base64.b64decode(obs['front']))))[::-1,::-1])
+                        if result['success']:break
+                record={'trial_id':str(uuid.uuid4()),'task':task['key'],'episode_id':ep,'backend':'simulation',
+                        'success':result['success'],'infra_error':False,'intervention':False,'bundle_hash':bundle_hash,
+                        'protocol_hash':digest(output/'protocol.json'),'initial_state_hash':result['initial_state_hash'],
+                        'seed':seed,'initial_state_index':initial_state_offset+ep,'video':str(video.resolve()),'steps':result['steps'],
+                        'collision':result['collision'],'collision_available':True,'collision_free_success':result['success'] and not result['collision']}
+                if transport=='ros2':record.update(transport='ros2_dds',ros2_namespace=obs['ros2_namespace'],ros2_counts=obs['ros2_counts'])
+                write_json(output/f'{task["key"]}_{ep:03d}.json',record,exclusive=True)
+                print(task['key'],ep,record['success'],flush=True)
+            except Exception as exc:
+                if transport!='ros2':raise
+                record=dict(trial_id=str(uuid.uuid4()),task=task['key'],episode_id=ep,backend='simulation',
+                            success=False,infra_error=True,intervention=False,bundle_hash=bundle_hash,
+                            protocol_hash=digest(output/'protocol.json'),seed=seed,initial_state_index=initial_state_offset+ep,
+                            initial_state_hash=result.get('initial_state_hash'),video=str(video.resolve()),steps=result.get('steps',0),
+                            collision_available=False,collision_free_success=False,transport='ros2_dds',
+                            ros2_namespace=obs.get('ros2_namespace'),ros2_counts=obs.get('ros2_counts',{}),error=repr(exc))
+                write_json(record_path,record,exclusive=True)
+                print(task['key'],ep,'INFRA_ERROR',repr(exc),flush=True)
     with ThreadPoolExecutor(max_workers=len(worker_urls)) as pool:
         futures=[pool.submit(worker,i) for i in range(len(worker_urls))]
         for future in futures:future.result()
@@ -290,7 +307,7 @@ def main():
     sub.add_parser('download');sub.add_parser('plan')
     a=sub.add_parser('prepare');a.add_argument('--source',type=Path,required=True);a.add_argument('--output',type=Path,required=True);a.add_argument('--resume',action='store_true')
     a=sub.add_parser('evaluate');a.add_argument('--manifest',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
-    a.add_argument('--worker-urls',nargs='+');a.add_argument('--resume',action='store_true');a.add_argument('--checkpoint',type=Path);a.add_argument('--url',default='http://127.0.0.1:8011');a.add_argument('--task');a.add_argument('--episodes',type=int,default=10);a.add_argument('--max-steps',type=int,default=300)
+    a.add_argument('--initial-state-offset',type=int,default=10);a.add_argument('--transport',choices=['http','ros2'],default='http');a.add_argument('--worker-urls',nargs='+');a.add_argument('--resume',action='store_true');a.add_argument('--checkpoint',type=Path);a.add_argument('--url',default='http://127.0.0.1:8011');a.add_argument('--task');a.add_argument('--episodes',type=int,default=10);a.add_argument('--max-steps',type=int,default=300)
     a=sub.add_parser('train-epoch');a.add_argument('--manifest',type=Path,required=True);a.add_argument('--output',type=Path,required=True);a.add_argument('--resume',type=Path,required=True);a.add_argument('--wandb-mode',choices=['online','offline','disabled'])
     a=sub.add_parser('train');a.add_argument('--manifest',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
     a.add_argument('--resume',type=Path);a.add_argument('--steps',type=int);a.add_argument('--smoke',action='store_true');a.add_argument('--wandb-mode',choices=['online','offline','disabled'])
@@ -298,7 +315,7 @@ def main():
     if args.command=='plan':print(json.dumps(settings(),indent=2))
     elif args.command=='download':download()
     elif args.command=='prepare':print(prepare(args.source,args.output,args.resume))
-    elif args.command=='evaluate':print(evaluate(args.manifest,args.output,args.checkpoint,args.url,args.task,args.episodes,args.max_steps,args.resume,args.worker_urls))
+    elif args.command=='evaluate':print(evaluate(args.manifest,args.output,args.checkpoint,args.url,args.task,args.episodes,args.max_steps,args.resume,args.worker_urls,args.initial_state_offset,args.transport))
     elif args.command=='train-epoch':
         from epoch_training import train_epoch
         print(train_epoch(args.manifest,args.output,args.resume,args.wandb_mode))

@@ -1,0 +1,20 @@
+[Unit]
+Description=Final best-checkpoint ROS 2 evaluation, two simulators, after BurgQ training exits
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+
+[Service]
+Type=exec
+WorkingDirectory=/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2
+ExecStart=/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/.venv/bin/python -u /home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/final_ros2.py --job /home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101 --wait
+Environment=PYTHONUNBUFFERED=1
+Environment=WANDB_MODE=offline
+StandardOutput=append:/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/final-ros2-queue.log
+StandardError=append:/home/lemonydrink/PhysicalAI/xvla-libero-plus-ros2/backends/smolvla/runs/burgq-staged-batch32-20261101/final-ros2-queue.log
+Restart=on-failure
+RestartSec=60
+TimeoutStopSec=30
+KillMode=control-group
+
+[Install]
+WantedBy=default.target

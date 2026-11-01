@@ -5,6 +5,7 @@ BurgQ SmolVLAをLIBERO-PLUSの指定8タスクへ追加学習するシミュレ�
 **学習前baseline：73/80成功（91.25%）。全8タスクの成功動画あり。追加学習は進行中で、最終SFT結果は未確定です。**
 
 - [4台並列評価への切替記録](reports/2026-11-01-burgq/PARALLEL_EVALUATION.md)
+- [最終ROS 2評価の予約と実機移行範囲](reports/2026-11-01-burgq/FINAL_ROS2_AND_HARDWARE.md)
 - [実験レポート](reports/2026-11-01-burgq/REPORT.md)
 - [8タスクの成功動画](reports/2026-11-01-burgq/videos/)
 - [設定・監査・80試行の結果](reports/2026-11-01-burgq/)

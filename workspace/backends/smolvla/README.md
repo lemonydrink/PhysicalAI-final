@@ -1,3 +1,5 @@
+最終評価はbest checkpointをROS 2 DDS経由・2並列・別初期状態80回で評価する予約を追加。実機移行の範囲と未検証事項は ../../docs/FINAL_ROS2_AND_HARDWARE.md を参照。
+
 現行BurgQ実験の評価はシミュレーター4台＋共有モデルへ切替済み。plan.jsonのevaluation_workers=4。trial別RNG/action queueを分離し、評価のexecution.jsonとW&Bに実行情報を保存する。
 
 # SmolVLA：8task追加学習

@@ -17,18 +17,28 @@
     },
     {
       "path": "README.md",
-      "bytes": 1026,
-      "sha256": "93f92bbaff58c657a5c7cf0a7a7a8bfe8c5ce436248c7d4c6a3f63a11f63f412"
+      "bytes": 1131,
+      "sha256": "60e181e15ea2c9dddf118e40da1dc34b9643f8004b4b05964a2d25457be32697"
     },
     {
       "path": "REPRODUCIBILITY.md",
-      "bytes": 5116,
-      "sha256": "83717b510edfeebc5641c45e082b8ee1ea03db3feef9f15b6ef1456c1da83e1d"
+      "bytes": 6439,
+      "sha256": "e1c834f9ba546dd684fb6ac99f276e3438cf29a5b78392aec3e622840c4a8a6d"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
       "bytes": 1154,
       "sha256": "4e65258e443b8c2a3fa595ddd75944d656450fe9cdf6a5cf1fdcee5aba80aee7"
+    },
+    {
+      "path": "deployment/physicalai-smolvla-final-ros2.service.example",
+      "bytes": 994,
+      "sha256": "a0051c24a1998dabe75991032e6c2bc975ad34f5b97b4ee364be2ff986168d39"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/FINAL_ROS2_AND_HARDWARE.md",
+      "bytes": 6492,
+      "sha256": "bba15e489600cf00f67f54c7eefa7f4a82665114c56c3b9e4f5e439b7970f318"
     },
     {
       "path": "reports/2026-11-01-burgq/PARALLEL_EVALUATION.md",
@@ -44,6 +54,16 @@
       "path": "reports/2026-11-01-burgq/REPORT.md",
       "bytes": 8803,
       "sha256": "7f4ccabd84ee1a4b77a9db58baed44a92805e10919b9607a87b88c23fe9c5654"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/ROS2_PREFLIGHT.json",
+      "bytes": 1147,
+      "sha256": "34524fa6dcc56d468c62f53d05b90aaf4868a16b5fd31252e12c06c41d71dc5f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/ROS2_VALIDATION.json",
+      "bytes": 668,
+      "sha256": "018ea5ffecc8c6fe3c6f5f1dc6c302d15f6bfdc30ee485438ad02df6280cbdee"
     },
     {
       "path": "reports/2026-11-01-burgq/audit/camera_canonical.png",
@@ -541,6 +561,11 @@
       "sha256": "41e0bff8a5287d7ee1344638eed6f541dc1224b63a3869e1c4bbfa19363ab59d"
     },
     {
+      "path": "reports/2026-11-01-burgq/final-ros2-plan.json",
+      "bytes": 2272,
+      "sha256": "894848f07b4868f447b44f3aa4367ccf99cda2b0d1954cce6ab9ab273dd85aeb"
+    },
+    {
       "path": "reports/2026-11-01-burgq/manifests/full-v1-evaluation.json",
       "bytes": 1278336,
       "sha256": "80937a5edd47ad83eef7eac55eac890435785f2faf9a5dc1c5696c6292925782"
@@ -569,6 +594,36 @@
       "path": "reports/2026-11-01-burgq/plan.json",
       "bytes": 1717,
       "sha256": "8b90841ab3d0537aa504028f4251c18f6018d930fe03554ec5dd1f62890f0c77"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/ros2-policy-smoke/execution.json",
+      "bytes": 297,
+      "sha256": "5801675867747d7972e4d23d7f9662b413da58b068fceb5a43868aaa481cea4f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/ros2-policy-smoke/milk_basket_000.json",
+      "bytes": 925,
+      "sha256": "e931c52fbd7530d1e0ef40a13f365495d041488926a8e8505fc04a49cd0c082d"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/ros2-policy-smoke/milk_basket_000.mp4",
+      "bytes": 8726,
+      "sha256": "e72c0f28270ddd3aeb6c529d9b2b5c250816121c0d48c4b2fff98967f2f9a38f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/ros2-policy-smoke/milk_basket_001.json",
+      "bytes": 925,
+      "sha256": "32e19eea8442d9f91ddc0206fcf92e19a692e509e6d62a8ff5b7314a06bf18dc"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/ros2-policy-smoke/milk_basket_001.mp4",
+      "bytes": 8525,
+      "sha256": "95125ce1ca27ecb3e2091ba691f338a088c7664cf70f10033578a588cdc30c7b"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/ros2-policy-smoke/protocol.json",
+      "bytes": 857,
+      "sha256": "1dd15b7e8063eb1e96ca6b593b1cfdbb8061ec2cc0a94b4be42944842b0c620f"
     },
     {
       "path": "reports/2026-11-01-burgq/snapshot.json",
@@ -641,6 +696,21 @@
       "sha256": "dc3ebc14ea6b98b4258bc9d9dc3757fe66fdd3a3b769d9987de1eaf19f181aae"
     },
     {
+      "path": "ros2.env",
+      "bytes": 712,
+      "sha256": "7204e58e7297aeea29a6b599d19d68092c3b9f533c95dd525e704e2ebcff9787"
+    },
+    {
+      "path": "ros2/pixi.lock",
+      "bytes": 482364,
+      "sha256": "bcff5ec30c93b6578799d3a5b0f7d13ef40eda3b3f05f5703b7c2b56b5e5023b"
+    },
+    {
+      "path": "ros2/pixi.toml",
+      "bytes": 356,
+      "sha256": "03499e13ad739dc4c0857d5c5089b31244ee7821b1c2bdd2625428e12b9897d6"
+    },
+    {
       "path": "workspace/.gitignore",
       "bytes": 214,
       "sha256": "1777aadc2a6c93697542d51746b286b213a340b136942aef6deada435b15bf69"
@@ -687,8 +757,8 @@
     },
     {
       "path": "workspace/backends/smolvla/README.md",
-      "bytes": 5717,
-      "sha256": "739318d8b6ece8074d3db8a2201dc06e0541c1d57942b360fcad5c00643846c9"
+      "bytes": 5926,
+      "sha256": "cbbfb263f8ce6203a64436eb557bb60874e061d26e2732e0fcc303e35347027d"
     },
     {
       "path": "workspace/backends/smolvla/STAGED_ONE_EPOCH.md",
@@ -746,6 +816,11 @@
       "sha256": "c626fd71df54e664ec0aee6a0983b3ea473190bf44e78b56349ddf83d568c157"
     },
     {
+      "path": "workspace/backends/smolvla/final_ros2.py",
+      "bytes": 10213,
+      "sha256": "8c91c70ae9998e2f285d266b85bfc7a114cbbc17f75f3e430a3a35a711c6c51a"
+    },
+    {
       "path": "workspace/backends/smolvla/input_contract.py",
       "bytes": 701,
       "sha256": "738bcd10074f0acf633d932a99f2a478f13dbc54c52f738c519e341f3e7dc70e"
@@ -772,8 +847,8 @@
     },
     {
       "path": "workspace/backends/smolvla/run.py",
-      "bytes": 21377,
-      "sha256": "0aaf2913d54896ddcb020e2a4c162e236bcfb7f89c469185af85f4cb9bece89a"
+      "bytes": 23482,
+      "sha256": "f8f0e903beee130f308294872901bc028629c3d4008ec1ec4329a87de24af74e"
     },
     {
       "path": "workspace/backends/smolvla/source.json",
@@ -3816,6 +3891,11 @@
       "sha256": "2c439fdddb7862955436711c095265cca42bd82f2c4c28a9f2011266c70f6562"
     },
     {
+      "path": "workspace/docs/FINAL_ROS2_AND_HARDWARE.md",
+      "bytes": 6492,
+      "sha256": "bba15e489600cf00f67f54c7eefa7f4a82665114c56c3b9e4f5e439b7970f318"
+    },
+    {
       "path": "workspace/docs/IMPLEMENTATION_STATUS.md",
       "bytes": 5019,
       "sha256": "73d38d7a4734a29341e67ce486f57b2027a8fba2b15567bff2342fb5af48e195"
@@ -3906,14 +3986,29 @@
       "sha256": "b3da3c8292a86d2eaec9aafec97ffe4257c1b433fe9bdbbc7116fac9d6e874bd"
     },
     {
+      "path": "workspace/scripts/run_smolvla_ros.sh",
+      "bytes": 288,
+      "sha256": "694af2ce279ebe5d1181db258eb9bb16d10bc73c302b145ce7b41a595d07831c"
+    },
+    {
       "path": "workspace/scripts/smoke_ros.py",
       "bytes": 889,
       "sha256": "0ffa1274ab00ed479c25466f4051e9a8fef1517842ffdaee2fe275c54ed72721"
     },
     {
+      "path": "workspace/scripts/smolvla_ros_transport.py",
+      "bytes": 8951,
+      "sha256": "07735ef9777de148e312711ddf356822407b0cf7189d7e09b7e3573827f66f07"
+    },
+    {
       "path": "workspace/src/physicalai_vla/__init__.py",
       "bytes": 22,
       "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed"
+    },
+    {
+      "path": "workspace/src/physicalai_vla/action_guard.py",
+      "bytes": 3094,
+      "sha256": "311bf74388f09088249615b27645501bd73e5d02d13a0ea98a1ba8085edd0f9c"
     },
     {
       "path": "workspace/src/physicalai_vla/artifacts.py",
@@ -3946,6 +4041,11 @@
       "sha256": "dd20ffbd89cc7f0a7f1bcf6045af9235248b3a08694529b0bdd5571e3f3df63c"
     },
     {
+      "path": "workspace/src/physicalai_vla/hardware_adapter.py",
+      "bytes": 4367,
+      "sha256": "0b23447aff1ab4854a738099ea2b290a1497c4215e03a33bffe7d13513368f97"
+    },
+    {
       "path": "workspace/src/physicalai_vla/io.py",
       "bytes": 859,
       "sha256": "6cf51b261fd7ae4db209e4ffa5b20726085bfe2ce2a209ddd539659e34f9c1e5"
@@ -3962,8 +4062,8 @@
     },
     {
       "path": "workspace/src/physicalai_vla/services.py",
-      "bytes": 5444,
-      "sha256": "35f58495e587a9e93d67840245336700d7892247d700d914fde370d0769a49e1"
+      "bytes": 5745,
+      "sha256": "fe81b687b8b49d57749c10209e4f988086139b2eafbd052db2ffc18fa83e2ab3"
     },
     {
       "path": "workspace/src/physicalai_vla/simulation.py",
@@ -3981,6 +4081,11 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "path": "workspace/tests/test_action_guard.py",
+      "bytes": 1280,
+      "sha256": "ed9e8111838484112d8b62a3cd8a4738079df7f94d606868bd0bc476020f716f"
+    },
+    {
       "path": "workspace/tests/test_codec.py",
       "bytes": 1349,
       "sha256": "f3d120f05b0da63a7ba6d0c0ef9e23d410d34a542380f7d45b699c236b381a4b"
@@ -3994,6 +4099,11 @@
       "path": "workspace/tests/test_evaluation.py",
       "bytes": 1119,
       "sha256": "87812a38295ad1e4a67e6fed66bf8e7d9cc1f0bee799c87fd39e8266db2b5e4d"
+    },
+    {
+      "path": "workspace/tests/test_hardware_adapter.py",
+      "bytes": 1576,
+      "sha256": "8b7169b9567fb9397f3142aea580da63960bc89293b6e569767fd03e86403b0e"
     },
     {
       "path": "workspace/tests/test_provenance.py",

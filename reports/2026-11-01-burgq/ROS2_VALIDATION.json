@@ -1,0 +1,10 @@
+{
+  "core_tests": "32 passed",
+  "backend_tests": "14 passed in original asset-complete workspace",
+  "dds_two_simulator_preflight": "passed: action, expiry rejection, stop acknowledgement, reset recovery",
+  "actual_policy_smoke": "two workers, two rollouts, ten DDS actions; not a task-success benchmark",
+  "final_service": "enabled and waiting for training service inactive + successful checkpoint selection",
+  "hardware": "mock-controller tests only; no Franka driver commissioning or physical task success verified",
+  "dependencies": "uv pip check and uv lock --check passed; existing wandb retained; no new dependency",
+  "final_trials": "not executed yet"
+}

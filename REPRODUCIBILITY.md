@@ -57,3 +57,14 @@ ROS 2メッセージ定義とbridgeスクリプトは `workspace/ros2_ws/src/` �
 ## 公開範囲
 
 コード、設定、lock、設計資料、第三者ソースの既存snapshot、監査、全80trial JSON、baseline成功動画各タスク1本、途中学習metricsを含む。重み、raw/HDF5学習データ、外部scene assets、venv、build、W&Bバイナリ、旧大容量分析archive・第三者のデモ動画とテスト用tensor fixtureは除外した。元の実行フォルダと学習プロセスはそのままローカルに残す。
+
+
+## 最終ROS 2評価（追加）
+
+`ros2/pixi.toml` と `ros2/pixi.lock` にROS 2 Jazzy環境を追加保存した。Pixi自体を導入してから `pixi install --locked --manifest-path ros2/pixi.toml` を実行する。学習venvをdeactivateした別のbashで `source ros2.env`、`cd workspace`、`bash scripts/build_ros.sh` を実行してcustom messageをbuildする。
+
+`workspace/scripts/run_smolvla_ros.sh` はこのROS環境とML環境を分ける。`PHYSICALAI_ROS_ENV` で別のROS環境設定を指定できる。公開 `.service.example` は元ホストのパスを証跡として保持するため、別ホストへそのまま登録せず配置先を修正する。
+
+`backends/smolvla/final_ros2.py --job <audited-job> --policy-smoke` が2並列の実環境DDS配線と短いpolicy rolloutを確認し、`--wait` が学習・モデル選択とプロセス退出後の最終80回を予約する。最終評価はindex20〜29、2並列、best checkpoint、ROS 2 DDS。中間評価は4並列HTTPを維持する。
+
+実機は未検証。vendor driver、実測カメラ/座標/制御gainの校正、独立watchdog・非常停止・controller commissioningが必要。詳細は `workspace/docs/FINAL_ROS2_AND_HARDWARE.md` を参照。デフォルトの予約はsimulationのみで実機を有効化しない。

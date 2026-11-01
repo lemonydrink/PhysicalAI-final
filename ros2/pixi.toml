@@ -1,0 +1,17 @@
+[workspace]
+name = "physicalai-ros2"
+version = "0.1.0"
+channels = ["https://prefix.dev/robostack-jazzy", "conda-forge"]
+platforms = ["linux-64"]
+
+[dependencies]
+ros-jazzy-desktop = "*"
+ros-jazzy-demo-nodes-py = "*"
+colcon-common-extensions = "*"
+cmake = "*"
+ninja = "*"
+pkg-config = "*"
+cxx-compiler = "*"
+
+[tasks]
+build = "colcon build --symlink-install"
