@@ -17,8 +17,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 1876,
-      "sha256": "7aa46045dac15b02f84ac5fff8d9ed778128a7e5d16214752ffee5a886d894a8"
+      "bytes": 2034,
+      "sha256": "8dd556ecda981410c954188ff2e3ca6a9cd1743a6e87483d5a56362b0f36faeb"
     },
     {
       "path": "REPRODUCIBILITY.md",
@@ -622,8 +622,8 @@
     },
     {
       "path": "reports/2026-11-01-burgq/final-report/REPORT.md",
-      "bytes": 22173,
-      "sha256": "a9756e4226e8b5abafac4c1928893710426cc3f8fec1e06c4223372c7600e778"
+      "bytes": 22533,
+      "sha256": "de2b9ce2c88e4daf799df579d1b5eaf9dee09d57a10e2add22876bdf94cf419e"
     },
     {
       "path": "reports/2026-11-01-burgq/final-report/VERIFICATION.json",
@@ -4161,9 +4161,124 @@
       "sha256": "80e823aabae280696505b32dfa0b341744aa8564fa0bd8445cf731b5933e095d"
     },
     {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/README.md",
+      "bytes": 5663,
+      "sha256": "5f3ec65d09579872f9082f7c69d4eb81e098898ec635d7911374b0727482fbd2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/figures/bowl_center_plate.png",
+      "bytes": 488724,
+      "sha256": "5463943a71720f68e0fb2344faa5f0e8f2f354e69c9a846039eaa00c60b7e09f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/figures/bowl_cookie_plate.png",
+      "bytes": 512982,
+      "sha256": "04a01ae2c0eab71e305cac70a0b4ca7b051f5e38b8dc96476c2861653cc25d73"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/figures/bowl_plate.png",
+      "bytes": 463616,
+      "sha256": "54907e1a1211943448fa386bf23635cc35568130a4ca8cb8ae73afb705ffc382"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/figures/butter_basket.png",
+      "bytes": 526308,
+      "sha256": "0bc50a74350a2c98ace26365e90bc70240604fb5f0e529c847e1bf5c0d88bfce"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/figures/middle_drawer.png",
+      "bytes": 533122,
+      "sha256": "310911f25a82061958aacedd5daf8cda677b94333fe5a8871f55634bfe8c7e12"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/figures/milk_basket.png",
+      "bytes": 529979,
+      "sha256": "536181ed94531ba41d1677b415ba4dc194d245c37e387c635488b0ba0bc2fa26"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/figures/motion_summary.csv",
+      "bytes": 1356,
+      "sha256": "506644690afdc91456855372dde98f539dc36e778fc0dee31ff8951387e1687f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/figures/motion_summary.json",
+      "bytes": 3655,
+      "sha256": "d2511195ef68a36c8eceb645c8b26b38e5a1035f06c909a253d7c3bc8da2eb9c"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/figures/overview.png",
+      "bytes": 820631,
+      "sha256": "f6a8575048f87a1de3c768e4d18a887ac9cf92bad6bf6714e4025b1b8d5aae8f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/figures/plate_stove.png",
+      "bytes": 502274,
+      "sha256": "275afd4f90a1a58829eb8504633848c281518c1723869a90d6ab15b3b8d4887a"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/figures/tomato_basket.png",
+      "bytes": 527730,
+      "sha256": "2daba1fbada2779f7997e7666ad9b15273638568217e98986207afa0279627c2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/lerobot_dataset/README.md",
+      "bytes": 298,
+      "sha256": "1eca01bc618d066cfb3c1a73179cc2c0eefe412d848609ad2917d5211a2defe2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/lerobot_dataset/VERIFICATION.json",
+      "bytes": 370,
+      "sha256": "70e62b9f406330d1c4be8ae5439c7af9d329fc254660fa4177893ebc7a55250f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/lerobot_dataset/data/chunk-000/file-000.parquet",
+      "bytes": 255022,
+      "sha256": "6b8211274f523442995ffaa8aa2b2eaf7eb2f12660fe4c9223306c531480aa51"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/lerobot_dataset/meta/episodes/chunk-000/file-000.parquet",
+      "bytes": 485781,
+      "sha256": "b45168650b4cf80350a066cfe6eefb5fdcf2e8b51e27d82db50fd61b1aeae30e"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/lerobot_dataset/meta/info.json",
+      "bytes": 5774,
+      "sha256": "a0698757d7e20a2369e2b13db3f45e7a828e1bddbb78ffa0b0f0787fcaa81860"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/lerobot_dataset/meta/stats.json",
+      "bytes": 25645,
+      "sha256": "2fbeffbb8602a0f162f4cf386f8dbae3d4d2ed4bbe27ccdcee04361f4d3ae8e4"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/lerobot_dataset/meta/tasks.parquet",
+      "bytes": 2478,
+      "sha256": "bcdc2d9ecca97c3caad34de67197cb64a9b1c92d5e99c38dfb28f86492ff4342"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/lerobot_dataset/provenance.json",
+      "bytes": 6655,
+      "sha256": "40d74365b3814bf92bd4aa6deb36919a77c4bfa9d58eaa349e4e72ff764ef5c0"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/lerobot_dataset/videos/observation.images.image/chunk-000/file-000.mp4",
+      "bytes": 1557478,
+      "sha256": "df903055bd910fb68a86cce2efbedb33e1a0b7f89e77f76b85d27031357d46a2"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/lerobot_dataset/videos/observation.images.image2/chunk-000/file-000.mp4",
+      "bytes": 1475610,
+      "sha256": "b8d7034473bc6f2e88249f75fcb77eda3cec5c7f262729038ad1a2761640a82f"
+    },
+    {
+      "path": "reports/2026-11-01-burgq/final-report/trajectories/replay_manifest.json",
+      "bytes": 14388,
+      "sha256": "3a02e468b9af106a39eb49bd315671f709bb4a118cbd783c81989bff681cd2c5"
+    },
+    {
       "path": "reports/2026-11-01-burgq/final-report/write_report.py",
-      "bytes": 23316,
-      "sha256": "dbe6d50dfc8515da224ea6a83e86e5913f4a5158ac89a9cef1ce815079584c9f"
+      "bytes": 23692,
+      "sha256": "9ca25f68ffe74e41db02631f319349faf044483afd6df2f428250d28f740e0aa"
     },
     {
       "path": "reports/2026-11-01-burgq/final-ros2-best80/RESULT.md",
@@ -4841,6 +4956,11 @@
       "sha256": "c626fd71df54e664ec0aee6a0983b3ea473190bf44e78b56349ddf83d568c157"
     },
     {
+      "path": "workspace/backends/smolvla/export_replay_lerobot.py",
+      "bytes": 7110,
+      "sha256": "862f247228aaa926e61886e84c96e8d2e065e0a952a206923751be19a10f6c9d"
+    },
+    {
       "path": "workspace/backends/smolvla/final_ros2.py",
       "bytes": 10213,
       "sha256": "8c91c70ae9998e2f285d266b85bfc7a114cbbc17f75f3e430a3a35a711c6c51a"
@@ -4849,6 +4969,11 @@
       "path": "workspace/backends/smolvla/input_contract.py",
       "bytes": 701,
       "sha256": "738bcd10074f0acf633d932a99f2a478f13dbc54c52f738c519e341f3e7dc70e"
+    },
+    {
+      "path": "workspace/backends/smolvla/lerobot_video_compat.py",
+      "bytes": 1088,
+      "sha256": "8c2509f2384699dc7e4b7ac486d42bf3f70b0488246d92b6884a37f305e41332"
     },
     {
       "path": "workspace/backends/smolvla/parallel_policy.py",
@@ -4869,6 +4994,11 @@
       "path": "workspace/backends/smolvla/queued_sft_eval.py",
       "bytes": 5272,
       "sha256": "4ae7fec9915d18e72910ad4cd661e9a632a6f3d09cfb53f6bae07d3580979fea"
+    },
+    {
+      "path": "workspace/backends/smolvla/replay_selected_trajectories.py",
+      "bytes": 8222,
+      "sha256": "debc3f0d2928bbf16f51ab0c3ad44b4a24683db25d7140efedcd19f43a9e33f9"
     },
     {
       "path": "workspace/backends/smolvla/run.py",
@@ -8011,6 +8141,11 @@
       "sha256": "fea968f6396280a240ee971fb4fab8b1cc87b855141f0d1440cc9036e130febd"
     },
     {
+      "path": "workspace/scripts/plot_lerobot_trajectories.py",
+      "bytes": 5371,
+      "sha256": "881ee8bdcabc45f5df4f9c360deda70b490f6a92c8f85da6811942352e7850d6"
+    },
+    {
       "path": "workspace/scripts/ros_nodes.py",
       "bytes": 4104,
       "sha256": "9670a9480f2f7f909d74dd700b9454821fc20001c91a9ed1682070a79a3016f3"
@@ -8102,8 +8237,8 @@
     },
     {
       "path": "workspace/src/physicalai_vla/simulation.py",
-      "bytes": 8517,
-      "sha256": "2e185433400545283149b331aa46a23d1575657f12305d1f70e2c4e12e81ed83"
+      "bytes": 8790,
+      "sha256": "b9df712d7bafa52b2f91d6880e9b6c1d96a5c61024ff1e19722f712e97c5aae9"
     },
     {
       "path": "workspace/src/physicalai_vla/training.py",

@@ -245,5 +245,6 @@ episode/sequence、7D shape、finite値、action範囲、codec、checkpoint hash
 
 初期重みSHA256：`88638a6aa1399327d79418265b224b883e7af6b5a7855c3b0aa6b7929ff1f971`。最終重みSHA256：`7538f906c9988f5a5e500f7cb03d26ae12afb4504058888ffd695a81e6c1f050`。最終checkpointは`train-002/ckpt-011434`。これらはモデルの同一性の記録であり、実機での性能を保証するものではない。
 '''
+text += '\n\n## 9. 動画採用軌道のLeRobot形式データと可視化\n\n[8タスクの軌道資料・データセット・照合記録](trajectories/README.md)を追加した。同条件のROS 2再実行の映像は元の採用8クリップと完全一致した。元評価の未保存テレメトリではなく、新規に記録した再実行データである。\n'
 (HERE/'REPORT.md').write_text(text)
 print('Final report written',len(text),'characters')

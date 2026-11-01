@@ -22,3 +22,5 @@ BurgQ SmolVLAをLIBERO-PLUSの指定8タスクへ追加学習するシミュレ�
 - [再現手順・公開範囲](REPRODUCIBILITY.md)
 
 公開時点のコード・依存lock・ROS 2メッセージ定義・過去の設計記録を保存しています。重み、データセット、シーンassets、仮想環境、秘密情報は含みません。`workspace/` 内の旧ドキュメントには過去の設定や結果が残っています。現行実験の説明は上記レポートを基準にしてください。
+
+動画採用8タスクの[LeRobot形式データと軌道可視化](reports/2026-11-01-burgq/final-report/trajectories/README.md)を公開しています。

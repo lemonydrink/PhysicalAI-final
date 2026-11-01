@@ -1,0 +1,165 @@
+{
+  "provenance": "new ROS2 replay with MP4-identical front videos; not recovered original telemetry",
+  "fps": 20,
+  "observation_alignment": "state[t] -> action[t] -> state[t+1]; terminal observation included",
+  "terminal_action": "zero placeholder, action.valid=false; not an executed zero command",
+  "cameras": "canonical front/wrist RGB: simulator raw rotated 180 degrees",
+  "images_lossy_encoded": true,
+  "state_units": "position metres, axis-angle radians, finger positions metres",
+  "action_units": "normalized relative OSC inputs [-1,1], not metres/radians",
+  "episodes": [
+    {
+      "lerobot_episode_index": 0,
+      "frames": 131,
+      "executed_actions": 130,
+      "task": "milk_basket",
+      "source_trial_id": "71f81a88-93be-45e5-a1f3-70f4bd88b3ed",
+      "source_video_sha256": "8a8959a440baf7e2a145798edf99382679a44712ce54c62a3c6cb88a9608ba72",
+      "raw_replay_sha256": "4d8fea5a265f645329ee704f33cfc76409ed2151ae451fac9c7d29fde0f7236b",
+      "image_replay_comparison": {
+        "original_frames": 131,
+        "replay_frames": 131,
+        "equal_frame_count": 131,
+        "all_decoded_frames_identical": true,
+        "max_pixel_difference": 0,
+        "mean_absolute_pixel_difference": 0.0,
+        "mp4_bytes_identical": true
+      },
+      "original_hidden_telemetry_was_not_recorded": true
+    },
+    {
+      "lerobot_episode_index": 1,
+      "frames": 129,
+      "executed_actions": 128,
+      "task": "tomato_basket",
+      "source_trial_id": "ac1d83ca-69d4-4cf8-a89e-d542c8c815eb",
+      "source_video_sha256": "988be2e52de966862d6103a657bd1388d3f85b840926d358f75506c412b4d340",
+      "raw_replay_sha256": "4391ca2a08872fe0eda03276ce5dba4bf9ac77e6271815142d8fe276fb0cbee8",
+      "image_replay_comparison": {
+        "original_frames": 129,
+        "replay_frames": 129,
+        "equal_frame_count": 129,
+        "all_decoded_frames_identical": true,
+        "max_pixel_difference": 0,
+        "mean_absolute_pixel_difference": 0.0,
+        "mp4_bytes_identical": true
+      },
+      "original_hidden_telemetry_was_not_recorded": true
+    },
+    {
+      "lerobot_episode_index": 2,
+      "frames": 139,
+      "executed_actions": 138,
+      "task": "butter_basket",
+      "source_trial_id": "56c9e55f-9a10-40d4-bf7d-bead6349b2ab",
+      "source_video_sha256": "fb854cd571cf1dc9056563359ef0a2aab054c4ddcf9c110f318c5ea03e17c664",
+      "raw_replay_sha256": "35279e950c1445b2142fe5c2324fe8d7af3d42866e25812c71790d93276f22cf",
+      "image_replay_comparison": {
+        "original_frames": 139,
+        "replay_frames": 139,
+        "equal_frame_count": 139,
+        "all_decoded_frames_identical": true,
+        "max_pixel_difference": 0,
+        "mean_absolute_pixel_difference": 0.0,
+        "mp4_bytes_identical": true
+      },
+      "original_hidden_telemetry_was_not_recorded": true
+    },
+    {
+      "lerobot_episode_index": 3,
+      "frames": 93,
+      "executed_actions": 92,
+      "task": "bowl_center_plate",
+      "source_trial_id": "21f1eab5-6d0f-48c0-a91f-a76d695623fb",
+      "source_video_sha256": "b3609942a715cd8885739ac98b2390dee5f6e8804ba9c87c15baedb16d6097c1",
+      "raw_replay_sha256": "910a820cbaa15b71beb42ef8aa296b14f1c6c3b7aafcddcb90b3a79951bf9af3",
+      "image_replay_comparison": {
+        "original_frames": 93,
+        "replay_frames": 93,
+        "equal_frame_count": 93,
+        "all_decoded_frames_identical": true,
+        "max_pixel_difference": 0,
+        "mean_absolute_pixel_difference": 0.0,
+        "mp4_bytes_identical": true
+      },
+      "original_hidden_telemetry_was_not_recorded": true
+    },
+    {
+      "lerobot_episode_index": 4,
+      "frames": 116,
+      "executed_actions": 115,
+      "task": "bowl_cookie_plate",
+      "source_trial_id": "d5cd7657-72c2-4f0e-b1ee-263741af3130",
+      "source_video_sha256": "2c58e4f6925f95b930fbac6134b652f2a5510bb7561d89d386c6ffd8fa30d864",
+      "raw_replay_sha256": "e72f0ebbf38b1c3621e0639d0be2141f66e31648e93d0450973916e8578a31e0",
+      "image_replay_comparison": {
+        "original_frames": 116,
+        "replay_frames": 116,
+        "equal_frame_count": 116,
+        "all_decoded_frames_identical": true,
+        "max_pixel_difference": 0,
+        "mean_absolute_pixel_difference": 0.0,
+        "mp4_bytes_identical": true
+      },
+      "original_hidden_telemetry_was_not_recorded": true
+    },
+    {
+      "lerobot_episode_index": 5,
+      "frames": 85,
+      "executed_actions": 84,
+      "task": "bowl_plate",
+      "source_trial_id": "0ac7f138-26a8-4b73-bae3-1c8769c3f22b",
+      "source_video_sha256": "4f133d8ddfbfa3426a09e1d20f362e43f7df666e0b46bfa7be1eea957e72b0e3",
+      "raw_replay_sha256": "e01991e91660d581481d8a543879f64787d3613c1ffdbebf74111b6ece4152f8",
+      "image_replay_comparison": {
+        "original_frames": 85,
+        "replay_frames": 85,
+        "equal_frame_count": 85,
+        "all_decoded_frames_identical": true,
+        "max_pixel_difference": 0,
+        "mean_absolute_pixel_difference": 0.0,
+        "mp4_bytes_identical": true
+      },
+      "original_hidden_telemetry_was_not_recorded": true
+    },
+    {
+      "lerobot_episode_index": 6,
+      "frames": 157,
+      "executed_actions": 156,
+      "task": "middle_drawer",
+      "source_trial_id": "46a3c5af-f176-4b66-ad80-58b48e4dc20c",
+      "source_video_sha256": "ced0542b293b8729c7c316133d000725b528f1abfad432cd86864763d1e722e0",
+      "raw_replay_sha256": "37d74e0f9d6bc8d28888d44fd327fd580c16cac2a04956f8343ffa0c65ef9630",
+      "image_replay_comparison": {
+        "original_frames": 157,
+        "replay_frames": 157,
+        "equal_frame_count": 157,
+        "all_decoded_frames_identical": true,
+        "max_pixel_difference": 0,
+        "mean_absolute_pixel_difference": 0.0,
+        "mp4_bytes_identical": true
+      },
+      "original_hidden_telemetry_was_not_recorded": true
+    },
+    {
+      "lerobot_episode_index": 7,
+      "frames": 123,
+      "executed_actions": 122,
+      "task": "plate_stove",
+      "source_trial_id": "3fe30423-289f-4cce-b8f0-a78266408021",
+      "source_video_sha256": "17223de7f2f2db5a74b7fd274a7bb6d0a680519c1c8040aad09f60c2f189230e",
+      "raw_replay_sha256": "b43dc9ad17c0b93467e42f75a4fc574c7710fe76de57a4b391419c40272061ab",
+      "image_replay_comparison": {
+        "original_frames": 123,
+        "replay_frames": 123,
+        "equal_frame_count": 123,
+        "all_decoded_frames_identical": true,
+        "max_pixel_difference": 0,
+        "mean_absolute_pixel_difference": 0.0,
+        "mp4_bytes_identical": true
+      },
+      "original_hidden_telemetry_was_not_recorded": true
+    }
+  ],
+  "model_sha256": "7538f906c9988f5a5e500f7cb03d26ae12afb4504058888ffd695a81e6c1f050"
+}

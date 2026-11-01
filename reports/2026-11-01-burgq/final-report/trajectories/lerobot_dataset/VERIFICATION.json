@@ -1,0 +1,11 @@
+{
+  "official_format": "LeRobot v3.0",
+  "official_loader_opened": true,
+  "video_reader": "explicit direct-PyAV compatibility adapter (TorchCodec ABI incompatible with installed torch)",
+  "episodes": 8,
+  "frames": 973,
+  "executed_actions": 965,
+  "terminal_padding_rows": 8,
+  "all_numeric_values_equal_float32_source": true,
+  "video_decoder_samples_checked": 24
+}

@@ -67,6 +67,9 @@ class Environment:
                 'position':position,'matrix':matrix,
                 'instruction':self.task['dataset_instruction'],
                 'state_encoding':self.state_encoding,
+                'joint_position':np.asarray(self.env.env.robots[0]._joint_positions).copy(),
+                'joint_velocity':np.asarray(self.env.env.robots[0]._joint_velocities).copy(),
+                'eef_quaternion_xyzw':np.asarray(self.raw['robot0_eef_quat']).copy(),
                 'state':np.r_[self.raw['robot0_eef_pos'],rotation,self.raw['robot0_gripper_qpos']]} 
 
     def step(self,action):
